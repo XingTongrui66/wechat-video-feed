@@ -17,18 +17,6 @@ const DELAY_MAX_MS = 8000;
 
 const POPULAR_PAGES = 20;
 const PRECIOUS_PAGES = 3;
-const RANKING_CATEGORIES = [
-  { rid: 160, keyword: '生活' },
-  { rid: 211, keyword: '美食' },
-  { rid: 217, keyword: '动物' },
-  { rid: 3,   keyword: '音乐' },
-  { rid: 129, keyword: '舞蹈' },
-  { rid: 36,  keyword: '知识' },
-  { rid: 188, keyword: '科技' },
-  { rid: 181, keyword: '影视' },
-  { rid: 5,   keyword: '娱乐' },
-  { rid: 155, keyword: '时尚' }
-];
 
 const BLOCK_WORDS = [
   '恐怖', '暴力', '吵架', '整蛊', '擦边', '抽卡', '赌博', '彩票', '性感', '美女',
@@ -237,15 +225,6 @@ async function* preciousSource(cookieJar) {
   }
 }
 
-async function* rankingSource(cookieJar) {
-  for (const category of RANKING_CATEGORIES) {
-    const url = `https://api.bilibili.com/x/web-interface/ranking/v2?rid=${category.rid}&type=all`;
-    const json = await requestJson(url, cookieJar);
-    const list = (json && json.data && json.data.list) || [];
-    yield normalizeList(list, category.keyword);
-  }
-}
-
 async function main() {
   const now = new Date().toISOString();
   const oldFeed = readJson(FEED_FILE, { items: [] });
@@ -269,8 +248,7 @@ async function main() {
 
   const sources = [
     { name: 'popular', factory: popularSource },
-    { name: 'precious', factory: preciousSource },
-    { name: 'ranking', factory: rankingSource }
+    { name: 'precious', factory: preciousSource }
   ];
 
   for (const source of sources) {
