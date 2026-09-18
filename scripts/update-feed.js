@@ -34,9 +34,10 @@ const BLOCK_WORDS = [
 ];
 
 const FALLBACK_ITEMS = [
-  { bvid: 'BV1xx411c7mD', title: '字幕君交流场所', author: '碧诗', keyword: '备用视频', likes: '128' },
-  { bvid: 'BV1GJ411x7h7', title: 'Never Gonna Give You Up', author: '官方 MV', keyword: '备用视频', likes: '96' },
-  { bvid: 'BV1Q5411c7mD', title: '杨紫方言传话要崩溃', author: '影视精选', keyword: '备用视频', likes: '74' }
+  { bvid: 'BV1JhZcY9EFN', title: '生活记录精选', author: 'B站', keyword: '备用视频', likes: '1000', duration: 334, width: 1080, height: 1920 },
+  { bvid: 'BV1fpZ6YaE47', title: '女儿：爸爸妈妈要结婚啦？', author: '肥娟小吃', keyword: '备用视频', likes: '303567', duration: 202, width: 1440, height: 2560 },
+  { bvid: 'BV1AiZEY5Etd', title: '短视频精选', author: 'B站', keyword: '备用视频', likes: '1000', duration: 132, width: 1080, height: 1920 },
+  { bvid: 'BV1GWZnYcEsu', title: '父亲的爱，总是无声的。', author: '古泽源', keyword: '备用视频', likes: '398688', duration: 29, width: 2160, height: 3840 }
 ];
 
 function requestJson(url) {
@@ -86,25 +87,34 @@ function validVideo(video) {
   if (isBlocked(video.title)) return false;
   if (Number(video.duration || 0) > 900) return false;
   if (Number(video.duration || 0) > 0 && Number(video.duration || 0) < 20) return false;
+  if (!Number(video.width) || !Number(video.height) || Number(video.height) <= Number(video.width)) return false;
   return true;
 }
 
 function normalizeVideo(raw, keyword) {
+  var dimension = raw.dimension || {};
   return {
     bvid: raw.bvid,
     title: cleanText(raw.title),
     author: cleanText(raw.owner && raw.owner.name) || keyword,
     keyword,
     likes: String(raw.stat && raw.stat.like ? raw.stat.like : raw.stat && raw.stat.view ? raw.stat.view : 50),
-    duration: Number(raw.duration || 0)
+    duration: Number(raw.duration || 0),
+    width: Number(dimension.width || 0),
+    height: Number(dimension.height || 0)
   };
 }
 
 async function fetchCategory(category) {
   const url = `https://api.bilibili.com/x/web-interface/ranking/v2?rid=${category.rid}&type=all`;
   const json = await requestJson(url);
+  if (!json || json.code !== 0) throw new Error(`Bilibili code ${json && json.code}`);
   const list = json && json.data && Array.isArray(json.data.list) ? json.data.list : [];
   return list.map(item => normalizeVideo(item, category.keyword)).filter(validVideo);
+}
+
+function feedIsVertical(feed) {
+  return !!(feed && Array.isArray(feed.items) && feed.items.length && feed.items.every(validVideo));
 }
 
 function trimHistory(history) {
@@ -136,10 +146,11 @@ async function main() {
 
   if (items.length < 12) {
     const old = readJson(OUT_FILE, null);
-    if (old && Array.isArray(old.items) && old.items.length) {
-      console.warn(`Only ${items.length} new items. Keeping previous feed.`);
+    if (feedIsVertical(old)) {
+      console.warn(`Only ${items.length} new vertical items. Keeping previous vertical feed.`);
       return;
     }
+    console.warn(`Only ${items.length} new vertical items. Writing vertical fallback feed.`);
     items.push(...FALLBACK_ITEMS);
   }
 
