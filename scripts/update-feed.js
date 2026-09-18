@@ -121,18 +121,31 @@ function validVideo(video) {
 
 function normalizeVideo(raw, keyword) {
   const dimension = raw.dimension || {};
+  const stat = raw.stat || {};
+  const owner = raw.owner || {};
   const width = Number(raw.width || dimension.width || 0);
   const height = Number(raw.height || dimension.height || 0);
+  const face = String(raw.face || owner.face || '').trim();
+  const likeCount = Number(raw.likeCount || stat.like || 0);
+  const view = Number(raw.view || stat.view || stat.vv || 0);
   return {
     bvid: String(raw.bvid || '').trim(),
     title: cleanText(raw.title),
-    author: cleanText(raw.author || (raw.owner && raw.owner.name)) || keyword,
+    author: cleanText(raw.author || owner.name) || keyword,
+    face,
     keyword: cleanText(raw.keyword || keyword),
-    likes: String(raw.likes || (raw.stat && (raw.stat.like || raw.stat.view)) || 50),
+    likes: String(raw.likes || likeCount || view || 50),
+    likeCount,
+    view,
+    coin: Number(raw.coin || stat.coin || 0),
+    favorite: Number(raw.favorite || stat.favorite || 0),
+    share: Number(raw.share || stat.share || 0),
+    reply: Number(raw.reply || stat.reply || 0),
     duration: Number(raw.duration || 0),
     width,
     height,
     vertical: height > width,
+    location: cleanText(raw.location || raw.pub_location || ''),
     addedAt: raw.addedAt || new Date().toISOString()
   };
 }
