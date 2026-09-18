@@ -1,23 +1,10 @@
 {
-  "date": "2026-09-18",
-  "source": "video-pool-cache",
   "generatedAt": "2026-09-18T08:15:09.397Z",
-  "poolSize": 4,
+  "poolTarget": 3000,
+  "total": 4,
   "verticalCount": 4,
   "horizontalCount": 0,
   "items": [
-    {
-      "bvid": "BV1AiZEY5Etd",
-      "title": "短视频精选",
-      "author": "B站",
-      "keyword": "备用视频",
-      "likes": "1000",
-      "duration": 132,
-      "width": 1080,
-      "height": 1920,
-      "vertical": true,
-      "addedAt": "2026-09-18T08:15:09.412Z"
-    },
     {
       "bvid": "BV1GWZnYcEsu",
       "title": "父亲的爱，总是无声的。",
@@ -49,6 +36,18 @@
       "keyword": "备用视频",
       "likes": "1000",
       "duration": 334,
+      "width": 1080,
+      "height": 1920,
+      "vertical": true,
+      "addedAt": "2026-09-18T08:15:09.412Z"
+    },
+    {
+      "bvid": "BV1AiZEY5Etd",
+      "title": "短视频精选",
+      "author": "B站",
+      "keyword": "备用视频",
+      "likes": "1000",
+      "duration": 132,
       "width": 1080,
       "height": 1920,
       "vertical": true,

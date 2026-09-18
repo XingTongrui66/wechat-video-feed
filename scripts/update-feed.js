@@ -6,11 +6,13 @@ const path = require('path');
 const https = require('https');
 
 const ROOT = path.resolve(__dirname, '..');
-const OUT_FILE = path.join(ROOT, 'data', 'channels-feed.json');
+const FEED_FILE = path.join(ROOT, 'data', 'channels-feed.json');
+const POOL_FILE = path.join(ROOT, 'data', 'video-pool.json');
 const HISTORY_FILE = path.join(ROOT, 'data', 'channels-history.json');
-const TARGET_TOTAL = 60;
-const PER_CATEGORY_LIMIT = 8;
-const HISTORY_DAYS = 7;
+const POOL_TARGET = 3000;
+const FEED_SIZE = 1000;
+const PER_CATEGORY_LIMIT = 120;
+const HISTORY_DAYS = 30;
 
 const RANKING_CATEGORIES = [
   { rid: 160, keyword: '生活' },
@@ -72,6 +74,11 @@ function readJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { return fallback; }
 }
 
+function writeJson(file, data) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
 function cleanText(value) {
   return String(value || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
@@ -81,28 +88,39 @@ function isBlocked(title) {
   return BLOCK_WORDS.some(word => text.includes(word.toLowerCase()));
 }
 
+function isVertical(video) {
+  return Number(video.height || 0) > Number(video.width || 0);
+}
+
 function validVideo(video) {
   if (!video || !video.bvid || !video.title) return false;
-  if (String(video.bvid).indexOf('BV') !== 0) return false;
+  if (!/^BV[0-9A-Za-z]{10}$/.test(String(video.bvid))) return false;
   if (isBlocked(video.title)) return false;
-  if (Number(video.duration || 0) > 900) return false;
-  if (Number(video.duration || 0) > 0 && Number(video.duration || 0) < 20) return false;
-  if (!Number(video.width) || !Number(video.height) || Number(video.height) <= Number(video.width)) return false;
+  if (Number(video.duration || 0) > 1200) return false;
+  if (Number(video.duration || 0) > 0 && Number(video.duration || 0) < 15) return false;
   return true;
 }
 
 function normalizeVideo(raw, keyword) {
-  var dimension = raw.dimension || {};
+  const dimension = raw.dimension || {};
+  const width = Number(raw.width || dimension.width || 0);
+  const height = Number(raw.height || dimension.height || 0);
   return {
-    bvid: raw.bvid,
+    bvid: String(raw.bvid || '').trim(),
     title: cleanText(raw.title),
-    author: cleanText(raw.owner && raw.owner.name) || keyword,
-    keyword,
-    likes: String(raw.stat && raw.stat.like ? raw.stat.like : raw.stat && raw.stat.view ? raw.stat.view : 50),
+    author: cleanText(raw.author || raw.owner && raw.owner.name) || keyword,
+    keyword: cleanText(raw.keyword || keyword),
+    likes: String(raw.likes || raw.stat && (raw.stat.like || raw.stat.view) || 50),
     duration: Number(raw.duration || 0),
-    width: Number(dimension.width || 0),
-    height: Number(dimension.height || 0)
+    width,
+    height,
+    vertical: height > width,
+    addedAt: raw.addedAt || new Date().toISOString()
   };
+}
+
+function normalizeList(list, keyword) {
+  return (Array.isArray(list) ? list : []).map(item => normalizeVideo(item, keyword)).filter(validVideo);
 }
 
 async function fetchCategory(category) {
@@ -110,11 +128,7 @@ async function fetchCategory(category) {
   const json = await requestJson(url);
   if (!json || json.code !== 0) throw new Error(`Bilibili code ${json && json.code}`);
   const list = json && json.data && Array.isArray(json.data.list) ? json.data.list : [];
-  return list.map(item => normalizeVideo(item, category.keyword)).filter(validVideo);
-}
-
-function feedIsVertical(feed) {
-  return !!(feed && Array.isArray(feed.items) && feed.items.length && feed.items.every(validVideo));
+  return normalizeList(list, category.keyword);
 }
 
 function trimHistory(history) {
@@ -122,51 +136,84 @@ function trimHistory(history) {
   return (history || []).filter(entry => Date.parse(entry.date) >= cutoff);
 }
 
-async function main() {
-  const history = trimHistory(readJson(HISTORY_FILE, []));
-  const used = new Set(history.map(entry => entry.bvid));
-  const items = [];
+function mergePool(existing, incoming) {
+  const map = new Map();
+  normalizeList(existing, '库存').forEach(item => map.set(item.bvid, item));
+  normalizeList(incoming, '新增').forEach(item => {
+    const old = map.get(item.bvid);
+    map.set(item.bvid, Object.assign({}, old || {}, item, { addedAt: old && old.addedAt || item.addedAt }));
+  });
+  return Array.from(map.values()).sort((a, b) => {
+    if (a.vertical !== b.vertical) return a.vertical ? -1 : 1;
+    return Number(b.likes || 0) - Number(a.likes || 0);
+  }).slice(0, POOL_TARGET);
+}
 
+function pickFeed(pool, history) {
+  const recent = new Set(history.map(entry => entry.bvid));
+  const vertical = [];
+  const horizontal = [];
+  pool.forEach(item => (isVertical(item) ? vertical : horizontal).push(item));
+
+  const preferred = vertical.concat(horizontal);
+  const fresh = preferred.filter(item => !recent.has(item.bvid));
+  const recycled = preferred.filter(item => recent.has(item.bvid));
+  return fresh.concat(recycled).slice(0, FEED_SIZE);
+}
+
+async function collectNewItems() {
+  const items = [];
   for (const category of RANKING_CATEGORIES) {
     try {
       const found = await fetchCategory(category);
-      let added = 0;
-      for (const item of found) {
-        if (items.length >= TARGET_TOTAL || added >= PER_CATEGORY_LIMIT) break;
-        if (used.has(item.bvid)) continue;
-        used.add(item.bvid);
-        items.push(item);
-        added += 1;
-      }
-      console.log(`${category.keyword}: ${found.length} candidates, added ${added}, total ${items.length}`);
+      found.slice(0, PER_CATEGORY_LIMIT).forEach(item => items.push(item));
+      console.log(`${category.keyword}: ${found.length} candidates, collected ${items.length}`);
     } catch (err) {
       console.warn(`${category.keyword}: ${err.message}`);
     }
   }
+  return items;
+}
 
-  if (items.length < 12) {
-    const old = readJson(OUT_FILE, null);
-    if (feedIsVertical(old)) {
-      console.warn(`Only ${items.length} new vertical items. Keeping previous vertical feed.`);
-      return;
-    }
-    console.warn(`Only ${items.length} new vertical items. Writing vertical fallback feed.`);
-    items.push(...FALLBACK_ITEMS);
-  }
+async function main() {
+  const now = new Date().toISOString();
+  const oldFeed = readJson(FEED_FILE, { items: [] });
+  const oldPoolFile = readJson(POOL_FILE, { items: [] });
+  const history = trimHistory(readJson(HISTORY_FILE, []));
 
-  const now = new Date();
+  const seed = normalizeList(FALLBACK_ITEMS, '备用视频')
+    .concat(normalizeList(oldFeed.items || [], '旧清单'))
+    .concat(normalizeList(oldPoolFile.items || [], '库存'));
+  const collected = await collectNewItems();
+  const pool = mergePool(seed, collected);
+  const feedItems = pickFeed(pool, history);
+
   const feed = {
-    date: now.toISOString().slice(0, 10),
-    source: 'bilibili-ranking',
-    generatedAt: now.toISOString(),
-    items: items.slice(0, TARGET_TOTAL)
+    date: now.slice(0, 10),
+    source: collected.length ? 'bilibili-ranking-pool' : 'video-pool-cache',
+    generatedAt: now,
+    poolSize: pool.length,
+    verticalCount: pool.filter(isVertical).length,
+    horizontalCount: pool.filter(item => !isVertical(item)).length,
+    items: feedItems
   };
-  fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-  fs.writeFileSync(OUT_FILE, JSON.stringify(feed, null, 2) + '\n', 'utf8');
 
-  const nextHistory = history.concat(feed.items.map(item => ({ bvid: item.bvid, date: feed.generatedAt })));
-  fs.writeFileSync(HISTORY_FILE, JSON.stringify(nextHistory, null, 2) + '\n', 'utf8');
-  console.log(`Generated ${feed.items.length} videos into ${path.relative(ROOT, OUT_FILE)}`);
+  const poolFile = {
+    generatedAt: now,
+    poolTarget: POOL_TARGET,
+    total: pool.length,
+    verticalCount: feed.verticalCount,
+    horizontalCount: feed.horizontalCount,
+    items: pool
+  };
+
+  const nextHistory = history.concat(feedItems.map(item => ({ bvid: item.bvid, date: now })));
+  writeJson(POOL_FILE, poolFile);
+  writeJson(FEED_FILE, feed);
+  writeJson(HISTORY_FILE, nextHistory);
+
+  console.log(`Pool ${pool.length} videos (${feed.verticalCount} vertical, ${feed.horizontalCount} horizontal).`);
+  console.log(`Feed ${feedItems.length} videos written to ${path.relative(ROOT, FEED_FILE)}.`);
 }
 
 main().catch(err => {

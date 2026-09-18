@@ -27,4 +27,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Update daily video feed'
-          file_pattern: data/channels-feed.json data/channels-history.json
+          file_pattern: data/channels-feed.json data/channels-history.json data/video-pool.json
