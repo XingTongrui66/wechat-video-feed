@@ -119,6 +119,16 @@ function validVideo(video) {
   return true;
 }
 
+// B 站返回的 pic 是 http；页面侧统一转 https，避免混合内容被拦。
+// pic 用于前端视频号播放器的"封面垫底层"：iframe 渲染出首帧前顶着画面，消除黑闪。
+function toHttpsPic(pic) {
+  const s = String(pic || '').trim();
+  if (!s) return '';
+  if (/^https?:\/\//i.test(s)) return s.replace(/^http:\/\//i, 'https://');
+  if (/^\/\//.test(s)) return 'https:' + s;
+  return '';
+}
+
 function normalizeVideo(raw, keyword) {
   const dimension = raw.dimension || {};
   const stat = raw.stat || {};
@@ -133,6 +143,7 @@ function normalizeVideo(raw, keyword) {
     title: cleanText(raw.title),
     author: cleanText(raw.author || owner.name) || keyword,
     face,
+    pic: toHttpsPic(raw.pic || raw.cover || raw.pic_url || ''),
     keyword: cleanText(raw.keyword || keyword),
     likes: String(raw.likes || likeCount || view || 50),
     likeCount,
