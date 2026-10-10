@@ -1696,7 +1696,8 @@ async function main() {
   const isCI = !!process.env.GITHUB_ACTIONS;
   const accountResults = await Promise.all(accountSources.map(async source => {
     if (isCI && /^https?:\/\/(localhost|127\.0\.0\.1)([:\/]|$)/i.test(source.feedUrl || '')) {
-      return account(source, []);
+      // 必须与下面统一返回 { source, ranked } 结构，否则 liveAccounts 取 r.source.id 会崩
+      return { source, ranked: [], fetched: 0, afterFilter: 0 };
     }
     try {
       const rows = await collect(source);
