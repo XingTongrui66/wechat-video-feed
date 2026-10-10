@@ -29,6 +29,7 @@ jobs:
         timeout-minutes: 40
         env:
           COMMENT_BATCH: '300'
+          COMMENT_ANON_COOKIE: '1'
         run: node scripts/update-feed.js
 
       - name: Commit updated feed

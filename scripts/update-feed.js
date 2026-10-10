@@ -86,6 +86,35 @@ async function warmupCookies() {
   return jar;
 }
 
+// 匿名身份：访问首页取 buvid3/b_nut，再用 finger/spi 取 b_3/b_4；失败返回 ''（降级为无 cookie）
+async function getAnonymousJar() {
+  const parts = new Map();
+  const home = await requestRaw('https://www.bilibili.com/', '');
+  home.setCookie.forEach(line => {
+    const kv = line.split(';')[0];
+    const i = kv.indexOf('=');
+    if (i > 0) parts.set(kv.slice(0, i).trim(), kv.slice(i + 1).trim());
+  });
+  try {
+    const spi = await requestRaw('https://api.bilibili.com/x/frontend/finger/spi', Array.from(parts, ([k, v]) => `${k}=${v}`).join('; '));
+    const d = JSON.parse(spi.body.replace(/^\uFEFF/, '')).data || {};
+    if (d.b_3) parts.set('buvid3', d.b_3);
+    if (d.b_4) parts.set('buvid4', d.b_4);
+  } catch (err) {
+    console.warn(`Comments: finger/spi failed (${err.message})`);
+  }
+  return Array.from(parts, ([k, v]) => `${k}=${v}`).join('; ');
+}
+
+let _diagLeft = 8;
+let _diagJarLen = 0;
+function diagFail(stage, res, json) {
+  if (_diagLeft <= 0) return;
+  _diagLeft -= 1;
+  const msg = String((json && json.message) || '').slice(0, 120);
+  console.warn(`Comments diag [${stage}]: HTTP ${res ? res.statusCode : '?'}, code ${json ? json.code : 'n/a'}, message "${msg}", anon cookie ${_diagJarLen ? 'yes' : 'no'} (len ${_diagJarLen})`);
+}
+
 async function requestJson(url, cookieJar) {
   const res = await requestRaw(url, cookieJar);
   if (res.statusCode !== 200) throw new Error(`HTTP ${res.statusCode} ${url}`);
@@ -158,9 +187,12 @@ async function fetchCommentsForBvid(bvid, cookieJar) {
   let aid = 0;
   try {
     const vres = await requestRaw(`https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`, cookieJar);
-    const vjson = JSON.parse(vres.body.replace(/^\uFEFF/, ''));
+    let vjson = null;
+    try { vjson = JSON.parse(vres.body.replace(/^\uFEFF/, '')); } catch (e) { /* diag below */ }
     aid = (vjson && vjson.data && vjson.data.aid) || 0;
+    if (!aid) diagFail('view', vres, vjson);
   } catch (err) {
+    diagFail('view-error:' + String(err.message).slice(0, 60), null, null);
     return [];
   }
   if (!aid) return [];
@@ -174,10 +206,12 @@ async function fetchCommentsForBvid(bvid, cookieJar) {
         oid: aid, type: 1, mode: 3, next, ps: COMMENT_PS, plat: 1, web_location: '1315875'
       });
       const res = await requestRaw(url, cookieJar);
-      const json = JSON.parse(res.body.replace(/^\uFEFF/, ''));
-      if (!json || json.code !== 0) break;
+      let json = null;
+      try { json = JSON.parse(res.body.replace(/^\uFEFF/, '')); } catch (e) { /* diag below */ }
+      if (!json || json.code !== 0) { diagFail('reply', res, json); break; }
       data = json.data;
     } catch (err) {
+      diagFail('reply-error:' + String(err.message).slice(0, 60), null, null);
       break;
     }
     if (!data) break;
@@ -209,7 +243,15 @@ async function fetchCommentsForBvid(bvid, cookieJar) {
 //       不带 cookie（干净 UA+Referer 头）能稳定拿 20 条/页。
 // 因此 buildComments 内部一律用 '' 作为 cookieJar，忽略外部传入。
 async function buildComments(feedItems, oldFeed, cookieJar) {
-  const emptyJar = ''; // 强制不用外部 cookie，见上方注释
+  // 外部 cookieJar 仍忽略；改用单独获取的匿名身份 cookie，失败则降级为 ''
+  let emptyJar = '';
+  try {
+    if (process.env.COMMENT_ANON_COOKIE === '1') emptyJar = await getAnonymousJar();
+    _diagJarLen = emptyJar.length;
+    console.log(`Comments: anonymous cookie ${emptyJar ? 'ok' : 'empty'} (len ${emptyJar.length})`);
+  } catch (err) {
+    console.warn(`Comments: anonymous cookie failed (${err.message}), fallback to no cookie`);
+  }
 
   const oldComments = new Map();
   (oldFeed.items || []).forEach(item => {
@@ -248,7 +290,7 @@ async function buildComments(feedItems, oldFeed, cookieJar) {
 
   try {
     await getWbiKeys(emptyJar);
-    console.log('Comments: wbi keys ready (no cookie)');
+    console.log(`Comments: wbi keys ready (${emptyJar ? "anon cookie" : "no cookie"})`);
   } catch (err) {
     console.warn(`Comments: wbi failed (${err.message}), will try unsigned`);
   }
