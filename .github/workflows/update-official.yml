@@ -1,0 +1,63 @@
+name: Update official feed
+
+# 公众号 / 看一看 / AI 评论的云端抓取任务。
+# 跑在 GitHub 服务器（Node + 无跨域限制 + cron 定时器），产出提交回本仓库，
+# 由 GitHub Pages 直接对外提供 → APK 无需重新打包即可吃到最新数据。
+on:
+  schedule:
+    # UTC 20:00 = 北京时间 04:00，与视频号任务（22:00 UTC）错开，避免同时提交
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 与本仓库其它 feed 任务排队串行，避免两个任务同时向同一分支提交产生冲突
+concurrency:
+  group: pages-feed
+  cancel-in-progress: false
+
+jobs:
+  update-official:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # content library 是持续累积池（本地已 75MB 且每轮都会变），
+      # 提交进 git 会让仓库迅速膨胀 → 改用 Actions 缓存跨轮保留。
+      # 缓存未命中时脚本会优雅降级为空池，不影响抓取結果。
+      - name: Restore content library cache
+        uses: actions/cache@v4
+        with:
+          path: data/library.json
+          key: official-library-${{ github.run_id }}
+          restore-keys: |
+            official-library-
+
+      - name: Generate official + look feed
+        run: node scripts/update-official-feed.js
+
+      # AI 评论：增量生成（已有评论的文章会跳过）。
+      # SF_KEY 未配置时本步骤会失败但不影响上面的抓取结果提交。
+      - name: Generate AI comments (incremental)
+        env:
+          SF_KEY: ${{ secrets.SF_KEY }}
+        continue-on-error: true
+        run: node scripts/ai-comments.js --conc 4
+
+      - name: Commit updated data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update official/look feed + AI comments'
+          file_pattern: >-
+            data/official-feed.json
+            data/look-feed.json
+            data/ai-review.json
+            data/articles-history.json
