@@ -16,7 +16,8 @@ const FEED_SIZE = 1500;
 // ---------- 评论抓取参数 ----------
 // 每轮最多给多少条「尚无评论」的视频补抓；以及整个 feed 最多允许多少条带评论（控制体积）。
 // 1500 条全带评论约 30MB，对 APK 远程拉取太重，故封顶 600 条（≈12MB）。
-const COMMENT_FETCH_PER_RUN = 300;
+const COMMENT_FETCH_PER_RUN = Math.max(0, Number(process.env.COMMENT_BATCH) || 300);
+const COMMENT_MAX_FAILS = 8;         // 连续 8 次空/失败视为限流，停止本轮剩余抓取
 const COMMENT_COVERAGE_CAP = 600;
 const COMMENT_TARGET = 80;          // 每个视频最多取多少条评论
 const COMMENT_PS = 20;              // 每页条数
@@ -197,7 +198,7 @@ async function fetchCommentsForBvid(bvid, cookieJar) {
     if (!next) break;
     await sleep(COMMENT_DELAY_MIN, COMMENT_DELAY_MAX);
   }
-  return out.slice(0, COMMENT_TARGET);
+  return out.filter(c => String(c.text || '').trim()).slice(0, COMMENT_TARGET);
 }
 
 // 评论合成：①继承上一轮 feed 已有的评论（pool 不存评论，不继承就会每轮被冲掉）
@@ -217,6 +218,11 @@ async function buildComments(feedItems, oldFeed, cookieJar) {
     }
   });
 
+  const triedAt = new Map();
+  (oldFeed.items || []).forEach(item => {
+    if (item && item.bvid && item.commentsTriedAt) triedAt.set(item.bvid, item.commentsTriedAt);
+  });
+
   let inherited = 0;
   const missing = [];
   feedItems.forEach(item => {
@@ -226,6 +232,7 @@ async function buildComments(feedItems, oldFeed, cookieJar) {
       inherited += 1;
     } else {
       item.comments = [];
+      if (triedAt.has(item.bvid)) item.commentsTriedAt = triedAt.get(item.bvid);
       missing.push(item);
     }
   });
@@ -247,14 +254,22 @@ async function buildComments(feedItems, oldFeed, cookieJar) {
   }
 
   const budget = Math.min(COMMENT_FETCH_PER_RUN, COMMENT_COVERAGE_CAP - covered);
+  // 轮换：从未尝试过的排前面，其后按上次尝试时间由旧到新（Array.sort 稳定，保持 feed 顺序）
+  missing.sort((a, b) => String(a.commentsTriedAt || '').localeCompare(String(b.commentsTriedAt || '')));
   const todo = missing.slice(0, budget);
   console.log(`Comments: fetching for ${todo.length} videos...`);
 
+  let failStreak = 0;
   for (let i = 0; i < todo.length; i += 1) {
     const item = todo[i];
     const comments = await fetchCommentsForBvid(item.bvid, emptyJar);
     item.comments = comments;
-    if (comments.length) { fetched += 1; covered += 1; }
+    item.commentsTriedAt = new Date().toISOString();
+    if (comments.length) { fetched += 1; covered += 1; failStreak = 0; } else { failStreak += 1; }
+    if (failStreak >= COMMENT_MAX_FAILS) {
+      console.warn('Comments: ' + COMMENT_MAX_FAILS + ' consecutive empty/failed, assume rate limit; stop this round.');
+      break;
+    }
     if ((i + 1) % 25 === 0) {
       console.log(`Comments: progress ${i + 1}/${todo.length} (ok ${fetched})`);
     }

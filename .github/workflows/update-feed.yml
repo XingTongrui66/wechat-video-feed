@@ -26,6 +26,9 @@ jobs:
           node-version: '20'
 
       - name: Generate feed
+        timeout-minutes: 40
+        env:
+          COMMENT_BATCH: '300'
         run: node scripts/update-feed.js
 
       - name: Commit updated feed
