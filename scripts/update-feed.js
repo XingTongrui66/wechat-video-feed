@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const FEED_FILE = path.join(ROOT, 'data', 'channels-feed.json');
@@ -11,6 +12,16 @@ const POOL_FILE = path.join(ROOT, 'data', 'video-pool.json');
 const HISTORY_FILE = path.join(ROOT, 'data', 'channels-history.json');
 const POOL_TARGET = 5000;
 const FEED_SIZE = 1500;
+
+// ---------- 评论抓取参数 ----------
+// 每轮最多给多少条「尚无评论」的视频补抓；以及整个 feed 最多允许多少条带评论（控制体积）。
+// 1500 条全带评论约 30MB，对 APK 远程拉取太重，故封顶 600 条（≈12MB）。
+const COMMENT_FETCH_PER_RUN = 300;
+const COMMENT_COVERAGE_CAP = 600;
+const COMMENT_TARGET = 80;          // 每个视频最多取多少条评论
+const COMMENT_PS = 20;              // 每页条数
+const COMMENT_DELAY_MIN = 150;
+const COMMENT_DELAY_MAX = 350;
 const HISTORY_DAYS = 30;
 const DELAY_MIN_MS = 4000;
 const DELAY_MAX_MS = 8000;
@@ -94,6 +105,164 @@ function readJson(file, fallback) {
 function writeJson(file, data) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+// ---------- WBI 签名：评论接口 x/v2/reply/wbi/main 需要 ----------
+// 无签名只能走旧接口 x/v2/reply（仅吐 3 条热门）；带签名可翻页取到 80 条。
+const MIXIN_KEY_ENC_TAB = [
+  46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35, 27, 43, 5, 49,
+  33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13, 37, 48, 7, 16, 24, 55, 40,
+  61, 26, 17, 0, 1, 60, 51, 30, 4, 22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11,
+  36, 20, 34, 44, 52
+];
+
+let _wbiKeys = null;
+
+async function getWbiKeys(cookieJar) {
+  if (_wbiKeys) return _wbiKeys;
+  // 注意：不能用 requestJson —— 它强制 code===0，而 nav 未登录时返回 code=-101，
+  // 但 data.wbi_img 依然有效。这里只取 wbi_img，不校验业务 code。
+  const res = await requestRaw('https://api.bilibili.com/x/web-interface/nav', cookieJar);
+  let json;
+  try {
+    json = JSON.parse(String(res.body || '').replace(/^\uFEFF/, ''));
+  } catch (err) {
+    throw new Error('nav JSON parse failed');
+  }
+  const wbi = json && json.data && json.data.wbi_img;
+  if (!wbi) throw new Error('no wbi_img in nav');
+  const imgKey = String(wbi.img_url || '').split('/').pop().split('.')[0];
+  const subKey = String(wbi.sub_url || '').split('/').pop().split('.')[0];
+  const orig = imgKey + subKey;
+  let mixin = '';
+  for (const i of MIXIN_KEY_ENC_TAB) mixin += orig[i] || '';
+  _wbiKeys = { mixin: mixin.slice(0, 32) };
+  return _wbiKeys;
+}
+
+function buildWbiUrl(base, params) {
+  const p = Object.assign({}, params, { wts: Math.floor(Date.now() / 1000) });
+  const keys = Object.keys(p).sort();
+  const qs = keys.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(p[k])}`).join('&');
+  const signed = _wbiKeys
+    ? `${qs}&w_rid=${crypto.createHash('md5').update(qs + _wbiKeys.mixin).digest('hex')}`
+    : qs;
+  return base + (base.includes('?') ? '&' : '?') + signed;
+}
+
+async function fetchCommentsForBvid(bvid, cookieJar) {
+  // 注意：wbi/main 不能走 requestJson —— 它的严格 code 校验会吞掉降级响应。
+  // 实测：同接口走 requestRaw（完整 Sec-Fetch 头 + cookie）能拿到 20/页，
+  // 走 requestJson 路径会被 B 站按「未验证站点」降到 3 条热门。
+  let aid = 0;
+  try {
+    const vres = await requestRaw(`https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`, cookieJar);
+    const vjson = JSON.parse(vres.body.replace(/^\uFEFF/, ''));
+    aid = (vjson && vjson.data && vjson.data.aid) || 0;
+  } catch (err) {
+    return [];
+  }
+  if (!aid) return [];
+
+  const out = [];
+  let next = 0;
+  for (let page = 0; page < 6 && out.length < COMMENT_TARGET; page += 1) {
+    let data;
+    try {
+      const url = buildWbiUrl('https://api.bilibili.com/x/v2/reply/wbi/main', {
+        oid: aid, type: 1, mode: 3, next, ps: COMMENT_PS, plat: 1, web_location: '1315875'
+      });
+      const res = await requestRaw(url, cookieJar);
+      const json = JSON.parse(res.body.replace(/^\uFEFF/, ''));
+      if (!json || json.code !== 0) break;
+      data = json.data;
+    } catch (err) {
+      break;
+    }
+    if (!data) break;
+    const replies = data.replies || [];
+    if (!replies.length) break;
+    replies.forEach(c => {
+      out.push({
+        name: (c.member && c.member.uname) || '',
+        avatar: String((c.member && c.member.avatar) || '').replace(/^http:\/\//, 'https://'),
+        text: (c.content && c.content.message) || '',
+        like: Number(c.like || 0),
+        time: Number(c.ctime || 0)
+      });
+    });
+    const cursor = data.cursor;
+    if (!cursor || cursor.is_end) break;
+    next = Number(cursor.next || 0);
+    if (!next) break;
+    await sleep(COMMENT_DELAY_MIN, COMMENT_DELAY_MAX);
+  }
+  return out.slice(0, COMMENT_TARGET);
+}
+
+// 评论合成：①继承上一轮 feed 已有的评论（pool 不存评论，不继承就会每轮被冲掉）
+//          ②对「排在最前且尚无评论」的若干条补抓，直到覆盖数达到上限
+//
+// 关键：抓评论时传空 cookie（不带 warmupCookies 的 session）
+// 实测：同一 wbi/main 接口，带 cookie jar 会被 B 站降级到 3 条热门；
+//       不带 cookie（干净 UA+Referer 头）能稳定拿 20 条/页。
+// 因此 buildComments 内部一律用 '' 作为 cookieJar，忽略外部传入。
+async function buildComments(feedItems, oldFeed, cookieJar) {
+  const emptyJar = ''; // 强制不用外部 cookie，见上方注释
+
+  const oldComments = new Map();
+  (oldFeed.items || []).forEach(item => {
+    if (item && item.bvid && Array.isArray(item.comments) && item.comments.length) {
+      oldComments.set(item.bvid, item.comments);
+    }
+  });
+
+  let inherited = 0;
+  const missing = [];
+  feedItems.forEach(item => {
+    const prev = oldComments.get(item.bvid);
+    if (prev) {
+      item.comments = prev;
+      inherited += 1;
+    } else {
+      item.comments = [];
+      missing.push(item);
+    }
+  });
+
+  console.log(`Comments: inherited ${inherited} from previous feed; ${missing.length} without.`);
+
+  let covered = inherited;
+  let fetched = 0;
+  if (covered >= COMMENT_COVERAGE_CAP) {
+    console.log(`Comments: coverage ${covered} reached cap ${COMMENT_COVERAGE_CAP}, skip fetching.`);
+    return { inherited, fetched, covered };
+  }
+
+  try {
+    await getWbiKeys(emptyJar);
+    console.log('Comments: wbi keys ready (no cookie)');
+  } catch (err) {
+    console.warn(`Comments: wbi failed (${err.message}), will try unsigned`);
+  }
+
+  const budget = Math.min(COMMENT_FETCH_PER_RUN, COMMENT_COVERAGE_CAP - covered);
+  const todo = missing.slice(0, budget);
+  console.log(`Comments: fetching for ${todo.length} videos...`);
+
+  for (let i = 0; i < todo.length; i += 1) {
+    const item = todo[i];
+    const comments = await fetchCommentsForBvid(item.bvid, emptyJar);
+    item.comments = comments;
+    if (comments.length) { fetched += 1; covered += 1; }
+    if ((i + 1) % 25 === 0) {
+      console.log(`Comments: progress ${i + 1}/${todo.length} (ok ${fetched})`);
+    }
+    await sleep(COMMENT_DELAY_MIN, COMMENT_DELAY_MAX);
+  }
+
+  console.log(`Comments: done. fetched ${fetched}, total covered ${covered}.`);
+  return { inherited, fetched, covered };
 }
 
 function cleanText(value) {
@@ -288,6 +457,9 @@ async function main() {
   const verticalCount = pool.filter(isVertical).length;
   const horizontalCount = pool.length - verticalCount;
 
+  // 评论：先继承上一轮，再给靠前的若干条补抓（远程 feed 以前完全没有评论）
+  const commentStats = await buildComments(feedItems, oldFeed, cookieJar);
+
   writeJson(FEED_FILE, {
     date: now.slice(0, 10),
     source: 'video-pool',
@@ -295,6 +467,9 @@ async function main() {
     poolSize: pool.length,
     verticalCount,
     horizontalCount,
+    commentCoverage: commentStats.covered,
+    commentInherited: commentStats.inherited,
+    commentFetched: commentStats.fetched,
     items: feedItems
   });
 
