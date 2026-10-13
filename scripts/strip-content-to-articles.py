@@ -17,6 +17,7 @@
 """
 import json
 import os
+import re
 import sys
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # scripts/.. = virtual-wechat
@@ -25,6 +26,20 @@ ART_DIR = os.path.join(DATA, "articles")
 os.makedirs(ART_DIR, exist_ok=True)
 
 STRIP_KEYS = ("content", "body")
+
+# 脏数据可能含孤立代理字符（如半个 emoji：`\ud83d`），json.dump(ensure_ascii=False)
+# 写 UTF-8 时会抛 UnicodeEncodeError。递归清洗所有字符串，去掉 U+D800–U+DFFF。
+_SURROGATE_RE = re.compile(r"[\ud800-\udfff]")
+
+
+def _sanitize(obj):
+    if isinstance(obj, str):
+        return _SURROGATE_RE.sub("", obj)
+    if isinstance(obj, list):
+        return [_sanitize(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: _sanitize(v) for k, v in obj.items()}
+    return obj
 
 
 def strip_feed(fname):
@@ -64,7 +79,7 @@ def strip_feed(fname):
                     }
                     try:
                         with open(os.path.join(ART_DIR, f"{cid}.json"), "w", encoding="utf-8") as f:
-                            json.dump(payload, f, ensure_ascii=False)
+                            json.dump(_sanitize(payload), f, ensure_ascii=False)
                         stripped += 1
                     except Exception as e:
                         failed += 1
@@ -73,6 +88,7 @@ def strip_feed(fname):
                 for k in STRIP_KEYS:
                     art.pop(k, None)
     # 写回（压缩单行，前端解析无影响；体积更小）
+    d = _sanitize(d)
     tmp = p + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False)
