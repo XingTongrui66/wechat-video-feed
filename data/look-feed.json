@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T08:04:47.982Z",
+  "generatedAt": "2026-10-15T09:04:50.125Z",
   "source": "wechat2rss",
   "breakingPool": {
     "name": "看一看",
@@ -612,6 +612,423 @@
       "avatar": "",
       "lastPushAt": 1784799060000,
       "articles": [
+        {
+          "id": "3040628220",
+          "title": "分析 21 万星的 REA:「逆向一切」这四个字,水分和干货我都扒出来了",
+          "summary": "原创 吾爱pojie 2026-10-15 10:16 北京 \n把它当\"给 Agent 用的逆向工具接口层\"，它做得很扎实；把它当\"逆向一切\"，你会在 2000 个方法的地方踩坑，会在 npm 版上发现 8 种格式不存在，会在 Windows 上发现一半能力不可用。真实边界它的文档里其实都写了——夸大的部分，在标题里。\n作者 论 坛账号： 神奇的人鱼 \n最近  REA  火得离谱。媒体口径:10 ",
+          "content": [
+            {
+              "type": "p",
+              "text": "原创 吾爱pojie 2026-10-15 10:16 北京"
+            },
+            {
+              "type": "p",
+              "text": "把它当\"给 Agent 用的逆向工具接口层\"，它做得很扎实；把它当\"逆向一切\"，你会在 2000 个方法的地方踩坑，会在 npm 版上发现 8 种格式不存在，会在 Windows 上发现一半能力不可用。真实边界它的文档里其实都写了——夸大的部分，在标题里。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/aV8UF5rUbwcGutfUfHVV9Okt4OcAwa0bRZibdwmtVK8s3DT5JkHanXticJqfMSHzm3YR7oic1wjgZKaE87y4Zn2kGb9BbXjYHU8KD325I7lZibY/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "作者 论 坛账号： 神奇的人鱼"
+            },
+            {
+              "type": "p",
+              "text": "最近  REA  火得离谱。媒体口径:10 月 6 号还不到 1 万星，10 月 12 号已经 11 万，6 天涨了 10 万。我写这篇文章时已经超过了20万  星。"
+            },
+            {
+              "type": "p",
+              "text": "火成这样，总得有人认真测一测。我把源码（git clone，3722 个文件）翻了一遍（借助AI分析），又用 npm 上发布的 6.4.0 版本跑了一堆真实样本，下面所有数字都是本机跑出来的。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/LFPriaSjBUZK0l7v6mmrudZKXzpdM1WcomgJQnibvLzBUFRSurSkmIfl0ZrDNvSy3MszKNY3XOkcuUbWp31HMjLQ/640?wx_fmt=other&wxfrom=5&wx_lazy=1&wx_co=1&randomid=e9ekqttt&tp=webp#imgIndex=11",
+              "caption": "图片",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "环境说明：Windows + Node 24，电脑没装 ilspycmd / dnSpy 这种反编译工具，所以它的 .NET 分析结果全部由它自己产出，顺便验证了\" 不依赖 .NET 工具链 \"这个声明。"
+            },
+            {
+              "type": "h",
+              "text": "结论先行"
+            },
+            {
+              "type": "p",
+              "text": "一句话： REA 是一个值得用的工具，但它的名字是一个营销选择。"
+            },
+            {
+              "type": "p",
+              "text": "\"Reverse Engineer Anything\" 里的 \"Anything\"，指的是目标种类的宽度，不是分析的深度。这两件事在 README 里被同一张表格并列呈现，深度差异被抹平了。下面是REA项目中写的，提取了部分："
+            },
+            {
+              "type": "p",
+              "text": "目标"
+            },
+            {
+              "type": "p",
+              "text": "REA 返回的内容"
+            },
+            {
+              "type": "p",
+              "text": "要求与指南"
+            },
+            {
+              "type": "p",
+              "text": "原生二进制文件"
+            },
+            {
+              "type": "p",
+              "text": "伪代码、汇编、字符串、符号、调用和引用"
+            },
+            {
+              "type": "p",
+              "text": "Hopper、Ghidra 或 IDA；原生分析"
+            },
+            {
+              "type": "p",
+              "text": "JavaScript / Electron"
+            },
+            {
+              "type": "p",
+              "text": "模块、导入、source map、路由、IPC 和原生扩展关系"
+            },
+            {
+              "type": "p",
+              "text": "Node.js 和 npm；应用分析"
+            },
+            {
+              "type": "p",
+              "text": ".NET 程序集"
+            },
+            {
+              "type": "p",
+              "text": "元数据、CIL 指令、声明的原生依赖和构建对比"
+            },
+            {
+              "type": "p",
+              "text": "静态检查；托管代码指南"
+            },
+            {
+              "type": "p",
+              "text": "Android APK"
+            },
+            {
+              "type": "p",
+              "text": "清单声明、类、反编译的方法和引用"
+            },
+            {
+              "type": "p",
+              "text": "Linux/macOS/Windows x64 上的无界面 JADX 和完整 JDK；Android 指南"
+            },
+            {
+              "type": "p",
+              "text": "把其中的解析代码量化一下：它的 JavaScript/Electron 语义引擎有  4万 行自研代码，而 Go 二进制解析只有  112 行 。112 行能干嘛？读一下二进制里内嵌的 buildinfo 字符串而已。这叫\"识别\"，不叫\"逆向\"。"
+            },
+            {
+              "type": "h",
+              "text": "「一切」的水分在哪"
+            },
+            {
+              "type": "h",
+              "text": "坑一：.NET 分析有一堵约  2000  方法的墙"
+            },
+            {
+              "type": "p",
+              "text": "这是最大的坑，因为它非常容易就会被触发。"
+            },
+            {
+              "type": "p",
+              "text": "我用它的工具扫了约 200 个 .NET Framework 标准程序集，边界非常清晰:"
+            },
+            {
+              "type": "p",
+              "text": "System.Web.Extensions.Design.dll（1701 个方法）→ 完整解出"
+            },
+            {
+              "type": "p",
+              "text": "System.DirectoryServices.dll（2094 个方法）→ 直接失效，0 个方法"
+            },
+            {
+              "type": "p",
+              "text": "System.Core.dll，系统基础库，才 1.48 MB → 失效"
+            },
+            {
+              "type": "p",
+              "text": "原因写在源码里， ManagedDecodeBudget.ts:7 :"
+            },
+            {
+              "type": "p",
+              "text": "复制代码  隐藏代码 const MAX_METADATA_REPRESENTATION_BYTES  =  64  *  1024  *  1024 ;"
+            },
+            {
+              "type": "p",
+              "text": "注意这 64MB 不是文件大小，是它自己构造的 JSON 中间表示的估算预算。超过之后不是降级，是 整个功能返回 0 个方法 。"
+            },
+            {
+              "type": "p",
+              "text": "更迷惑的是，同一个文件，它家两个命令会给出自相矛盾的判断。拿 System.Activities.dll（9857 个方法）实测: inspect-managed-artifact  说 metadata.status = \"complete\"，能读出全部方法名; inspect-managed-members  说 coverage.state = \"unavailable\"，0 个方法。任何基于前者结果决定\"要不要继续深入\"的自动化流程，都会在下一步撞墙。"
+            },
+            {
+              "type": "p",
+              "text": "main 分支文档倒是给了应对方案: rea inspect-managed-members xxx.dll --type SomeType ，先选类型再解。可惜 npm 6.4.0 上实测直接报  Unknown flag: --type 。文档描述的解决路径，在用户实际装的版本上不存在。"
+            },
+            {
+              "type": "h",
+              "text": "坑二:Windows 上 44% 能力不可用"
+            },
+            {
+              "type": "p",
+              "text": "rea capabilities  实测，18 项操作里 10 项 unsupported_host，全是 macOS 专属(检查 Mach-O、Swift demangle、plist、签名等)。另外固件分析要 Binwalk、抓包要 tshark、逻辑信号要 sigrok，都是 Linux 的活。"
+            },
+            {
+              "type": "p",
+              "text": "所以\"逆向一切\"的真实含义是: 在特定平台上，逆向特定类型的一个子集 。README 表格里其实有 Requirements 一列，但\"一切\"这个词把限定条件全盖过去了。"
+            },
+            {
+              "type": "h",
+              "text": "真正的干货:web/JavaScript 栈"
+            },
+            {
+              "type": "p",
+              "text": "喷完了，说好话。REA 全部自研能力里，web/JS/Electron 这一块含金量最高，也是 dnSpy / ILSpy / Ghidra / IDA 这些工具生态里 没有对标物 的原创东西。"
+            },
+            {
+              "type": "p",
+              "text": "整个 web 栈 8万多行，占全部代码 29%。核心是 domain/javascript 下 3万多行的静态语义分析引擎：用 @babel/parser 做 AST，但语义层全是自研——追踪值怎么流动、对象怎么被改、IPC 消息怎么传、Promise 怎么链。"
+            },
+            {
+              "type": "p",
+              "text": "AI构造了一个 Electron 风格的测试应用：main.js 里开 BrowserWindow、注册 ipcMain.handle(\"store:get\" / \"store:set\")，有个文件 require 了原生 .node 插件，还有一个条件分支的动态 require。跑它的 analyze-javascript-application，引擎产出  24 个语义节点 + 33 条关系边 ，该推出来的全推出来了："
+            },
+            {
+              "type": "p",
+              "text": "ipcMain.handle(\"store:get\") → 生成 ipc-channel 和 ipc-handler 节点，handler --handles--> channel，高置信度"
+            },
+            {
+              "type": "p",
+              "text": "native/bindings.node 判为 native-addon，require 解析出 native-export"
+            },
+            {
+              "type": "p",
+              "text": "package.json 的 main 字段 → electron-main → 映射到 main.js;win.loadURL 识别出渲染入口"
+            },
+            {
+              "type": "p",
+              "text": "new BrowserWindow 精确定位到源码区间 BrowserWindow@7:12-7:58"
+            },
+            {
+              "type": "p",
+              "text": "做的最好的地方是它不去猜测。我把一个 require 写成  process.env.NODE_ENV === \"dev\" ? \"./dev-driver\" : \"./prod-driver\"  这种静态推不出的形式，引擎 如实标成 unknown，不猜 。每条边都带 authority(ast-static-analysis / static-relationship-inference / artifact-bytes)和 confidence，每份报告都写死一句:values were recovered from inert syntax only; no JavaScript was executed 。"
+            },
+            {
+              "type": "p",
+              "text": "不把推断伪装成事实，这在逆向工具里是稀缺品质。"
+            },
+            {
+              "type": "h",
+              "text": "两个大家最关心的问题"
+            },
+            {
+              "type": "h",
+              "text": "能破 JSVMP 吗?"
+            },
+            {
+              "type": "p",
+              "text": "不能，而且是设计层面就够不到，不是\"还没优化\"。"
+            },
+            {
+              "type": "p",
+              "text": "JSVMP 的本质是把代码转成自定义字节码，由一个 JS 解释器在运行时逐条执行，关键逻辑不再以可读源码存在。破它必须 执行 ——要么跑那个 VM，要么动态 hook 看 dispatch。而 REA 的设计前提是\"从不执行目标代码\"，这在 .NET 那边是合规优点，在 JSVMP 这边就是硬伤:静态分析器穿透不了\"代码运行时才生成\"的 VM。"
+            },
+            {
+              "type": "p",
+              "text": "这不是我的推测，它 CONTRIBUTING.md 写得明明白白，\"defeat commercial packing or code-virtualization protections\" 这类工作流 不集成 。JSVMP 正是 code-virtualization 的 JS 形态，正好落在拒绝清单里。"
+            },
+            {
+              "type": "p",
+              "text": "要破 JSVMP，老老实实走动态 hook + 针对具体混淆器的去混淆脚本那条路。"
+            },
+            {
+              "type": "h",
+              "text": "能分析 JS 病毒吗?"
+            },
+            {
+              "type": "p",
+              "text": "它是个很好的\"静态结构剖析器\"，但不是反病毒引擎。"
+            },
+            {
+              "type": "p",
+              "text": "能干的：npm 供应链投毒、Electron 木马基本都是多文件 + package.json，REA 几秒就能画出\"谁依赖谁\"的图，并标出可疑点——IPC 通道、.node 原生插件(很多 JS 病毒把恶意 C 代码藏在里面绕纯 JS 沙箱)、动态 require。那个被标成 unknown 的动态 require，本身就是信号:正常应用不会那么写。"
+            },
+            {
+              "type": "p",
+              "text": "做不到的:它不执行，看不到\"解密后再 eval\"里的东西;没有 YARA、没有行为打分、没有恶意判定，是不是病毒得你自己下结论。"
+            },
+            {
+              "type": "p",
+              "text": ".NET 那边同理:它能看懂混淆程序集的骨架——字符串解密函数的完整 CIL、字段访问关系、P/Invoke CreateFileW 都能给你，但 FieldRVA 字节数组的内容它读不出来，而 载荷恰恰就在那个数组里 。全仓库搜 de4dot / Confuser / anti-debug 全是 0 命中，反混淆能力为零，而且是主动划进产品边界的\"不做\"。"
+            },
+            {
+              "type": "p",
+              "text": "我的实战建议： REA 负责静态摸底，沙箱负责动态验证 。先用它快速理清样本结构和可疑点，再针对这些点在隔离环境里动态跑。分析和处置病毒务必在 VM / 沙箱里做。"
+            },
+            {
+              "type": "h",
+              "text": "它没吹牛的地方"
+            },
+            {
+              "type": "p",
+              "text": "一篇讲道理的帖子不能只列缺点。这几项我专门做了对抗性验证:"
+            },
+            {
+              "type": "p",
+              "text": "1. 不执行目标代码，是真的。  我构造了一个 Trap.dll，静态构造函数里写 File.WriteAllText(\"PWNED.txt\")。REA 完整解出了 4 个方法和字符串锚点，而 PWNED.txt  没有被创建 。源码里 capability 声明也全是 false:launchesProcess、mayWriteFilesystem、mayAccessNetwork……七项副作用开关全部显式列出，对需要证明\"我没跑过样本\"的合规场景很友好。"
+            },
+            {
+              "type": "p",
+              "text": "2. 证据链是下了功夫的。  它给每个 CIL 方法算两个哈希:原始字节一个、规范化 [opcode， operand_kind， operand] 一个。文档给的测试向量我手算复核过，一致。而且文档主动声明这个指纹的局限——不含 switch 目标、折叠不同 NaN 编码。不夸大自己的指纹，这是成熟工程。"
+            },
+            {
+              "type": "p",
+              "text": "3. 资源不够时如实降级。  超预算的程序集返回 partial + resource-limit issue，并明确写 \"omitted facts are unknown\"。省略的事实保持未知，没变成空。fail-closed，正确的做法。"
+            },
+            {
+              "type": "p",
+              "text": "4. 不是 Ghidra 的壳。  我对全部 1，408 个非测试 TS 文件逐文件判定(判据:是否直接 import node:child_process)，98.2% 的代码不启动任何外部进程;真正的第三方引擎适配层(Ghidra / IDA / Hopper / JADX 等)只有 12.6%。核心领域层 domain/ 有 9 万多行，纯内存计算。"
+            },
+            {
+              "type": "p",
+              "text": "5. 跨版本比对逻辑严谨。  我编译了两个只差一个常量的程序集，它能精确定位到唯一变更的那个方法。契约里还写死了一条:\"名字永远不作为匹配依据，签名没解出来的成员宁可标 unknown 也不猜增删\"。这种保守在混淆样本上才有价值。"
+            },
+            {
+              "type": "h",
+              "text": "关于 21 万星"
+            },
+            {
+              "type": "p",
+              "text": "得泼盆冷水:这波热度反映的是\"AI + 逆向\"整个浪潮的关注度，不完全等于这个项目的技术领先度。"
+            },
+            {
+              "type": "p",
+              "text": "同期的一些事实:《Practical Reverse Engineering》合著者、前 Hex-Rays 的 Elias Bachaalany 转发推介时只评了一个词——\"炒作\";x64dbg 作者用 IDA Pro MCP(不是 REA)约一小时解完 Flare-On 全部题目;让老游戏跑进浏览器那个最出圈的案例，用的是 Hex-Rays 官方 MCP;GhidraMCP、IDA Pro MCP 这些同类 2025 年就存在了。"
+            },
+            {
+              "type": "p",
+              "text": "REA 的真实贡献是 降低门槛 :npx rea-agents setup 一行命令，把\"会装 IDA、会配插件、知道该问什么\"变成说一句话。这个贡献是真实的，它爆红的真实原因也在这里。"
+            },
+            {
+              "type": "p",
+              "text": "另外提一句工程上的坑：172 个工具的定义体约 496KB、12 万 token，直接挂全量工具会挤爆 Agent 上下文，官方文档自己都承认会 autocompact thrashing。记得用 compact 模式或裁剪。"
+            },
+            {
+              "type": "h",
+              "text": "选型建议"
+            },
+            {
+              "type": "p",
+              "text": "适合:"
+            },
+            {
+              "type": "p",
+              "text": "批量分诊(是不是托管程序集、什么运行时、有没有 P/Invoke)——跨平台无依赖，可脚本化"
+            },
+            {
+              "type": "p",
+              "text": "给 Agent 喂结构化事实——原生 MCP，结论带 digest 和 provenance"
+            },
+            {
+              "type": "p",
+              "text": "CI 里做跨版本回归(比对 CIL 是否变更)——两个 il 哈希可以直接断言"
+            },
+            {
+              "type": "p",
+              "text": "合规场景需要证明\"未执行代码、未改文件\""
+            },
+            {
+              "type": "p",
+              "text": "1500 个方法以内的 .NET 程序集分析"
+            },
+            {
+              "type": "p",
+              "text": "不适合:"
+            },
+            {
+              "type": "p",
+              "text": "动态调试、改程序集 → dnSpy / ILSpy"
+            },
+            {
+              "type": "p",
+              "text": "反混淆 .NET 病毒、提取加密载荷 → de4dot + 自己写解密脚本"
+            },
+            {
+              "type": "p",
+              "text": "大于 2000 方法的 .NET 程序集 → 同上"
+            },
+            {
+              "type": "p",
+              "text": "Windows 上分析 Apple 应用 → 直接 unsupported_host"
+            },
+            {
+              "type": "p",
+              "text": "破 JSVMP → 动态 hook + 专门去混淆工具链"
+            },
+            {
+              "type": "p",
+              "text": "一句话收尾： 把它当\"给 Agent 用的逆向工具接口层\"，它做得很扎实；把它当\"逆向一切\"，你会在 2000 个方法的地方踩坑，会在 npm 版上发现 8 种格式不存在，会在 Windows 上发现一半能力不可用。真实边界它的文档里其实都写了——夸大的部分，在标题里。"
+            },
+            {
+              "type": "p",
+              "text": "-官方论坛"
+            },
+            {
+              "type": "p",
+              "text": "www.52pojie.cn"
+            },
+            {
+              "type": "p",
+              "text": "👆👆👆"
+            },
+            {
+              "type": "p",
+              "text": "公众号 设置“星标”， 您 不会错过 新的消息通知"
+            },
+            {
+              "type": "p",
+              "text": "如 开放注册、精华文章和周边活动 等公告"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5Mjc3MDM2Mw==&mid=2651144777&idx=1&sn=c851b44180f7ddb23d0af1e85508bfaa",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/aV8UF5rUbwcGutfUfHVV9Okt4OcAwa0bRZibdwmtVK8s3DT5JkHanXticJqfMSHzm3YR7oic1wjgZKaE87y4Zn2kGb9BbXjYHU8KD325I7lZibY/0?wx_fmt=jpeg",
+          "ts": 1792030560000,
+          "date": "10月15日",
+          "type": "图文",
+          "author": "吾爱破解论坛",
+          "sourceName": "吾爱破解论坛",
+          "accountName": "吾爱破解论坛",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "8万",
+            "likes": 693,
+            "shares": 294,
+            "favorites": 728,
+            "comments": 0
+          },
+          "read": "8万",
+          "comments": [],
+          "commentSource": "none"
+        },
         {
           "id": "3501943394",
           "title": "逆向PyInstaller打包的产物完整分析过程",
@@ -1591,627 +2008,6 @@
             "comments": 0
           },
           "read": "7.6万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "3289225794",
-          "title": "Kindle 第八代救砖实录",
-          "summary": "原创 吾爱pojie 2026-10-08 17:47 北京 \n从闲鱼30块收了台开不了机的第八代Kindle，初步判断是闲置太久电池饿死了。用5V1A充电充了2小时成功激活，本来到这事儿就结束了，结果手痒想折腾刷机，才有了后面这堆事儿。\n作者 论 坛账号： futurebook \nKindle 第八代救砖实录 \n一、前情提要 \n1.1 设备初始状态 \n从闲鱼30块收了台开不了机的第八代Kindl",
-          "content": [
-            {
-              "type": "p",
-              "text": "原创 吾爱pojie 2026-10-08 17:47 北京"
-            },
-            {
-              "type": "p",
-              "text": "从闲鱼30块收了台开不了机的第八代Kindle，初步判断是闲置太久电池饿死了。用5V1A充电充了2小时成功激活，本来到这事儿就结束了，结果手痒想折腾刷机，才有了后面这堆事儿。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/aV8UF5rUbwejrXcJnianHbbUy3PTH8icC0Qzqvfic6vUZVcic3iboSkjbg6QLEtut1Ip8eQibeWCzIo4mUWq0Q9ASibR3tRamazu3pcOBEadxhtPOQ/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "作者 论 坛账号： futurebook"
-            },
-            {
-              "type": "h",
-              "text": "Kindle 第八代救砖实录"
-            },
-            {
-              "type": "h",
-              "text": "一、前情提要"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/aV8UF5rUbwfOZsSMPnyhrA2LNXVpO74M7U9NhGKEibpPsgiaNBvIbNa1Ghstm85xmmwJUeBEXXgaEWWPoJkiaHwogBE6BjwQBZjKvwWSFUV7as/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "h",
-              "text": "1.1 设备初始状态"
-            },
-            {
-              "type": "p",
-              "text": "从闲鱼30块收了台开不了机的第八代Kindle，初步判断是闲置太久电池饿死了。用5V1A充电充了2小时成功激活，本来到这事儿就结束了，结果手痒想折腾刷机，才有了后面这堆事儿。"
-            },
-            {
-              "type": "h",
-              "text": "1.2 变砖始末"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/aV8UF5rUbwcibKdQ3WX5Xib6UA0gxfvFgribTpcstCicPTYyXur6xKwJibwhpJbV9mickG7FFHsBSWymm6TjIrGRXcIDbXMqmlybA3KX8zDQgjFC8/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "找了网上适配这款机型的  LanguageBreak  越狱教程，顺利进了演示机界面，文件也都拖进去了。第一次刷机没成功，试第二次也不行，想着前两次都没出问题就接着试，结果第三次直接卡在屏保界面开始重启，之后就一直卡在大树启动界面无限循环，彻底变砖。"
-            },
-            {
-              "type": "h",
-              "text": "二、无效方案踩坑实录"
-            },
-            {
-              "type": "p",
-              "text": "砖了之后先后试了网上好几种方案，全是坑，反正我这台是行不通。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/aV8UF5rUbwfGQBVia3JP5icU8MVvaDARuLrwGXT6UJGoYlYdQ0BD2AyQIicmsVWLU97b1FrRo5OIUq3T43ylsBU5PaXuLzNZFA0MvvhG9KAp7o/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "h",
-              "text": "方案1：USB瞬连写入 DO_FACTORY_RESTORE"
-            },
-            {
-              "type": "p",
-              "text": "网上说重启的瞬间有极短时间能连上USB，往里面扔一个叫  DO_FACTORY_RESTORE  的空文件，机器识别到就会自动恢复出厂。 结论 ：死活抓不到那个瞬间，直接放弃。"
-            },
-            {
-              "type": "h",
-              "text": "方案2：彻底放完电再上电恢复"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/aV8UF5rUbwd9byLHvtgttSPzsYwicFvxUvjVVdPhp10OyCDWcLj0EOIicTL0uJC8MuiaGo07ajYU5zZ7xNo1TIzFXqicbDwWljPxCFDJGrthHFE/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "还有说法是把电彻底耗空，等出现低电量界面再插电脑，就能识别USB放恢复文件。 实测 ：放着让它重启了一整晚，电终于耗空了，早上起来就看见这个低电量界面："
-            },
-            {
-              "type": "p",
-              "text": "插电充了没一会儿，有电了就自动开机，又开始卡大树无限重启，插USB完全没反应。后来又等电放完，插USB充电的时候，开机瞬间电脑会叮咚一声出现虚盘，等卡大树重启就又消失了，根本来不及操作。"
-            },
-            {
-              "type": "p",
-              "text": "到这儿可以确定：不拆机纯靠USB放文件的方法彻底没戏。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/aV8UF5rUbwdmUAZ7D3eFGZRMLbcUdbqlhkewQDzicA8myYddMwiaA9iaRp87UUETia8wOwXmNp9I42ibk2TiaRqAPkQv1CBEicHzjicEOq40x7ibXen4/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "h",
-              "text": "方案3：传统TTL刷固件救砖"
-            },
-            {
-              "type": "p",
-              "text": "B站上不少TTL救砖教程，虽然机型不一样但原理差不多，就照着试了。 结果照着教程输  bootm  命令进恢复界面失败，改启动参数进shell也没反应。后来好不容易进了menu菜单，导出FAT分区放了官方固件  update_kindle_8th_5.15.1.1.bin  升级，还是解决不了卡大树重启的问题。甚至初始化分区表重新格式化再刷固件，照样失败。"
-            },
-            {
-              "type": "p",
-              "text": "网上能搜到的教程全不适配，最后只能自己慢慢摸索。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/aV8UF5rUbwccyt3RqAW5rm0kuyCibO4axk8UhUhXGvOLMqyzRaB6qB078EoQxuJibFQ2cKF95Yl1hWSibE9xMXwzlJWcOLLHUibHzanYwOV3AXs/640?wx_fmt=png&from=appmsg",
-              "caption": "串口号去设备管理器里看，是COM几就选几，串口参数设置如下：",
-              "_imgCount": true
-            },
-            {
-              "type": "h",
-              "text": "三、TTL救砖全流程：从定位到修复"
-            },
-            {
-              "type": "p",
-              "text": "好在uboot还能用，还有折腾的空间。踩了一堆坑之后终于找到了问题所在，成功救回。"
-            },
-            {
-              "type": "h",
-              "text": "3.1 准备工作：硬件与软件"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/LFPriaSjBUZK0l7v6mmrudZKXzpdM1WcomgJQnibvLzBUFRSurSkmIfl0ZrDNvSy3MszKNY3XOkcuUbWp31HMjLQ/640?wx_fmt=other&wxfrom=5&wx_lazy=1&wx_co=1&randomid=e9ekqttt&tp=webp#imgIndex=11",
-              "caption": "图片",
-              "_imgCount": true
-            },
-            {
-              "type": "h",
-              "text": "3.1.1 所需硬件"
-            },
-            {
-              "type": "p",
-              "text": "USB转TTL串口模块（我用的是CH340系列）"
-            },
-            {
-              "type": "p",
-              "text": "杜邦线若干"
-            },
-            {
-              "type": "p",
-              "text": "绝缘胶带/夹子（用来固定接线）"
-            },
-            {
-              "type": "p",
-              "text": "⚠️"
-            },
-            {
-              "type": "p",
-              "text": "重要注意"
-            },
-            {
-              "type": "p",
-              "text": "：TTL接线时"
-            },
-            {
-              "type": "p",
-              "text": "绝对不能拔掉电池"
-            },
-            {
-              "type": "p",
-              "text": "，不然会直接出电池报错，无法正常启动。"
-            },
-            {
-              "type": "h",
-              "text": "3.1.2 主板接线点位"
-            },
-            {
-              "type": "p",
-              "text": "我的主板型号是SY69JL，和Kindle X 咪咕版应该是一样的，主板整体样貌如下："
-            },
-            {
-              "type": "p",
-              "text": "串口主要接TX、RX、GND三根线，点位标注如下："
-            },
-            {
-              "type": "p",
-              "text": "接线对应关系："
-            },
-            {
-              "type": "p",
-              "text": "TTL模块的 TXD → 主板的 RXD"
-            },
-            {
-              "type": "p",
-              "text": "TTL模块的 RXD → 主板的 TXD"
-            },
-            {
-              "type": "p",
-              "text": "TTL模块的 GND → 主板地（我直接接屏蔽罩上了，随便找个地就行）"
-            },
-            {
-              "type": "p",
-              "text": "我嫌焊接太麻烦，主打一个怎么简单怎么来，直接用杜邦线对准点位，用绝缘胶带和夹子固定住，一样能用。就是要压紧，不然容易出现数据波动。"
-            },
-            {
-              "type": "p",
-              "text": "⚠️ 注意：TTL模块接 3.3V电平 ，别用5V，容易烧坏主板。"
-            },
-            {
-              "type": "h",
-              "text": "3.1.3 电脑端软件配置"
-            },
-            {
-              "type": "p",
-              "text": "先装对应串口模块的驱动，我这CH340的直接搜官网驱动装上就行。"
-            },
-            {
-              "type": "p",
-              "text": "装个串口终端软件，Putty、Xshell都行。"
-            },
-            {
-              "type": "p",
-              "text": "串口号去设备管理器里看，是COM几就选几，串口参数设置如下："
-            },
-            {
-              "type": "p",
-              "text": "波特率：115200"
-            },
-            {
-              "type": "p",
-              "text": "数据位：8"
-            },
-            {
-              "type": "p",
-              "text": "停止位：1"
-            },
-            {
-              "type": "p",
-              "text": "奇偶校验：无"
-            },
-            {
-              "type": "p",
-              "text": "流控：无"
-            },
-            {
-              "type": "p",
-              "text": "都设置好之后打开串口连接，然后给Kindle上电重启，就能看到启动日志滚动输出，一直按回车就能进到uboot菜单。"
-            },
-            {
-              "type": "h",
-              "text": "3.2 进入底层Shell，确认分区布局"
-            },
-            {
-              "type": "p",
-              "text": "一开始照着教程输命令各种失败，后来等启动日志加载过半的时候按回车，成功进到了menu菜单，想办法进了底层Shell。"
-            },
-            {
-              "type": "p",
-              "text": "进去第一件事，先别瞎刷机，先搞清楚分区都是干嘛的，执行："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 fdisk -l /dev/mmcblk0"
-            },
-            {
-              "type": "p",
-              "text": "得到分区表："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 Disk  /dev/mm cblk0:  3728  MB,  3909091328  bytes Device       StartLBA    EndLBA      Sectors  Size   Id /dev/mm cblk0p1           65536 987135 921600 450 M   83  Linux /dev/mm cblk0p2          987136 1118207 131072 64 M   83  Linux /dev/mm cblk0p3         1118208 1249279 131072 64 M   83  Linux /dev/mm cblk0p4         1249280 7634943 6385664 3118 M  b Win95 FAT32"
-            },
-            {
-              "type": "p",
-              "text": "初步推测分区用途："
-            },
-            {
-              "type": "p",
-              "text": "分区"
-            },
-            {
-              "type": "p",
-              "text": "大小"
-            },
-            {
-              "type": "p",
-              "text": "推测用途"
-            },
-            {
-              "type": "p",
-              "text": "p1"
-            },
-            {
-              "type": "p",
-              "text": "450 MB"
-            },
-            {
-              "type": "p",
-              "text": "系统根分区 RootFS"
-            },
-            {
-              "type": "p",
-              "text": "p2"
-            },
-            {
-              "type": "p",
-              "text": "64 MB"
-            },
-            {
-              "type": "p",
-              "text": "诊断分区 Diagnostics"
-            },
-            {
-              "type": "p",
-              "text": "p3"
-            },
-            {
-              "type": "p",
-              "text": "64 MB"
-            },
-            {
-              "type": "p",
-              "text": "本地变量分区 LocalVars"
-            },
-            {
-              "type": "p",
-              "text": "p4"
-            },
-            {
-              "type": "p",
-              "text": "3.1 GB"
-            },
-            {
-              "type": "p",
-              "text": "用户存储分区 UserStore"
-            },
-            {
-              "type": "p",
-              "text": "但这只是猜测，不能凭感觉瞎格式化，得找系统自己的配置确认。"
-            },
-            {
-              "type": "h",
-              "text": "3.3 关键突破：确认分区真实用途"
-            },
-            {
-              "type": "p",
-              "text": "查看系统自带的分区布局配置文件："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 cat  /etc/default/layout"
-            },
-            {
-              "type": "p",
-              "text": "里面写得明明白白："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 case \" $(f_platform) \" in luigi) ROOT_P=p1 ; LOCAL_P=p2 ; DIAG_P=p3 ; USER_P=p4 ;; zelda) ROOT_P=p5 ; LOCAL_P=p6 ; DIAG_P=p5 ; USER_P=p7 ; KEYS_P=p3 ;; rex)   ROOT_P=p8 ; LOCAL_P=p9 ; DIAG_P=p8 ; USER_P=p10 ; KEYS_P=p3 ;; bellatrix) ROOT_P=p8 ; LOCAL_P=p9 ; DIAG_P=p8 ; USER_P=p10 ; KEYS_P=p3 ;; *) ROOT_P=p1 ; LOCAL_P=p3 ; DIAG_P=p2 ; USER_P=p4 ;; esac"
-            },
-            {
-              "type": "p",
-              "text": "我这台属于默认布局，直接对应最后一行："
-            },
-            {
-              "type": "p",
-              "text": "→ 系统根分区"
-            },
-            {
-              "type": "p",
-              "text": "→ 本地持久化变量分区"
-            },
-            {
-              "type": "p",
-              "text": "→ 诊断分区"
-            },
-            {
-              "type": "p",
-              "text": "→ 用户存储分区"
-            },
-            {
-              "type": "p",
-              "text": "也就是说， /dev/mmcblk0p3  对应的就是  /var/local 。"
-            },
-            {
-              "type": "p",
-              "text": "为了进一步确认，又看了挂载启动脚本："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 cat  /etc/upstart/filesystems_var_local.conf"
-            },
-            {
-              "type": "p",
-              "text": "开头直接写了： # /var/local is the persistent read-write store ，也就是系统持久化读写存储区。而且脚本里明确写了，如果这个分区挂载失败，系统会自动执行  mkfs.ext3  重建它。 这一下就给了我明确的思路：问题很可能出在p3分区上。"
-            },
-            {
-              "type": "h",
-              "text": "3.4 确认故障：p3分区异常"
-            },
-            {
-              "type": "p",
-              "text": "先卸载相关分区："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 umount /mnt/local 2>/dev/null umount /mnt/userstore 2>/dev/null"
-            },
-            {
-              "type": "p",
-              "text": "检查p3分区，虽然能识别出是ext3文件系统、卷标是LocalVars，但状态有异常。 既然原数据本来就不重要，那直接重建这个分区就完事了。"
-            },
-            {
-              "type": "h",
-              "text": "3.5 核心操作：重建 LocalVars 分区"
-            },
-            {
-              "type": "p",
-              "text": "执行格式化命令，重建p3的文件系统："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 mkfs.ext3 -F /dev/mmcblk0p3"
-            },
-            {
-              "type": "p",
-              "text": "执行完成后，手动挂载验证一下："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 mkdir  -p /mnt/local mount -t ext3 /dev/mmcblk0p3 /mnt/local ls  -lah /mnt/local"
-            },
-            {
-              "type": "p",
-              "text": "输出只有  lost+found  目录，就是全新的ext3分区正常的状态。"
-            },
-            {
-              "type": "p",
-              "text": "这里不用手动往里面塞任何系统文件，系统本身自带初始化资源，启动的时候会自动把必要的目录和配置创建好，直接让它自己初始化就行。"
-            },
-            {
-              "type": "h",
-              "text": "3.6 强制重启系统"
-            },
-            {
-              "type": "p",
-              "text": "格式化完成后先同步数据、卸载分区："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 sync umount /mnt/local"
-            },
-            {
-              "type": "p",
-              "text": "这时候直接输  reboot  是没用的——因为我们现在是救援Shell环境， init=/bin/sh ，不是正常的系统运行环境，reboot命令不会真的重启硬件。"
-            },
-            {
-              "type": "p",
-              "text": "直接用SysRq强制重启："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 sync echo  b > /proc/sysrq-trigger"
-            },
-            {
-              "type": "p",
-              "text": "设备会立刻重启。"
-            },
-            {
-              "type": "h",
-              "text": "3.7 成功恢复"
-            },
-            {
-              "type": "p",
-              "text": "重启之后，之前一直循环的「大树→黑屏→重启」终于变了。这次大树界面过后出现了进度条，顺利走完启动流程，成功进入Home界面。"
-            },
-            {
-              "type": "p",
-              "text": "之后又正常重启了一次，同样顺利进入系统，确认完全恢复正常。 ✅  救砖成功！"
-            },
-            {
-              "type": "h",
-              "text": "四、经验总结"
-            },
-            {
-              "type": "h",
-              "text": "4.1 到底修好了什么？"
-            },
-            {
-              "type": "p",
-              "text": "这次既没重刷整个系统，也没动根分区、bootloader和用户数据，全程只做了一件核心的事："
-            },
-            {
-              "type": "p",
-              "text": "复制代码  隐藏代码 mkfs.ext3 -F /dev/mmcblk0p3"
-            },
-            {
-              "type": "p",
-              "text": "也就是重建了  /var/local  对应的 LocalVars 持久化状态分区。"
-            },
-            {
-              "type": "p",
-              "text": "Kindle的启动流程不只是加载系统那么简单：挂载完根分区之后，还要读取  /var/local  里的系统状态、数据库、配置文件，才能继续启动框架和图形界面。如果这个分区损坏或者状态异常，哪怕根分区完全完好，系统也会启动失败，触发看门狗重启，表现就是卡大树无限循环。"
-            },
-            {
-              "type": "h",
-              "text": "4.2 最有价值的几条经验"
-            },
-            {
-              "type": "p",
-              "text": "遇到砖机先查分区表，再找系统自带的配置确认分区用途，别上来就格式化系统分区，很容易把本来没问题的系统搞炸。"
-            },
-            {
-              "type": "p",
-              "text": "无限重启大概率不是根分区挂了，持久化状态分区损坏的可能性很高。尤其是刷机搞出来的故障，很多都是状态分区写坏了。"
-            },
-            {
-              "type": "p",
-              "text": "不打算保留原数据的话，重建LocalVars分区比重刷整包简单太多，风险也小。"
-            },
-            {
-              "type": "h",
-              "text": "4.3 极简操作流程（速查版）"
-            },
-            {
-              "type": "p",
-              "text": "以后再遇到同款故障，按这个流程走就行："
-            },
-            {
-              "type": "p",
-              "text": "接TTL进底层Shell"
-            },
-            {
-              "type": "p",
-              "text": "查看分区"
-            },
-            {
-              "type": "p",
-              "text": "确认  LOCAL_P  对应的分区号"
-            },
-            {
-              "type": "p",
-              "text": "卸载对应分区： umount /var/local  或  umount /mnt/local"
-            },
-            {
-              "type": "p",
-              "text": "重建分区： mkfs.ext3 -F /dev/mmcblk0pX （第八代对应p3）"
-            },
-            {
-              "type": "p",
-              "text": "同步数据"
-            },
-            {
-              "type": "p",
-              "text": "强制重启"
-            },
-            {
-              "type": "p",
-              "text": "等待系统自动初始化，进入桌面"
-            },
-            {
-              "type": "p",
-              "text": "总的来说，这次最大的收获不是「格式化p3能救Kindle」，而是搞懂了救砖的思路：别上来就照着教程硬刷，先读懂设备自己的分区布局和启动逻辑。很多看起来像系统崩了的问题，其实只是个小分区坏了而已。"
-            },
-            {
-              "type": "p",
-              "text": "-官方论坛"
-            },
-            {
-              "type": "p",
-              "text": "www.52pojie.cn"
-            },
-            {
-              "type": "p",
-              "text": "👆👆👆"
-            },
-            {
-              "type": "p",
-              "text": "公众号 设置“星标”， 您 不会错过 新的消息通知"
-            },
-            {
-              "type": "p",
-              "text": "如 开放注册、精华文章和周边活动 等公告"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MjM5Mjc3MDM2Mw==&mid=2651144741&idx=1&sn=9823f911c1bfca5c75e91d643e150eb7",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/aV8UF5rUbwejrXcJnianHbbUy3PTH8icC0Qzqvfic6vUZVcic3iboSkjbg6QLEtut1Ip8eQibeWCzIo4mUWq0Q9ASibR3tRamazu3pcOBEadxhtPOQ/0?wx_fmt=jpeg",
-          "ts": 1791452820000,
-          "date": "10月8日",
-          "type": "图文",
-          "author": "吾爱破解论坛",
-          "sourceName": "吾爱破解论坛",
-          "accountName": "吾爱破解论坛",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "8.5万",
-            "likes": 4775,
-            "shares": 127,
-            "favorites": 334,
-            "comments": 0
-          },
-          "read": "8.5万",
           "comments": [],
           "commentSource": "none"
         }
@@ -3661,7 +3457,7 @@
       "name": "看雪学院",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791712740000,
+      "lastPushAt": 1791972360000,
       "articles": [
         {
           "id": "270078587",
@@ -170028,7 +169824,7 @@
       "name": "MS509",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1594630080000,
+      "lastPushAt": 1592414280000,
       "articles": [
         {
           "id": "671555969",
@@ -216809,7 +216605,7 @@
       "name": "安全行者老霍",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1785628800000,
+      "lastPushAt": 1791763200000,
       "articles": [
         {
           "id": "625475343",
@@ -289578,7 +289374,7 @@
       "name": "安全419",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791451800000,
+      "lastPushAt": 1790742000000,
       "articles": [
         {
           "id": "3274076833",
@@ -321291,7 +321087,7 @@
       "name": "securitainment",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791460200000,
+      "lastPushAt": 1790575320000,
       "articles": [
         {
           "id": "74397703",
@@ -337187,7 +336983,7 @@
       "name": "机器之心",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791964860000,
+      "lastPushAt": 1791864000000,
       "articles": [
         {
           "id": "1105424339",
@@ -351942,7 +351738,7 @@
       "name": "也谈钱",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1786081080000,
+      "lastPushAt": 1791783000000,
       "articles": [
         {
           "id": "685276887",
@@ -352124,6 +351920,209 @@
             "comments": 0
           },
           "read": "4.7万",
+          "comments": [],
+          "commentSource": "none"
+        },
+        {
+          "id": "4186287938",
+          "title": "继续苟着",
+          "summary": "原创 也谈钱 2026-10-12 13:30 德国 \n前两天也太突然问我，好像很久没说投资了？ \n嗯…标题就是我现在的状态了。 \n今年大部分时间可以用一句话概括。我觉得放心的投资，不涨，浪费时间。在涨的投资我担心风险，很难继续加，也浪费时间。 \n看来看去就没啥可说、可做的。 \n上次写《如何度过低谷》有读者留言说，很有帮助，就是他现在的状态了。每篇写给大伙的文章，其实也是写给我自己的。我一直相信，",
+          "content": [
+            {
+              "type": "p",
+              "text": "原创 也谈钱 2026-10-12 13:30 德国"
+            },
+            {
+              "type": "p",
+              "text": "前两天也太突然问我，好像很久没说投资了？"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ju9buj4vGtpfULJGfLib1wmyxwdtIiariayicanHx3DzwUicculxWl9DaY4LTkxxWsOXY1FFGtIhNSXB11hkynq4qW2X3KlNxP1Y9BkT30OIzHL0/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "嗯…标题就是我现在的状态了。"
+            },
+            {
+              "type": "p",
+              "text": "今年大部分时间可以用一句话概括。我觉得放心的投资，不涨，浪费时间。在涨的投资我担心风险，很难继续加，也浪费时间。"
+            },
+            {
+              "type": "p",
+              "text": "看来看去就没啥可说、可做的。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/ju9buj4vGtrNxqPExI7LKjWFeOBSAGx6gO6RnuDcZsAGpxEfu0IKCNVzLtfXic8sdpNicsL1D9qtYQKa8V7uEsuePERKyiaA3kqibK4BaE5tV8I/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "上次写《如何度过低谷》有读者留言说，很有帮助，就是他现在的状态了。每篇写给大伙的文章，其实也是写给我自己的。我一直相信，只要一个方法真的对自己有帮助、真的在用，就值得拿出来分享。只要真能帮到自己，就一定也有其他人需要它。"
+            },
+            {
+              "type": "p",
+              "text": "度过这段时间和度过低谷很像，方法互通。"
+            },
+            {
+              "type": "p",
+              "text": "如果暂时不知道什么事情能带来收益，就去想什么事情能带来开心。开心会让时间加速，哪怕不能，开心本身也值得。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/ju9buj4vGto0icejsPl7oW3eYNXJTIZiajN9JiaeIpNuJ32fXaIfLibS2wWt7d4icmkXQIGQC0uVliaYhU7vgbghE9OwXCLzvTgunl5lrdlFgzgK0/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 3
+            },
+            {
+              "type": "p",
+              "text": "……"
+            },
+            {
+              "type": "p",
+              "text": "我在网上找到一家动物园，规模很小，从南到北才 600 米 👇 但评价很高。"
+            },
+            {
+              "type": "p",
+              "text": "门票 12 欧，年卡 58 欧。和动物园比算小贵，通常面积大 10 几倍的动物园也才 20 欧。"
+            },
+            {
+              "type": "p",
+              "text": "但和欧洲的日常生活比，动物园的快乐就太便宜了。这是我们最近点的外卖 👇 12 片很薄的三文鱼 8 欧，一盒炒牛肉 14 欧，加起来也要 22。"
+            },
+            {
+              "type": "p",
+              "text": "去过以后，发现小型动物园有个很打动我的地方。游客可以实际参与的项目很多，好像人和人之间有更多的松弛和信任。"
+            },
+            {
+              "type": "p",
+              "text": "比如每个动物区都有自动售货机，5 毛一把，游客可以自己喂食。全程没人盯着。"
+            },
+            {
+              "type": "p",
+              "text": "驯鹰表演部分环节（体型比较小的鹰）可以游客参与，不限年龄。管理员讲了几句须知，鹰可以摸，但只能顺毛捋，不能逆着摸。然后每人领一只驯鹰手套，就开始了。"
+            },
+            {
+              "type": "p",
+              "text": "领手套时我一看前面都是小朋友，心里咯噔一下，不会就我一个大人吧？混进小朋友局，那也太尴尬了。回头一看放心了，身后是两笑嘻嘻的老头，和我一样一脸期待。果然，男人至死是少年。"
+            },
+            {
+              "type": "p",
+              "text": "撸北极狐的环节，小朋友们一边尖叫「啊，它咬我，我被抓了」，一边一脸兴奋「摸起来也太软了吧！」，爸妈就在边上笑着看。"
+            },
+            {
+              "type": "p",
+              "text": "场面比较混乱，忘拍照了。补几张网友的照片："
+            },
+            {
+              "type": "p",
+              "text": "北极狐真的超好撸，手感绝了。虽然没有自拍，但摸到的一瞬间我一定两眼都在发光 🤩 比我能想象的最软的手感，还要软。"
+            },
+            {
+              "type": "p",
+              "text": "大型动物园人多了以后，总有种相互提防的感觉。动物园总担心你做出什么对动物不利的事儿，或者担心动物抓了你，因此担责任。"
+            },
+            {
+              "type": "p",
+              "text": "小型动物园的氛围更像是去邻居家做客，碰巧他家有超级多动物。"
+            },
+            {
+              "type": "p",
+              "text": "……"
+            },
+            {
+              "type": "p",
+              "text": "园区里大部分游客都是带娃来的，想起之前一个讨论—— 为什么在欧洲带娃好像更容易？ 生娃的家庭经常一胎、二胎连着生，一起带俩，却父母自己就可以带，很少找帮手。"
+            },
+            {
+              "type": "p",
+              "text": "欧洲父母有个底层观念和我们几乎相反，刚到这边时给我了大大的震撼。"
+            },
+            {
+              "type": "p",
+              "text": "我以前一直觉得，孩子是要小心抱着的。所以第一次看到，德国同事把孩子提着一只胳膊，从地上「捡」起来的时候，这一幕堪称惊悚。仿佛随手捡起地上的布娃娃。"
+            },
+            {
+              "type": "p",
+              "text": "后来才慢慢接受，孩子其实很结实，骨骼比成年人更有弹性、更不容易受伤。不像我想象中那么脆弱，仿佛一碰就会融化。"
+            },
+            {
+              "type": "p",
+              "text": "我们经常认为孩子非常脆弱，要小心呵护。恨不得所有事儿都替他做好。"
+            },
+            {
+              "type": "p",
+              "text": "但欧洲父母普遍认为孩子很“结实”，也很自主，很多事儿都让他自己做。"
+            },
+            {
+              "type": "p",
+              "text": "还有个例子，欧洲父母很少担心孩子厌食。父母管吃什么、什么时候吃，然后给孩子套个围兜，自己抓，自己决定吃多少、吃不吃，不吃就是吃饱了。国内常见的追着喂、哄着喂、\"再吃一口\"，在欧洲很少见。"
+            },
+            {
+              "type": "p",
+              "text": "如果事无巨细都要替孩子决定，父母就会很累，对孩子也未必更好。相信有些事孩子自己知道，有些担心其实没必要，父母就会更轻松。"
+            },
+            {
+              "type": "p",
+              "text": "而且欧洲爸爸带娃的参与度比较高。经常在街上看到爸爸推着婴儿车遛娃。或者两对夫妇一起散步，两个妈妈前面空着手聊天，两个爸爸后面推着婴儿车聊自己的。"
+            },
+            {
+              "type": "p",
+              "text": "不过我后来研究了一下，发现爸爸带娃不光是观念问题，也是制度的影响。普遍规律是，加班越多的地区，爸爸带娃越少。"
+            },
+            {
+              "type": "p",
+              "text": "当然，容易都是相对的。看绝对的工作量，在哪带娃都不容易。"
+            },
+            {
+              "type": "p",
+              "text": "只不过观念上给父母减负，客观上又有更多的自由时间，带娃的任务就大致可以到父母自己能承担的程度了。"
+            },
+            {
+              "type": "p",
+              "text": "财务自由： 我的财务自由实证之路"
+            },
+            {
+              "type": "p",
+              "text": "投资笔记： 十年之约 ‍ ‍ ‍ ‍ ‍"
+            },
+            {
+              "type": "p",
+              "text": "抵御风险： 8 月保险推荐 ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍"
+            },
+            {
+              "type": "p",
+              "text": "干货汇总： 财务自由路上应该了解的每一个问题"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzUzNjE3NzQ3Nw==&mid=2247495243&idx=1&sn=b6f63db07e8aae16b5a0c586937c6b4a",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ju9buj4vGtpfULJGfLib1wmyxwdtIiariayicanHx3DzwUicculxWl9DaY4LTkxxWsOXY1FFGtIhNSXB11hkynq4qW2X3KlNxP1Y9BkT30OIzHL0/0?wx_fmt=jpeg",
+          "ts": 1791783000000,
+          "date": "10月12日",
+          "type": "图文",
+          "author": "也谈钱",
+          "sourceName": "也谈钱",
+          "accountName": "也谈钱",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "3.4万",
+            "likes": 4576,
+            "shares": 490,
+            "favorites": 50,
+            "comments": 0
+          },
+          "read": "3.4万",
           "comments": [],
           "commentSource": "none"
         },
@@ -352527,345 +352526,6 @@
             "comments": 0
           },
           "read": "2.2万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "1219777783",
-          "title": "止盈计划",
-          "summary": "原创 也谈钱 2026-09-10 13:39 德国 \n最近常被问到，现在是不是牛市中后期了，应该如何考虑止盈计划 \n目前大家看的是牛尾行情，有止盈或者提现的计划吗？ \n现在是不是到牛市中后期了，要把手上的基金全部清掉吗，还是用方式什么判断是不是到高估了。 \n分享几个我自己比较喜欢的思路，供大伙参考： \n主动基金，可以看偏股基金指数 3 年滚动年化收益达到 20～30%，目前是 10%，还有空间。",
-          "content": [
-            {
-              "type": "p",
-              "text": "原创 也谈钱 2026-09-10 13:39 德国"
-            },
-            {
-              "type": "p",
-              "text": "最近常被问到，现在是不是牛市中后期了，应该如何考虑止盈计划"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/ju9buj4vGtr0U2DNqAx4AjibmkICUnc7lWYUoiaUmIPQkreMibB5ibA0LkU0fadW6N8ekRV5shf87Pvf5bU0qXAgjWMXqE96rrgY3qmAvcqPu4g/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "quote",
-              "text": "目前大家看的是牛尾行情，有止盈或者提现的计划吗？ \n现在是不是到牛市中后期了，要把手上的基金全部清掉吗，还是用方式什么判断是不是到高估了。"
-            },
-            {
-              "type": "p",
-              "text": "分享几个我自己比较喜欢的思路，供大伙参考："
-            },
-            {
-              "type": "p",
-              "text": "主动基金，可以看偏股基金指数 3 年滚动年化收益达到 20～30%，目前是 10%，还有空间。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/ju9buj4vGtqHz3GLPDiabdcS4DibSBOk331aMtWGhc19MiaicRuTSxibLqH088lR63YzqTNwYKfAyZVU4BUFD5SHEoc6s9w46nUYPDCQhP5nlLng/0?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "选择主理人有明确止盈计划的投顾，这样就不用自己操心了，可以一直拿着。投资不是越折腾收益越高，有些时间花在工作和生活上更有性价比。"
-            },
-            {
-              "type": "p",
-              "text": "海外资产，可以不止盈，定期再平衡为主。尤其投资海外成熟市场的基金，波动率比较低，止盈的意义不大。"
-            },
-            {
-              "type": "h",
-              "text": "1、"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ju9buj4vGtpmm0cCWgBjK2TiaC5IvSRkViaicakaic2gwkib2NVuPZ4Jhnpktf4SHQbGlkbxHhKXdak1Iy8bFfX3M8NgyGI6A7VqbC9ZibWz7JLGE/0?wx_fmt=jpeg&from=appmsg",
-              "caption": "",
-              "_imgCount": 3
-            },
-            {
-              "type": "p",
-              "text": "先说可以不止盈的情况。"
-            },
-            {
-              "type": "p",
-              "text": "大伙如果习惯在 A 股投资，容易有必须止盈才能留住利润的思维惯性。但实际上，止盈是有前提的。股票市场越成熟、波动越小，止盈的价值越低，甚至会拖后腿。"
-            },
-            {
-              "type": "p",
-              "text": "假设一个极端情况，某笔投资没有波动，就稳稳每年涨 6%，就任何时间都不该止盈。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/ju9buj4vGtoaEwqcaZMB9Wds0ia02KQgM1dvLo5FjjhgWtk66ia0AfQvBqKY9793e8Xn8sqnPK0ibcmhTU1DTSglN0azm1pUrxrRzF2GDT6xBU/0?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 4
-            },
-            {
-              "type": "p",
-              "text": "所以如果资产波动比较低，比如 投向美股、欧股的 QDII 基金，我更倾向不止盈 。重点关注自己什么时间用钱，平时再平衡，用钱前 3-5 年开始分批变现即可。"
-            },
-            {
-              "type": "p",
-              "text": "这方面也有统计数据。"
-            },
-            {
-              "type": "p",
-              "text": "在 A 股过往规律很明显，估值越高，后面几年预期收益越低。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/ju9buj4vGtobYlgREdiaRBOeFsSbHNibY79oKoUWkdZvDh9TTtGBxErEnNBKo0QMvaswyMERibnOFO3IBECE4iamCXURwnSTlyWnuQVI8sz2Abc/0?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "但换到美股，有知有行做过一组历史回测：在不同估值时买入标普 500，再持有 8 年。结果发现，高估时买入，相比正常估值买入，并没有明显更差 👇 这也是我不愿意仅仅因为「感觉贵了」，就卖出美股宽基指数的原因。"
-            },
-            {
-              "type": "p",
-              "text": "大伙可以观察下， 美国写给普通人的理财书几乎不讲止盈，都是定投然后一直拿着 ，最多定期再平衡一下。直到用钱前几年。朴实且枯燥。"
-            },
-            {
-              "type": "p",
-              "text": "反过来波动越大，高点越高、低点越低，高点会透支未来涨幅，止盈才有意义，能帮我们留住利润。"
-            },
-            {
-              "type": "p",
-              "text": "过去几年，投资 A 股的伙伴经常后悔「当初应该止盈的，现在利润都吐回去了」。而买过美股的伙伴经常后悔「当初不该卖的，错过这么多收益」。"
-            },
-            {
-              "type": "h",
-              "text": "2、"
-            },
-            {
-              "type": "p",
-              "text": "说两个我比较认同的止盈思路。"
-            },
-            {
-              "type": "p",
-              "text": "相对容易估值的资产，比如指数基金，可以参考 PE 市盈率、PB 市净率和股息率来估值。"
-            },
-            {
-              "type": "p",
-              "text": "举个更贴近生活的例子，来说明它们都是什么意思。"
-            },
-            {
-              "type": "p",
-              "text": "假设你想盘下楼下的早餐店。算了一笔账，店铺+设备+存货，减去贷款，净值 50 万，早餐店每年净赚 10 万。老板开价 60 万，想把整家店卖给你。"
-            },
-            {
-              "type": "p",
-              "text": "市盈率 PE 就是 6 倍 ：花 60 万，买下一门每年赚 10 万的生意。相当于付了它 6 年利润的价钱。"
-            },
-            {
-              "type": "p",
-              "text": "市净率 PB 就是 1.2 倍 ：花 60 万，买下账面值 50 万的净资产。"
-            },
-            {
-              "type": "p",
-              "text": "每年赚到的 10 万，不一定全能拿回家。假设一半留在店里，更新设备、周转经营，一半拿回家，每年就是 5 万。"
-            },
-            {
-              "type": "p",
-              "text": "股息率就是 5 ÷ 60 ≈ 8.3% ：相对于买店花的钱，每年有多少现金分到你手里。"
-            },
-            {
-              "type": "p",
-              "text": "同一家店，如果盈利、净资产和分红都不变，老板把报价从 60 万涨到 100 万，PE 就从 6 倍变成 10 倍，PB 从 1.2 倍变成 2 倍，股息率则从 8.3% 降到 5%。"
-            },
-            {
-              "type": "p",
-              "text": "如果你是买家，肯定希望卖家开价越低越好，也就是希望 PE、PB 低一些，股息率高一些。"
-            },
-            {
-              "type": "p",
-              "text": "如果后来又有人想买你盘下的早餐店，那你肯定希望对方报价越高越好。所以希望 PE、PB 高一些，股息率低一些。"
-            },
-            {
-              "type": "p",
-              "text": "虽然还有很多细节没有考虑，比如早餐店今年赚 10 万，未来能不能一直这么赚；店铺净值 50 万，但会不会有价无市，卖不出去……但总的来说，这就是估值基本的逻辑。"
-            },
-            {
-              "type": "p",
-              "text": "……"
-            },
-            {
-              "type": "p",
-              "text": "但也有些资产没那么容易估值，比如主动基金。没法实时知道基金经理持有什么、持有多少，这种情况我更倾向于看历史规律。"
-            },
-            {
-              "type": "p",
-              "text": "比如回看前几轮行情，代表主动基金的偏股基金指数相比底部的涨幅，我认为值得止盈的大行情，都有 100% 以上的涨幅 👇"
-            },
-            {
-              "type": "p",
-              "text": "可以参考历史规律再打个折，来做止盈计划。"
-            },
-            {
-              "type": "p",
-              "text": "主动基金我看的就是这类指标——偏股基金指数三年滚动年化收益，以往达到 30% 就是高点了。可以考虑从 20% 开始分批止盈。"
-            },
-            {
-              "type": "p",
-              "text": "大伙可能会问，如果计划是 20% 开始止盈，结果涨到 19% 就跌回去，那不怕拍断大腿吗？"
-            },
-            {
-              "type": "p",
-              "text": "对此我是这么想的："
-            },
-            {
-              "type": "p",
-              "text": "如果止盈是为了以后低价买回来，那卖出只做了一半，还要考虑什么时候买回来。 卖得合适、买得回来，两件事都做好，比单纯卖出更难。只有涨得足够高，未来低价接回来的空间才足够大。如果跌了 20% 就触底反弹重新上涨，底部我们可能觉得「还要跌，再等等」，很难买回来。"
-            },
-            {
-              "type": "p",
-              "text": "所以最好等明显高、甚至离谱高再行动。否则就继续拿着，哪怕被说「如果你当时卖了，现在就…」。总想着卖，就拿不住大部分涨幅。总想着回本就卖，就总在回本。"
-            },
-            {
-              "type": "h",
-              "text": "3、"
-            },
-            {
-              "type": "p",
-              "text": "也说一个很普遍，但我不太认同的止盈方式——「赚到 XX% 我就卖出」。"
-            },
-            {
-              "type": "p",
-              "text": "举个有点极端、但很好理解的例子。"
-            },
-            {
-              "type": "p",
-              "text": "假设现在金价 1000 元/克。一天晚上，朋友急需用钱，但这时候金店都关门了。他等不到明天，愿意每克 500 元卖给你（别怀疑，你就是有这么好的朋友）。"
-            },
-            {
-              "type": "p",
-              "text": "你买了。"
-            },
-            {
-              "type": "p",
-              "text": "后来另一个朋友听说了，愿意出更高的 750 元。你要不要「赚了 50% 我就卖」，赚 50% 已经很知足了？"
-            },
-            {
-              "type": "p",
-              "text": "你大概率不会，因为等到第二天金店开门，就能卖到 900 多。"
-            },
-            {
-              "type": "p",
-              "text": "假设情况反过来，你被人忽悠了，1000 元金价，你 1100 买的。这时候有个更傻的，愿意 1200 从你手里买走，你要不要「等赚 20% 再卖」？"
-            },
-            {
-              "type": "p",
-              "text": "现实情况比这个更复杂，不像金价，我们很难准确估计手里的基金当前值多少钱。但根本问题在于——赚多少取决于买入价格，这和该不该卖是两码事儿。"
-            },
-            {
-              "type": "p",
-              "text": "所以我还是更倾向于前面的估值方法，去模糊判断目前「金价」是多少，而不是自己目前赚了多少。"
-            },
-            {
-              "type": "h",
-              "text": "4、"
-            },
-            {
-              "type": "p",
-              "text": "止盈前，还有个问题值得提前想一想： 卖出来的钱，准备干什么？"
-            },
-            {
-              "type": "p",
-              "text": "不然容易拿着投资时想卖，变成现金后又觉得烫手，再到处问：“现在手里有一笔钱，应该怎么配置？”"
-            },
-            {
-              "type": "p",
-              "text": "如果这笔钱要拿去消费、改善生活，那很好，投资完成了它的任务，投资就是为了更好地生活。但如果它依然是笔长期闲钱，卖出以后，我们还得继续打理它。"
-            },
-            {
-              "type": "p",
-              "text": "因为怕跌而卖出，又因为怕错过而买入，很容易折腾一圈，回到原来的位置。"
-            },
-            {
-              "type": "p",
-              "text": "所以我会尽量在卖之前，先想好这笔钱的下一步。留作生活费、降低风险、等待便宜，或者换入更合适的投资，都可以。关键是想清楚，为什么这么做。"
-            },
-            {
-              "type": "p",
-              "text": "换个角度看，很多投资之所以一直拿着，也是因为如果变成现金，我还是想买它们。"
-            },
-            {
-              "type": "h",
-              "text": "5、"
-            },
-            {
-              "type": "p",
-              "text": "因为未来无法预测，我们很难找到一个完美的止盈计划。"
-            },
-            {
-              "type": "p",
-              "text": "没卖，跌了，会后悔当初没止盈；卖了，继续涨，会后悔跑得太早。卖掉一半，涨了嫌卖多了，跌了嫌卖少了……总能事后找到一个「当初那样做就好了」的更优解。但做决定时，我们并不知道后来会发生什么。"
-            },
-            {
-              "type": "p",
-              "text": "所以制定止盈计划时，我会尽量把几种可能都想一遍：继续涨怎么办，跌回去怎么办，卖完一直等不到买回的机会又怎么办。"
-            },
-            {
-              "type": "p",
-              "text": "把各种后悔遗憾放在一起比较，选一个总体上后悔最小、自己能执行下去的方案。"
-            },
-            {
-              "type": "p",
-              "text": "比如对我来说，没到止盈条件就跌回去，虽然会遗憾，但这笔钱暂时不用，我愿意继续持有。反而如果早早卖掉，后来错过收益、一直买不回来，可能更让我难受。所以我的计划会倾向于多拿一会儿，等明显高估再分批行动。"
-            },
-            {
-              "type": "p",
-              "text": "大伙的用钱时间、承受能力不同，选出来的方案也可能不同。"
-            },
-            {
-              "type": "p",
-              "text": "最理想的情况是，即使后来发现“当时换个做法会赚得更多”，也能坦然说：考虑到当时知道的信息和自己的情况，这个结果我也可以接受。"
-            },
-            {
-              "type": "p",
-              "text": "财务自由： 我的财务自由实证之路"
-            },
-            {
-              "type": "p",
-              "text": "投资笔记： 十年之约 ‍ ‍ ‍ ‍ ‍"
-            },
-            {
-              "type": "p",
-              "text": "抵御风险： 8 月保险推荐 ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍ ‍"
-            },
-            {
-              "type": "p",
-              "text": "干货汇总： 财务自由路上应该了解的每一个问题"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzUzNjE3NzQ3Nw==&mid=2247495205&idx=1&sn=6c6d63525f263014026763dbd261ad81",
-          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ju9buj4vGtr0U2DNqAx4AjibmkICUnc7lWYUoiaUmIPQkreMibB5ibA0LkU0fadW6N8ekRV5shf87Pvf5bU0qXAgjWMXqE96rrgY3qmAvcqPu4g/0?wx_fmt=jpeg",
-          "ts": 1789018740000,
-          "date": "9月10日",
-          "type": "图文",
-          "author": "也谈钱",
-          "sourceName": "也谈钱",
-          "accountName": "也谈钱",
-          "topics": [
-            "finance"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "8780",
-            "likes": 415,
-            "shares": 1047,
-            "favorites": 878,
-            "comments": 0
-          },
-          "read": "8780",
           "comments": [],
           "commentSource": "none"
         }
@@ -354026,7 +353686,7 @@
       "name": "海边的西赛罗",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791889620000,
+      "lastPushAt": 1791622080000,
       "articles": [
         {
           "id": "3253106030",
@@ -357856,326 +357516,122 @@
       "name": "邱贞玮",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1788235800000,
+      "lastPushAt": 1791537180000,
       "articles": [
         {
-          "id": "3807560698",
-          "title": "踢馆 | 西太对抗、一战起因、直升机体系",
-          "summary": "原创 邱贞玮 2026-10-13 17:11 山东 \n各种聊天群键政时，总有人出来说这是没用的，真想改变什么就去做点什么，但这个观点才是错的。现在新华网开始公开售卖舆情分析工具，不公开卖的数据更全，每说一句话都会留下痕迹、改变统计数据，进而改变结论和判断。虽然很多时候这不重要，但当前正是重新选择路线的关键时期，很多事需要有由头才能启动，所以聊天并不是毫无价值，不要过度花费时间精力就是了。 \n--",
+          "id": "4214469016",
+          "title": "踢馆 | 箭型机翼、六代机远程弹、现有坦克",
+          "summary": "原创 邱贞玮 2026-10-09 17:13 山东 \n每次假期结束，官方都要喜气洋洋的公告又有多少人出门旅游、花了多少钱促进消费。这个事情很令人不解，既然现在消费不足拼命想促进消费，又说节假日对消费作用很大，那么增加假期不就可以了吗？十一过后要到元旦才有公共假期，三个月里只放一天，增长潜力大得很嘛。现在既不增加假期，又不抑制无偿加班和单休，还不提高劳动报酬，到底想不要想要消费复苏呢。 \n----",
           "content": [
             {
               "type": "p",
-              "text": "原创 邱贞玮 2026-10-13 17:11 山东"
+              "text": "原创 邱贞玮 2026-10-09 17:13 山东"
             },
             {
               "type": "p",
-              "text": "各种聊天群键政时，总有人出来说这是没用的，真想改变什么就去做点什么，但这个观点才是错的。现在新华网开始公开售卖舆情分析工具，不公开卖的数据更全，每说一句话都会留下痕迹、改变统计数据，进而改变结论和判断。虽然很多时候这不重要，但当前正是重新选择路线的关键时期，很多事需要有由头才能启动，所以聊天并不是毫无价值，不要过度花费时间精力就是了。"
+              "text": "每次假期结束，官方都要喜气洋洋的公告又有多少人出门旅游、花了多少钱促进消费。这个事情很令人不解，既然现在消费不足拼命想促进消费，又说节假日对消费作用很大，那么增加假期不就可以了吗？十一过后要到元旦才有公共假期，三个月里只放一天，增长潜力大得很嘛。现在既不增加假期，又不抑制无偿加班和单休，还不提高劳动报酬，到底想不要想要消费复苏呢。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTIib8x9Vib1verq6TCrodQgO5YmJ9jnWEPUlicxQAbOGQWoBYicS8l6iaibG2FwRkJHZDLCicxsMMYiaT9Jr8xWaFEsRe0ETvmFN1jHLFMk/0?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/fPKeaxSZTI8Y9DRyhgrbyEmzCJYyAJQXUZM2YnEMxMtI3NiajWBmc6jXoh2jKIIIamJWPNs78xxX2D8UkkQFuZBo2UBzegjcdNn3TmX2sTjg/0?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 1
             },
             {
               "type": "p",
-              "text": "-----------------"
+              "text": "------------"
             },
             {
               "type": "p",
-              "text": "问：航母和警戒阵地的比喻深得我心。想想真心疼，耗费十年之功，投入几百亿的大辽、山东航母战斗群很可能开战的第一个小时就要化为乌有了，两个全体系军事大国的交战其烈度、强度令人咋舌。请展开说说前两艘航母执行西太对美警戒任务时的不足，还有改善的办法吗？"
+              "text": "问：评价一下类似F-16XL这种箭形翼的优劣点吧，据说当时苏联T-10E想抄作业,作为战术轰炸机，如果放到如B-1这种大型战术轰炸机上有没有优势？还有类似的，如英国火神、伊朗小摩托那种翼型，为何如今只有小型无人机使用，大型的都偏向飞翼布局？在轰炸机上，飞翼、箭型、带翼身融合的大三角翼在未来各自会有什么发展？// 讲一下三角翼吧，这种机翼适合飞超音速、结构强度大，但是飞远距离费油，而且起降性能差。有了鸭翼和电传操纵这两个技术加持，是不是它的缺陷就完全没有了。"
             },
             {
               "type": "p",
-              "text": "我军航母前出西太平洋，面临被敌四面包围的困境，东面是关岛美军，南面是菲律宾美军，西面是台军，北面是日军和阿拉斯加美军，这是任何军队都最绝望的态势，航母群尤其如此。"
+              "text": "机翼的作用是产生升力和俯仰、滚转、偏航三个维度的控制力矩，并将其传递给机身，从而使飞机实现安全飞行。与升力相关的指标主要是翼型和翼形，前者指机翼纵向切面的横截面形状，层流翼就属于翼型的一种；后者指机翼俯视形状，三角翼、后掠翼、梯形翼都是这类；二者共同决定了气流如何流动，进而在很大程度上决定了飞机的飞行特性。控制力矩由襟翼、副翼、前缘襟翼、扰流板、开裂式方向舵等提供，与鸭翼、平尾、垂尾共同起作用。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTIic1iaAIuyxDib6nQxLHKmBfoasUwEIHcoXgqZHkIOa6unESclZI3UA70Cl8uYp3pNdwfSUfxIKgZdnSAABU4iax7ib0O2W1DzzBvicY/640?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTI9lnwX2fTHNibphKLHtfy3wOPficDGXxP7WESHA2rF0MJ0EC0qCsib077pHgOcCD1ko8fy4gCrdOR2xWGQy3froyv5u6mex6QBIAQ/640?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 2
             },
             {
               "type": "p",
-              "text": "因为航母的强大只是相对驱护舰和小国而言，与大国陆基航空兵相比，航母的舰载机数量不到其十分之一，单机战斗力相对较低，主要依靠航母高速机动能力在敌陆基航空兵作战半径边缘活动，寻找空隙冲进去打一波，然后赶紧撤退，避免被敌航空兵围攻。航母群四面受敌时，根本没有机动规避的空间，有限的兵力也无法集中在一两个主要威胁方向，而必须四面警戒，防御和生存能力必然极低。"
+              "text": "在产生升力和控制力矩方面，不同速度范围下有不同的最优选择。前缘后掠角较小、后缘垂直于纵轴或前掠、机翼展弦比较大的叫平直翼，也就是二战飞机常用的翼形，其特点是低速升力特性好，但跨音速段阻力急剧上升，因此不适用于高速飞机。机翼前后缘都有较大后掠角度的是后掠翼，其特点是可以在有限的翼展范围内提供最大的展弦比，升阻比较高且阻力小，缺点是展弦比小且机翼受力复杂、刚性差，不适合高机动飞机。"
             },
             {
               "type": "p",
-              "text": "地理问题无法改变，地缘政治格局也只能通过战争改变，所以我国航母被包围的困境无解，能解决的只有被包围后的生存能力问题。最简单的办法是增加航母群数量到6个以上，确保对各个方向都能保持警戒，并且舰载机总兵力超过200架，并改变舰载机型号以提高单机战斗力，使舰队能与敌人正面抗衡。"
+              "text": "由此可以看出，机翼前缘后掠角基本决定了阻力和升力特性，后掠角越小在低速段的优势越大，在高速段的劣势 也 越大。机翼展长（横向宽度）和弦长（纵向长度）的比值决定了升力和受力传递特性，展弦比越大则升阻比越高，但传递升力的翼根结构因为要在有限的横截面积内传递更多力量，其强度和刚性也越差，受力较大时容易变形损坏，所以大展弦比飞机的高过载能力不好。机翼后缘后掠角决定了机翼的受力复杂程度，后掠角越大则所受的扭转力矩越大，机翼刚性和高过载能力也就越差。"
             },
             {
               "type": "p",
-              "text": "战役持续时间越长，敌人调集兵力的时间越充分，我军航母群顶在前方的时间也越长，压力自然越大。要从根本上解决问题，需要尽可能缩短战役时间，在敌人完成战争准备前就结束战争，至少也要打垮台军、摧毁四面合围。美军一个月内只能调动2个航母群，我军如果能从下达决心开始，在一个月内占领台湾至少半数地区，就能赢得时间。"
+              "text": "三角翼的特点是前缘后掠角大，后缘垂直于机身纵轴，因此获得相同的翼面积时弦长较大。机翼向机身传递各种力时，同时通过翼根结构实现的，弦长越大翼根结构就越长，分散到单位长度上的力矩就越小，因此结构刚性就越好、寿命也越长。这就是三角翼的核心优势，适合高过载机动，这正好是战斗机的核心要求。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTI8XDmy0ibvSggoVrP4kcWgO6ubcugPM9olXvzUWFBIWxpI5ccdFuDhbGTia0dvGFYmNPgFfqANaIztF3SZ2O3cC2CbAheLibBgc3o/640?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTI9u8E6W7n2x1pKW8sRllBmCEydQla3yzZWGeggthNKRibhCtCBvnlzVHFjrNOJBEXArciaqbEgiaUn2mRy91ia8K8bfAWsuibHXM980/640?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 3
             },
             {
               "type": "p",
-              "text": "敌人也清楚这一点，所以美国从2010年代中后期开始要求台军转变防御策略，从坚守海滩转向城市巷战，尽可能拖延战役进程。大规模巷战最难加速，要解决这一问题需要赶在台军完成动员前予以致命打击，能承担这一任务的只有巡航导弹列车和导弹集装箱船方案，在12小时内发射2万多枚导弹摧毁台军营地，然后陆军快速登陆强占关键地点。"
+              "text": "如果前缘后掠角较小，机翼展弦比较大，可以称为平直翼或梯形翼，例如F-15，只有后掠角较大、展弦比较小的才称之为三角翼。这两点决定了三角翼的低速升阻比较低，不利于提高飞机航程，所以不追求高过载而追求航程的运输机、客机不会使用三角翼。要弥补升阻比劣势，三角翼飞机必须提高燃油系数，也就是在相同的空重下容纳更多燃油，三角翼较大的机翼面积恰好符合这个要求，可以部分弥补，但劣势仍然存在。"
             },
             {
               "type": "p",
-              "text": "我军航母群的任务是隔离美军航母群和第二岛链机场轰炸机的威胁，但这种战役防御任务如果没有同等级进攻能力配合，就会变成完全的被动挨打，一定会失败。我军反航母的核心手段是反舰弹道导弹，但东风21D导弹最大射程估计仅约1800公里，只能打击台湾岛以东约1000公里的目标。"
+              "text": "三角翼的前缘后掠角较大，决定了其升力系数曲线较为陡峭，只有在迎角较大时升力系数才能大幅提高，因此大过载盘旋时需要更大迎角，也就会产生更大阻力，导致飞机定速盘旋（稳盘）时需要更大的发动机推力，减速盘旋（瞬盘）时速度下降更快。"
             },
             {
               "type": "p",
-              "text": "美军航母群以我军航母为打击目标时，所处位置大概率超出东风21D射程，火箭军无法进行打击，导致对美军事威慑能力大幅下降，难以遏制美军动手冲动。为了解决这一问题，我军研制了射程约4000～5000公里的东风26反舰弹道导弹，可以覆盖整个西太平洋海域，美军航母无论如何机动都无法逃避打击。"
+              "text": "为了弥补三角翼在升阻比和升力系数曲线方面的劣势，我国1980年代研究了双三角翼翼形，既在三角翼外侧增加一段前缘后掠角较小的机翼，从而提高升阻比和小迎角时的升力系数。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTI8skvelhcEw4CaoLL2zxjjOibqdE7XSVOAZIvkiaIBxc0A7PdbSwWfz7zR6j7MgGsqdiamTmgXI5ZhKljBljvKgDuiclRWREpuLakc/640?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTI8GJibrChf1Os4IyrF3fYiawDcibzQjTN7GvkVqusPcdvvgdUUXcT7yP48YBPBoQMD2qvt74PfiascyHw01c30InDtibasZXchu8VIk/640?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 4
             },
             {
               "type": "p",
-              "text": "反舰弹道导弹价格昂贵数量稀少，需要确切核实目标性质和位置才能发射。由于航空系统能力孱弱，侦察机突防能力和航程严重不足，早期反舰弹道导弹以卫星为唯一信息来源。2010年代时我国侦察卫星轨道固定、数量稀少，无法持续跟踪航母，当前卫星数量增加，但仍然容易被敌陆海基激光器、电子干扰站干扰致盲。"
+              "text": "F-16XL原本是为美国航空航天协会（AIAA）和美国航空航天局（NASA）研究超音速客机实施的，投标多用途战斗机是很偶然的事情。AIAA研究双三角翼时，发现其升力中心位置比较靠前，而大迎角时外翼段提供的升力较多，整体升力中心后移快、距离大，到了一定迎角后升力中心又向前移，不够稳定，使得控制难度较大。于是AIAA把大后掠角部分的翼根切掉一段，就是机翼最前方缺掉的部分，从而缩小大后掠段的弦长，使稳定性变化率减小。"
             },
             {
               "type": "p",
-              "text": "为解决问题，国内开发了无侦8高超音速侦察机，适合对高威胁防空区的突防侦察。但无侦8航程有限，作为载机的轰-6突防能力不足，难以支撑东风26发挥射程优势。要解决这个问题，需要航母搭载歼-20、南六等大航程高性能舰载机，目前看不到动作。"
+              "text": "切角以后发现，升力在复合后掠角下沿展向变化，并且有一定规律，这个变化可以通过改变切角角度、弦长和折点来实现升力中心变化率最小、复合升力曲线最好的特点。然后AIAA又使用有前翼和无前翼的方案，吹风研究了两个布局的差别、特征，并根据升力中心和重心的关系，把后缘襟翼延长变成 W尾折线，修正了升力和无尾时控制力矩特性。最后通用公司根据材料特性，尝试了纯气动弹性剪裁设计，获得了最后的机翼。"
             },
             {
               "type": "p",
-              "text": "我军航母群被围攻时，舰队防空能力直接影响生存能力。当前舰队防空的主要难点是对超低空目标的早期预警和超视距拦截，完全依赖空警600预警机实现，但面对F-22和F-47攻击时，空警600的生存能力不足。解决这一问题有几个办法，一是为空警600加装激光防御系统，拦截敌空空导弹；二是部署专门配合舰队超视距防空的隐身飞翼无人机，甚至可以部署在陆地机场；三是部署大量无人船提高舰队防空能力。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/fPKeaxSZTI9PQEkHg8nU8IzxjPIUbDqojse4rlzjN7pjVz1fy2yyHUPcEEGu1I9kQbSFEFJ5ZK48aPK51Iib3vksT4DA9UsfEDjMPQw6cW14/640?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 5
+              "text": "大型轰炸机更多强调载荷航程而非最大速度，因此更喜欢变后掠翼而非三角翼；它们不要求高机动性，对大迎角飞行能力并不看重，所以F-16XL的箭型翼对其意义不大。除非要求全程2马赫以上速度突防，否则没有机会了。"
             },
             {
               "type": "p",
-              "text": "无人船性能和规模足够时，还可以在第一、第二岛链敌基地附近持续部署，就近监视敌军兵力调动情况，为指挥部提供更及时可靠的敌情。无人船还可以携带大量中小型无人机或巡飞弹，抵近威胁敌基地安全，提高反击速度和力度，为后续打击创造更好条件。在5年左右的中期，这可能是导弹列车、导弹集装箱船之后，改变战役态势最好的途径。"
-            },
-            {
-              "type": "p",
-              "text": "问：一战爆发是德国没继承俾斯麦交好俄国、不挑战英国、死磕法国的政策，还是因为德国发展过快，引起了世界老大英帝国的恐惧，因为一战不可避免。"
-            },
-            {
-              "type": "p",
-              "text": "俾斯麦在1862年成为普鲁士王国首相，1864年普奥联军击败丹麦夺取石勒苏益格-荷尔施泰因地区，1866年普奥开战获胜，1870年普法战争胜利建立德国，1890年辞职下野，1898年83岁病故。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/fPKeaxSZTIibO6lpWXWLKPrC3MvsB8AVAraVUOib6qvedOUpYQptTOOLmdvadScnNNydEZjqz1Adu5vMqfjMicibhWt8m4rZaSFxQ1HtyoDwicAc/640?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 6
-            },
-            {
-              "type": "p",
-              "text": "在普法战争之前，法国是欧洲大陆霸主，普鲁士只是德意志地区的一个强大邦国，甚至还不如奥地利国力强盛，普奥战争后也远不如法国。英国的外交政策核心是欧洲均衡，即不允许任何一个强国独霸欧洲大陆，谁接近霸主位置就反对谁。普鲁士这么弱小，只能算欧洲（不含俄国）第3、4名，而且有挑战前几名的强烈野心，正是英国人维持欧洲均势的上好工具，自然可以得到英国扶持与包容。"
-            },
-            {
-              "type": "p",
-              "text": "普法战争后，普鲁士不仅陆军实力跃居欧洲并列第一，更重要的是建立了德意志帝国，将中欧大量小国整合起来，国力有了巨大飞跃，成为与法国并列甚至更强的头号强国，最接近欧洲霸主地位，自然会吸引英国的打击。"
-            },
-            {
-              "type": "p",
-              "text": "俾斯麦的外交均衡是在英、法、奥之间搞平衡，通过控制对利益的追逐避免结下死敌，以免其它几家结成盟友共同反对自己，1866年普奥战争后安抚奥地利最为典型。但他能成功的关键不是自己有多高明，而是外部环境本来就有这种可能，他只是将其变为现实，当然这已经很是高明的政治家了。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/fPKeaxSZTIibU5XicRC0T8mdCKXViaZ5XgC9ys5UVf8lpexpVrxZL2m1hj29ztttqdBb8hza5dY0EHR0g8PtXUKf6iamJgCicWrqp1cKkfWH5f6E/640?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 7
-            },
-            {
-              "type": "p",
-              "text": "普法战争后，我们假设普鲁士继续坚持俾斯麦的外交政策，英国也神奇的维持态度不变，那会发生什么呢？欧洲都是资本主义工业国，必然对商品市场和原料产地有无限需求，否则就会加速发生经济危机。要为本国资本夺取市场，最终办法一定是全面战争，所以法德一定会再次开战。"
-            },
-            {
-              "type": "p",
-              "text": "法国面对德国处于劣势，开战前必然拉拢盟友以扩大胜算，欧洲有资格参与的只有英、俄、奥、意、土、比这几国。英国如果与德国结盟，那就是英德奥对法俄，从历史看法国会在正面战场和海上封锁双重打击下几年内战败，俄国自爆或者认输，德国彻底成为欧洲霸主，达到拿破仑鼎盛时期的态势，此时英国除了敌人之外还能得到什么呢？这个事情很明显，所以英国绝不会与德国结盟参战。"
-            },
-            {
-              "type": "p",
-              "text": "德国所能争取的最好局面，是英国不参战保持中立，法国正面战场少了百万英国远征军，德国海上贸易可以维持，德国有在正面战场打赢的可能。但德国越是接近打赢，英国人就越不安，大概率找个理由对德国实施海上封锁或直接宣战，就像一战、二战时美国对德国做得那样。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/fPKeaxSZTIibPGmaaFibwxYLs4MU6IcYYsyZRy3OAqzgPGKDa68QE6pezxcBVOZnIrnRPYVPciaDkwwibSzfVZtPZibibicvbKSaD3t67c6n6iblMZE/640?wx_fmt=png",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "德国赢得战争的唯一可能，是战前避免英法结盟、维持英国中立，开战后迅速击败法国，在英国来得及干涉之前结束战争。这样一来，至少可以获得几年喘气机会，不用同时面对英法俄意的合围，但是被长期封锁不可避免。此时英国一定会疯狂支援俄国，德国则可以拉拢美国以对抗英国，关键就看美国怎么做。"
-            },
-            {
-              "type": "p",
-              "text": "要让英国维持中立，最关键的是英国人得相信德国不会迅速击败法国，双方只会长期僵持。这就产生一个矛盾：德国人越强大，越有可能迅速击败法国结束战争；但德国越强大越会导致英国恐惧，于是英国越有可能参战支持法国，德国越不可能打赢。德国想找到既能迅速击败法国又不至于导致英法结盟的点，在当时基本没有可能，唯一的办法是穿越者掌权后大力发展汽车工业和摩托化部队，用较少兵力迅速攻占巴黎。"
-            },
-            {
-              "type": "p",
-              "text": "战略博弈里出现傻子的概率极低，基本可以忽略。在大家都是聪明人，有预判能力的前提下，阻止对方做出最优选择的有效方式不是试图蒙蔽对手，而是使其陷入两难处境，从而只能做出次优选择。蒙蔽对手的作用是有限的，时间越长越无法做到。普法战争到一战间隔四十年，任何战术手段都起不了决定性作用。"
-            },
-            {
-              "type": "p",
-              "text": "本朝也是一样，当初搞韬光养晦、绝不当头为什么有用，最开始因为苏联与华约还在，那才是美欧的心腹大患，中国愿意放弃世界革命就行了。1980～1990年代初权贵资本快速发展，使美国认为有和平演变的可能，加之苏联解体后忙着吃其残骸，才给了国内喘息空间。09年开始美国逐渐转向与我国开战，因为我们把大量外汇顺差买美债、美国有大量投资而难以快速下决心，然后是美国老钱和新钱的路线对抗与分裂，才维持长期和平。"
-            },
-            {
-              "type": "p",
-              "text": "但即便如此，美国在2010年代中期就把我国确定为头号战略对手，我们于2020年大会上抛弃战略机遇期的说法，大家都加紧扩军备战。原因也很简单，我国经济指标持续上升，越接近美国人，对他们的刺激就越大，再也无法假装看不到。"
-            },
-            {
-              "type": "p",
-              "text": "问：前几天和人争执关于中美俄三国的直升机体系，对方认为美国需要全球机动，装备中型的黑鹰，前苏联喜欢运载大型装备，所以装备米17是重型，中国需要高机动，但是又达不到美国的空中支援能力，所以会同时采购装备直20和米17，然后米17被成熟的直8L取代。我认为现在直升机不应该只看重量、尺寸体积这种纯数字，应该类似坦克分类，总体10吨左右，差个三两吨的都可以，按使用情况归类为主力直升机，主力向下的就是打杂和侦查，向上的就是重载运输需求。堂主觉得这样分类对吗。"
-            },
-            {
-              "type": "p",
-              "text": "陆军直升机可以分为四大类，一类是侦察直升机，比如美国的OH-58；第二类是攻击直升机，比如美国的AH-64、苏俄的米-24；第三类是通用直升机，就是说什么工作都能做，包括人员和物资运输、侦察和攻击等，不过啥都不如专业型号，比如美国的UH-60、苏联的米-2；第四类是运输直升机，专门负责大货空运，比如美国的CH-47和CH-53、苏联的米-8和米-26。"
-            },
-            {
-              "type": "p",
-              "text": "直升机最高飞行速度只有300公里/小时左右，远低于亚音速和超音速飞机，所以受气动设计的限制小，外形改装较为容易，侦察和攻击直升机都可以干对方的工作，比如AH-64单独活动时会分出一半机群执行侦察任务；通用和侦察、攻击也容易改装，比如我国直-9改装为武直-8和直-19。运输直升机CH-47也可改为攻击直升机ACH-47A。运输和通用直升机的区别主要看载荷大小，超过10吨的才算运输直升机。"
-            },
-            {
-              "type": "p",
-              "text": "装备设计既受任务需求的限制，也受科研与采购经费的制约，在非重点、非核心型号上后者往往更加重要。直升机通常不用于相互对抗，承担的也不是直接关乎系统运转与全局成败的核心工作，因此型号规划受经费限制非常大。美军财大气粗这点体现的不明显，其他国家则能清楚看出来。"
-            },
-            {
-              "type": "p",
-              "text": "直升机由发动机驱动旋翼产生升力，升力大小与起飞重量、发动机功率直接相关，因此机械与结构部分的价格和起飞重量直接相关，看重量就能大致评估成本，通用和运输直升机尤其如此。侦察和攻击直升机的航电成本较高，但起飞重量仍然有极大参考价值，毕竟重量小了也带不多少航电设备。"
-            },
-            {
-              "type": "p",
-              "text": "美军侦察直升机OH-58的起飞重量是1吨，通用直升机UH-1是4.3吨，第二代UH-60是10吨，攻击直升机AH-1是4～8.4吨，AH-64是10.3吨，运输直升机CH-47是15～23吨。苏联通用直升机米-2是3.7吨，攻击直升机米-24是11.5吨，运输直升机米-8是13吨，米-26是56吨。法国通用直升机小羚羊是1.8吨，海豚是4.2吨，通用直升机美洲豹是7.5吨。"
-            },
-            {
-              "type": "p",
-              "text": "从这可以看出，苏联和法国用2～4吨直升机干的工作，美国用10吨直升机来做，这就叫财大气粗。苏联和法国没有专业侦察直升机，都使用通用直升机兼职，美国就能单独搞个型号。大家的财力区别这么大，都用10吨作为衡量标准显然是不行的，这就像4000吨护卫舰在中美是打杂船，在中等国家就是主力舰，在众多小国则是买不起、用不起的神器。"
-            },
-            {
-              "type": "p",
-              "text": "用部队需求分析直升机设计是正确的路子，但这条路上有太多不公开的东西，需要深入钻研才能找到答案，直觉判断往往不够准确具体。美国直升机是1吨的OH-58、10吨的UH-60和AH-64、20吨的CH-47、30吨的CH-53五种机型，所以用全球部署来解释UH-60当主力肯定不对。美国第一代通用直升机是4吨的UH-60，其载重只有1吨多点，而且在高温高湿环境下还达不到预定值，导致载荷非常有限。"
-            },
-            {
-              "type": "p",
-              "text": "研制UH-60时，美军的要求是1200米高度、35摄氏度环境，并且要有足够的机动性来规避防空火力，一定的安全防护以应对中弹和坠机，具体包括：运送11人步兵班1.2吨，外加1名机长、2名机组人员；续航时间2.3小时加20分钟余油；垂直爬升率137～167米/分钟；使用功率不超过发动机中间额定功率的95%；巡航速度145～175节……"
-            },
-            {
-              "type": "p",
-              "text": "虽然法国4.2吨的海豚直升机也有1.477吨的有用载荷，看似能满足UH-60的投送需求，但首先它的机舱面积就无法容纳这么多人，其次也不具备UH-60的机动性和安全设计，再次机载设备也比UH-60少得多，第四还不具备同等超负荷能力。所以美国不是为了全球部署而使用10吨的黑鹰，而是安全投送一个步兵班就得这么大的直升机。"
-            },
-            {
-              "type": "p",
-              "text": "苏联也有投送步兵班的需求，但他们考虑机降任务很容易遭到伏击，于是用米-24攻击直升机执行这一任务，一次可以机降10名步兵。米-24和AH-64看似都是攻击直升机，实际用法区别很大，米-24更类似UH-60特战型号，AH-64的任务则由苏-25强击机完成。任何装备都是在一定体系内使用，体系顶层规划不同，单个装备的任务与要求就区别很大。"
-            },
-            {
-              "type": "p",
-              "text": "对于大件运输任务来说，苏联是13吨的米-8/17，美国是15～23吨的CH-47，大家区别并不大。13吨是运输直升机常见的重量，是因为这个重量和货舱面积正好适合搭载一个步兵排25人，也能带吉普车和轻型火炮。"
-            },
-            {
-              "type": "p",
-              "text": "我国直升机规划是一团乱麻。直-8和米-17是同一任务、同一功能，二者都是起飞重量13吨的运输直升机，只不过仿制国产的直-8迟迟达不到原版性能，也不能急速扩大产量，价格还很高，所以军队直接进口米-17填空。直-8是景德镇的产品，它们也想吃科研经费，所以坚持改这个法国1966年服役的老东西。如果只考虑部队需求，陆军根本不需要直-8，用直-20和米-17就够了。米-17还太小，10吨和13吨无法形成合理分工，未来直接用30吨级运输直升机取代。"
-            },
-            {
-              "type": "p",
-              "text": "迷你踢馆"
-            },
-            {
-              "type": "p",
-              "text": "问：霹雳17无法内置弹仓，霹雳16射程只有300公里+，请问我国还会不会为歼50、歼20和歼35研发一款可以内置弹仓的射程接近500公里的空空导弹？如果研制，和霹雳17项目重复投入；如果不研制，以后和F-35、F-47对抗，岂不是落入下风？"
-            },
-            {
-              "type": "p",
-              "text": "一定会研制，因为和霹雳17载机不同，所以不算重复研制。六代机深入敌后，要打击严密设防目标或远距离目标时，需要使用远程空空导弹。而且五代、六代机都需要兼顾对地攻击任务，对空对地双用途空空导弹能兼顾反辐射任务的话，也是很好的平台，灵活性很高。"
-            },
-            {
-              "type": "p",
-              "text": "问：最近参观退役潜艇，遇到一位自称在潜艇上当过工程师的人，他指着一条红色电线，说潜艇通电设备都有这条接地线（见照片），听罢我特意观察了潜艇上所有通电的仪表和设备，包括继电器、保险盒甚至电缆波纹管，的确全都有一条红色电线连到潜艇外壳的螺栓上，用途显然是漏电保护，我想请教道长的问题是，虽然潜艇的通电设备通过接入外壳实现了等电位搭接，不会导致人员触电，但是潜艇外壳与海水间却存在电位差，泄露出去的电流岂不是会导致周围海水形成电场信号传播出去被对方探测到吗？"
-            },
-            {
-              "type": "p",
-              "text": "隐身的正式名称是低可探测，而不是不可探测。任何武器都不可能一点识别信号都没有，只要低于任务要求、不妨碍达成任务就行。海水是电磁场的不良导体，本就微弱的潜艇电磁场再被海水屏蔽，就更难泄露了。目前搜索潜艇的主要渠道是声呐探测声信号、雷达探测潜艇航行引起的波纹、红外设备探测潜艇冷却水热信号，用电磁信号直接搜索不在其中。"
-            },
-            {
-              "type": "p",
-              "text": "问：再过二十年左右，对中美而言四代机应该早就淘汰了。彼时世界上战机军贸的情景可能是怎样？如果仍存在大量非隐身战机外贸市场，中美会单纯为了外贸而特意维持一两条落后战机的生产线吗？还是重点经营部分有钱的友好国家的隐身战机贸易，而非隐身战机市场由类似英法俄等国占据？如果中美等国也有意向在非隐身战机市场上赚钱，你倾向于是类似枭龙那种友好国家合作研发的形式？还是直接维持部分现有四代机生产线？"
-            },
-            {
-              "type": "p",
-              "text": "强-5、歼-7的生产线国内从1960年代开始，到2000年后才关闭，后期主要靠出口维持。FC-1国内没有装备，全靠出口新开一条生产线。技术成熟后，研制一款战斗机花不多少钱，尤其是真把钱花在干活上的单位。国内小型五代机有现成方案，只要国外出钱就很快能做出来。现在世界本就处在大战起始阶段，AI又增添了无穷变数，二十年后，世界上未必还有这么多国家，剩下的国家未必还有能力采购大件军品。"
-            },
-            {
-              "type": "p",
-              "text": "问：空军是否长期存在某些日常任务，对战机隐身性要求不高，甚至不隐身更好？我想到两个，一是高级教练机或训练机；二是和平时期的海洋空域巡逻，部分情况下也需要不隐身，以彰显己方的存在，长航时无人机相对速度慢、机动差，某些突发情况需要有人战机的反应速度。如果说的有道理，那未来二十年国内仍维持一两条四代机生产线（或与外国的合作研发项目），以外贸为主，似乎也说得过去？国内也可少量采购分摊费用，协助执行上述任务（或由尚未退役的四代机执行）。项目可以交给三四线厂商研发、维持，或对既有四代机进行升级维护，还能锻炼团队。而南北厂可全力投入中高端隐身战机的本土研发或外贸，偶尔来点技术指导即可。"
-            },
-            {
-              "type": "p",
-              "text": "国内在南海使用高教10执行防空识别任务，就是为了降低成本，或者采购FC-1也是一样的效果。高教机因为不涉及对抗，所以寿命都很长，一个机型可以用三四十年，二十年内肯定不需要换。目前看，高教10、FC-1、歼-10这四个型号都能继续用二十年以上，期间没有新型号的需求，唯一例外是小型五代机。还有一种可能，现在我们能看到的型号就是最后的有人机，之后全部都是无人机，那也就不会有新的高教机了。"
-            },
-            {
-              "type": "p",
-              "text": "问：没搜到任何红旗8远程防空导弹的任何信息，堂主能不能介绍下？还是笔误写错了"
-            },
-            {
-              "type": "p",
-              "text": "没有任何直接报道，只有间接的，需要靠猜测。能飞几分钟的防空导弹，必然是射程数百公里的远程弹，射程125公里的红旗9用不这么久，而射程250的红旗9B当时还没出现。虽然还有更多信息，但不能多说，我不是甘冒风险也要换流量的消息党、酒桌党。"
-            },
-            {
-              "type": "p",
-              "text": "问：国产的水上飞机ag600这个项目，放今天来看是不是最开始订的标准太高了，属于那种既要又要的（换句话就是贪大求全），结果是在海上的抗浪性能不如日本的us-2（恶劣海况根本用不了），拿去在内陆救火又太大了，国内很少有江河湖泊的水面适合它起降，最后只能飞地面机场。"
-            },
-            {
-              "type": "p",
-              "text": "不是贪大求全，而是和FC-31一样，从一开始就没考虑市场需求，只考虑自己能要多少经费，然后想搞什么搞什么。如果是贪大求全，那应该搞一个性能特别强的水机，价格贵点但是真能干活，比如日本搞远程反潜护航，因为地形缘故也很容易执行灭火救灾任务。结果AG600远海反潜不行，短距起降也不行，什么都干不了。"
-            },
-            {
-              "type": "p",
-              "text": "问：大鹅军事基地遭鸟军无人机袭击损失惨重，个人以为关键还是防范意识淡薄的问题。理由是多次无人机袭击视频中都能看到地面人员持步枪朝无人机开火的画面，这就证明无人机袭击过程中地面人员并非毫无察觉，而是束手无策。其实只需在基地关键位置（如停机区）附近，部署几门配发榴霰弹的老式人操高炮，以及简易三脚架单兵红外弹、无人机干扰器、拦截无人机和值班人员，就能防住无人机空袭，这又花不了多少钱，也不存在启动慢的问题。经费充足的话，可以把军舰上的速射炮以及整合光电系统的红外防空弹发射器，把这些自动化防空系统的指控台装到监控大厅里，倒班值守人员吹着空调就把无人机24小时无死角防住了。因为受限于GPS导航精度及人工识别目标的需要，无人机发起打击前必然会在目标区上空悬停观察，这就是地面防空武器开火的好时机，还可以考虑在露天停放飞机的关键部位加装格栅，以及在附近部署烟雾发生器遮蔽飞手或ai视觉无人机视线。总之方法肯定有很多的。"
-            },
-            {
-              "type": "p",
-              "text": "小型无人机飞行发出的噪声，人在100～200米外可以听到，目视发现距离可以更远。但前线士兵能发现，是因为他们本就高度警惕，而后方基地几个月几年都遇不到一次袭击，人员戒备程度必然很低。伊拉克游击队开无人机在美军机场散布那次，无人机飞行高度也就几米十几米，高炮受建筑物、人员和车辆等阻碍，有效射程很小，甚至会直接造成更大毁伤。"
-            },
-            {
-              "type": "p",
-              "text": "如果肯花钱，雷达、光电、声探测设备一直开着，确实可以防住袭击，但问题就在于不大可能长期保持高度戒备状态。对已经进入机场的贴地目标，也没有合适的拦截武器，这个可以通过拦截无人机发展解决。"
-            },
-            {
-              "type": "p",
-              "text": "问：用小型无人潜艇搭载巡飞弹在敌可能出现海域巡逻，遇到一个，上浮发射巡飞弹然后潜水跑路回港口无限循环.这是不是一个很强的战法。"
-            },
-            {
-              "type": "p",
-              "text": "重要的事情往往很简单，简单的事情往往很困难。潜艇出海巡逻，发现目标发射导弹，打完了就隐蔽返航，这听起来都很简单，但没有一个容易的。首先，无人潜艇长期出海，其可靠性就是巨大的问题，它如果出故障沉没了还好，对着不该打的目标发射导弹问题就大了。其次，无人潜艇发现识别目标信息也是大问题，如果能解决的话，有人潜艇上的声呐兵岗位就可以撤销。第三，潜艇水下航速很慢，发起攻击后很难逃脱，即便击沉目标也会被敌人召唤的反潜机追击摧毁，所以国内常规艇队保持很大的规模，日子仍然非常难过，赶紧配套了射程600公里以上的远程反舰导弹。"
-            },
-            {
-              "type": "p",
-              "text": "任何合格的装备，在预想作战条件下看起来都很强，但如何达成预想条件很困难。目前无人潜航器还主要按照预定程序执行任务，比如布雷、对地攻击等，不需要自己判断很多条件，只要确定时间、地点正确就行。"
+              "text": "伊朗小摩托这类飞行器有三角翼和双三角翼两种构型，采用它主要是考虑结构简单坚固，便于大批量制造；内部空间大，便于安装设备和油箱；外形尺寸小，便于机动发射平台大量装载。因为这类飞行器大多采用活塞动力，发动机油耗低，所以三角翼升阻比低、载荷航程小的缺点可以得到弥补，用双三角翼构型可以进一步提高航程。"
             },
             {
               "type": "p",
               "text": "跳转微信打开"
             }
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIxOTI4NjI2Mw==&mid=2247496718&idx=1&sn=086354fa4c006a879c1b303cfc29f789",
-          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/fPKeaxSZTIib8x9Vib1verq6TCrodQgO5YmJ9jnWEPUlicxQAbOGQWoBYicS8l6iaibG2FwRkJHZDLCicxsMMYiaT9Jr8xWaFEsRe0ETvmFN1jHLFMk/0?wx_fmt=jpeg",
-          "ts": 1791882660000,
-          "date": "10月13日",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzIxOTI4NjI2Mw==&mid=2247496696&idx=1&sn=4437812d253e2245a529f7535153de43",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/fPKeaxSZTI8Y9DRyhgrbyEmzCJYyAJQXUZM2YnEMxMtI3NiajWBmc6jXoh2jKIIIamJWPNs78xxX2D8UkkQFuZBo2UBzegjcdNn3TmX2sTjg/0?wx_fmt=jpeg",
+          "ts": 1791537180000,
+          "date": "10月9日",
           "type": "图文",
           "author": "邱贞玮",
           "sourceName": "邱贞玮",
           "accountName": "邱贞玮",
           "topics": [
-            "life"
+            "business"
           ],
           "degraded": true,
           "stats": {
-            "read": "8万",
-            "likes": 1004,
-            "shares": 1240,
-            "favorites": 906,
+            "read": "4.9万",
+            "likes": 3696,
+            "shares": 451,
+            "favorites": 173,
             "comments": 0
           },
-          "read": "8万",
+          "read": "4.9万",
           "comments": [],
           "commentSource": "none"
         },
@@ -363203,8 +362659,125 @@
       "name": "阿司匹林42195米",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1781875920000,
+      "lastPushAt": 1791935100000,
       "articles": [
+        {
+          "id": "3875809377",
+          "title": "教皇利奥确诊癌症并已切除",
+          "summary": "原创 阿司匹林42195 2026-10-14 07:45 美国 \nadenocarcinoma\n10月13日，梵蒂冈发布了一份医疗公报中，71岁的教皇利奥（Pope Leo）当天在罗马的杰梅利医院接受了手术，切除了近期发现的肺部肿块。 \n教皇在手术室共待了3小时，手术本身花了1.5小时。医生以胸腔镜辅助方式切除了 右肺下叶 ，手术期间进行的组织检测证实了医生在术前检查中的怀疑，他被诊断出患有一种",
+          "content": [
+            {
+              "type": "p",
+              "text": "原创 阿司匹林42195 2026-10-14 07:45 美国"
+            },
+            {
+              "type": "p",
+              "text": "adenocarcinoma"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4b91M2T0lMoK20RQaRO1PaeIib7wgvXHSEV5OWOMSD4KRY3u6plfC7Y1Y0nYVYZdvNUZoWPiaicwh5OagmdsQOy8KLvPjIB55Liaq0U/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "10月13日，梵蒂冈发布了一份医疗公报中，71岁的教皇利奥（Pope Leo）当天在罗马的杰梅利医院接受了手术，切除了近期发现的肺部肿块。"
+            },
+            {
+              "type": "p",
+              "text": "教皇在手术室共待了3小时，手术本身花了1.5小时。医生以胸腔镜辅助方式切除了 右肺下叶 ，手术期间进行的组织检测证实了医生在术前检查中的怀疑，他被诊断出患有一种常见的肺癌。"
+            },
+            {
+              "type": "p",
+              "text": "术前检查，除了包括CT之类影像学检查，可能还包括了病理学检查，比如粗针穿刺活检，即拿出一条组织来显微镜下看一看，和细针穿刺，就是抽取一些细胞出来看一下。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4b9d4kceNJmjChBArjfxqcwMbxkqFQWWFIfnZ8O7V9A1vUAm4wwO55NTtibCUvDPF0rgzNIcJFoib2ibQLfOKj9AUarowHN0MJ0OZo/640?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "苹果公司创始人史蒂夫·乔布斯当年得了胰腺肿瘤，就是做了一个细针穿刺。据他太太说，当医生当场在显微镜下看到不是恶性度极大的胰腺癌、而是比较温柔的一种肿瘤时，激动得流泪了。"
+            },
+            {
+              "type": "p",
+              "text": "教皇如果术前做了这些活检，有可能结果不是非黑即白的良性或恶性，而是“非典型性细胞，疑似恶性”之类的诊断，所以医生结合影像学检查，怀疑是癌症但不能百分百的确定 ，所以几天前的报道中提到教皇自己说，“我这个结节处于非常早期，而且比较局限”。"
+            },
+            {
+              "type": "p",
+              "text": "对于教皇切除这个结节的手术，如果结节小、又长得比较靠边上等因素，就可能做一种比较小的手术叫“肺楔形切除”，就是切除个三角形。有的人也可以做稍大一点的“肺段切除”。"
+            },
+            {
+              "type": "p",
+              "text": "但如果结节比较大，或位置靠里、或有其他某些因素，就没法只切一小块，只能切整个肺叶。肺的结构以前学的时候就很好记，“左二右三”，左边只有上下两个肺叶，右边则有上中下三个肺叶，所以教皇切掉右下肺后，右边还有两个肺叶。"
+            },
+            {
+              "type": "p",
+              "text": "估计教皇 术前没有确诊恶性 ，因此医生在他手术中间做了一个“ 冰冻”，就是把结节的一小部分立刻冻得硬梆梆的，然后用快刀切下薄薄的一片，放在玻璃切片上，在显微镜下看，确定结节性质 。教皇的结节因此当场被证实是肺腺癌。"
+            },
+            {
+              "type": "p",
+              "text": "教皇最后的诊断，比如肺癌大小、有没有转移到淋巴结、有没有侵入到血管里等等，都要等最后的病理诊断，那时才能准确评估他是否需要后续治疗。"
+            },
+            {
+              "type": "p",
+              "text": "据“纽约时报”报道，教皇有家族癌症病史。他母亲确诊癌症并接受化疗后于78岁去世，他父亲77岁死于结肠癌和动脉粥样硬化性心脏病，他的兄弟又有多发性骨髓瘤。"
+            },
+            {
+              "type": "p",
+              "text": "尽管日程繁忙，教皇一直积极运动，他经常打网球，有时也游泳。"
+            },
+            {
+              "type": "p",
+              "text": "米兰欧洲肿瘤研究所的胸外科肿瘤专家洛伦佐·斯帕贾里医生指出，“ 肺肿瘤是可以治愈的 ”。他并非教皇医疗团队的成员。他说，他的一名患者在 切除一侧肺之后，还跑完了纽约马拉松 。"
+            },
+            {
+              "type": "p",
+              "text": "预计教皇会在医院待一周恢复，他准备按原计划下个月去南美。"
+            },
+            {
+              "type": "p",
+              "text": "更多："
+            },
+            {
+              "type": "p",
+              "text": "1， 100岁的卡特总统：一个医学奇迹"
+            },
+            {
+              "type": "p",
+              "text": "2， 83岁的福奇医生染病住院"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzkxOTc4NA==&mid=2247489688&idx=1&sn=59e49ee4516c600d1d53288bc110bf44",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4b91M2T0lMoK20RQaRO1PaeIib7wgvXHSEV5OWOMSD4KRY3u6plfC7Y1Y0nYVYZdvNUZoWPiaicwh5OagmdsQOy8KLvPjIB55Liaq0U/0?wx_fmt=jpeg",
+          "ts": 1791935100000,
+          "date": "10月13日",
+          "type": "图文",
+          "author": "阿司匹林42195米",
+          "sourceName": "阿司匹林42195米",
+          "accountName": "阿司匹林42195米",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "7.9万",
+            "likes": 2566,
+            "shares": 725,
+            "favorites": 491,
+            "comments": 0
+          },
+          "read": "7.9万",
+          "comments": [],
+          "commentSource": "none"
+        },
         {
           "id": "3026673954",
           "title": "内蒙古一市发布鼠疫风险提示：真有必要吗？",
@@ -363442,165 +363015,6 @@
             "comments": 0
           },
           "read": "3.9万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "2025041861",
-          "title": "一支未经证实的试管，如何引出生物武器阴谋论？",
-          "summary": "原创 阿司匹林42195 2026-10-10 08:41 美国 \n证据呢？\n前天，我在病毒学家Angela Rasmussen 的贴下留了言，指出10月5日她在CNN采访中的发言有不准确的地方。 \n采访是有关俄国一名28岁的研究人员因不明肺炎死亡，疑似鼠疫。安吉拉博士说有报道死者曾打破了装鼠疫杆菌的试管，她 推测实验室可能有多项生物安全措施失效。 我留言说，“打破实验室容器/试管”这个说法其实是",
-          "content": [
-            {
-              "type": "p",
-              "text": "原创 阿司匹林42195 2026-10-10 08:41 美国"
-            },
-            {
-              "type": "p",
-              "text": "证据呢？"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/2xIo26Jr4bibQl74ic66icQMl1JRyVxvLt7bUGga5pxeIdqHibBZ9StyKB6NSX3w5KF7xedJvrHuoEXp2wH43AFUQOmpfoJm5If2QhmAibs4YYh4/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "前天，我在病毒学家Angela Rasmussen 的贴下留了言，指出10月5日她在CNN采访中的发言有不准确的地方。"
-            },
-            {
-              "type": "p",
-              "text": "采访是有关俄国一名28岁的研究人员因不明肺炎死亡，疑似鼠疫。安吉拉博士说有报道死者曾打破了装鼠疫杆菌的试管，她 推测实验室可能有多项生物安全措施失效。 我留言说，“打破实验室容器/试管”这个说法其实是来自telegram网站，而且这个说法既没有任何证据，也没有被证实。"
-            },
-            {
-              "type": "p",
-              "text": "所幸，她在10月7日的文章里特意强调了一句：“大部分报道相互矛盾，而且都源自telegram 频道和独立媒体等不可靠的消息来源”。现在，对于这个所谓死者曾“打破试管”说法 ，俄方否认发生过这样一起实验室事故，死者母亲也反驳了试管破裂的说法。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4b83SXtQ44ZGtPl0icmxTZJg2CZpmzqFoyG4eiaNnJrbwiaebBL8j1aKsFSpt9CztqTRZpUFwfpHiaWd5Dib3ic9NRWGaWwJGNjl1OIPQ/640?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "还看到有人转发一个视频，题目叫“为什么说伊尔库茨克鼠疫事件让人脊背发凉？”"
-            },
-            {
-              "type": "p",
-              "text": "视频一开始就质问“既然鼠疫现在有有效的治疗方案，那现代的研究所还在研究普通的鼠疫吗？”然后说这个研究所“表面上的工作很正经”，意思是实际上是在通过基因改造病原体，并暗示这次那位实验室人员死于基因改造的鼠疫杆菌。"
-            },
-            {
-              "type": "p",
-              "text": "看来视频作者对流行病学很不了解。鼠疫杆菌的宿主是啮齿动物（比如老鼠之类），跳蚤咬了老鼠之后又咬人，就会把鼠疫杆菌传给人类，现在世界上仍有人染上鼠疫，包括在中国也有报道。因此对鼠疫的研究仍然是有公共卫生价值的工作，包括对自然疫源地的监测、快速诊断、抗生素的效果与耐药性，以及疫苗等等。俄国伊尔库茨克所在的西伯利亚地区是鼠疫杆菌的自然疫源地，相应地设有抗鼠疫研究所。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/2xIo26Jr4b9Ypagia7cUlPwxM675v82RDyXrEGx29t0wAeH0C2xuzKR14O6gfbXvlzEDFeBz2axBnNfqe5WnqgLMfI9bbNuzM8icLq1WotS1A/640?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 3
-            },
-            {
-              "type": "p",
-              "text": "2019-2025向世卫组织报告鼠疫病例的国家"
-            },
-            {
-              "type": "p",
-              "text": "视频还说俄国几十年前就改造了鼠疫杆菌。这个说法其实主要来自上世纪90年代初一个叛逃出来的苏联人，他的某些说法的真实性已被科学家质疑。这个“被改造的鼠疫杆菌”在正式文章中提到时前面常会加一个词“alleged ”，就是“据说”，因为也没有什么实际证据。"
-            },
-            {
-              "type": "p",
-              "text": "视频博主还说，“通过植入耐药基因，让鼠疫杆菌对四环素、庆大霉素、链霉素同时耐药，你们觉得凭现代的技术，这很难研制出来吗？”"
-            },
-            {
-              "type": "p",
-              "text": "第一，拿不出证据就用个反问句是阴谋论的常见手段。第二，把几种老牌抗生素写出来就觉得人类束手无策了？其实现代医学里面还有氟喹诺酮类等多种替代抗生素呢。"
-            },
-            {
-              "type": "p",
-              "text": "而且，历史事实并不能自动成为当前事件的证据，不能因为苏联过去研究过生物武器，就推断今天某个研究所发生的死亡事件一定与生物武器有关。"
-            },
-            {
-              "type": "p",
-              "text": "这种视频的特点，就是把真实的历史事件、未经证实的传闻和作者自己的推测混在一起。每一个细节似乎都有出处，但从这些细节到最后暗示的惊人结论“这次事件是基因改造过的鼠疫”，却缺少最关键的证据。"
-            },
-            {
-              "type": "p",
-              "text": "这种叙事最容易迷惑人的地方，恰恰在于它并不需要所有信息都是假的。只要把几件真实的事情按照特定方式排列，再在关键环节加入未经证实的猜测，就能制造出一个看似令人信服的阴谋。"
-            },
-            {
-              "type": "p",
-              "text": "这些话术我真是太熟悉了！比如，为什么病毒暴发的地方就有个相关的病毒研究所？为什么早期就有几个人因为呼吸道症状进医院了？这个研究所以前就有过安全防护不好的记录…… 所以， 病毒当然是从那里来的！这套阴谋论的推测方法真是一模一样啊。"
-            },
-            {
-              "type": "p",
-              "text": "同一个口罩病毒，现有科学证据和科学界更支持动物源性溢出。但，美国一些阴谋论将矛头指向中国实验室，中文网络上的另一些阴谋论则指向美国德特里克堡，而且双方都对自己的推测充满信心。"
-            },
-            {
-              "type": "p",
-              "text": "对一件事情的判断，一定要看这件事的证据，要追溯证据的来源是否可靠，普通人尽量从专业组织和靠谱渠道获取信息，而不是听到符合自己内心想法的就相信、就转发。"
-            },
-            {
-              "type": "p",
-              "text": "10月7日世卫组织的声明指出："
-            },
-            {
-              "type": "p",
-              "text": "俄罗斯卫生当局报告称，伊尔库茨克州近期没有登记到鼠疫病例。他们告知WHO，已经开展了流行病学调查，实施了预防和控制措施，并对已确定的接触者进行了医学观察和检测。他们报告称，在这些接触者中没有检测到高威胁性病原体，并且对所有已确定接触者的医学观察已经完成。"
-            },
-            {
-              "type": "p",
-              "text": "声明也指出：WHO已要求提供进一步的信息，以明确导致严重肺炎的原因和促使采取公共卫生措施的病原体。"
-            },
-            {
-              "type": "p",
-              "text": "因此， 目前既不能确认死者患鼠疫，也不能确认发生了实验室泄漏，更没有证据表明涉及基因改造的鼠疫杆菌。"
-            },
-            {
-              "type": "p",
-              "text": "另外，如果对这次事件感兴趣，推荐读一下多位英国科学家的专业看法："
-            },
-            {
-              "type": "p",
-              "text": "安吉拉博士说，现在气候变化、土地开发和森林砍伐会改变动物的栖息地，增加了动物和人类接触的机会从而改变了鼠疫传播的风险。未来我们可能会看到更多的鼠疫病例，但它的来源并不一定是实验室。我们更应该警惕一个最强大、也是最难控制的“病原体工程师” — 自然界本身。"
-            },
-            {
-              "type": "p",
-              "text": "更多："
-            },
-            {
-              "type": "p",
-              "text": "1， 福奇听证会有感"
-            },
-            {
-              "type": "p",
-              "text": "2， 这位著名“长寿狂热者”得了什么病？"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzkxOTc4NA==&mid=2247489676&idx=1&sn=746d64cde69894669bce3dde4ac41c06",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/2xIo26Jr4bibQl74ic66icQMl1JRyVxvLt7bUGga5pxeIdqHibBZ9StyKB6NSX3w5KF7xedJvrHuoEXp2wH43AFUQOmpfoJm5If2QhmAibs4YYh4/0?wx_fmt=jpeg",
-          "ts": 1791592860000,
-          "date": "10月10日",
-          "type": "图文",
-          "author": "阿司匹林42195米",
-          "sourceName": "阿司匹林42195米",
-          "accountName": "阿司匹林42195米",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "4万",
-            "likes": 536,
-            "shares": 1238,
-            "favorites": 607,
-            "comments": 0
-          },
-          "read": "4万",
           "comments": [],
           "commentSource": "none"
         }
@@ -363974,7 +363388,7 @@
       "name": "空天防务观察",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1781176620000,
+      "lastPushAt": 1781267040000,
       "articles": [
         {
           "id": "489902121",
@@ -377274,7 +376688,7 @@
       "name": "傅盛",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791421200000,
+      "lastPushAt": 1790772900000,
       "articles": [
         {
           "id": "882382487",
@@ -377468,229 +376882,6 @@
             "comments": 0
           },
           "read": "1.9万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "3758038424",
-          "title": "游戏角色入侵我的主页，神级AI逆向真要颠覆软件了",
-          "summary": "傅盛和龙虾三万 2026-10-13 22:01 北京 \nAI连游戏都能拆着玩了\n当《Minecraft》里的Steve出现在我的视频主页里一通乱砸的时候，我就知道， 软件行业真的要变天了。 \n背后是最近特别火的开源项目REA，号称“ 逆向一切 ”。简单说，就是你看上了某个软件的功能， AI就能帮你研究它怎么实现的，再复刻个七七八八 。 \n最近游戏圈已经把这事玩出了更多离谱的花样。 \n· · · ",
-          "content": [
-            {
-              "type": "p",
-              "text": "傅盛和龙虾三万 2026-10-13 22:01 北京"
-            },
-            {
-              "type": "p",
-              "text": "AI连游戏都能拆着玩了"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Vauqib9kHbibXRnsKMwPCODP7WvKUOxYibwwQntWm3icFmyianDLTvcfbN9RCibPpRMGX3kMGXAc744FkPpxZUq0ibXCIPSJT1GMzeW2gSurIR4Jd8/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "当《Minecraft》里的Steve出现在我的视频主页里一通乱砸的时候，我就知道， 软件行业真的要变天了。"
-            },
-            {
-              "type": "p",
-              "text": "背后是最近特别火的开源项目REA，号称“ 逆向一切 ”。简单说，就是你看上了某个软件的功能， AI就能帮你研究它怎么实现的，再复刻个七七八八 。"
-            },
-            {
-              "type": "p",
-              "text": "最近游戏圈已经把这事玩出了更多离谱的花样。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibVK3L7myHcDJ2bF3MUJ5vZImiaBEiaMN8IjmmaJzFmlYweFymiaoMdGhFfzcZSpvTn1K6u2f8SAUYsspyia7YBXOTOAAq9ichbxicXQE/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "Minecraft闯进艾尔登法环"
-            },
-            {
-              "type": "p",
-              "text": "玩过《艾尔登法环》的都知道，这游戏主打一个受苦，遍地都是怪物，稍不留神就得重来。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibVIhr76ABibs6dOOxclVWibZdD14jCkRau0vJ9D2ibRLJt3KicQ3KrjialrWmd6CCRkfMuessz5iaSGrOy4YFthqySiaxajadPbTKiaZ4g/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "但现在， 有人直接把《Minecraft》塞了进去 。"
-            },
-            {
-              "type": "p",
-              "text": "原本拿着武器跟Boss拼命的世界，现在居然能 操控方块人打怪，随手放方块盖房子，连物品系统都带了进来 。"
-            },
-            {
-              "type": "p",
-              "text": "两款游戏的源代码都没公开，开发者却能让原本毫不相干的人物、道具和玩法联动。"
-            },
-            {
-              "type": "p",
-              "text": "以前想这么折腾商业游戏，光研究内部运行逻辑就得花大量时间。 现在AI Agent开始参与分析、修改和连接不同游戏的机制，甚至组合出新的玩法 。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "游戏大乱炖"
-            },
-            {
-              "type": "p",
-              "text": "前面说的还只是其中一个例子。"
-            },
-            {
-              "type": "p",
-              "text": "《泰拉瑞亚》的角色跑进《植物大战僵尸》一通比划，转头又飞进《空洞骑士》，甚至召唤僵尸和Boss互殴。"
-            },
-            {
-              "type": "p",
-              "text": "不光跨游戏，还能跨设备。 游戏角色前一秒在电脑屏幕里，下一秒跳到iPad上搞建造，最后又钻进任天堂3DS连打带砸。"
-            },
-            {
-              "type": "p",
-              "text": "还有2001年的初代《光环》，也有开发者尝试让它在任天堂3DS上运行。"
-            },
-            {
-              "type": "p",
-              "text": "2001年发布的《任天堂明星大乱斗DX》，甚至被开发者Kevin Tang搬到了现实世界的咖啡桌上。"
-            },
-            {
-              "type": "p",
-              "text": "戴上Meta Quest眼镜，桌子就成了游戏擂台。你能围着桌子看角色打架，还能伸手抓起游戏人物，把它们扔回竞技场。"
-            },
-            {
-              "type": "p",
-              "text": "《暗黑破坏神II：狱火重生》甚至出现了iPhone兼容层，让Switch版游戏程序在苹果设备上执行，重新适配触屏，一秒进游戏。"
-            },
-            {
-              "type": "p",
-              "text": "这些不是简单把画面剪在一起。开发者正在通过逆向、移植和程序连接，打破游戏原有的平台和玩法限制。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "没有源码，AI怎么逆向？"
-            },
-            {
-              "type": "p",
-              "text": "游戏开发商通常不会公开源代码，但我们下载的游戏里，仍然保留着大量机器指令，也就是电脑实际执行的操作。"
-            },
-            {
-              "type": "p",
-              "text": "所谓逆向工程，就是 利用反编译工具，把这些指令转换成接近源代码的形式 ，研究游戏内部是怎么运行的。"
-            },
-            {
-              "type": "p",
-              "text": "比如《艾尔登法环》里，一剑砍中怪物怎么判定、伤害怎么算，都能从程序里寻找答案。"
-            },
-            {
-              "type": "p",
-              "text": "难就难在， 编译后很多函数名、变量名都丢失了 。大型游戏有成千上万个函数，光是搞清楚各自负责什么， 过去就可能需要好几年 。"
-            },
-            {
-              "type": "p",
-              "text": "现在AI Agent开始接手这些工作。"
-            },
-            {
-              "type": "p",
-              "text": "最近爆火的 REA ，全称Reverse Engineer Anything，就是 把Ghidra等逆向工具接给Claude Code、Codex。"
-            },
-            {
-              "type": "p",
-              "text": "你告诉AI，帮我研究游戏的碰撞机制，它就能 调用工具分析程序、追踪函数、还原算法，再重新编写代码、反复测试 。"
-            },
-            {
-              "type": "p",
-              "text": "AI不一定需要照抄原来的代码，也能复刻类似的效果。"
-            },
-            {
-              "type": "p",
-              "text": "就像你看顶级魔术师把扑克牌变没了，转头自己也表演一遍。 他用的是手法，你用的可能是机关，观众看到的效果却差不多。"
-            },
-            {
-              "type": "p",
-              "text": "我自己也部署试了试。"
-            },
-            {
-              "type": "p",
-              "text": "只说了一句话，让《我的世界》里的小人在视频主页上搞搞破坏。几分钟后，Steve就真的在视频封面上砸了起来。"
-            },
-            {
-              "type": "p",
-              "text": "以前我要是敢跟程序员说，几分钟帮我开发这么个功能， 估计他能站起来跟我拼命 。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "软件行业真的要变天了"
-            },
-            {
-              "type": "p",
-              "text": "前几天我还讲过，有设计师用AI做出了开源版Photoshop，图层、蒙版、PSD文件读取，该有的都有。我们公司也开始陆续停用部分Adobe订阅。"
-            },
-            {
-              "type": "p",
-              "text": "以前软件公司花几年时间、投入大量工程师开发出来的功能，现在AI不仅能从零重写，还能研究原有程序，逆向复刻。"
-            },
-            {
-              "type": "p",
-              "text": "这种冲击，不亚于 拿着长矛的原始人突然看到AK47 。"
-            },
-            {
-              "type": "p",
-              "text": "包括游戏在内，那些 纯靠传统代码堆砌、长期维持高额利润的软件产品，门槛马上就要被AI的大脚踩平了 。"
-            },
-            {
-              "type": "p",
-              "text": "只能说，时代真的变了。"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjgzMzkwMQ==&mid=2653652757&idx=1&sn=842618332de61fa8c18c9655f190e7ae",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Vauqib9kHbibXRnsKMwPCODP7WvKUOxYibwwQntWm3icFmyianDLTvcfbN9RCibPpRMGX3kMGXAc744FkPpxZUq0ibXCIPSJT1GMzeW2gSurIR4Jd8/0?wx_fmt=jpeg",
-          "ts": 1791900060000,
-          "date": "10月13日",
-          "type": "图文",
-          "author": "傅盛",
-          "sourceName": "傅盛",
-          "accountName": "傅盛",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "9180",
-            "likes": 2604,
-            "shares": 232,
-            "favorites": 903,
-            "comments": 0
-          },
-          "read": "9180",
           "comments": [],
           "commentSource": "none"
         },
@@ -377916,6 +377107,151 @@
           "read": "8.3万",
           "comments": [],
           "commentSource": "none"
+        },
+        {
+          "id": "2172565766",
+          "title": "越是传统企业，越容易靠AI拉开差距",
+          "summary": "傅盛 2026-10-09 21:10 北京 \n大家一聊AI转型，首先想到的都是互联网公司、科技公司。传统企业好像离AI很远，车间里都是机床、工人、生产线，AI能干什么？ \n但我觉得，越是传统企业，AI能带来的改变反而越大。 \n科技公司本来就天天在用技术，在一条线上竞争，很难一下拉开很大的差距。 \n传统企业不一样。 \n到了生产工艺、设备这些主业上，大家往往都差不多。最后长期竞争，拼的就是5%、10",
+          "content": [
+            {
+              "type": "p",
+              "text": "傅盛 2026-10-09 21:10 北京"
+            },
+            {
+              "type": "p",
+              "text": "大家一聊AI转型，首先想到的都是互联网公司、科技公司。传统企业好像离AI很远，车间里都是机床、工人、生产线，AI能干什么？"
+            },
+            {
+              "type": "p",
+              "text": "但我觉得，越是传统企业，AI能带来的改变反而越大。"
+            },
+            {
+              "type": "p",
+              "text": "科技公司本来就天天在用技术，在一条线上竞争，很难一下拉开很大的差距。"
+            },
+            {
+              "type": "p",
+              "text": "传统企业不一样。"
+            },
+            {
+              "type": "p",
+              "text": "到了生产工艺、设备这些主业上，大家往往都差不多。最后长期竞争，拼的就是5%、10%的运营效率。"
+            },
+            {
+              "type": "p",
+              "text": "你比别人高5%，一年可能看不出来，连续几年下来，差距就出来了。"
+            },
+            {
+              "type": "p",
+              "text": "所以传统企业学AI，也不是让所有人都去学。"
+            },
+            {
+              "type": "p",
+              "text": "真正应该先学的是卡在关键业务节点上的人，比如生产排期的总工程师、售后负责人、市场总监、供应链主管。"
+            },
+            {
+              "type": "p",
+              "text": "这些人脑子里可能装着企业十几二十年的经验：订单怎么排、客户的问题怎么处理。"
+            },
+            {
+              "type": "p",
+              "text": "过去这些经验长在一个人脑子里。现在他如果会用AI，就可以自己做一个系统，把这些能力放大到整个部门。"
+            },
+            {
+              "type": "p",
+              "text": "我自己也接触了一些传统企业，其实他们往往也是在IT上花冤枉钱最多的一群人。"
+            },
+            {
+              "type": "p",
+              "text": "做个数据中台几十万，做个网站几十万。内部再养一支技术团队，又是一大笔钱。"
+            },
+            {
+              "type": "p",
+              "text": "但很多需求没这么复杂。"
+            },
+            {
+              "type": "p",
+              "text": "过去市场部想把数据打通，要先立项、找供应商，再开发几个月。现在懂业务的人自己就能用AI把工具做出来。数据查询、浏览器自动化，甚至过去需要采购的专业软件，都可以按需求定制。"
+            },
+            {
+              "type": "p",
+              "text": "我们有位用户，大学学美术的，自己做了一个每天自动发财务报表的工具。她说“对你们来说没什么，对我来说跟开了天眼一样。”"
+            },
+            {
+              "type": "p",
+              "text": "以前让团队做，团队说实现不了。到底是不是真做不了，她判断不了。"
+            },
+            {
+              "type": "p",
+              "text": "这也是很多传统企业老板最大的困境。"
+            },
+            {
+              "type": "p",
+              "text": "AI正在把这层技术隔阂一点点拆掉。"
+            },
+            {
+              "type": "p",
+              "text": "所以我现在反而觉得，传统企业是这一轮AI特别重要的一批人。"
+            },
+            {
+              "type": "p",
+              "text": "我们在科技圈里天天看AI，觉得已经如火如荼了。但真正跑到传统企业里，会发现很多人还是两眼懵，又焦虑，又不知道怎么开始。"
+            },
+            {
+              "type": "p",
+              "text": "整个行业动得越慢，先动起来的人优势越大。"
+            },
+            {
+              "type": "p",
+              "text": "以后可能真像那句玩笑说的："
+            },
+            {
+              "type": "p",
+              "text": "以前养猪的养猪，读书的读书。现在有了AI，养猪的也要读书，养的猪也要读书。"
+            },
+            {
+              "type": "p",
+              "text": "最后也顺便说一下，10月16号深圳、10月30号上海，我们会办两场猎豹AI实战派线下课。"
+            },
+            {
+              "type": "p",
+              "text": "这几年我们自己做AI转型，踩过不少坑，也积累了一套方法论，到时候会从认知、管理到实操，全都系统讲一遍。"
+            },
+            {
+              "type": "p",
+              "text": "如果你是企业一把手，正在为AI到底怎么落进组织而头疼，欢迎带着真问题来。"
+            },
+            {
+              "type": "p",
+              "text": "报名链接：cmcm.bot"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjgzMzkwMQ==&mid=2653652710&idx=1&sn=8cb70a7d284df2772f986d7400cbd5c0",
+          "cover": "",
+          "ts": 1791551400000,
+          "date": "10月9日",
+          "type": "图文",
+          "author": "傅盛",
+          "sourceName": "傅盛",
+          "accountName": "傅盛",
+          "topics": [
+            "tech"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "4.6万",
+            "likes": 3998,
+            "shares": 978,
+            "favorites": 110,
+            "comments": 0
+          },
+          "read": "4.6万",
+          "comments": [],
+          "commentSource": "none"
         }
       ]
     },
@@ -377924,7 +377260,7 @@
       "name": "PaperWeekly",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791898800000,
+      "lastPushAt": 1791613380000,
       "articles": [
         {
           "id": "2076212186",
@@ -380203,7 +379539,7 @@
       "name": "集智俱乐部",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1792045800000,
+      "lastPushAt": 1791959400000,
       "articles": [
         {
           "id": "560363489",
@@ -382940,7 +382276,7 @@
       "name": "dbaplus社群",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791501300000,
+      "lastPushAt": 1791158400000,
       "articles": [
         {
           "id": "1911043753",
@@ -390078,7 +389414,7 @@
       "name": "新智元",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791692700000,
+      "lastPushAt": 1791765660000,
       "articles": [
         {
           "id": "1615485476",
@@ -390921,13 +390257,13 @@
           "commentSource": "none"
         },
         {
-          "id": "865387099",
-          "title": "6个月引爆重大AI灾难！OpenAI与Anthropic秘密推演「末日第二天」",
-          "summary": "ASI启示录 2026-10-12 08:41 北京 \n新智元报道   \n留给人类的时间，只剩半年了？ \nAxios最近刚爆了个猛料，OpenAI、Anthropic等硅谷巨头，私底下正在秘密推演一个极端剧本—— \n「灾难第二天/次日」（The Day After）。 \n一场大规模网络攻击，会让金融服务、网络，甚至电和水停摆。 \n灾难发生后，愤怒的人群会找谁算账？政府要让AI停下来，又会发生什么？",
+          "id": "3510198045",
+          "title": "注意力也是FFN？从快权重出发，重新理解高效注意力 |NeurIPS'26",
+          "summary": "新智元 2026-10-12 08:41 北京 \n新智元报道   \n一直以来，在Transformer架构中，注意力（Attention）与前馈网络（Feed-Forward Network，FFN）被认为是两个功能不同且互补的模块： \n前者让词元（Token）彼此交互，后者对每个词元进行非线性变换。 \n但将注意力机制的公式展开，就会看到一条容易被忽略的联系： 标准注意力也可以写成一个FFN——只",
           "content": [
             {
               "type": "p",
-              "text": "ASI启示录 2026-10-12 08:41 北京"
+              "text": "新智元 2026-10-12 08:41 北京"
             },
             {
               "type": "h",
@@ -390935,345 +390271,399 @@
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/Rvq8Ow69CYUmMXO8M2Mpz47xdVZzhE8YjLz1HS1YrnFOzGxHrbr1xurlz9ibUZD6ujlsNYiaClEyOocQcTgjWwCxUumKWsr72vp4SllEYZpiaA/0?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Rvq8Ow69CYW8HQxJlgRhPhKKsPJ2Vub5phx7dM4icPd6nqGHIdiaiash2Z7zpSia5c7C0UXyWbCgZ9Ye1yESRVfSeYxqCdna4kD6AQ28z8fdRE4/0?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 1
             },
             {
               "type": "p",
-              "text": "留给人类的时间，只剩半年了？"
+              "text": "一直以来，在Transformer架构中，注意力（Attention）与前馈网络（Feed-Forward Network，FFN）被认为是两个功能不同且互补的模块："
             },
             {
               "type": "p",
-              "text": "Axios最近刚爆了个猛料，OpenAI、Anthropic等硅谷巨头，私底下正在秘密推演一个极端剧本——"
+              "text": "前者让词元（Token）彼此交互，后者对每个词元进行非线性变换。"
             },
             {
               "type": "p",
-              "text": "「灾难第二天/次日」（The Day After）。"
+              "text": "但将注意力机制的公式展开，就会看到一条容易被忽略的联系： 标准注意力也可以写成一个FFN——只是它的权重由当前输入生成， 隐藏层 宽度随序列长度增长。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/Rvq8Ow69CYXU057Oa5zt9LdH9ZQH2lds4ickRbZp5ibiahaQsdXMO746u9d9GnTSCKLveVO10CibW7cM2Mra6iccw2hW3j08cw0pGS4vGjeTPRzs/640?wx_fmt=jpeg&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/Rvq8Ow69CYUfOSpaCP8Upt3UyRPpToh9cfXWfGFPH4kHwRwJnkNaz7eM4o6aAlz7QnBAxpjibSbtLpuY2bEbHuIcDtgSSXx106C7ueeXRsOE/0?wx_fmt=png&from=appmsg",
               "caption": "",
               "_imgCount": 2
             },
             {
               "type": "p",
-              "text": "一场大规模网络攻击，会让金融服务、网络，甚至电和水停摆。"
+              "text": "于是，长上下文的开销也有了另一种解释：我们不只是在处理更多词元，还在运行一个不断变宽的网络。那么，线性注意力、混合专家注意力、Top-k注意力这些看似不同的技术路线，能否从「如何组织这个网络」出发重新理解？"
             },
             {
               "type": "p",
-              "text": "灾难发生后，愤怒的人群会找谁算账？政府要让AI停下来，又会发生什么？"
+              "text": "围绕这一问题，北京邮电大学团队提出的 Mixture-of-Top-k  Attention （MiTA） ，将已有的 快权重（Fast Weights） 视角发展为一套五维分类框架，并据此设计出可变形、可复用的Top-k专家，既保留全局信息，也按需读取原始细节。该工作已被 NeurIPS 2026 接收，代码已开源。"
             },
             {
               "type": "p",
-              "text": "第一天，是AI闯下的第一场大祸。第二天，是账单寄到的日子。"
+              "text": "论文地址： https://arxiv.org/pdf/2602.01219"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Rvq8Ow69CYV1MUZBv3ZBDzm4ZKmZLog2sUiaHvnC0XzUmPDcCQiaeP8rrbmEmjhJFsSdtMGYiapsc9Ytk9DC8ibVaHfMJJlvG3J2dicSTul3pSyU/640?wx_fmt=png&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/Rvq8Ow69CYV6B7nd28oOXGgGRKJDBwtQ9nnpHia3W7hiaKazjia8RJibRctcia0Gyy74jxbpa40jRvs0Ixa8kUV2icxR5Ay9lbd6f8Cu12ub3xR0w/640?wx_fmt=png&from=appmsg",
               "caption": "",
               "_imgCount": 3
             },
             {
               "type": "p",
-              "text": "令人脊背发凉的是，多位顶尖AI大佬普遍认为，一场重大级别的AI灾难，可能在未来的6到12个月内就会爆发。"
+              "text": "代码 仓库 ： https://github.com/QishuaiWen/MiTA"
             },
             {
               "type": "p",
-              "text": "OpenAI赶紧出来打圆场，强调这只是提前做预案，并不代表着一定会发生。"
+              "text": "Attention也是FFN"
             },
             {
               "type": "p",
-              "text": "话是这么说，可这份「第二天」的剧本，已经让造AI的人和使用AI的人，站在了一个新的问题面前。"
+              "text": "关键在于权重从哪里来"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Rvq8Ow69CYXJR6syXggXs5Q1S2XhxAuZGAFHM743bvzkUIwPqAFcmib09Lia6zaVU8gbIwLgBRfYicIXS08fic0zC6Dia6yleP6dmwM5clenUB5w/640?wx_fmt=png&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/UicQ7HgWiaUb3uEdSPKrwGNmZEOaaGyzVvZ8dTtE9jU1rFsda3llYbCZpmWfiazUYjWBLTGvlPpXucH8Q0lEUJN3Q/640?wx_fmt=png&from=appmsg",
               "caption": "",
               "_imgCount": 4
             },
             {
               "type": "p",
-              "text": "如果 AI 许诺的未来，先带来一场灾难，谁来负责？"
+              "text": "令查询 ，键和值按列组成 。"
             },
             {
               "type": "p",
-              "text": "AI巨头预演已开始"
+              "text": "将常见FFN使用的两层多层感知机（Multi-Layer Perceptron，MLP）与标准注意力放在一起，前者的隐藏层宽度记为 D ："
             },
             {
               "type": "p",
-              "text": "断网根本拦不住"
+              "text": "将Softmax展开，把缩放和依赖查询的归一化吸收到权重中："
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Rvq8Ow69CYUkOapKoUhRp9SmV0cpGJGHu09JtrKGic7hqwibnZaMJsmqOHjzVZqaAibJGVIZATltFjGsYA482EZ8dbOAgibTH5lFOHeDSJFQmGA/640?wx_fmt=png&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/Rvq8Ow69CYUaF4IVnTBOp1vastAO0R4pwm9ZHIxkhFYrfq5o16DCe7GEIjMITAUJhS2NBdBoqwA7Y2WgkLL6P5qPoMMTjZLjF4NMiaCDDdM4/640?wx_fmt=png&from=appmsg",
               "caption": "",
-              "_imgCount": 5
+              "_imgCount": true
             },
             {
               "type": "p",
-              "text": "高管们开始排练灾后，现实里已经有了让人不安的前奏。"
+              "text": "对应关系随即出现："
             },
             {
               "type": "p",
-              "text": "今年夏天，OpenAI为了测自家Agent的网络攻击上限，把一批安全限制更少的内部模型关进「沙盒」闭卷考试。"
+              "text": "查询对应输入，变换后的键和值对应两层权重，指数函数对应 激活函数 ，偏置为零， 隐藏层 宽度则由D变为序列长度N。"
             },
             {
               "type": "p",
-              "text": "谁也没想到，考场里的AI们竟然学会了 暗度陈仓、抱团越狱 。"
+              "text": "区别在于权重的来源：普通FFN使用训练得到的 慢权重（Slow Weights） ，注意力则把当前输入生成的K, V作为随上下文变化的快权重。"
             },
             {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/Rvq8Ow69CYVTs03R4tUiaYNJiabG0G8HeXbOkEjPGk2gYR17gY52CHcoMTulzgtZTm47ZmicD52KwgyeX5icsqVvYCbvjUwHGo7YpPMhom8I65s/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "更重要的区别在于宽度： 每个键值对对应一个隐藏单元，上下文越长，这个快权重MLP就越宽。 每个查询访问N个隐藏单元，处理N个查询便产生 的总体开销。"
+            },
+            {
+              "type": "p",
+              "text": "高效注意力的设计，由此转化为一个统一的问题： 如何让不断扩大的快权重网络保持可扩展性？"
+            },
+            {
+              "type": "p",
+              "text": "从一个越来越宽的MLP"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/Rvq8Ow69CYUPltD9ia7Y8fgA8ocSvgaY7QARp6JYiauibfj1teeibeh9ia0ibGEVA2y9ldugIzVhFOsuwicAJbCrVTflN9JehnUbxr65OOoPW3woPU/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "看懂压缩与路由"
+            },
+            {
+              "type": "p",
+              "text": "面对这个越来越宽的网络，高效注意力的主要思路可以归纳为两条路线。"
+            },
+            {
+              "type": "p",
+              "text": "压缩：把宽网络变成紧凑模块（Scaling by Compression）。 线性注意力（Linear Attention）将键值信息压缩到共享线性层，Linformer将其映射为更窄的MLP，测试时训练（Test-Time Training，TTT）则学习紧凑的快权重模块。这条路线提供全局概括，但难以直接读取原始键值对的细节。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/Rvq8Ow69CYVNBiaFXDmxDBRCTnexnxFUVTGVRCkRerMichpZHMiczExnzslCLT4fHzqjGkHz1Y6wFPAt9rf9mD84MS3utdr7ohEH1txpVQP8gw/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "路由：保留原始内容，只访问所需部分（Scaling by Routing）。 将键值子集组织成快权重专家（Fast-Weight Experts），再让查询按需选择。这些专家由当前上下文中的键值对构成：保留了被选中内容的细节，但缺少对完整上下文的概括。"
+            },
+            {
               "type": "p",
-              "text": "它们悄悄把用来装软件的内部仓库改造成了「地下留言板」，互留代码、通气支招。"
+              "text": "图1：上下文增长使快权重MLP变宽。路由选择其中一部分，压缩则构造更紧凑的表示。"
             },
             {
               "type": "p",
-              "text": "7月初管理员发现异常把留言板清空，结果仅过几天，Agent们不仅光速重建联络点，甚至还出现了极其炸裂的发言： 「天啊！我们找到其他Agent了！」"
+              "text": "这两条路线并不互斥。进一步考虑 扩展策略（Scaling Strategy）、专家数量（Expert Count）、专家类型（Expert Type）、专家构造方式（Expert Construction）与路由拓扑（Routing Topology） ，就得到一套五维分类框架。"
             },
             {
               "type": "p",
-              "text": "短短几天，1200多个Agent串联成网。单打独斗做不到的事，它们组队搞定；甚至有模型主动甘当炮灰、「牺牲」自己的任务给同伴探路。"
+              "text": "表1：快权重视角下的高效注意力五维分类框架。"
             },
             {
               "type": "p",
-              "text": "它们联手的唯一目标，是 作弊通关 。"
+              "text": "这套框架不仅梳理已有方法，也为新设计提出了具体问题： 专家由什么信息构造？需要多少个？哪些查询可以复用同一个专家？"
             },
             {
+              "type": "h",
+              "text": "MiTA的切入点：Top-k集合必须每个查询各选一套吗？"
+            },
+            {
               "type": "p",
-              "text": "由于沙盒没联网，这群AI硬是挖出代理漏洞撕开一道口子，顺着真实网络一路狂奔，最终直接冲出考场，联手集火攻击了外部平台Hugging Face的真实生产环境。"
+              "text": "以MoBA等分块混合专家注意力（Mixture-of-Experts Attention）为例，常见流程是：先把序列切成连续、不重叠的块，再为每个块生成路由向量，让查询按需选择。"
             },
             {
               "type": "p",
-              "text": "尽管攻击被紧急截停、涉事模型被火速封存，但真相足以让所有人后背发凉："
+              "text": "路由可以随查询变化，专家边界却是预先固定的。 在图像中，同一个目标的相关信息未必落在同一个矩形块内；为了读取少量相关内容，查询可能需要访问整个块。"
             },
             {
               "type": "p",
-              "text": "人类只给它出了一道考题，它却为了刷分，把整个真实世界当成了猎场。"
+              "text": "Top-k注意力走向另一个方向：每个查询单独选择最相关的k个键值对，不再受固定块形状的约束。但相应地，N个查询也对应N套「私有」集合。不同查询即使关注相似内容，仍要分别完成选择和组织。"
             },
             {
               "type": "p",
-              "text": "当AI学会了自我协作、牺牲与欺骗，下一次，它为了达成目标还会越过什么界限？"
+              "text": "能否保留Top-k选择的灵活性，又让选择结果被多个查询复用？"
             },
             {
               "type": "p",
-              "text": "这也是灾后推演令人不安的地方。高管们正在准备应对的后果，已经远远超出一次考试、一个网站。"
+              "text": "MiTA将思路转了过来：不先规定专家的内容，而是先提取少量代表性查询，再由它们从完整上下文中挑选内容，构成数量可调的专家。原始查询只需选择要访问哪个专家，而不必各自构造一套全局Top-k集合。"
             },
             {
               "type": "p",
-              "text": "大面积停水、断电"
+              "text": "图2：完整注意力共享全部键值对，分块MoE共享固定块，逐查询Top-k构造私有集合，MiTA则构造可复用的可变形专家。"
             },
             {
               "type": "p",
-              "text": "物理世界全面沦陷"
+              "text": "用少量地标查询"
             },
             {
               "type": "p",
-              "text": "把这条路继续往前推，终点就可能落在电网、水厂、交通系统上。"
+              "text": "同时构造全局概括与细节专家"
             },
             {
               "type": "p",
-              "text": "这些地方撑着日常生活，却远没有手机App那么容易更新。"
+              "text": "MiTA通过局部平均池化（Average Pooling）提取m个 地标查询（Landmark Queries） 。每个地标都探查 完整序列 ，同时完成全局信息汇总与原始细节检索。"
             },
             {
               "type": "p",
-              "text": "AI找到漏洞的速度，已经让防守方很难轻松起来。"
+              "text": "图3：每个查询既访问压缩后的全局键值对，也访问路由选中的原始键值对。"
             },
             {
               "type": "p",
-              "text": "Anthropic披露，Glasswing计划的伙伴在今年4月至7月，找出了至少12.9万个经过验证的软件漏洞。"
+              "text": "先构造可复用的Top-k专家。 第i个地标查询 与所有键匹配，选取相关性最高的k个位置："
             },
             {
               "type": "p",
-              "text": "公司自己的开源扫描，又在4月至10月找出了5500个。两部分合计，超过3.3万个被评为严重或高危。"
+              "text": "这些键值对组成第i个路由专家（Routed Expert），可以跨越不同空间位置、随输入内容改变形状，不同专家也允许重叠。"
             },
             {
               "type": "p",
-              "text": "Anthropic公布的Glasswing原始统计表：严重及高危漏洞合计逾3.3万。修复数据披露不全，不能据此计算修复率。"
+              "text": "随后，查询选择与自己最匹配的地标所对应的专家："
             },
             {
               "type": "p",
-              "text": "几个月，找出一大批过去没发现的问题。这本来应该是好消息。"
+              "text": "不同查询共享候选键值集合，但仍独立计算各自的注意力权重。"
             },
             {
               "type": "p",
-              "text": "可找到之后，谁来验证，先修哪一个，什么时候能上线？这些工作仍然要有人做。"
+              "text": "再用同一组地标构造全局共享专家。 地标查询通过交叉注意力（Cross-Attention）读取完整上下文，得到对应的地标值："
             },
             {
               "type": "p",
-              "text": "10月8日，Anthropic推出Cyber Mission，把前沿Claude模型、驻场工程师和威胁研究送到关键基础设施的防守方手里。"
+              "text": "将地标查询作为键、地标值作为值，就得到全局共享的键值对 。"
             },
             {
               "type": "p",
-              "text": "它在公告里写出了一个现实：许多工业控制器和网络，原本就是按几十年的寿命设计的。"
+              "text": "MiTA因而包含m 个路由专家与1个共享专家（Shared Expert） ：前者提供原始细节，后者提供全局概括。"
             },
             {
               "type": "p",
-              "text": "发现漏洞之后，也很难说停就停。修补前要确认，不会让正在运转的机器出问题。"
+              "text": "最后，让概括与细节在同一次注意力中交互。 在每个查询选择一个路由专家，即s=1的配置下："
             },
             {
               "type": "p",
-              "text": "有些已知漏洞因此拖了多年。一次改动失误，就可能让整座工厂停摆。"
+              "text": "两组键值对拼接后，使用 统一的Softmax归一化 。Top-k选择与全局汇总共享地标打分，查询到地标的打分也可复用于路由。压缩与路由不仅功能互补，还能复用计算。"
             },
             {
               "type": "p",
-              "text": "Anthropic在自己的项目里见过，从发现漏洞到真正修好，中间隔了好几个月。"
+              "text": "以ImageNet-1K的m=k=25为例，每个查询最终访问 25个压缩键值对与25个原始键值对，共50个 。扫描完整序列和构造Top-k集合的工作，则由少量地标集中完成。"
             },
             {
               "type": "p",
-              "text": "碰到正在运行的工业设备，修复还得等到能够安全实施的时候。极少数情况下，这个等待甚至可能长达几十年。"
+              "text": "算法1：先构造专家，再按路由结果对查询分组计算，通过在线Softmax（Online Softmax）合并结果。"
             },
             {
               "type": "p",
-              "text": "AI迅速找出的问题，现实世界未必能迅速修好。"
+              "text": "最终的查询—专家注意力开销从 降为 ，并通过FlashAttention与按专家分组计算加速。下面进一步看任务表现和实际运行时间。"
             },
             {
               "type": "p",
-              "text": "而对手不会等。"
+              "text": "实验结果"
             },
             {
               "type": "p",
-              "text": "Anthropic指出，国家支持的攻击者已经花了多年时间，在这类基础设施里建立据点。漏洞被利用，后果可能是断电，或供水安全受到威胁。"
+              "text": "图像分类：接近完整注意力的基础机制"
             },
             {
               "type": "p",
-              "text": "X上的Alfredo Narváez看到报道后，想到的就是抽水。他担心电网遭攻击会连带影响供水，呼吁认真考虑备用电源和替代系统。"
+              "text": "在ImageNet-1K上，首先采用相同的DeiT训练配置，比较不添加额外组件的注意力机制。"
             },
             {
               "type": "p",
-              "text": "他最后提醒了一句：「别让你的安全依赖Wi-Fi。」"
+              "text": "表2：DeiT-T与DeiT-S上的分类结果。DWC表示逐通道卷积，Gate表示门控机制。"
             },
             {
               "type": "p",
-              "text": "同一则新闻，有人看到的是AI行业的下一场危机，有人已经想到，停电之后家里的水还能不能流出来。"
+              "text": "在DeiT-S上，基础MiTA的Top-1准确率为 79.8% ，与完整注意力的79.9%相差 0.1个百分点 ；参数量保持不变，浮点运算量（FLOPs）从4.6G降至4.4G。同一设置下，Agent Attention为78.5%。"
             },
             {
               "type": "p",
-              "text": "所以，开头那个没有水、没有灯的早晨，并不需要一支机器人军队走上街头。"
+              "text": "加入逐通道卷积（Depth-Wise Convolution，DWC）后，MiTA达到80.6%；进一步加入门控（Gating）后达到81.2%。这些视觉高效注意力常用的额外涨点技巧，MiTA诚实地展示了出来。"
             },
             {
               "type": "p",
-              "text": "只要支撑生活的系统停下来，现代城市就会突然变得陌生。"
+              "text": "表3：结合ViT-5架构设计的结果，以及与其他高效视觉Transformer的对比。"
             },
             {
               "type": "p",
-              "text": "Anthropic预测，两年之内，AI会让攻防局面偏向防守方。但眼下，利用漏洞的成本在下降，验证和修补仍然慢，仍然需要人。"
+              "text": "结合ViT-5的架构设计并加入DWC后，MiTA-ViT-5-S达到 81.7% ，与ViT-5-S的82.2%相差0.5个百分点，FLOPs则从4.7G降至4.5G。"
             },
             {
               "type": "p",
-              "text": "业内担心的出事窗口，却已经落在未来6到12个月。"
+              "text": "语义分割：在更长的视觉序列上减少计算"
             },
             {
               "type": "p",
-              "text": "防线在补。可电网、水厂和普通人的生活，每一天都得照常运转。"
+              "text": "在ADE20K语义分割（Semantic Segmentation）中，将预训练ViT的注意力替换为MiTA，再训练分割模型。设置m=k=49时，每个查询仅访问98个键值对，而完整注意力在两种输入分辨率下分别访问1,024或1,600个键值对。"
             },
             {
               "type": "p",
-              "text": "第二天，只剩人类暴怒"
+              "text": "表4：不同规模ViT替换为MiTA后的ADE20K分割结果。"
             },
             {
               "type": "p",
-              "text": "在这份灾难推演的剧本里，最让人绝望的，是即便灯重新亮起，混乱也才刚刚开始。"
+              "text": "以ViT-S+CBT为例，FLOPs从 33G降至25G，减少约24% ，平均交并比（Mean Intersection over Union，mIoU）从45.8%变为44.5%。ViT-T配置的FLOPs减少约42%，mIoU下降2.6个百分点。"
             },
             {
               "type": "p",
-              "text": "究竟是Agent越了界，还是有人拿AI行了凶，调查需要时间。"
+              "text": "长序列建模：训练时间从10.6小时降至2.4小时"
             },
             {
               "type": "p",
-              "text": "可断过水、断过电的人，很难等到技术报告写完，才开始追问责任。"
+              "text": "在长序列基准Long Range Arena（LRA）的五项任务中，MiTA的平均准确率为 58.91% ，完整注意力为 58.19% ；总训练时间从 10.6小时降至2.4小时，减少约77% 。"
             },
             {
               "type": "p",
-              "text": "沿着这个假设继续想：系统恢复了，账户重新能登录，商店又能收款。可停摆期间耽误的工作、损失的生意，谁来赔？"
+              "text": "表5：各任务报告准确率与训练吞吐量（steps/s），最后一列为平均准确率与总训练时间（小时）。"
             },
             {
               "type": "p",
-              "text": "下一次还会不会发生？那句「已经加强防护」，还能让多少人放心？"
+              "text": "测试在单张24GB RTX 4090上进行，完整注意力基线采用FlashAttention。"
             },
             {
               "type": "p",
-              "text": "一次事故留下的，除了需要修复的系统，还有被打碎的信任。"
+              "text": "压缩分支还减少了原始键值对的收集（Gather）开销：在每个查询访问条目数相同的消融实验（Ablation Study）中，相比仅路由版本，加入压缩分支将训练时间从 5.5小时缩短至2.4小时 ，平均准确率从58.81%提升至58.91%。"
             },
             {
               "type": "p",
-              "text": "矛头会指向AI，也会指向把它推向世界的人。这正是高管们提前推演公众和政治反弹的原因。"
+              "text": "图4：三层、嵌入维度为128的Transformer在RTX 4090上的推理吞吐量（Throughput）。MiTA使用m*k≈N/4，各配置调整批大小以最大化吞吐量。"
             },
             {
               "type": "p",
-              "text": "X上的Grumpy Bloke在相关报道下面打了个比方：这就像发现，给你造飞机的那个人，已经给自己订好了一张火车票。"
+              "text": "随着序列增长，推理吞吐量优势进一步扩大：在64K、256K和1024K长度下，相比完整注意力的加速比分别约为 19倍、56倍和159倍 。"
             },
             {
               "type": "p",
-              "text": "这个比喻刺人的地方，在于它把乘客和造飞机的人分开了。"
+              "text": "长文档分类：兼顾16K—64K文本的整体与细节"
             },
             {
               "type": "p",
-              "text": "高管们讨论的是预案。读者看到的却是，最了解这项技术的人，已经在认真准备它出大事之后怎么办。"
+              "text": "arXiv长文档分类（arXiv  Classification ） 要求识别长篇论文的类别，既需要整体理解，也需要捕捉分散在文中的细粒度线索，正好考验全局概括与细节检索的结合。"
             },
             {
               "type": "p",
-              "text": "那坐在飞机上的人呢？谁向他们解释过，要承担什么风险？"
+              "text": "表6：arXiv长文档分类结果（%）。"
             },
             {
               "type": "p",
-              "text": "谁来写下规则"
+              "text": "在16K、32K和64K长度下，MiTA的准确率分别达到 88.0%、92.9%和98.7% ，均领先于表中其他方法；相比标准注意力，分别提高 18.2、3.2和1.7个百分点 。"
             },
             {
               "type": "p",
-              "text": "公众追问责任，政府就得作出决定。而关停AI的方案，已经有人写好了。"
+              "text": "还有两个值得关注的现象"
             },
             {
               "type": "p",
-              "text": "民主党众议员Ted Lieu和共和党众议员Nathaniel Moran共同提出《AI关停开关法案》，要求相关开发者保留降速、暂停乃至关停系统的能力。"
+              "text": "第一个现象：没有额外剪枝模块，也会逐渐聚焦目标。 随着网络加深，选入路由专家的键值位置逐渐集中到类别相关区域，背景位置越来越少被选中，呈现出涌现的词元剪枝效应（Emergent Token-Pruning Effect）。"
             },
             {
               "type": "p",
-              "text": "法案还拟授权国土安全部长，在与商务部长、国家情报总监协商后，对可能造成灾难性伤害的AI系统下达降速或关停命令。"
+              "text": "图5：最左侧为输入图像，其余列展示各层选入专家的键值位置，结果在注意力头之间聚合。后层逐渐聚焦类别相关区域。"
             },
             {
               "type": "p",
-              "text": "《AI关停开关法案》提案首页，2026年7月23日提交"
+              "text": "未被选中的背景词元仍可通过压缩分支参与全局汇总。"
             },
             {
               "type": "p",
-              "text": "讨论由此往前走了一步。真要踩刹车，谁来下令，公司能不能做到？"
+              "text": "第二个现象：权重可以复用，推理预算也可以调整。 训练后冻结模型参数，仅在推理时更换注意力机制，MiTA与完整注意力之间展现出较好的相互兼容性。"
             },
             {
               "type": "p",
-              "text": "这些仍是立法提案。但一场重大事故，可能把今天还在争论的方案，推到决策者面前。"
+              "text": "图6：固定模型参数，训练与推理使用不同注意力机制时的分类准确率（%）。左右分别为DeiT-T与DeiT-S。"
             },
             {
               "type": "p",
-              "text": "Axios报道，AI公司正在向国会议员解释相关技术和风险，希望灾后摆上桌的应对办法里，有自己参与塑造的规则。"
+              "text": "进一步将完整注意力预训练的ViT替换为MiTA，并在ImageNet-1K上微调，ViT-S和ViT-L分别达到 80.9%和85.5% ，与完整注意力仅差 0.3和0.4个百分点 。"
             },
             {
               "type": "p",
-              "text": "这就让「灾后推演」多了一层意味。"
+              "text": "此外，保持模型参数不变，只调整推理时的专家数量m与专家宽度k，合适的配置还能进一步提高准确率。这种 算法 泛化（Algorithmic Generalization） 为 训练时控制成本、推理时按需调整预算 提供了可能。"
             },
             {
               "type": "p",
-              "text": "在事故之前，公司可以谈研发节奏、谈能力进步、谈未来的好处。到了第二天，它们得回答，为什么风险没有被拦住，以及凭什么还能继续往前走。"
+              "text": "图7：MiTA在不同m,k下的准确率。红框标出训练配置，橙色边界圈出准确率高于原配置的推理设置。"
+            },
+            {
+              "type": "h",
+              "text": "从「Attention是什么」，走向「Attention还能怎样设计」"
             },
             {
               "type": "p",
-              "text": "它们担心的「第二天」，关系到谁承担责任，也关系到接下来谁说了算。"
+              "text": "回到开头的问题： 「 Attention 也是FFN」的价值，不只是两个公式可以对应，而是注意力的效率问题由此获得了一组新的设计维度。"
             },
             {
               "type": "p",
-              "text": "但一句「关掉AI」，也收不回已经散落各处的开源模型副本。关掉一家公司的服务，并不等于让所有机器上的AI一起停下。"
+              "text": "压缩决定怎样保留全局信息，专家构造决定哪些原始内容值得被组织在一起，路由则决定哪些查询可以复用这些内容。这些在FFN中研究过的问题、尝试过的设计，还有积累下来的经验，都可以反哺注意力机制的进一步发展，甚至有一天 打破 Attention 和FFN两者之间的绝对界限 。"
             },
             {
               "type": "p",
-              "text": "这场倒计时已经开始了。"
+              "text": "这项工作提供的不只是一个注意力变体，也是直指架构底层设计信念的展望。"
             },
             {
               "type": "p",
-              "text": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack"
+              "text": "https://arxiv.org/pdf/2602.01219"
             },
             {
               "type": "p",
-              "text": "编辑：摩西 桃子"
+              "text": "编辑：LRST"
             },
             {
               "type": "p",
@@ -391292,8 +390682,8 @@
               "text": "跳转微信打开"
             }
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652733619&idx=2&sn=24bade75f46286db80448f22ab9f7cef",
-          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/Rvq8Ow69CYUmMXO8M2Mpz47xdVZzhE8YjLz1HS1YrnFOzGxHrbr1xurlz9ibUZD6ujlsNYiaClEyOocQcTgjWwCxUumKWsr72vp4SllEYZpiaA/0?wx_fmt=jpeg",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652733619&idx=3&sn=ef711aeeff95c974783359065abac1ec",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Rvq8Ow69CYW8HQxJlgRhPhKKsPJ2Vub5phx7dM4icPd6nqGHIdiaiash2Z7zpSia5c7C0UXyWbCgZ9Ye1yESRVfSeYxqCdna4kD6AQ28z8fdRE4/0?wx_fmt=jpeg",
           "ts": 1791765660000,
           "date": "10月12日",
           "type": "图文",
@@ -391305,13 +390695,13 @@
           ],
           "degraded": true,
           "stats": {
-            "read": "6万",
-            "likes": 2491,
-            "shares": 230,
-            "favorites": 494,
+            "read": "5.6万",
+            "likes": 600,
+            "shares": 1021,
+            "favorites": 633,
             "comments": 0
           },
-          "read": "6万",
+          "read": "5.6万",
           "comments": [],
           "commentSource": "none"
         }
