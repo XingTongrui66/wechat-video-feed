@@ -1,5 +1,86 @@
 [
   {
+    "id": "1757561986",
+    "title": "谷歌宣布突破量子计算核心资源瓶颈 Willow计算误差降低40倍",
+    "summary": "谷歌宣布，谷歌量子人工智能团队成功打通量子计算的一项关键瓶颈：已在Willow处理器上实证“魔态培育”方案可行，相比不采用该技术，误差降低约40倍。这项突破性成果今日发表于《科学》期刊，是推动量子计算走向规模化实用化的关键一步。\n...",
+    "body": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】\n\n谷歌 宣布，谷歌量子人工智能团队成功打通量子计算的一项关键瓶颈：已在Willow处理器上实证“魔态培育”方案可行，相比不采用该技术，误差降低约40倍。这项突破性成果今日发表于《科学》期刊，是推动量子计算走向规模化实用化的关键一步。\n\n早在2004年，远在量子计算成为工程实践方向之前，研究人员就预判到一个棘手瓶颈。\n\n想要实现 通用量子计算 、运行有实际价值的程序，就必须能够执行一组特定的量子操作。实现方式是先制备所谓的“魔态”，该名称源于这类量子态能够生成超越经典计算所需的量子运算。\n\n但这里存在一个难题：制备高质量、经过纠错的魔态极其消耗资源。部分估算显示，量子计算机最多可能要动用95%的全部算力来生成魔态，留给实际计算的资源所剩无几。还有一重难点：魔态一旦使用便无法复用，属于稀缺资源。\n\n因此二十年来，科研人员一直在持续降低魔态制备的资源开销。\n\n2024年，谷歌量子AI研究员克雷格·吉德尼、诺亚·舒蒂与科迪·琼斯借鉴文献中的思路并加以优化，开发出现在所说的 魔态培育 技术。该方案有望大幅削减资源消耗。其核心思路是：培育过程如同过滤器。向量子芯片的一小块区域注入带噪声的量子态，随后执行一系列高度协同的测量，排查错误、剔除不合格样本。克雷格团队证明，借助这套方法，可以“培育”出纯度极高、低误差的量子态，并且能够同步转换为规模更大、具备实用价值的编码形式。\n\n该方案在理论上效果优异。如果能在量子硬件上落地，就可以大幅降低实用任务所需量子计算机的规模。\n\n和许多新技术研发一样，工程落地需要一连串技术创新与工程攻关。\n\n举一例：在首次测试培育协议时，谷歌量子AI研究员艾玛·罗森菲尔德观测到的数据看似违背物理规律。历经数月的排查、仿真、同行研讨与一致性校验后，她发现问题源于团队常用测量方法里的错误假设。具体来说，实验室电气设备漂移、温度波动带来的一类噪声，干扰了基准测试结果的有效性。团队需要同步调整理论框架与工程方案。研究团队为系统增加额外控制手段，削弱该噪声带来的影响；还创新出一套基准测试方法，以培育技术本身作为测量工具，从根源解决该问题。\n\n依托这项成果以及更多算法创新与工程方案，谷歌将量子计量技术推至全新顶尖水平。在谷歌量子AI的Willow处理器上，这套协议相比未经过培育处理的量子态，实现高达40倍的误差压缩；得到的T态逻辑保真度达到创纪录的99.99%。\n\n该成果现已刊登在《科学》，首次实证解决量子计算最严重资源瓶颈之一的可行方案，在真实硬件上证明谷歌能够高效制备这一关键魔态。\n\n谷歌还初步验证，克雷格等人提出的理论可以适配其的量子计算架构。团队实现了“色码”（一种新型量子纠错码，非常适合魔态培育）与“表面码”（成熟度更高的纠错方案）之间的切换，将距离为3的色码量子态嫁接至距离为5的表面码。这套嫁接协议最早出自2024年的理论论文，本次实验证实，经过纯化的量子态能够在硬件内稳定存续、平稳传递。",
+    "content": [
+      {
+        "type": "quote",
+        "text": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】"
+      },
+      {
+        "type": "p",
+        "text": "谷歌 宣布，谷歌量子人工智能团队成功打通量子计算的一项关键瓶颈：已在Willow处理器上实证“魔态培育”方案可行，相比不采用该技术，误差降低约40倍。这项突破性成果今日发表于《科学》期刊，是推动量子计算走向规模化实用化的关键一步。"
+      },
+      {
+        "type": "p",
+        "text": "早在2004年，远在量子计算成为工程实践方向之前，研究人员就预判到一个棘手瓶颈。"
+      },
+      {
+        "type": "p",
+        "text": "想要实现 通用量子计算 、运行有实际价值的程序，就必须能够执行一组特定的量子操作。实现方式是先制备所谓的“魔态”，该名称源于这类量子态能够生成超越经典计算所需的量子运算。"
+      },
+      {
+        "type": "p",
+        "text": "但这里存在一个难题：制备高质量、经过纠错的魔态极其消耗资源。部分估算显示，量子计算机最多可能要动用95%的全部算力来生成魔态，留给实际计算的资源所剩无几。还有一重难点：魔态一旦使用便无法复用，属于稀缺资源。"
+      },
+      {
+        "type": "p",
+        "text": "因此二十年来，科研人员一直在持续降低魔态制备的资源开销。"
+      },
+      {
+        "type": "p",
+        "text": "2024年，谷歌量子AI研究员克雷格·吉德尼、诺亚·舒蒂与科迪·琼斯借鉴文献中的思路并加以优化，开发出现在所说的 魔态培育 技术。该方案有望大幅削减资源消耗。其核心思路是：培育过程如同过滤器。向量子芯片的一小块区域注入带噪声的量子态，随后执行一系列高度协同的测量，排查错误、剔除不合格样本。克雷格团队证明，借助这套方法，可以“培育”出纯度极高、低误差的量子态，并且能够同步转换为规模更大、具备实用价值的编码形式。"
+      },
+      {
+        "type": "p",
+        "text": "该方案在理论上效果优异。如果能在量子硬件上落地，就可以大幅降低实用任务所需量子计算机的规模。"
+      },
+      {
+        "type": "p",
+        "text": "和许多新技术研发一样，工程落地需要一连串技术创新与工程攻关。"
+      },
+      {
+        "type": "p",
+        "text": "举一例：在首次测试培育协议时，谷歌量子AI研究员艾玛·罗森菲尔德观测到的数据看似违背物理规律。历经数月的排查、仿真、同行研讨与一致性校验后，她发现问题源于团队常用测量方法里的错误假设。具体来说，实验室电气设备漂移、温度波动带来的一类噪声，干扰了基准测试结果的有效性。团队需要同步调整理论框架与工程方案。研究团队为系统增加额外控制手段，削弱该噪声带来的影响；还创新出一套基准测试方法，以培育技术本身作为测量工具，从根源解决该问题。"
+      },
+      {
+        "type": "p",
+        "text": "依托这项成果以及更多算法创新与工程方案，谷歌将量子计量技术推至全新顶尖水平。在谷歌量子AI的Willow处理器上，这套协议相比未经过培育处理的量子态，实现高达40倍的误差压缩；得到的T态逻辑保真度达到创纪录的99.99%。"
+      },
+      {
+        "type": "p",
+        "text": "该成果现已刊登在《科学》，首次实证解决量子计算最严重资源瓶颈之一的可行方案，在真实硬件上证明谷歌能够高效制备这一关键魔态。"
+      },
+      {
+        "type": "p",
+        "text": "谷歌还初步验证，克雷格等人提出的理论可以适配其的量子计算架构。团队实现了“色码”（一种新型量子纠错码，非常适合魔态培育）与“表面码”（成熟度更高的纠错方案）之间的切换，将距离为3的色码量子态嫁接至距离为5的表面码。这套嫁接协议最早出自2024年的理论论文，本次实验证实，经过纯化的量子态能够在硬件内稳定存续、平稳传递。"
+      }
+    ],
+    "url": "https://finance.sina.com.cn/stock/usstock/c/2026-10-16/doc-inivivfx7969875.shtml",
+    "cover": "http://n.sinaimg.cn/finance/c30320b4/20210712/wx_poster_finance1.png",
+    "ts": 1792089097000,
+    "date": "10月15日",
+    "type": "图文",
+    "author": "环球市场播报",
+    "sourceName": "新浪·股市速递",
+    "accountName": "新浪·股市速递",
+    "topics": [
+      "life"
+    ],
+    "stats": {
+      "read": "1.5万",
+      "likes": 4503,
+      "shares": 1173,
+      "favorites": 278,
+      "comments": 0
+    },
+    "read": "1.5万",
+    "comments": [],
+    "commentSource": "none"
+  },
+  {
     "id": "3685148342",
     "title": "印度多家头部资管公司周四限制黄金ETF及相关母基金申购",
     "summary": "最新最全黄金白银价格炒金神器。印度部分头部资产管理公司于周四宣布，对黄金交易所交易基金及相关基金中基金产品实施申购限制。塔塔共同基金、ICICI保诚资管、HDFC共同基金、阿迪提亚·比拉太阳生命资管、DSP等至少六家机构，于周四晚间分别提交文件发布该限制措施。资管机构未说明决策原因，外界认为此举背景为印度本币走弱，市场通过ETF配置贵金属的需求持续旺盛。(AI生成)--新浪财经领先金融信息服务平台",
@@ -1340,8 +1421,8 @@
     "date": "10月15日",
     "type": "图文",
     "author": "环球市场播报",
-    "sourceName": "新浪·股市速递",
-    "accountName": "新浪·股市速递",
+    "sourceName": "新浪·滚动要闻",
+    "accountName": "新浪·滚动要闻",
     "topics": [
       "life"
     ],
@@ -3788,6 +3869,145 @@
     "commentSource": "none"
   },
   {
+    "id": "443631211",
+    "title": "你刷到的一条广告，可能正在给手机装间谍软件",
+    "summary": "原创 黑鸟 2026-10-15 23:20 广东 \n2024年到2025年间，国际新闻网络Al Jazeera（半岛电视台）内部至少45台设备遭到了一系列零点击攻击。所谓零点击，意思是受害者什么都不用做，不需要点链接，不需要打开附件，甚至不需要醒着，设备就被入侵了。 \n安全研究人员通过分析网络日志和恶意样本，把这些攻击追溯到了一家名为Candiru（后更名Integrity Labs）的以色列雇",
+    "body": "原创 黑鸟 2026-10-15 23:20 广东 \n2024年到2025年间，国际新闻网络Al Jazeera（半岛电视台）内部至少45台设备遭到了一系列零点击攻击。所谓零点击，意思是受害者什么都不用做，不需要点链接，不需要打开附件，甚至不需要醒着，设备就被入侵了。 \n安全研究人员通过分析网络日志和恶意样本，把这些攻击追溯到了一家名为Candiru（后更名Integrity Labs）的以色列雇佣兵间谍软件公司，以及一个此前从未公开的中间商Discover-Tech。 \n攻击的入口不是邮件，不是漏洞钓鱼，而是一条在普通网站和App里展示的定向广告。研究团队把这种技术命名为AdFection，也就是广告感染。这是全球首次有技术证据公开证明，雇佣兵级别的间谍软件是通过定向广告分发出去的。 \n研究团队向13家公司发出了评论请求。Google、IAB Europe、Beeswax、Vungle（Liftoff）和Eskimi在收到通知后陆续切断了Discover-Tech的广告生态接入。Discover-Tech、Candiru、Bindecy、Intelos、Xandr、Sunteng、IAB Europe和Affle在限期内未予回应。 \n先搞懂：你看到的每条广告背后在发生什么 \n当你打开一个免费App或者新闻网站，屏幕上弹出一条广告，这背后通常不到一秒钟。在这不到一秒里，你的设备已经向一群公司发送了你的设备标识、大致位置、IP地址等信息，各家广告平台在实时竞价，价高者赢得把广告推到你屏幕上的机会。这套系统叫Real-Time Bidding（实时竞价，简称RTB），每天发生数千亿次。 \n整个链条上有几个关键角色。Advertiser（广告主）想买广告，DSP（Demand-Side Platform，需求方平台）帮广告主出价，Ad Exchange（广告交易市场）撮合买卖，SSP（Supply-Side Platform，供给方平台）帮网站和App卖广告位，最后Publisher（发布者）把广告塞进页面或App里展示给你。 \n相关阅读： 关于广告相关威胁的文章汇总 \n在线广告生态系统的基本架构。绿色线是用户数据流，红色线是第三方追踪代码 \n本次调查中各角色的实际对应公司：广告主一侧是Discover-Tech、Candiru、Bindecy、Intelos等，DSP是MyDSP、Beeswax、Eskimi，交易所是Google、Yandex、Vungle、Sunteng 大多数人以为广告就是一张图或者一段视频，但实际上广告还可以携带代码。这些代码在你的浏览器或App里运行，用来追踪你、记录广告展示和点击。广告主、DSP、SSP以及其他第三方都可以往广告里塞代码，通常被称作tag、pixel或者SDK。 \n这套系统天然有两个容易被滥用的地方。第一，它收集大量个人数据，设备标识、精确位置、IP地址、App使用习惯，全部在竞价过程中暴露给数千家第三方，系统设计的初衷就是支持针对单个用户的定向投放。第二，它允许各种第三方在你的设备上运行代码。如果有人故意把恶意代码藏进广告里，理论上就能精准送到特定目标的设备上。 \n黑鸟认为，一个能接触到竞价数据的公司，可以在用户毫不知情的情况下追踪他在物理空间中的移动，观察同一个广告标识如何在蜂窝网络、Wi-Fi和VPN之间切换IP地址。监控行业已经在售卖所谓ADINT（Advertising Intelligence，广告情报）平台的访问权限，客户包括国防、情报和执法机构。 @blackorbird \nDiscover-Tech：夹在间谍软件和广告生态之间的那座桥 \nDiscover-Tech是一家2020年在以色列注册的公司，表面上做数字广告，运营一个叫MyDSP的需求方平台，对接Google、Yandex、Vungle（Liftoff旗下）、Sunteng（舜飞）等广告交易所。但研究发现，它的核心业务实际上是帮雇佣兵间谍软件厂商在全球范围内追踪和入侵设备。 \n这家公司的CEO是Dekel Boni，董事会里曾经坐着Eric Banoun，一位被以色列国土报称为“以色列进攻性网络先驱之一”的人物。Banoun联合创办了网络间谍公司Circles（NSO Group的密切关联方）和Senpai Technologies（Intellexa集团的一部分）。2020年到2026年3月间，公司股东里还出现过一家与Sara Hamou有关联的公司，而Hamou管理过间谍软件集团Intellexa的企业网络。Banoun于2025年1月退出董事会。 \nDiscover-Tech充当雇佣兵间谍软件行业与在线广告生态系统之间的桥梁 Discover-Tech投放广告有两条路径。一条是通过自家MyDSP对接Google、Yandex、Vungle和Sunteng。另一条是通过Eskimi和Comcast旗下的Beeswax（FreeWheel）直接购买广告。大量广告里嵌着一个script标签，指向公司内部所谓的“NOAS server”（也叫getAd server）。 \n这个NOAS服务器是整个攻击链的关键。广告渲染时，你的设备会连接NOAS服务器，提交你的广告标识（cookie ID或者移动广告ID），然后服务器根据来源IP和广告标识判断你是不是被选中的目标。如果是，返回一段JavaScript代码让你执行；如果不是，返回0字节的空响应。这种设计让Discover-Tech不需要和投放广告的平台共享任何恶意代码，广告平台看到的只是一个普通的script标签。 \n从2020年到2026年，Discover-Tech一直名列Google的“Ad Manager Certified External Vendors”（认证外部供应商）名单，也是IAB Europe（欧洲互动广告局）TCF（Transparency and Consent Framework，透明度与同意框架）全球供应商列表上的注册厂商。它还通过了GDPR（General Data Protection Regulation，通用数据保护条例）的同意框架校验，在欧洲合法地处理用户“同意”信号。 \nControlium：一个用来“投毒”的广告投放控制台 \nDiscover-Tech给客户提供一个叫Controlium的平台，界面长得像普通的广告投放后台。管理员可以给客户开通权限、设置IP白名单、限制每天投放的campaign数量，甚至做“白标”贴牌。客户登录后可以按照Mobile Advertising ID（移动广告标识，简称MAID）、cookie ID或者IP地址来选定要感染或画像的目标。 \n相关阅读： 关于竞价广告 \nControlium的管理后台界面，功能看起来和普通广告平台没什么两样 Controlium前端的全部源码都直接放在登录页面上。研究人员保存了前端代码，去掉了和外部服务器的通信，把所有隐藏的界面都显示出来后在浏览器里打开。平台部署在四个域名上：controlium[.]net、powerium[.]net、adv45.volasim[.]com和adv50.volasim[.]com，全部CNAME到同一个AWS Application Load Balancer，名字直接叫discovertech-alb-100966113。代码里还写着“controlium-discover-tech”和“ https://discovertech.us.auth0.com”。访问/jsConfig端点时返回的消息是“ONLY DEKEL IS ALLOWED!!!”，被认为是在指CEO Dekel Boni。 \n管理员后台可以配置的限制包括：客户允许竞拍哪些User ID和IP地址组合、能访问哪些URL Type、是否开启OpSec（操作安全）限制、每天或每月能跑多少个campaign、Domains Whitelist（域名白名单）和Apps Whitelist（App白名单）、以及按国家的允许/禁止列表。这套限制机制和攻击平台的授权模式一模一样。 \n管理员给单个客户配置的CAMPAIGNS权限与CREATIVE UPLOAD表单：左侧勾选允许的Campaign Type和URL Type（Script、User Agent、De-anon、Monitor、Pixel），右侧选择DSP为Beeswax，并开启NOAS、Cookie、UserAgent、Infinite FIFO、Detect IPv6、Detect ZUID等开关 \n投放限额与白名单设置：限制每天/每月campaign数量，可上传域名白名单和App白名单CSV，按国家设置WL（允许）或BL（禁止），还能选择是否纳入代理IP、是否忽略使用代理的用户 \nBid OpSec操作安全限制面板：可按Auction ID、Bid Time、IPv4、IPv6限制出价，OpSec Bid Timer默认30秒，Bid Time Offset默认10秒，IPv4/IPv6最少匹配3个网段 客户侧的功能更丰富。Tag Generator模块组合广告图片、落地页、NOAS URL和曝光/点击追踪URL。OP Creative Upload模块上传广告创意并推送到DSP。可选的DSP包括MyDSP WW、MyDSP Yandex RU、MyDSP Google（Palm 3）、Beeswax（Palm 3）等，还能勾选“Infinite FIFO”、“Detect Zuid”、“User Agent”等附加功能。 \nTag Generator标签生成器：选择DSP（BeesWax、MyDSP、ESKIMI）、广告类型（Image或Youtube Video），填写Image URL、Landing Page、NOAS URL、Click Log URL和Impression URL，生成后保存 \nExchange交易所下拉选项：General、GoogleAdx、Yandex RU，以及三套Palm 3（General、GoogleAds、Yandex RU） \nOP Creative Upload创意上传界面：选择Standard或Custom Tag，配置DSP、Advertiser、OS、NOAS、Cookie和Add-ons，填写Prefix/Suffix/Domain参数与Landing Page、NOAS、Impression、Click Log四个URL，创意列表可导出CSV并Submit to DSP直接推送 Campaigns模块把“Ad URL”关联到受控广告里。URL Type下拉菜单里有Ad URL、Test URL、Script、User Agent、Monitor、Pixel和De-anon。研究团队判断Ad URL类型会让NOAS服务器返回一段JavaScript，往页面里插入一个指向指定URL的1像素iframe，而Script类型可能就是用来执行任意JavaScript的。 \nNew Campaign新建任务表单：填写Name，逐行粘贴User IDs或IP Addresses，选择URL Type（Ad URL）和Type（User ID），可填User Agent并勾选Mandatory，选择IP Bid OpSec Override \nCampaigns列表与Create New Campaign弹窗：列表按USER ID、AD URL、CREATION DATE/TIME管理，支持Search、Exclude Records和Export to CSV，弹窗里只需填入User ID和AD URL即可保存 Targeting和cTargeting模块允许上传目标的数字标识列表，包括Android和iOS的移动广告ID、Beeswax用户ID、MyDSP用户ID和IP地址，上传后挂到一个segment（人群包）里。Ads Impressions模块可以查看某个目标标识或IP在最近30分钟内的广告曝光数据，Bid Requests模块可以查看最近的竞价请求，包含用户ID、访问的网站或App、设备IP等属性。User Info、User API Info和User Sync Info三个模块则根据输入的标识返回键值对信息，可选的User ID Type包括EYield、TYield、VYield、SYield、Sync_User、Sync_Domain、Sync_App、AH_User，这些明显是跨供应商ID同步的标识。 \nAds Impressions曝光监控面板：可按Last 30 Minutes时间窗，用App/Web Id或IPv4 Address检索某个目标的近期广告曝光 \nBid Requests竞价请求面板：按Hour Range（默认Last Hour）筛选，可按User ID、App Bundle、IPv4、IPv6、URL过滤，列表展示REQUEST_TIME、USER_ID、USER_ID_HASHED、DOMAIN、APP_BUNDLE、APP_NAME、DEVICE_IP、DEVICE_BROWSER，支持Export to CSV Controlium的两个安全漏洞 \nControlium名义上用授权令牌保护客户数据，但实际上认证逻辑有严重缺陷。它使用Okta的Auth0产品做认证，Auth0返回一个经过数字签名的JWT（JSON Web Token），后端应该校验这个令牌。但Controlium忽略了JWT，转而把一个未经认证的user对象（只包含姓名和邮箱等元数据）用前端公开的密钥加密后当成令牌传给后端。讽刺的是，正确使用JWT的代码在平台里存在，但被注释掉了，换成了有漏洞的实现。研究团队没有利用这个漏洞，因为那构成未授权访问。 \n平台前端源码片段：上方正确的getToken/getAccessTokenSilently() JWT逻辑被整段注释，下方取而代之的是用CryptoJS.AES加密未经认证的user对象后写入localStorage 另一个问题是未授权API端点。源码里提到一个/csv-download端点，接受开始和结束日期参数。研究团队直接用HTTP GET请求访问这个端点，不需要密码、不需要特殊头、不需要令牌，就导出了128天的登录日志，识别出120个不同用户名在controlium[.]net和powerium[.]net上的登录记录。 \nNOAS服务器：一次只返回一次代码的“投递员” \n研究团队通过测试Dummy User ID从NOAS服务器拿到了返回代码。访问 https://pqv2.mtrtb[.]com/getAd?idfa=test2，服务器返回了一段JavaScript，创建一个1像素iframe指向https://logger.powerium.net/register_event，并把user_id等参数带过去。 \n另一个叫“Mini Platform C”的应用发布在events-ui.myweb3id[.]io上，研究团队在表单里输入User ID“test123”和AD URL“ https://example.com/”，然后访问https://events.platc-tester[.]com/cplatform/getAd?idfa=test123，第一次访问返回了插入example.com的iframe代码，后续访问什么都不返回。这说明NOAS服务器对每个目标只投递一次代码，之后静默。 \n一条广告如何在几分钟内完成入侵 \nCandiru通过Discover-Tech广告实施感染的完整时间线 整个过程从0秒开始。广告在目标设备上渲染，触发JavaScript加载，设备连接Discover-Tech的基础设施，包括cloud-images.s3.eu-west-1.amazonaws[.]com和noas.mtrtb[.]com来加载图片和脚本。如果目标被选中，NOAS服务器返回一段JavaScript，往页面里插入一个1像素iframe，指向Candiru的validator服务器（keyadapter[.]com或sharethere[.]net），设备加载这个iframe。同时设备还会向dtech.adtimizer[.]com发送标准曝光统计。 \n5到10秒内，设备通过Candiru的validator校验，validator把设备重定向到漏洞利用服务器brainsolitary[.]com。一旦漏洞被成功利用，设备在1到3分钟内与Candiru的C&C（Command and Control，命令与控制）服务器建立连接，包括fearevolve[.]com、insightenterprisells[.]com、jobmarcher[.]com、plasticbells[.]com、rebookings[.]net、freshmeditate[.]com、dustclimate[.]com等。 \n服务器指纹与样本分析 \n研究团队为Candiru的validator服务器开发了一套指纹（Fingerprint V1），在Censys上扫描到305个不同域名分布在319个IP地址上，时间跨度从2022年8月到2026年7月。这些域名包括Sekoia和Recorded Future之前公开归因于Candiru的那些。另外为C&C服务器单独开发了Fingerprint C1，匹配fearevolve[.]com、insightenterprisells[.]com、jobmarcher[.]com、plasticbells[.]com四台服务器。 \n半岛电视台从一台被入侵设备上隔离出一个Windows DLL文件，样本SHA256为255869de85e2a171993fc5eb8a556d873a1b8966e040f6f55926f2fa2d595cc8，已上传VirusTotal。样本硬编码了fearevolve[.]com和jobmarcher[.]com两个C&C服务器。 \n和研究团队2021年捕获的Candiru攻击链相比，这个新版本有几个关键共性：都使用COM劫持实现持久化（但用了不同的DLL）；都用48字节重复XOR密钥混淆字符串（但密钥不同），而且混淆字符串里都有一个“dummy”空终止符，这个字符不解密，唯一作用是确保分配正确大小的内存来存放XOR解密输出；配置里都硬编码了相同的网络连通性检测地址列表 http://www.google.com和http://www.microsoft.com。这些特征组合在一起，高置信度确认这是同一攻击链的新版本。 \n连加密密钥都摆在网页上的“操作安全”工具 \nDiscover-Tech还运营了一个叫myipinfo[.]io的网站，上面放着一个“AES-256-CBC Multi-Decryptor”工具。页面说明写着“Decrypt Base64(IV[16] || AES-CBC(cipher))”，可以选择V1或V2密钥。 \nDiscover-Tech的AES-256解密工具，输入加密参数即可还原目标IP等信息 研究团队发现2024到2025年间多个Candiru感染链接指向至少6个匹配Fingerprint V1的域名，URL里带一个?q=参数，值是16字节的Base64编码数据。这些参数全部能用myipinfo[.]io上公布的V1 AES-256密钥正确解密。 \n其中一个在VirusTotal上公开的Candiru感染链接，?q=参数解密后得到一个IP地址，注册地指向沙特阿拉伯外交部，暗示该组织是Candiru间谍软件通过Discover-Tech广告锁定的潜在目标。这种加密被Discover-Tech内部称为Ad URL OpSec，攻击者把目标IP加密后附在链接里，收到请求时解密比对，确保来访问的不是被安全研究人员截获的设备。 \nAd URL OpSec配置面板：Ad URL Type可选Regular或Hashed，Frequency Cap可开关，Ad URL OpSec可选Off、IP Only、V2、V3、V4，并可填入Ad URL OpSec Key，另有Disrupt OpSec V2/V3 Values选项 2025年3月18日两小时内注册的两个域名outdooutcome[.]com和suggestutterly[.]com匹配C&C指纹，SOA记录里都留着info@rockhoster[.]com。同一天注册的第三个域名sincereaccertain[.]com没有匹配指纹，但从2025年4月起，指向它的URL通过Discover-Tech广告分发。URL格式为 https://sincereaccertain[.]com/?qq=[...]，qq参数解密后格式为|||。2025年5月起，d1fcoizt7mje85.cloudfront[.]net上出现相同格式的URL，两者通过同一个Infinite FIFO ID（编号778）关联。这套部署在2025年12月停止。研究团队估计有数十万到数百万用户通过这些广告被引导到这些域名。 \n2026年1月起，系统升级到新的NOAS地址ppv2[.]mtrtb[.]com。研究团队从该服务器的未授权端点收集了五个月的统计数据，期间共计3,637,213个“eligible users”（被认定为应该收到Infinite FIFO代码的用户）。2026年晚些时候又演进到V3 OpSec，允许自定义参数名（观察到“impid”）和每用户密钥，但解码器没有同步更新，所以无法解密。 \n追踪Candiru的售前团队 \nCandiru更名Integrity Labs后的官网首页，只有一句“Exquisite capability. Access by trusted referral only”（精良能力，仅靠可信引荐获得），不公开对外销售 从未授权API端点导出的登录日志里，研究团队识别出两个从以色列IP登录的用户，归属到Candiru/Integrity Labs。第一个用户INTEGRITYPRESALE1，在LinkedIn上的名字对应一个在“Cyber Security Company”做“Head of Presale”（售前负责人）的人。这个LinkedIn页面名义上属于一家雅加达公司，但页面推荐栏前三名分别是Integrity Labs、NSO Group和Integrity Lab（Integrity Labs的拼写错误版）。第二个用户INTEGRITYPRESALE2，用户名包含名字，结尾是“_pap_pres”，推测“_pres”是presale。 \n该LinkedIn页面的“Pages people also viewed”推荐栏：Integrity Labs、NSO Group、拼写错误的Integrity Lab、Cyber Security Community依次出现，成为归属Candiru的旁证 \n这两个账户从阿塞拜疆、捷克、以色列、意大利、墨西哥、黑山、阿联酋和美国登录。另外还有一个包含“pap”字符串的用户集群，全部从内网IP 10.0.0.52登录，用户名为Aurora_api、Barbara、Chameleon、CS、Fox、Heron、Journey、MobyDick、Oris、papdev2、papplayg、Presale、Scorpion、spare2，被认为是Candiru关联用户。 \nBindecy：另一家雇佣兵黑客公司 \n登录日志里两个用户maya和mayaqa从多个IP登录，其中一个以色列IP 62.90.129.xxx管理着多个网站，这些网站的自签证书由“cupid-ca”颁发。Censys上共找到7张由cupid-ca签发的证书，涉及beachvibesnow[.]com、enjoymultiplecats[.]com、icecreamtester[.]com、pickarest[.]com、infoanalytics[.]live等域名。这些域名指向的IP在8443端口（无TLS）返回一个特征鲜明的speedtest页面。 \n匹配这个指纹的一个IP 52.174.65.77同时被域名archer.westeurope.cloudapp.azure[.]com和bd-mainserver.herokuapp[.]com指向。研究团队从合作伙伴处了解到，Bindecy有两个产品叫“Archer”和“Cupid”，“bd”在“bd-mainserver”里很可能就是Bindecy的缩写。部分域名登记在以色列软件公司Moveo Group名下。研究团队还识别出Bindecy运维人员分布在比利时、德国、挪威、葡萄牙、瑞典、新加坡和西班牙，以及一个在墨西哥和哥伦比亚使用Bindecy间谍软件的客户。 \nIntelos：广告情报公司 \n多个从globaldatapoints[.]com证书IP登录的Controlium用户被关联到Intelos。被动DNS数据显示该域名的一个子域名CNAME到AWS ELB，ELB名称里包含“intelos”字符串。另一个子域名短暂返回过名为“AD/HOC”的应用登录页，这被报道为Intelos的产品名。研究团队识别出至少15个与Intelos关联的Controlium用户，包括bear（比利时、以色列、新加坡、波兰登录）、JonG（比利时、捷克、希腊、法国、以色列、意大利、塞尔维亚登录）等。Intelos股东正是Eric Banoun，他同时也是Discover-Tech前董事。 \n被动DNS证据：app-prod1-new.globaldatapoints.com通过CNAME指向AWS ELB，内部主机名internal-k8s-commonintelosprod中直接包含intelos字样 \n该子域名返回的AD/HOC应用HTML源码，noscript提示“We're sorry but AD/HOC doesn't work properly without JavaScript enabled”，对应Intelos的AD/HOC产品 DARK CARTOGRAPHER：大规模去匿名化 \n调查还牵出一个被研究团队称为DARK CARTOGRAPHER的威胁行为者。这个实体利用Discover-Tech的基础设施，在30多个国家的移动运营商网络中挖掘漏洞，把设备的广告ID和MSISDN（Mobile Station ISDN Number，也就是手机号）关联起来，实现大规模去匿名化。 \n手段之一是利用WebRTC IP Leak问题，暴露VPN和代理用户的真实IP。另一个手段是利用“零点击登录”技术中的HTTP header enrichment（HTTP请求头增强）。移动运营商会给经过网关的明文HTTP请求加上X-MSISDN等请求头，把用户手机号直接告诉网站。如果白名单匹配逻辑有bug，或者第三方增强服务有安全问题，任何加载了这些请求的网站都能拿到访客手机号。研究团队把问题归为五类，攻击者在北美、南美、欧洲、非洲和亚洲的30多个国家移动运营商中利用了这些问题，正在向相关公司披露。 \n更罕见的是，这个基础设施同时指向一家雇佣兵广告技术供应商和一家美国政府承包商。研究团队评估这个攻击者至少从2019年起就在利用MSISDN泄露问题，背后是多个雇佣兵广告技术公司。 \n你在CBC、雅虎和数独App上见过的那种广告 \n研究人员在CBC网站、Yahoo和Android数独App上实际看到的Discover-Tech广告 \n被广泛使用的AliExpress/UGREEN “SALE”广告创意 研究人员在日常浏览中也被投了这些广告。在CBC网站上看到过“FREE GAMES”的横幅广告，在雅虎上看到过“Free Motion Shoes”的运动鞋广告，在Android的数独App底部看到过“MY IP INFO”的黑色横幅，还有一个霓虹灯管风格的“SALE”广告，画面里摆着UGREEN的扩展坞、无线耳机、手机壳和充电宝。 \n这些“SALE”广告打着AliExpress的旗号，落地页是一个联盟营销链接 https://s.click.aliexpress[.]com/e/_c3U5aNwL。但数据库里所有广告主的花费记录几乎都是零，没有任何转化数据，大部分广告主直接指向Discover-Tech自己的域名或者关联实体。研究团队判断这些AliExpress广告很可能不是AliExpress买的，而是被借来当幌子。 \n40亿条竞价记录背后的覆盖范围 \nDiscover-Tech在mtrtb[.]com上跑了两个公开可读的Apache Druid数据库，druid.mtrtb[.]com存MyDSP平台的竞价数据，cn.druid.mtrtb[.]com存Sunteng相关的竞价数据。研究团队分析了2026年3月到6月间的数据，总计约37.7亿次竞价，赢得约4.42亿次展示，中标率11.7%。其中约76.7%的竞价发生在移动App里，23.3%在网页浏览器中。 \n按上游交易所分，Yandex占了67.4%，Google Ad Manager占24.74%，Vungle占7.24%，Google Retargeting占0.05%，Sunteng占0.03%。数据库里只有三个广告主，但有九种广告主域名组合。discover-tech绑定akedo.gg占37.31%，AliExpress绑定www.aliexpress.com占34.70%，MyIpInfo占12.65%，discover-tech绑定www.remindmewhere.app占9.61%，其余是discover-tech绑定aliexpress.com、myipinfo.io、s.taobao.com、king.com等。MyDSP在这四个月里只花了约109,091美元，而且advertiser_revenue、dsp_profit、margin和conversion字段几乎全部为零。 \n至少7.19亿次竞价（约19%）投的是带有NOAS script标签的广告。研究团队通过广告名称中是否包含“infi”（Infinite FIFO）、“NOAS”、“ppv2”、“pqv2”来识别这类广告，其中pqv2被推测用于测试/QA环境，ppv2用于生产。这些NOAS广告被投放到161个国家的IP地址。 \n按原始竞价量排名前十的国家是：也门4.57亿、巴基斯坦1.39亿、黑山9760万、巴西7610万、墨西哥3270万、我国3007万、白俄罗斯2512万、亚美尼亚2319万、捷克1910万、以色列1848万。按人均竞价次数排名前十的是：黑山156.68次、也门13.99次、亚美尼亚7.49次、拉脱维亚3.14次、塞舌尔3.13次、白俄罗斯2.77次、以色列1.80次、捷克1.75次、丹麦0.99次、阿塞拜疆0.97次。 \n展示这些带攻击者script标签广告的App多达75,373个（Android和iOS合计），网站120,768个。Android端展示量超过100万的包括MX Player和Lark Player，Viber超过70万，Snap VPN、Truecaller、VivaCut约50万。广告还出现在Yahoo Mail、Opera Mini、德国天气App Wetter Online、Duolingo、宗教App WeMuslim、健康App Period Calendar Period Tracker、游戏Bubble Shooter和Ludo STAR，以及家庭追踪App Location Share和约会App Badoo、Grindr里。iOS端总量较少，Viber在iOS上约20万次展示。 \n网站端展示量超过100万的有亚美尼亚新闻站mamul.am和塞尔维亚新闻站kurir.rs，超过10万的有黑山dan.co.me和vijesti.me、也门adngad.net、巴基斯坦whatmobile.com.pk。Weather.com约40万次。更大体量的广告还出现在yahoo.com、AccuWeather.com、tripadvisor.com、yandex.ru，以及丹麦bt.dk、波黑slobodna-bosna.ba、埃及almasryalyoum.com、哈萨克斯坦vesti.kz等新闻站。长尾网站从9gag.com、foxnews.com到bbc.com、cbc.ca、haaretz.co.il、nytimes.com无所不包。 \n广告展示的网络里，藏着NATO和各国政府 \n最令人警觉的不是广告覆盖了多少普通人的设备，而是这些广告被展示在了哪些网络里。研究团队在NATO和联合国的网络中都发现了广告展示记录。 \n在欧洲，欧洲议会、欧盟委员会和欧盟理事会总秘书处的网络里都有记录。北欧集群尤其密集：挪威议会（Stortinget）、挪威数字局、挪威通信管理局、国家IT网络Statens IT、挪威警察局、严重犯罪调查部门Kripos，以及挪威北部靠近军事基地的多个市县网络（Alta、Harstad、Nordland）。瑞典方面则有武装部队、国家电网Svenska Kraftnat、国有电力公司Vattenfall、国家互联网交换中心Netnod、国防承包商Saab、沃尔沃集团、查尔姆斯理工大学、国家研究资助机构Verket for Innovationssystem、瑞典气象水文研究所。丹麦方面有国家铁路Banedanmark、国家邮政Post Danmark、国家研究教育网Forskningsnettet、数字基础设施公司KMD A/S、风电企业Vestas和Ørsted（沃旭能源）、Grundfos、丹麦银行和哥本哈根机场。 \n澳大利亚发现了电网、电力公司、大学和核研究机构网络中的展示记录，包括澳大利亚同步辐射中心和澳大利亚核科学技术组织。其他国家政府网络包括：亚美尼亚（中央选举委员会、中央银行、总理办公室）、捷克（财政部、外交部、内政部、国家网络安全局、捷克央行等）、以色列（卫生部、外交部、国防部、警察局、以色列银行、机场管理局）、意大利（意大利银行、议会众议院、国防部）。此外还在阿塞拜疆、不丹、巴西、印度尼西亚、科索沃、利比亚、马来西亚、墨西哥、黑山、巴基斯坦、俄罗斯、索马里、泰国、阿联酋、美属萨摩亚、乌拉圭的政府运营网络中发现了展示记录。亚美尼亚、印度尼西亚和墨西哥的选举监督机构网络中也有。 \n半导体行业的覆盖尤其密集，Intel网络中的展示量最大，其次是Nvidia、Sandisk、Texas Instruments、Broadcom、Micron、ARM，还有研究机构IMEC，以及Apple、Microsoft、Motorola。国防科技企业Raytheon（雷神）和Elbit Systems（埃尔比特系统），核电领域的Westinghouse（西屋电气）也在其中。Confiant的独立调查还发现这些广告出现在美国国防部、荷兰经济部、爱沙尼亚信息系统管理局（RIA）、西班牙数字转型部、亚美尼亚总理办公室、国际原子能机构（IAEA）和国际刑事法院的网络中。 \n浏览器里的追踪标签和ID同步 \n除了移动App，Discover-Tech还通过网站浏览器部署追踪代码。研究团队发现两个版本的“Banner Tester”应用，分别发布在bt.myweb3id[.]io和bt.platc-tester[.]com上，用来生成和预览横幅广告标签。生成的标签包含广告创意、链接，以及一组指向不同URL的请求，包括NOAS地址、曝光追踪和点击追踪。 \nurlscan上的存档记录显示了实际部署案例：2025年5月访问俄罗斯文学网站livelib[.]ru时，Discover-Tech通过MyDSP和Yandex投递了Akedo广告，请求了noas.mtrtb[.]com和dtech.adtimizer[.]co；2025年8月访问nbcnews[.]com时，通过MyDSP和Google投递了Akedo广告，请求了tracker.mtrtb[.]com；2025年7月访问一个西班牙语星座网站时，通过Beeswax DSP和Google投递了MyIPInfo广告，请求了infinoas.mtrtb[.]com。 \nDiscover-Tech还与Beeswax、Yandex和Microsoft的Xandr进行ID同步（cookie同步）。web浏览器不允许网站访问通用设备标识，ID同步就是各家广告平台不断交换用户标识，存在浏览器里，下次访问嵌入第三方追踪代码的网站时再取出来。myweb3id[.]io用于和Yandex同步，URL里的“an.yandex.ru/mapuid/discovertechis”表明双方有业务关系。tracookiepixel[.]xyz用于和Beeswax同步，The Guardian网站上的请求链包含“bee_sync_partners=dtech”参数。 \n另外还有一个tracking pixel代码，加载在myipinfo[.]io、cookiesurfer[.]com和discover-tech[.]io上，从js.tracookiepixel.xyz/myipinfo/c_tracking_pixel_gdpr.js和js.tracookiepixel.xyz/dt/c_tracking_pixel_gdpr_enhanced.js加载。这个pixel在Discover-Tech、Beeswax、Xandr和Yandex之间存储、检索和同步用户标识。当代码检测到访客在GDPR适用区域（基于IP地理定位），它会使用IAB Europe的TCF框架来处理三个供应商（Discover-Tech Ltd、Xandr Inc、BeeswaxIO Corporation）的“同意”信号。代码里还把ZUID映射为Xandr的用户标识，Controlium的附加功能里正好有“Detect Zuid”选项。 \nDiscover-Tech的企业关系网 \nMyDSP和mtrtb[.]com域名在2020年由Discover-Tech Ltd取得。历史whois显示mydsp[.]io重定向到一个叫“Market Group”的公司，该公司在2015年推出了MyDSP。Discover-Tech 2020年3月成立后接管了这些域名。广告安全公司Confiant发现discover-tech[.]io和tekma-dmp[.]ai共用同一个Wix用户账户，tekma网站联系信息里提到“Chaia Services”（即Discover-Tech的那家BVI股东）和香港办公室。 \nAdtimizer Ltd是一家以色列公司，Discover-Tech使用dtech.adtimizer[.]co作为曝光和点击追踪URL。研究团队在一个讨论Beeswax的公开论坛帖子里发现了Oren Baranes用Discover-Tech邮箱发帖的记录，Baranes的LinkedIn profile自称移动广告专家。Controlium源码里也出现了Baranes的名字。 \nAkedo是一个移动游戏平台，管理层包括Discover-Tech的关键高管和股东Dekel Boni和Yaniv Basil。MyIPInfo网站hosting着Controlium相关代码，也是广告投放的主要落地页，网站上主要展示Akedo广告。Volasim公司提供RemindMeWhere等App，adv45和adv50.volasim[.]com上部署着Controlium平台。Volasim在回复中称Discover-Tech只是它的“外部广告供应商”之一，公司从未参与间谍软件活动。 \n整条广告供应链是怎么被打通的 \nGoogle主导美国和欧洲的数字广告生态，运营Ad Manager、AdSense、AdMob（卖方）和Google Ads、DV360（买方），其Authorized Buyers项目允许第三方广告商参与Google广告交易所的竞价。Yandex主导俄罗斯市场。Beeswax是Comcast旗下FreeWheel拥有的DSP，主打“bidder-as-a-service”，客户可以接入未经过滤的RTB数据流，使用自定义竞价算法，集成36个供应伙伴。 \nEskimi是一家立陶宛的白标DSP，号称可以定向15亿用户、覆盖60个交易所，数据管理平台号称存储20亿个profile。Eskimi与位置数据经纪公司Redmob关系密切，两者共用同一个CEO，Redmob号称覆盖150个国家10亿人。之前美国参议员Ron Wyden收到Datastream Group的报告称Eskimi是36亿条位置数据记录的来源。Vungle（Liftoff旗下）的SDK嵌入15万个App，覆盖10亿用户，Vungle Exchange的规则写明禁止分发“malware, spyware”，但没有说明如何监控执行。Sunteng（舜飞科技/BiddingX/Bidex）号称每天处理500亿次竞价请求，覆盖1万个App。Xandr（原AppNexus，Microsoft Advertising）在2020年AT&T旗下时运营着一个连接50亿个标识的身份图谱。 \n所有这些平台都给Discover-Tech开了绿灯。 Google从2020年到2026年把它列在Ad Manager Certified External Vendors、Ad Technology Partners和Ads Personalization Providers名单里。IAB Europe把它列在TCF全球供应商列表里。直到研究团队把发现通知各家公司后，2026年10月初Google才终止了Discover-Tech的广告交易所访问权限并部署Safe Browsing保护，IAB Europe把它从供应商列表移除，Beeswax从Buyer Cloud中删除，Vungle暂停其访问，Eskimi封停了账户和域名。Eskimi在回复中解释，Discover-Tech的标签“根据观看者的设备、IP和位置加载不同代码”，通过了第三方验证扫描，直到Eskimi自己的监控发现异常，其在Eskimi的花费仅几百美元，最后一次campaign在2026年8月6日停止。 \n在线广告已经是网络安全危机 \nAdFection最值得注意的不是某家公司做了恶，而是整条产业链的“合规”外衣。一家被Google认证、被IAB欧洲注册、在GDPR框架下合法处理用户同意的广告公司，同时在帮Candiru、Bindecy、Intelos这些雇佣兵间谍软件厂商把恶意代码精准投放到半岛电视台、NATO网络和各国政府机构里。 \n现有的广告行业审核机制依赖第三方审计和KYC（Know Your Customer，了解你的客户），但Discover-Tech的广告标签根据观看者身份返回不同代码，自动扫描根本发现不了。Eskimi事后也承认，这些标签“根据设备、IP和位置加载不同代码”，所以通过了验证。在线广告的RTB竞价系统天然把设备标识、位置和IP暴露给数千家第三方，而这些第三方的安全能力参差不齐。当一条定向广告可以成为零点击间谍软件的投递通道时，“我就看个新闻能有什么事”这个前提已经不成立了。 \n这次调查最值得注意的一点不是某家公司做了恶，而是整条产业链的“合规”外衣。一家被Google认证、被IAB欧洲注册、在GDPR框架下合法处理用户同意的广告公司，同时在帮Candiru、Bindecy、Intelos这些雇佣兵间谍软件厂商把恶意代码精准投放到半岛电视台、NATO网络和各国政府机构里。 \nDiscover-Tech mass abuse、对隐私的侵犯以及对雇佣兵间谍软件攻击的便利化，暴露了在线广告系统的结构性缺陷。这套系统未能发现或阻止本次报告记录的滥用行为。 \n当一条广告从“想让你买东西”变成“能让你被监听”，在线广告就不再只是一个隐私问题，而是一个国家安全问题。 \n参考：《 Exposing AdFection How Discover-Tech Turned Targeted Ads Into a Pipeline for Zero-Click Mercenary Spyware 》 \n跳转微信打开 \n]]>",
+    "content": [
+      {
+        "type": "p",
+        "text": "原创 黑鸟 2026-10-15 23:20 广东"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=6f06abb2&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_jpg%2FibO9kiauylaDqMWp2tUeF5icibVfURca889oB57ibVaE9xhib88K6f1uADSTr7GgPPLabmd8ah62c1Akjoncian5EAZ5iamXhOZeVspdK6icic5tPnP40%2F0%3Fwx_fmt%3Djpeg",
+        "caption": "",
+        "_imgCount": 1
+      },
+      {
+        "type": "p",
+        "text": "2024年到2025年间，国际新闻网络Al Jazeera（半岛电视台）内部至少45台设备遭到了一系列零点击攻击。所谓零点击，意思是受害者什么都不用做，不需要点链接，不需要打开附件，甚至不需要醒着，设备就被入侵了。"
+      },
+      {
+        "type": "p",
+        "text": "安全研究人员通过分析网络日志和恶意样本，把这些攻击追溯到了一家名为Candiru（后更名Integrity Labs）的以色列雇佣兵间谍软件公司，以及一个此前从未公开的中间商Discover-Tech。"
+      },
+      {
+        "type": "p",
+        "text": "攻击的入口不是邮件，不是漏洞钓鱼，而是一条在普通网站和App里展示的定向广告。研究团队把这种技术命名为AdFection，也就是广告感染。这是全球首次有技术证据公开证明，雇佣兵级别的间谍软件是通过定向广告分发出去的。"
+      },
+      {
+        "type": "p",
+        "text": "研究团队向13家公司发出了评论请求。Google、IAB Europe、Beeswax、Vungle（Liftoff）和Eskimi在收到通知后陆续切断了Discover-Tech的广告生态接入。Discover-Tech、Candiru、Bindecy、Intelos、Xandr、Sunteng、IAB Europe和Affle在限期内未予回应。"
+      },
+      {
+        "type": "h",
+        "text": "先搞懂：你看到的每条广告背后在发生什么"
+      },
+      {
+        "type": "p",
+        "text": "当你打开一个免费App或者新闻网站，屏幕上弹出一条广告，这背后通常不到一秒钟。在这不到一秒里，你的设备已经向一群公司发送了你的设备标识、大致位置、IP地址等信息，各家广告平台在实时竞价，价高者赢得把广告推到你屏幕上的机会。这套系统叫Real-Time Bidding（实时竞价，简称RTB），每天发生数千亿次。"
+      },
+      {
+        "type": "p",
+        "text": "整个链条上有几个关键角色。Advertiser（广告主）想买广告，DSP（Demand-Side Platform，需求方平台）帮广告主出价，Ad Exchange（广告交易市场）撮合买卖，SSP（Supply-Side Platform，供给方平台）帮网站和App卖广告位，最后Publisher（发布者）把广告塞进页面或App里展示给你。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=698b36fa&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FibO9kiauylaDoNkM3gcTgb1S5qOggrepoUcDxYyJOTvpHt4XBb8iaRR04yM0fUSOibBf3AQcrjG6jZL1ogAKhkG0xQvJiaiaeic3jicCR6ibztVlDokI%2F640%3Fwx_fmt%3Dpng",
+        "caption": "",
+        "_imgCount": 2
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=fae40c85&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FibO9kiauylaDoxGWib6Cd4HTz1vubbUiciaicECrSiauNFSCz1S4X28tia7iaPwAYPdYHUMcupT474ps22C5awRsD9D04xy17klrLia4ynoc2K5ekhlicY%2F640%3Fwx_fmt%3Dpng",
+        "caption": "",
+        "_imgCount": 3
+      },
+      {
+        "type": "p",
+        "text": "大多数人以为广告就是一张图或者一段视频，但实际上广告还可以携带代码。这些代码在你的浏览器或App里运行，用来追踪你、记录广告展示和点击。广告主、DSP、SSP以及其他第三方都可以往广告里塞代码，通常被称作tag、pixel或者SDK。"
+      },
+      {
+        "type": "p",
+        "text": "这套系统天然有两个容易被滥用的地方。第一，它收集大量个人数据，设备标识、精确位置、IP地址、App使用习惯，全部在竞价过程中暴露给数千家第三方，系统设计的初衷就是支持针对单个用户的定向投放。第二，它允许各种第三方在你的设备上运行代码。如果有人故意把恶意代码藏进广告里，理论上就能精准送到特定目标的设备上。"
+      },
+      {
+        "type": "p",
+        "text": "黑鸟认为，一个能接触到竞价数据的公司，可以在用户毫不知情的情况下追踪他在物理空间中的移动，观察同一个广告标识如何在蜂窝网络、Wi-Fi和VPN之间切换IP地址。监控行业已经在售卖所谓ADINT（Advertising Intelligence，广告情报）平台的访问权限，客户包括国防、情报和执法机构。 @blackorbird"
+      },
+      {
+        "type": "h",
+        "text": "Discover-Tech：夹在间谍软件和广告生态之间的那座桥"
+      },
+      {
+        "type": "p",
+        "text": "Discover-Tech是一家2020年在以色列注册的公司，表面上做数字广告，运营一个叫MyDSP的需求方平台，对接Google、Yandex、Vungle（Liftoff旗下）、Sunteng（舜飞）等广告交易所。但研究发现，它的核心业务实际上是帮雇佣兵间谍软件厂商在全球范围内追踪和入侵设备。"
+      },
+      {
+        "type": "p",
+        "text": "这家公司的CEO是Dekel Boni，董事会里曾经坐着Eric Banoun，一位被以色列国土报称为“以色列进攻性网络先驱之一”的人物。Banoun联合创办了网络间谍公司Circles（NSO Group的密切关联方）和Senpai Technologies（Intellexa集团的一部分）。2020年到2026年3月间，公司股东里还出现过一家与Sara Hamou有关联的公司，而Hamou管理过间谍软件集团Intellexa的企业网络。Banoun于2025年1月退出董事会。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=01398e26&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FibO9kiauylaDpAYyWyyZxvXmEdpZmAia8ic133u2dHMghNRtYCpWwSQwQXWwkf1jetL6YgbUXhCINn6mkKoo0DPl7myDWPDvEY0JAWxRyqS7ccQ%2F640%3Fwx_fmt%3Dpng",
+        "caption": "",
+        "_imgCount": 4
+      },
+      {
+        "type": "p",
+        "text": "Discover-Tech投放广告有两条路径。一条是通过自家MyDSP对接Google、Yandex、Vungle和Sunteng。另一条是通过Eskimi和Comcast旗下的Beeswax（FreeWheel）直接购买广告。大量广告里嵌着一个script标签，指向公司内部所谓的“NOAS server”（也叫getAd server）。"
+      },
+      {
+        "type": "p",
+        "text": "这个NOAS服务器是整个攻击链的关键。广告渲染时，你的设备会连接NOAS服务器，提交你的广告标识（cookie ID或者移动广告ID），然后服务器根据来源IP和广告标识判断你是不是被选中的目标。如果是，返回一段JavaScript代码让你执行；如果不是，返回0字节的空响应。这种设计让Discover-Tech不需要和投放广告的平台共享任何恶意代码，广告平台看到的只是一个普通的script标签。"
+      },
+      {
+        "type": "p",
+        "text": "从2020年到2026年，Discover-Tech一直名列Google的“Ad Manager Certified External Vendors”（认证外部供应商）名单，也是IAB Europe（欧洲互动广告局）TCF（Transparency and Consent Framework，透明度与同意框架）全球供应商列表上的注册厂商。它还通过了GDPR（General Data Protection Regulation，通用数据保护条例）的同意框架校验，在欧洲合法地处理用户“同意”信号。"
+      },
+      {
+        "type": "h",
+        "text": "Controlium：一个用来“投毒”的广告投放控制台"
+      },
+      {
+        "type": "p",
+        "text": "Discover-Tech给客户提供一个叫Controlium的平台，界面长得像普通的广告投放后台。管理员可以给客户开通权限、设置IP白名单、限制每天投放的campaign数量，甚至做“白标”贴牌。客户登录后可以按照Mobile Advertising ID（移动广告标识，简称MAID）、cookie ID或者IP地址来选定要感染或画像的目标。"
+      },
+      {
+        "type": "p",
+        "text": "Controlium前端的全部源码都直接放在登录页面上。研究人员保存了前端代码，去掉了和外部服务器的通信，把所有隐藏的界面都显示出来后在浏览器里打开。平台部署在四个域名上：controlium[.]net、powerium[.]net、adv45.volasim[.]com和adv50.volasim[.]com，全部CNAME到同一个AWS Application Load Balancer，名字直接叫discovertech-alb-100966113。代码里还写着“controlium-discover-tech”和“ https://discovertech.us.auth0.com”。访问/jsConfig端点时返回的消息是“ONLY DEKEL IS ALLOWED!!!”，被认为是在指CEO Dekel Boni。"
+      },
+      {
+        "type": "p",
+        "text": "管理员后台可以配置的限制包括：客户允许竞拍哪些User ID和IP地址组合、能访问哪些URL Type、是否开启OpSec（操作安全）限制、每天或每月能跑多少个campaign、Domains Whitelist（域名白名单）和Apps Whitelist（App白名单）、以及按国家的允许/禁止列表。这套限制机制和攻击平台的授权模式一模一样。"
+      }
+    ],
+    "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189327&idx=1&sn=ae1924e6941ca799ebe70724677bd0f1",
+    "cover": "https://wechat2rss.xlab.app/img-proxy/?k=6f06abb2&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_jpg%2FibO9kiauylaDqMWp2tUeF5icibVfURca889oB57ibVaE9xhib88K6f1uADSTr7GgPPLabmd8ah62c1Akjoncian5EAZ5iamXhOZeVspdK6icic5tPnP40%2F0%3Fwx_fmt%3Djpeg",
+    "ts": 1792077600000,
+    "date": "10月15日",
+    "type": "图文",
+    "author": "黑鸟",
+    "sourceName": "黑鸟",
+    "accountName": "黑鸟",
+    "topics": [
+      "life",
+      "tech"
+    ],
+    "degraded": true,
+    "stats": {
+      "read": "3.5万",
+      "likes": 1144,
+      "shares": 631,
+      "favorites": 141,
+      "comments": 0
+    },
+    "read": "3.5万",
+    "comments": [],
+    "commentSource": "none"
+  },
+  {
     "id": "2844315264",
     "title": "国产剧出海“四剑客”齐发力：从“零星出海”走向“规模化登陆”-中新网",
     "summary": "中新网北京10月15日电(记者 王诗尧)一部国产剧国内还没大爆，海外先火起来了；中国演员演绎的职场故事，远在巴西的观众追得停不下来；更有多部国产剧的评论区里，充斥着用各国语言忙着安利剧情、讨论角色的外国网友……",
@@ -3931,8 +4151,8 @@
   {
     "id": "4073728062",
     "title": "AI担忧刺激美股轮动，标普道指反弹，芯片指数一度跌超4%，CoreWeave信用风险创新高",
-    "summary": "科技股遭遇大规模抛售，AI交易降温引发美股轮动以及投资者转向美国国债避险，美债收益率大幅回落。与此同时，强劲的经济数据进一步巩固了美联储维持高利率的预期，令市场承压。\n周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示增长势头有所放缓，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益者继",
-    "body": "科技股遭遇大规模抛售，AI交易降温引发美股轮动以及投资者转向美国国债避险，美债收益率大幅回落。与此同时，强劲的经济数据进一步巩固了美联储维持高利率的预期，令市场承压。\n周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示增长势头有所放缓，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益者继续下挫，费城半导体指数早盘曾跌超4%。\n云计算服务商CoreWeave不但股价重挫，而且信用风险指标创历史新高，凸显AI领域融资风险。在公司第二大股东英伟达的CEO 黄仁勋发声安抚市场 后，CoreWeave股价跌幅加速收窄，本周四日仍可能累跌超20%。\n科技股抛售之际，投资者涌入美国国债市场避险，美债价格上涨，10年期美债收益率盘中降超10个基点。继周三公布的CPI之后，周四公布的 美国9月PPI 也超预期上涨，创逾四年最大环比涨幅，显示潜在通胀压力依然较强，零售销售数据亦超出预期，两项数据均未能动摇市场对美联储未来数月进一步加息的判断。\n三大美股指：纳指开盘跌约1.2%，早盘跌幅收窄到1%以内，低开的标普500指数盘初跌逾0.6%，早盘尾声时转涨，高开的道指总体上行，早盘尾声时涨幅曾达1.1%。\n光通信股、存储芯片股等AI热潮受益者继续普跌。光通信股中，Credo盘初曾跌7.1%；费城半导体指数早盘一度跌4.4%；存储芯片股中，SK海力士盘初曾跌6.6%；云服务商CoreWeave早盘一度跌9.5%，黄仁勋称该司融资成本在下降、无需英伟达兜底后，股价进一步收窄跌幅，午盘跌不足2%。\n公布财报的个股中，尽管三季度净利润大增69%、连续六季录得创纪录盈利、且透露其尖端技术需求仍极其强劲，台积电美股仍继续下挫，早盘曾跌超5%。\nAI概念股融资：CoreWeave的五年期信用违约互换（CDS）利差周四一度升74.5个基点，至1194.5个基点，创盘中历史新高。CDS市场隐含该公司未来五年内违约的概率超过60%。\n以下为北京时间21:36发布内容 ：\nAI热潮降温，科技股领跌\n盘初数据显示，道指小幅上涨0.4%，标普500指数下跌0.4%，纳指跌幅扩大至1.2%。个股层面，台积电跌幅约4%，此前公司刚刚发布了第三季度财报。\n光通信板块遭遇集体抛售，Lumentum跌约8%，Coherent跌约7%，Marvell Technology及康宁均跌约5%，Credo跌约5%。存储芯片方面，SK海力士、西部数据、闪迪、希捷科技跌幅均约6%，美光科技跌约5%。\n市场对AI投资周期持续性的担忧正在加剧。BMO Capital Markets的Vail Hartman表示，\"科技股持续下跌正推动避险资金流入国债市场，压低收益率。\"\n值得关注的是，标普500指数自2022年低点以来已累计上涨逾一倍，但Nvidia、Apple、Microsoft、Alphabet及Broadcom这五只个股贡献了约40%的涨幅，市场集中度之高令投资者担忧。\n债务成本侵蚀AI回报预期\n围绕AI投资价值的争论，正随着国债收益率攀升至多年高位而趋于激烈。\nTrade Nation的David Morrison指出，为建设AI基础设施而举借的巨额债务，在高借贷成本环境下处境并不理想，这将侵蚀未来回报，而这些回报的规模与兑现时间本身仍充满不确定性。\nCrossbridge Capital的Manish Singh对此作了进一步阐述：\"AI的需求是真实的，我们也不会回到AI出现之前的工作与软件使用方式。结构性机会是真实存在的，但这并不意味着每一家建设基础设施的公司都能为投资者带来可观回报。\"他强调，AI革命最终的评判标准，不仅在于建设了多少算力，更在于能否盈利地加以使用。\"AI或许代表未来，但债务偿付是当下的现实。\"\n通胀广度扩大，消费韧性存疑\n经济数据层面，PPI超预期上涨及零售销售走强，表面上呈现出经济韧性，但市场人士对数据质量持保留态度。\nAnnex Wealth Management的Brian Jacobsen表示，\"AI支出不能成为经济引擎中唯一运转的汽缸。通胀的广度正在扩大，而增长的广度却在收窄。\"他指出，油价冲击正向其他品类蔓延，路径是先传导至生产者价格，再落地至消费者端。零售销售数据表面强劲，主要源于汽油支出的拉动，其他消费品类实际上正受到挤压。\neToro的Bret Kenwell亦持类似观点：\"从表面看，消费者仍在消费。但结构至关重要，尤其是因为零售销售数据并未经过通胀调整。对零售商而言，更关键的问题是，在家庭预算压力持续上升的背景下，消费者能否在关键的假日购物季维持这种韧性。\"\nWells Fargo Investment Institute的Gary Schlossberg则相对乐观，认为即便消费支出在未来数月有所放缓，AI主导的投资支出繁荣所带来的直接与间接支撑，料将对放缓幅度形成一定缓冲。\n本文来自华尔街见闻，欢迎下载APP查看更多\n]]>",
+    "summary": "科技股遭遇大规模抛售，AI交易降温引发美股轮动以及投资者转向美国国债避险，美债收益率大幅回落。与此同时，强劲的经济数据进一步巩固了美联储维持高利率的预期，令市场承压。\n周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示 营收增长势头放缓 ，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益",
+    "body": "科技股遭遇大规模抛售，AI交易降温引发美股轮动以及投资者转向美国国债避险，美债收益率大幅回落。与此同时，强劲的经济数据进一步巩固了美联储维持高利率的预期，令市场承压。\n周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示 营收增长势头放缓 ，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益者继续下挫，费城半导体指数早盘曾跌超4%。\n云计算服务商CoreWeave不但股价重挫，而且信用风险指标创历史新高，凸显AI领域融资风险。在公司第二大股东英伟达的CEO 黄仁勋发声安抚市场 后，CoreWeave股价跌幅加速收窄，本周四日仍可能累跌超20%。\n科技股抛售之际，投资者避险推动美国国债价格上涨，10年期美债收益率盘中降超10个基点。继周三公布的CPI之后，周四公布的 美国9月PPI 也超预期上涨，创逾四年最大环比涨幅，显示潜在通胀压力依然较强，零售销售数据亦超出预期，两项数据均未能动摇市场对美联储未来数月进一步加息的判断。\n国际原油周四走势分化，美油继续上涨，布油小幅回落。美油当天有两大上行推手：部分源于飓风导致墨西哥湾停产， 美国国内原油库存意外大幅减少 ；报道称特朗普政府考虑放宽针对“影子船队”的部分制裁，旨在增加油轮供应并降低原油运输成本。\n三大美股指：纳指开盘跌约1.2%，早盘跌幅收窄到1%以内，低开的标普500指数盘初跌逾0.6%，早盘尾声时转涨，高开的道指总体上行，早盘尾声时涨幅曾达1.1%。\n光通信股、存储芯片股等AI热潮受益者继续普跌。光通信股中，Credo盘初曾跌7.1%；费城半导体指数早盘一度跌4.4%；存储芯片股中，SK海力士盘初曾跌6.6%；云服务商CoreWeave早盘一度跌9.5%，黄仁勋称该司融资成本在下降、无需英伟达兜底后，股价进一步收窄跌幅，午盘跌不足2%。\n公布财报的个股中，尽管三季度净利润大增69%、连续六季录得创纪录盈利、且透露其尖端技术需求仍极其强劲，台积电美股仍继续下挫，早盘曾跌超5%。\nAI概念股融资：CoreWeave五年期信用违约互换（CDS）利差周四一度升74.5个基点，至1194.5个基点，创盘中历史新高。CDS市场隐含该公司未来五年内违约的概率超过60%。\n美债：10年期美债收益率周四全天总体下行，美股早盘曾下测5.04%，刷新9月下旬以来低位，日内降约15个基点。\n国际原油：美股盘中，美能源部公布上周EIA原油库存不增反降近860万桶后，美国WTI原油加速上行，午盘刷新日高时涨破98.30美元、日内涨3.4%，欧股盘中曾跌2.5%的布伦特原油进一步收窄跌幅，一度重上106美元并小幅转涨0.3%。\n以下为北京时间21:36发布内容 ：\nAI热潮降温，科技股领跌\n盘初数据显示，道指小幅上涨0.4%，标普500指数下跌0.4%，纳指跌幅扩大至1.2%。个股层面，台积电跌幅约4%，此前公司刚刚发布了第三季度财报。\n光通信板块遭遇集体抛售，Lumentum跌约8%，Coherent跌约7%，Marvell Technology及康宁均跌约5%，Credo跌约5%。存储芯片方面，SK海力士、西部数据、闪迪、希捷科技跌幅均约6%，美光科技跌约5%。\n市场对AI投资周期持续性的担忧正在加剧。BMO Capital Markets的Vail Hartman表示，\"科技股持续下跌正推动避险资金流入国债市场，压低收益率。\"\n值得关注的是，标普500指数自2022年低点以来已累计上涨逾一倍，但Nvidia、Apple、Microsoft、Alphabet及Broadcom这五只个股贡献了约40%的涨幅，市场集中度之高令投资者担忧。\n债务成本侵蚀AI回报预期\n围绕AI投资价值的争论，正随着国债收益率攀升至多年高位而趋于激烈。\nTrade Nation的David Morrison指出，为建设AI基础设施而举借的巨额债务，在高借贷成本环境下处境并不理想，这将侵蚀未来回报，而这些回报的规模与兑现时间本身仍充满不确定性。\nCrossbridge Capital的Manish Singh对此作了进一步阐述：\"AI的需求是真实的，我们也不会回到AI出现之前的工作与软件使用方式。结构性机会是真实存在的，但这并不意味着每一家建设基础设施的公司都能为投资者带来可观回报。\"他强调，AI革命最终的评判标准，不仅在于建设了多少算力，更在于能否盈利地加以使用。\"AI或许代表未来，但债务偿付是当下的现实。\"\n通胀广度扩大，消费韧性存疑\n经济数据层面，PPI超预期上涨及零售销售走强，表面上呈现出经济韧性，但市场人士对数据质量持保留态度。\nAnnex Wealth Management的Brian Jacobsen表示，\"AI支出不能成为经济引擎中唯一运转的汽缸。通胀的广度正在扩大，而增长的广度却在收窄。\"他指出，油价冲击正向其他品类蔓延，路径是先传导至生产者价格，再落地至消费者端。零售销售数据表面强劲，主要源于汽油支出的拉动，其他消费品类实际上正受到挤压。\neToro的Bret Kenwell亦持类似观点：\"从表面看，消费者仍在消费。但结构至关重要，尤其是因为零售销售数据并未经过通胀调整。对零售商而言，更关键的问题是，在家庭预算压力持续上升的背景下，消费者能否在关键的假日购物季维持这种韧性。\"\nWells Fargo Investment Institute的Gary Schlossberg则相对乐观，认为即便消费支出在未来数月有所放缓，AI主导的投资支出繁荣所带来的直接与间接支撑，料将对放缓幅度形成一定缓冲。\n本文来自华尔街见闻，欢迎下载APP查看更多\n]]>",
     "content": [
       {
         "type": "p",
@@ -3940,7 +4160,7 @@
       },
       {
         "type": "p",
-        "text": "周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示增长势头有所放缓，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益者继续下挫，费城半导体指数早盘曾跌超4%。"
+        "text": "周四三大美股指涨跌不一，低开的纳指保持跌势，投资者转投非AI类股怀抱，标普和道指反弹。Anthropic财报显示 营收增长势头放缓 ，加剧了市场对AI资本支出周期持续性的疑虑，进一步打压科技板块情绪。芯片股和光通信股等AI热潮的受益者继续下挫，费城半导体指数早盘曾跌超4%。"
       },
       {
         "type": "p",
@@ -3948,11 +4168,15 @@
       },
       {
         "type": "p",
-        "text": "科技股抛售之际，投资者涌入美国国债市场避险，美债价格上涨，10年期美债收益率盘中降超10个基点。继周三公布的CPI之后，周四公布的 美国9月PPI 也超预期上涨，创逾四年最大环比涨幅，显示潜在通胀压力依然较强，零售销售数据亦超出预期，两项数据均未能动摇市场对美联储未来数月进一步加息的判断。"
+        "text": "科技股抛售之际，投资者避险推动美国国债价格上涨，10年期美债收益率盘中降超10个基点。继周三公布的CPI之后，周四公布的 美国9月PPI 也超预期上涨，创逾四年最大环比涨幅，显示潜在通胀压力依然较强，零售销售数据亦超出预期，两项数据均未能动摇市场对美联储未来数月进一步加息的判断。"
+      },
+      {
+        "type": "p",
+        "text": "国际原油周四走势分化，美油继续上涨，布油小幅回落。美油当天有两大上行推手：部分源于飓风导致墨西哥湾停产， 美国国内原油库存意外大幅减少 ；报道称特朗普政府考虑放宽针对“影子船队”的部分制裁，旨在增加油轮供应并降低原油运输成本。"
       },
       {
         "type": "quote",
-        "text": "三大美股指：纳指开盘跌约1.2%，早盘跌幅收窄到1%以内，低开的标普500指数盘初跌逾0.6%，早盘尾声时转涨，高开的道指总体上行，早盘尾声时涨幅曾达1.1%。\n光通信股、存储芯片股等AI热潮受益者继续普跌。光通信股中，Credo盘初曾跌7.1%；费城半导体指数早盘一度跌4.4%；存储芯片股中，SK海力士盘初曾跌6.6%；云服务商CoreWeave早盘一度跌9.5%，黄仁勋称该司融资成本在下降、无需英伟达兜底后，股价进一步收窄跌幅，午盘跌不足2%。\n公布财报的个股中，尽管三季度净利润大增69%、连续六季录得创纪录盈利、且透露其尖端技术需求仍极其强劲，台积电美股仍继续下挫，早盘曾跌超5%。\nAI概念股融资：CoreWeave的五年期信用违约互换（CDS）利差周四一度升74.5个基点，至1194.5个基点，创盘中历史新高。CDS市场隐含该公司未来五年内违约的概率超过60%。"
+        "text": "三大美股指：纳指开盘跌约1.2%，早盘跌幅收窄到1%以内，低开的标普500指数盘初跌逾0.6%，早盘尾声时转涨，高开的道指总体上行，早盘尾声时涨幅曾达1.1%。\n光通信股、存储芯片股等AI热潮受益者继续普跌。光通信股中，Credo盘初曾跌7.1%；费城半导体指数早盘一度跌4.4%；存储芯片股中，SK海力士盘初曾跌6.6%；云服务商CoreWeave早盘一度跌9.5%，黄仁勋称该司融资成本在下降、无需英伟达兜底后，股价进一步收窄跌幅，午盘跌不足2%。\n公布财报的个股中，尽管三季度净利润大增69%、连续六季录得创纪录盈利、且透露其尖端技术需求仍极其强劲，台积电美股仍继续下挫，早盘曾跌超5%。\nAI概念股融资：CoreWeave五年期信用违约互换（CDS）利差周四一度升74.5个基点，至1194.5个基点，创盘中历史新高。CDS市场隐含该公司未来五年内违约的概率超过60%。\n美债：10年期美债收益率周四全天总体下行，美股早盘曾下测5.04%，刷新9月下旬以来低位，日内降约15个基点。\n国际原油：美股盘中，美能源部公布上周EIA原油库存不增反降近860万桶后，美国WTI原油加速上行，午盘刷新日"
       },
       {
         "type": "h",
@@ -4329,62 +4553,62 @@
     "read": "3.8万",
     "comments": [
       {
-        "id": "1950499977",
-        "name": "滑稽狮子看日出",
+        "id": "1720839144",
+        "name": "用户6155666815",
+        "location": "新加坡",
+        "time": "刚刚",
+        "avatar": "https://n.sinaimg.cn/sinanews/eb9bf575/20190108/TouXiang120.png",
+        "text": "既然要调查。那就要看3次测试的完整无剪辑原始视频了吧。公众也要看。想看是不是3次都演一遍吓死我了。",
+        "likes": 0,
+        "replies": []
+      },
+      {
+        "id": "76820601",
+        "name": "静态同温层",
+        "location": "广西*",
+        "time": "刚刚",
+        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.996.996.50/006BPHBMly8gls9k50oryj30ro0ro0um.jpg",
+        "text": "我就买这种产品，怎么滴",
+        "likes": 0,
+        "replies": []
+      },
+      {
+        "id": "3113148851",
+        "name": "杳杳无灯",
+        "location": "江苏镇江",
+        "time": "刚刚",
+        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.1024.1024.50/6919f3d7ly8hzdchzvqjcj20sg0sgq4z.jpg",
+        "text": "大众福特也没有出现在车主踩断的情况，是人家自测断掉立马召回的，还是那句话，一个刹车就不能在人力情况下断掉，还要等车主踩断，那车主大概会跟竹知了一样下场吧[笑cry]",
+        "likes": 0,
+        "replies": []
+      },
+      {
+        "id": "1400581195",
+        "name": "用户5641775368",
         "location": "北京",
         "time": "刚刚",
-        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.500.500.50/009S767bly8idehrpibs4j30dw0dwweo.jpg",
-        "text": "但是他说的没错",
+        "avatar": "https://n.sinaimg.cn/sinanews/eb9bf575/20190108/TouXiang120.png",
+        "text": "我最理想的情况是华为低头认错人设崩塌，DCD直接解散。双赢！[doge]",
         "likes": 0,
         "replies": []
       },
       {
-        "id": "1443324944",
-        "name": "用户7371664425",
-        "location": "福建泉州",
+        "id": "3172050304",
+        "name": "星海忌",
+        "location": "河南商丘",
         "time": "刚刚",
-        "avatar": "https://tvax3.sinaimg.cn/crop.0.0.996.996.50/0082SKFjly8gav0h7gajzj30ro0rogmj.jpg",
-        "text": "如果真是这样的话，这件事就不会弄得这么大！",
+        "avatar": "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/0077mWe8ly8i7lag2zcthj30u00u0q52.jpg",
+        "text": "笑死了，这款车总共才交付多少辆啊，还绝大部分",
         "likes": 0,
         "replies": []
       },
       {
-        "id": "668094622",
-        "name": "夏小莫_Trust",
-        "location": "上海",
+        "id": "200554591",
+        "name": "偶然V博",
+        "location": "广东广州",
         "time": "刚刚",
-        "avatar": "https://tvax4.sinaimg.cn/crop.0.0.1002.1002.50/d18304baly8gdi8jhh2s1j20ru0ruglz.jpg",
-        "text": "一起看看[哆啦A梦吃惊]",
-        "likes": 0,
-        "replies": []
-      },
-      {
-        "id": "2316028818",
-        "name": "财校准目标1",
-        "location": "山东济南",
-        "time": "刚刚",
-        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.924.924.50/006zbFMCly8i0qu3f5tghj30po0po76v.jpg",
-        "text": "我们坐等调查真相",
-        "likes": 0,
-        "replies": []
-      },
-      {
-        "id": "641829035",
-        "name": "imas_132u",
-        "location": "广东佛山",
-        "time": "刚刚",
-        "avatar": "https://tvax4.sinaimg.cn/crop.0.0.434.434.50/007Yono6ly8gsdl9ebmf9j30c20c2n01.jpg",
-        "text": "回复",
-        "likes": 0,
-        "replies": []
-      },
-      {
-        "id": "725586128",
-        "name": "__Nothing___",
-        "location": "广东东莞",
-        "time": "刚刚",
-        "avatar": "https://tva2.sinaimg.cn/crop.2.0.507.507.50/aabd5916jw8f5lymobww1j20e80e374z.jpg",
-        "text": "你猜会是哪个结果[笑而不语]",
+        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.1080.1080.50/69a5868bly8i5usqsnr9uj20u00u0gn7.jpg",
+        "text": "江淮汽车需要哪些无资质的人测评吗？",
         "likes": 0,
         "replies": []
       }
@@ -6239,6 +6463,280 @@
     "commentSource": "none"
   },
   {
+    "id": "220382094",
+    "title": "MedReaMM：面向专家级临床诊断综合能力的评测",
+    "summary": "原创 52CV 2026-10-15 22:27 江苏 \n随着大语言模型和视觉语言模型不断进入医学场景，模型能不能“看懂一张片子” 已经不再是唯一问题。真实诊断往往同时依赖病史、症状、实验室检查、医学影像和病理结果，医生需要把这些来源不同、粒度不同的证据放在一起，形成一份有优先级的鉴别诊断。 \n然而，已有不少医学基准仍停留在纯文本问答或局部视觉问答：模型回答一个知识点，或者识别一张图中的局部信息。",
+    "body": "原创 52CV 2026-10-15 22:27 江苏 \n随着大语言模型和视觉语言模型不断进入医学场景，模型能不能“看懂一张片子” 已经不再是唯一问题。真实诊断往往同时依赖病史、症状、实验室检查、医学影像和病理结果，医生需要把这些来源不同、粒度不同的证据放在一起，形成一份有优先级的鉴别诊断。 \n然而，已有不少医学基准仍停留在纯文本问答或局部视觉问答：模型回答一个知识点，或者识别一张图中的局部信息。这些任务难以检验模型是否真正具备“从完整临床证据中得出诊断” 的能力，尤其难以覆盖罕见、非典型和多系统病例。 \n正是基于这个观察，华中科技大学联合复旦大学、南京医科大学第一附属医院（江苏省人民医院）等单位的研究团队提出了 MedReaMM：面向专家级临床诊断综合能力的评测数据集。其中所有数据均来自公开发表的医学病例报告：期刊来源部分选自影响因子（IF）大于 40 的高水平医学期刊，如 NEJM 和 The Lancet；同时也包括 Eurorad 等专业病例平台。平均每例包含 2.79 张医学影像，文本信息平均约 833 个词，并覆盖 13 种医学影像类型； 79%  的病例还包含两个及以上最终诊断。 \n论文标题：MedReaMM: Evaluating Large Multimodal Models on Expert-Level Clinical Diagnostic Synthesis \n论文地址： https://arxiv.org/abs/2608.22323 \n仓库地址： https://github.com/thomaswei-cn/MedReaMM \n数据来源：影响因子（IF）> 40 的高水平医学期刊（如  NEJM  、 The Lancet ）及  Eurorad  等专业病例平台。 \n1. 面向专家级诊断的高难度病例 \nMedReaMM 的第一个亮点，是病例本身就足够难。它不是把常见疾病做成图文问答，而是从medical case reports 中筛选经过专家复核的复杂病例：病例往往罕见、非典型，或同时涉及多个器官系统，需要把病史、症状、检查结果和多张医学影像放在一起，才能形成可靠的鉴别诊断。 \n每个病例同时提供较长的临床记录和多张医学图像，模型不能依赖固定选项，而要输出按可能性排序的前10 个诊断。对于存在合并症或多种诊断的病例，模型还需要尽可能覆盖完整诊断集合。 \n这种开放式设置更接近临床中的鉴别诊断过程，也避免了多选题把候选空间提前限定的问题。为了减少名称差异带来的误判，研究团队同时使用ICD-11 编码匹配和医学语义相似度匹配。 \n图1 传统医学问答及视觉问答的任务对比：MedReaMM 将临床病历、多张医学图像与开放式诊断放在同 一个输入中。 2. 从病例收集到专家复核 \n研究团队从影响因子（IF）大于 40 的高水平医学期刊（如 NEJM 、The Lancet）和公开病例平台（如 Eurorad）收集了 2,867 份 medical case reports，其中 2,359 份来自医学期刊，508 份来自公开病例平台。经过多模态信息抽取、图像与文字对齐、标签泄漏筛查、诊断拆分与 ICD-11 编码，最终由临床专家复核，保留625 个高质量病例。 \n图2 MedReaMM 的数据构建流程。 其中，标签泄漏筛查专门检查三类问题：最终诊断是否已经出现在病历或图注中，图注是否直接给出了临床解释，图像是否包含诊断之后的信息。这样的处理让评测更聚焦于证据整合，而不是识别题目中已经露出的答案。 \n3. 23 个模型的成绩仍有明显差距 \n论文在 625 个病例上评测了23 个多模态模型。结果显示，在 Top-10 首要诊断指标上，Gemini-2.5-Pro 的 ICD-11 匹配得分达到 68.0%，语义匹配得分为 56.5%；Gemini-2.5-Flash 和 GPT-4.1 也表现较好。但即使允许模型给出10 个候选诊断，多数模型仍没有超过 50%。 \n表 1 论文主实验结果。表中数值为百分比，指标包括 Top-5、Top-10、Top-1、MRR 和 NDCG@10。 4. 多方面能力共同影响诊断表现 \n研究团队进一步分析了影响诊断表现的多方面因素。结果显示，模型的医学影像视觉感知能力、医学疾病知识能力和多模态信息联合推理能力，都会影响最终诊断成绩，而且三项能力均与诊断表现呈正相关。任何一方面存在明显短板，都可能限制模型的整体表现。 \n这意味着，模型即使看见了关键影像特征，也需要知道这一特征与哪些疾病相关，并结合病史、症状、实验室检查和其他影像进行联合推理。只有视觉感知、医学知识和多模态推理相互配合，模型才能形成更可靠、更完整的鉴别诊断。 \n图 3 诊断表现受到医学疾病知识、医学影像视觉感知和多模态信息联合推理三方面能力的共同影响。三项能力均与最终诊断成绩呈正相关。 5. 典型病例 \n论文给出了一例 35 岁女性反复肺部感染的病例。最终诊断包含肺内隔离症和放线菌感染两个部分。在模型输出中，较强模型通常能够识别主病“肺内隔离症” ，但对放线菌感染并不稳定。 \n图 4 典型病例：肺内隔离症合并放线菌感染及模型预测结果。 这个案例说明，模型当前的困难并不总是\"完全不会诊断”，而是容易抓住最显眼的主病，却漏掉病理细节或并发症里的第二个答案。对于临床诊断支持而言，能否覆盖完整诊断集合，可能比只猜中一个主病更重要。 \n结语 \nMedReaMM 提供了一条清晰的评测基线：多模态医疗模型既要具备医学疾病知识和医学影像视觉感知能力，也要能够对临床文本与多张医学图像进行联合推理，最终组织成一份有优先级的诊断列表。论文同时提醒我们，基准中的高分不能直接等同于临床可用性，因为真实诊疗还涉及追问、复查、不确定性和风险管理。 \n但在模型真正进入复杂临床场景之前，先用这样一套公开、可复现、经过专家核验的基准回答\"模型到底会不会综合判断”，仍然是非常必要的一步。 \n入群加好友(v:xiao-ma-baoli)，请备注你感兴趣的技术方向 \n跳转微信打开 \n]]>",
+    "content": [
+      {
+        "type": "p",
+        "text": "原创 52CV 2026-10-15 22:27 江苏"
+      },
+      {
+        "type": "p",
+        "text": "随着大语言模型和视觉语言模型不断进入医学场景，模型能不能“看懂一张片子” 已经不再是唯一问题。真实诊断往往同时依赖病史、症状、实验室检查、医学影像和病理结果，医生需要把这些来源不同、粒度不同的证据放在一起，形成一份有优先级的鉴别诊断。"
+      },
+      {
+        "type": "p",
+        "text": "然而，已有不少医学基准仍停留在纯文本问答或局部视觉问答：模型回答一个知识点，或者识别一张图中的局部信息。这些任务难以检验模型是否真正具备“从完整临床证据中得出诊断” 的能力，尤其难以覆盖罕见、非典型和多系统病例。"
+      },
+      {
+        "type": "p",
+        "text": "正是基于这个观察，华中科技大学联合复旦大学、南京医科大学第一附属医院（江苏省人民医院）等单位的研究团队提出了 MedReaMM：面向专家级临床诊断综合能力的评测数据集。其中所有数据均来自公开发表的医学病例报告：期刊来源部分选自影响因子（IF）大于 40 的高水平医学期刊，如 NEJM 和 The Lancet；同时也包括 Eurorad 等专业病例平台。平均每例包含 2.79 张医学影像，文本信息平均约 833 个词，并覆盖 13 种医学影像类型； 79%  的病例还包含两个及以上最终诊断。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=d3de9018&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FP9MWBRYIGW9xJbzlnJPo1bpCZXxZKLaZLFQWBsusscK2yPicq0bdBwWIROZoHulCnY7yxrGGF6rDT1jChqp4BeuGlb4RXPuqol0m4Laibiaq2U%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "",
+        "_imgCount": 1
+      },
+      {
+        "type": "p",
+        "text": "论文标题：MedReaMM: Evaluating Large Multimodal Models on Expert-Level Clinical Diagnostic Synthesis"
+      },
+      {
+        "type": "p",
+        "text": "论文地址： https://arxiv.org/abs/2608.22323"
+      },
+      {
+        "type": "p",
+        "text": "仓库地址： https://github.com/thomaswei-cn/MedReaMM"
+      },
+      {
+        "type": "p",
+        "text": "数据来源：影响因子（IF）> 40 的高水平医学期刊（如  NEJM  、 The Lancet ）及  Eurorad  等专业病例平台。"
+      },
+      {
+        "type": "h",
+        "text": "1. 面向专家级诊断的高难度病例"
+      },
+      {
+        "type": "p",
+        "text": "MedReaMM 的第一个亮点，是病例本身就足够难。它不是把常见疾病做成图文问答，而是从medical case reports 中筛选经过专家复核的复杂病例：病例往往罕见、非典型，或同时涉及多个器官系统，需要把病史、症状、检查结果和多张医学影像放在一起，才能形成可靠的鉴别诊断。"
+      },
+      {
+        "type": "p",
+        "text": "每个病例同时提供较长的临床记录和多张医学图像，模型不能依赖固定选项，而要输出按可能性排序的前10 个诊断。对于存在合并症或多种诊断的病例，模型还需要尽可能覆盖完整诊断集合。"
+      },
+      {
+        "type": "p",
+        "text": "这种开放式设置更接近临床中的鉴别诊断过程，也避免了多选题把候选空间提前限定的问题。为了减少名称差异带来的误判，研究团队同时使用ICD-11 编码匹配和医学语义相似度匹配。"
+      },
+      {
+        "type": "h",
+        "text": "2. 从病例收集到专家复核"
+      },
+      {
+        "type": "p",
+        "text": "研究团队从影响因子（IF）大于 40 的高水平医学期刊（如 NEJM 、The Lancet）和公开病例平台（如 Eurorad）收集了 2,867 份 medical case reports，其中 2,359 份来自医学期刊，508 份来自公开病例平台。经过多模态信息抽取、图像与文字对齐、标签泄漏筛查、诊断拆分与 ICD-11 编码，最终由临床专家复核，保留625 个高质量病例。"
+      },
+      {
+        "type": "p",
+        "text": "其中，标签泄漏筛查专门检查三类问题：最终诊断是否已经出现在病历或图注中，图注是否直接给出了临床解释，图像是否包含诊断之后的信息。这样的处理让评测更聚焦于证据整合，而不是识别题目中已经露出的答案。"
+      },
+      {
+        "type": "h",
+        "text": "3. 23 个模型的成绩仍有明显差距"
+      },
+      {
+        "type": "p",
+        "text": "论文在 625 个病例上评测了23 个多模态模型。结果显示，在 Top-10 首要诊断指标上，Gemini-2.5-Pro 的 ICD-11 匹配得分达到 68.0%，语义匹配得分为 56.5%；Gemini-2.5-Flash 和 GPT-4.1 也表现较好。但即使允许模型给出10 个候选诊断，多数模型仍没有超过 50%。"
+      },
+      {
+        "type": "h",
+        "text": "4. 多方面能力共同影响诊断表现"
+      },
+      {
+        "type": "p",
+        "text": "研究团队进一步分析了影响诊断表现的多方面因素。结果显示，模型的医学影像视觉感知能力、医学疾病知识能力和多模态信息联合推理能力，都会影响最终诊断成绩，而且三项能力均与诊断表现呈正相关。任何一方面存在明显短板，都可能限制模型的整体表现。"
+      },
+      {
+        "type": "p",
+        "text": "这意味着，模型即使看见了关键影像特征，也需要知道这一特征与哪些疾病相关，并结合病史、症状、实验室检查和其他影像进行联合推理。只有视觉感知、医学知识和多模态推理相互配合，模型才能形成更可靠、更完整的鉴别诊断。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=b20da81e&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FP9MWBRYIGW8lbg4xHzKGGGTssucNTd4zoMRicJg5ns4kGibkVUgmorRL2wG9Im8ooUltwvwOhG0sbuZicHhcXshobhKzsWARYp2BTnVcIGjF8o%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "图 3 诊断表现受到医学疾病知识、医学影像视觉感知和多模态信息联合推理三方面能力的共同影响。三项能力均与最终诊断成绩呈正相关。",
+        "_imgCount": 2
+      },
+      {
+        "type": "h",
+        "text": "5. 典型病例"
+      },
+      {
+        "type": "p",
+        "text": "论文给出了一例 35 岁女性反复肺部感染的病例。最终诊断包含肺内隔离症和放线菌感染两个部分。在模型输出中，较强模型通常能够识别主病“肺内隔离症” ，但对放线菌感染并不稳定。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=a73b8adf&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FP9MWBRYIGWicBmGApI5jW5DTnfBtspH4bJCJQEnVDfejDprAyUJf3QibrUuE8cju0HPUrsLXBhaOGT08bs3o7ccxOTlxxXMGPHpwddbwRGFa8%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "图 4 典型病例：肺内隔离症合并放线菌感染及模型预测结果。",
+        "_imgCount": 3
+      }
+    ],
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTE1NjQxMQ==&mid=2247666371&idx=2&sn=fa7897666ea637f7195d2deb901f9d9b",
+    "cover": "https://wechat2rss.xlab.app/img-proxy/?k=d3de9018&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FP9MWBRYIGW9xJbzlnJPo1bpCZXxZKLaZLFQWBsusscK2yPicq0bdBwWIROZoHulCnY7yxrGGF6rDT1jChqp4BeuGlb4RXPuqol0m4Laibiaq2U%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+    "ts": 1792074420000,
+    "date": "10月15日",
+    "type": "图文",
+    "author": "我爱计算机视觉",
+    "sourceName": "我爱计算机视觉",
+    "accountName": "我爱计算机视觉",
+    "topics": [
+      "life"
+    ],
+    "degraded": true,
+    "stats": {
+      "read": "5.9万",
+      "likes": 4673,
+      "shares": 498,
+      "favorites": 711,
+      "comments": 0
+    },
+    "read": "5.9万",
+    "comments": [],
+    "commentSource": "none"
+  },
+  {
+    "id": "324183634",
+    "title": "港科大×腾讯视频：音视频大模型后训练往哪儿使劲？边学边改，不再提前定死",
+    "summary": "原创 52CV 2026-10-15 22:27 江苏 \n导读｜ 你一定见过这样的 AI 视频：主播张嘴却没声音，狗叫声响了嘴还闭着，人物说着说着就「换了张脸」。音视频联合生成模型越做越大，但让画面好看、声音好听、语义对得上、口型还同步，几个目标经常互相「打架」。 \n来自  港科大 MMLab@HKUST、腾讯视频与香港大学  的研究团队给出了新答案—— Adaptive Reward Routi",
+    "body": "原创 52CV 2026-10-15 22:27 江苏 \n导读｜ 你一定见过这样的 AI 视频：主播张嘴却没声音，狗叫声响了嘴还闭着，人物说着说着就「换了张脸」。音视频联合生成模型越做越大，但让画面好看、声音好听、语义对得上、口型还同步，几个目标经常互相「打架」。 \n来自  港科大 MMLab@HKUST、腾讯视频与香港大学  的研究团队给出了新答案—— Adaptive Reward Routing（自适应奖励路由） ：让强化学习后训练既知道「往哪儿改」，又知道「怎么权衡」，而且随着模型训练实时更新。 \n论文标题 Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL \n作者单位 港科大 MMLab@HKUST、腾讯视频、香港大学 \n论文链接 https://arxiv.org/abs/2609.37200 \n关键词 音视频联合生成 / 扩散模型强化学习 / DiffusionNFT / 多奖励优化 \n00 一图看懂：这篇论文有多能打 \n一句话总结： 把「奖励往哪儿打」和「奖励怎么配比」这两件事，从 训练前一次性定死 ，变成了 训练中随模型一起进化 。 \n01 痛点：多奖励 RL 的两道「送命题」 \n要让一个音视频大模型同时做好画质、音质、文本对齐和音画同步，业界通常会请来多个「裁判」（奖励模型）打分，再用强化学习去优化。本文用了 5 个裁判：VideoAlign、HPSv3（视频质量）、AudioBox Aesthetics（音频质量）、CLAP（文本-音频对齐）和 DeSync（音画同步）。 \n问题是： 裁判越多，事情越复杂。作者把它归结为两个相互耦合的问题—— \n送命题一：奖励应该打在哪儿？（Where to Optimize） \nLTX-2 这类模型由视频、音频两条分支组成，靠双向交叉注意力（A2V / V2A）互相「沟通」。此前的 OmniNFT 已经意识到要分模态、分层去分配奖励，但它的分层路由是 根据基座模型一次性固定 的。 \n作者做了一个关键实验：分别屏蔽不同层的跨模态 K/V，看同步误差怎么变。结果发现—— 基座模型和训练后模型里，「管同步」的关键层根本不是同一批！ 反向梯度分析也给出了一致结论：跨模态梯度的峰值位置在训练中发生了明显迁移。 \n打个比方： 这就像拿着出发前下载的「离线地图」开长途——路况早变了，你还在按老路线走。 \n送命题二：多个奖励该怎么平衡？（How to Balance） \n裁判之间经常意见相反。论文统计显示，在同一批样本上， CLAP 和 HPSv3 的冲突率高达 65% ，AV-DeSync 和 HPSv3 的冲突率也有 55%。 \n现有两类方案各有硬伤： GDPO  用固定权重，冲突来了不会变通； MARBLE  按梯度几何自动调权重，但它只看「梯度合不合得来」，不管「用户认为谁更重要」。结果是—— AV-DeSync 这种早期梯度噪声大、却至关重要的同步目标，权重被一路压到接近 0 。 \n图1｜(a)(b) 前向屏蔽与反向梯度分析：同步关键层在训练中发生迁移；(c) 奖励间冲突率最高达 65%；(d) 纯梯度加权会让 AV-DeSync 权重趋近于零 02 方法：两把钥匙，一套「实时导航」 \n针对这两个问题，作者在前向过程强化学习框架  DiffusionNFT  之上提出了 Adaptive Reward Routing，整体流程可以概括为四级路由： \n奖励重加权 （每个目标用多大力）→  分支路由 （交给视频还是音频分支）→  Token 路由 （重点优化哪些位置）→  层路由 （梯度从哪些跨模态层穿过去） \n图2｜Adaptive Reward Routing 整体框架：采样 → 评估 → 重加权 → 路由 → 损失 钥匙一：跨模态影响引导路由 —— 解决「往哪儿改」 \n想知道哪一层、哪个 token 对跨模态影响最大，最直接的办法是逐个「关掉」看效果，但训练中反复这么做太贵。作者的巧思是： 直接复用前向过程中已经算好的交叉注意力输出强度（pre-gate response）作为代理信号 ，几乎不增加额外的模型前向计算。 \n▸ Token 级路由： 跨层聚合响应强度，得到每个 token 的损失权重——跨模态影响大的位置（例如与声音强相关的画面区域）被重点优化；视频按帧内归一化，避免帧间亮度差异喧宾夺主。 \n▸ 层级路由： 在层内聚合响应强度，给每一层一个「软截断」系数。前向值完全不变，只缩放反向梯度：影响力强的层保留更多梯度，弱耦合层的梯度逐步被截断。A2V 和 V2A 各自独立路由。 \n▸ 动态刷新： 这些路由在训练中随当前模型重新计算，而不是从基座模型一次性抄过来。 \n钥匙二：偏好保持的模态感知重加权 —— 解决「怎么平衡」 \n作者的思路很朴素： 用户偏好和梯度冲突，不二选一，而是两个都要。 \n▸ 分支感知： 视频奖励只在视频分支里探测梯度，音频奖励只在音频分支里探测，跨模态奖励两边都算，冲突在「各自负责的分支」内部求解。 \n▸ 残差修正： 预设权重作为「偏好先验」保底，梯度冲突得到的系数只作为残差微调——相当于给每个目标设了一个 非零地板 ，弱但关键的目标不会被饿死。 \n▸ 预热机制： 训练早期梯度关系不可靠，先按预设权重跑一段，等估计稳定了再开启动态调整。 \n一句话： 先听用户的，再根据实时「路况」做微调——既不墨守成规，也不随波逐流。 \n03 效果：口型、身份、同步，全面在线 \n看得见的提升：四组真实生成对比 \n作者在中文新闻播报、风格化角色说话、双人对话、狗叫四类场景下，对比了基座 LTX-2、OmniNFT 和本文方法（每组展示 5 帧时序画面）。 \n案例一｜中文新闻播报：本文方法（Ours 行）主播身份与场景构图在整段序列中保持稳定 案例二｜「蔬菜精灵」说英文台词：基座出现明显外观漂移，本文方法角色造型与动作保持一致 案例三｜双人对话：本文方法两位人物的身份与场景构图在时序上更稳定 案例四｜德牧连续吠叫：基座出现主体漂移，本文方法狗的外观与吠叫动作更连贯 论文观察到： LTX-2 在角色和动物案例里有明显的主体与外观漂移；OmniNFT 提升了提示词遵循，但仍有时序不一致； 本文方法在保持身份和场景结构稳定的同时，保留了说话、对话、吠叫对应的视觉动作。 \n量化结果：两大底座，9/10 指标第一 \n在包含  10,140 条提示词  的完整 JavisBench 上，作者在  LTX-2（19B）  和  LTX-2.3（22B）  两个底座上评测了 10 项指标。所有可训练方法均使用相同数据、LoRA 与优化预算，各跑 3 个随机种子取均值。 \n方法 VQ↑ AQ↑ TA-IB↑ CLAP↑ AV-IB↑ AVHScore↑ JavisScore↑ DeSync↓ Base \n1.883 \n5.201 \n0.143 \n0.358 \n0.180 \n0.177 \n0.153 \n0.604 \n+GDPO \n2.722 \n5.450 \n0.138 \n0.347 \n0.174 \n0.175 \n0.155 \n0.671 \n+MARBLE \n2.384 \n5.100 \n0.138 \n0.365 \n0.182 \n0.182 \n0.158 \n0.618 \n+OmniNFT \n3.136 \n5.614 \n0.145 \n0.416 \n0.222 \n0.219 \n0.195 \n0.390 \n+Ours 3.336 5.868 0.167 0.425 0.235 0.234 0.206 0.341 表1｜LTX-2 底座 JavisBench 主要结果（节选 8 项，3 个种子均值） \n图｜音画不同步误差 DeSync：LTX-2 上从 0.604 降至 0.341，LTX-2.3 上从 0.504 降至 0.302 几个值得划重点的数字： \n▸ 音画同步： LTX-2 上 DeSync 较基座  降低 43.5% ，较 OmniNFT（0.390）再降 12.6%；LTX-2.3 上降至  0.302 ，较 OmniNFT（0.369）再降 18.2%。 \n▸ 音频质量： AQ 在 LTX-2 / LTX-2.3 上分别达到  5.868 / 5.979 ，两个底座均为最优。 \n▸ 「偏科」现象： GDPO 拉高了画质，却让 DeSync 从 0.604  恶化到 0.671 ——固定权重导致的失衡一目了然。 \n图｜LTX-2 底座上各指标相对基座的提升幅度：本文方法在所有展示指标上均高于 OmniNFT 训练曲线：不是「拆东墙补西墙」 \n从训练动态看，本文方法的五项奖励平均值最高，而且 每一条单项奖励曲线都保持了良好的上升趋势 ；而基线方法在音频、视频、同步之间的进展明显不均衡。这说明最终的提升来自协同优化，而不是牺牲某个目标换来的。 \n图4｜(a) 五项奖励与平均奖励的训练曲线（绿色为本文方法）；(b) 路由与加权组件的逐步消融 04 硬核验证：代理信号真的靠谱吗？ \n消融实验显示，Token 级加权、层级缩放、分支感知、残差混合和预热机制各自都带来增益，组合后效果最好——说明「往哪儿改」和「怎么平衡」解决的是两类互补的失效模式。 \n更有说服力的是机制分析。作者在 4 个训练检查点上，逐个关闭 48 个 A2V / V2A 跨模态块，用真实干预效果来检验代理信号： \n▸ 层级保真： 代理信号几乎完美复现了真实干预得到的层级排序。 \n▸ 动态追踪： 实时重算的代理全程相关性在 0.96 以上；而冻结在初始化的路由图，相关性分别 跌到 0.56 和 0.38 ——直接证明了「静态路由会过期」。 \n▸ Token 识别： 屏蔽得分最高的 10% token，对最终预测的影响是同等数量随机 token 的  1.62 倍（A2V）和 1.74 倍（V2A） 。 \n图5｜(a) 代理分数与真实干预效果高度一致；(b) 实时代理（实线）vs 冻结代理（虚线）；(c) 屏蔽高分 token 造成的影响最大 05 写在最后 \n这篇工作最值得玩味的，不只是刷新了几项指标，而是一个观念上的转变： 多模态模型的反馈，不该按一份固定「菜谱」分配，而应该随着模型能力的成长持续重组。 \n作者也坦诚讨论了局限：目前还没有一个能统一刻画模态质量、语义一致性和时序同步的音视频奖励模型；路由机制需要模态 token 可识别、跨模态交互响应可分离。作者表示方法已在双流 LTX 底座和单流 JavisDiT++ 底座上验证，奖励协调部分本身与架构无关，可推广到其他扩散 RL 目标。 \n随着音视频一体化生成走向短视频、虚拟主播、影视预演等真实场景，「口型对得上、声音配得准、人物不变脸」将是绕不开的门槛。让训练过程「与模型同步进化」，或许正是迈过这道门槛的关键一步。 \n入群加好友(v:xiao-ma-baoli)，请备注你感兴趣的技术方向 \n跳转微信打开 \n]]>",
+    "content": [
+      {
+        "type": "p",
+        "text": "原创 52CV 2026-10-15 22:27 江苏"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=3cbc1d5e&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_jpg%2FP9MWBRYIGW88FTdERbAvx6GM8pbr4tRx6JkKG4OibfIkEXOStsEBy35ZxjOiaDSrfJmA8jtY4LCvuxVZFDrK9gfNRREw9mLN0NwRhIC2icr4mY%2F0%3Fwx_fmt%3Djpeg",
+        "caption": "",
+        "_imgCount": 1
+      },
+      {
+        "type": "quote",
+        "text": "导读｜ 你一定见过这样的 AI 视频：主播张嘴却没声音，狗叫声响了嘴还闭着，人物说着说着就「换了张脸」。音视频联合生成模型越做越大，但让画面好看、声音好听、语义对得上、口型还同步，几个目标经常互相「打架」。 \n来自  港科大 MMLab@HKUST、腾讯视频与香港大学  的研究团队给出了新答案—— Adaptive Reward Routing（自适应奖励路由） ：让强化学习后训练既知道「往哪儿改」，又知道「怎么权衡」，而且随着模型训练实时更新。"
+      },
+      {
+        "type": "p",
+        "text": "Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL"
+      },
+      {
+        "type": "p",
+        "text": "港科大 MMLab@HKUST、腾讯视频、香港大学"
+      },
+      {
+        "type": "p",
+        "text": "https://arxiv.org/abs/2609.37200"
+      },
+      {
+        "type": "p",
+        "text": "音视频联合生成 / 扩散模型强化学习 / DiffusionNFT / 多奖励优化"
+      },
+      {
+        "type": "h",
+        "text": "00 一图看懂：这篇论文有多能打"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=485e4280&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FP9MWBRYIGW9oU5Y8NqDmqJZiaAPxuB33lbYB85lP4j3Xh0Uojda2zpTstKre5PusULb6xxZ0Qj5hmicHO08Jmuc4hTTPdbWZLsb1EQNBlCaHo%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "",
+        "_imgCount": 2
+      },
+      {
+        "type": "p",
+        "text": "一句话总结： 把「奖励往哪儿打」和「奖励怎么配比」这两件事，从 训练前一次性定死 ，变成了 训练中随模型一起进化 。"
+      },
+      {
+        "type": "h",
+        "text": "01 痛点：多奖励 RL 的两道「送命题」"
+      },
+      {
+        "type": "p",
+        "text": "要让一个音视频大模型同时做好画质、音质、文本对齐和音画同步，业界通常会请来多个「裁判」（奖励模型）打分，再用强化学习去优化。本文用了 5 个裁判：VideoAlign、HPSv3（视频质量）、AudioBox Aesthetics（音频质量）、CLAP（文本-音频对齐）和 DeSync（音画同步）。"
+      },
+      {
+        "type": "p",
+        "text": "问题是： 裁判越多，事情越复杂。作者把它归结为两个相互耦合的问题——"
+      },
+      {
+        "type": "h",
+        "text": "送命题一：奖励应该打在哪儿？（Where to Optimize）"
+      },
+      {
+        "type": "p",
+        "text": "LTX-2 这类模型由视频、音频两条分支组成，靠双向交叉注意力（A2V / V2A）互相「沟通」。此前的 OmniNFT 已经意识到要分模态、分层去分配奖励，但它的分层路由是 根据基座模型一次性固定 的。"
+      },
+      {
+        "type": "p",
+        "text": "作者做了一个关键实验：分别屏蔽不同层的跨模态 K/V，看同步误差怎么变。结果发现—— 基座模型和训练后模型里，「管同步」的关键层根本不是同一批！ 反向梯度分析也给出了一致结论：跨模态梯度的峰值位置在训练中发生了明显迁移。"
+      },
+      {
+        "type": "quote",
+        "text": "打个比方： 这就像拿着出发前下载的「离线地图」开长途——路况早变了，你还在按老路线走。"
+      },
+      {
+        "type": "h",
+        "text": "送命题二：多个奖励该怎么平衡？（How to Balance）"
+      },
+      {
+        "type": "p",
+        "text": "裁判之间经常意见相反。论文统计显示，在同一批样本上， CLAP 和 HPSv3 的冲突率高达 65% ，AV-DeSync 和 HPSv3 的冲突率也有 55%。"
+      },
+      {
+        "type": "p",
+        "text": "现有两类方案各有硬伤： GDPO  用固定权重，冲突来了不会变通； MARBLE  按梯度几何自动调权重，但它只看「梯度合不合得来」，不管「用户认为谁更重要」。结果是—— AV-DeSync 这种早期梯度噪声大、却至关重要的同步目标，权重被一路压到接近 0 。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=771b1353&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FP9MWBRYIGWicQ0Fkuaby5O8lP0CeLA5az3ktYjvanteicJYUg2pF55ib6UA5Lt0bBmUm0RhTTCt6b0X8bRc3nVXWsa9qwoWhn9W9uSc2aiaJJxc%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "图1｜(a)(b) 前向屏蔽与反向梯度分析：同步关键层在训练中发生迁移；(c) 奖励间冲突率最高达 65%；(d) 纯梯度加权会让 AV-DeSync 权重趋近",
+        "_imgCount": 3
+      },
+      {
+        "type": "h",
+        "text": "02 方法：两把钥匙，一套「实时导航」"
+      },
+      {
+        "type": "p",
+        "text": "针对这两个问题，作者在前向过程强化学习框架  DiffusionNFT  之上提出了 Adaptive Reward Routing，整体流程可以概括为四级路由："
+      },
+      {
+        "type": "quote",
+        "text": "奖励重加权 （每个目标用多大力）→  分支路由 （交给视频还是音频分支）→  Token 路由 （重点优化哪些位置）→  层路由 （梯度从哪些跨模态层穿过去）"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=7388d73f&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FP9MWBRYIGWicF1dLQYAoiaCprUCxcQlzF1Izs13QiaOLyQOpxaG5jaBXYicBzUzKfy3eDn3Os1DuX7fLZyISDLnK6kdibD2picfLC0jDpMjNy2icFY%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "图2｜Adaptive Reward Routing 整体框架：采样 → 评估 → 重加权 → 路由 → 损失",
+        "_imgCount": 4
+      }
+    ],
+    "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTE1NjQxMQ==&mid=2247666371&idx=1&sn=297b34861bcd703c4e18cd8002404dde",
+    "cover": "https://wechat2rss.xlab.app/img-proxy/?k=3cbc1d5e&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_jpg%2FP9MWBRYIGW88FTdERbAvx6GM8pbr4tRx6JkKG4OibfIkEXOStsEBy35ZxjOiaDSrfJmA8jtY4LCvuxVZFDrK9gfNRREw9mLN0NwRhIC2icr4mY%2F0%3Fwx_fmt%3Djpeg",
+    "ts": 1792074420000,
+    "date": "10月15日",
+    "type": "图文",
+    "author": "我爱计算机视觉",
+    "sourceName": "我爱计算机视觉",
+    "accountName": "我爱计算机视觉",
+    "topics": [
+      "life"
+    ],
+    "degraded": true,
+    "stats": {
+      "read": "9550",
+      "likes": 1668,
+      "shares": 1239,
+      "favorites": 226,
+      "comments": 0
+    },
+    "read": "9550",
+    "comments": [],
+    "commentSource": "none"
+  },
+  {
     "id": "319004783",
     "title": "最后半小时买了将近500亿",
     "summary": "原创 moomoocat 2026-10-15 22:20 新加坡 \n昨晚文章发出来不到半小时没了，很多读者没看到就会好奇，四处打听，还有让我以其它形式重发的。这个是不行的，腾讯管理员那么操作肯定有原因，就好像很多汽车监测到驾驶员不系安全带会报警，于是很多人就买了各种小道具骗自己的汽车，既不系安全带又不会报警，我寻思这不是作死么？ \n其实昨晚也没啥稀罕内容，就是吐槽抱怨了几句，行情不好狗嘴里自然是",
@@ -6366,396 +6864,6 @@
       "comments": 0
     },
     "read": "6.3万",
-    "comments": [],
-    "commentSource": "none"
-  },
-  {
-    "id": "590050040",
-    "title": "5108股飘绿！什么引发A股放量回调？",
-    "summary": "来源：国际金融报\n10月15日，A股放量至1.65万亿元，超5100只个股收跌；通信等科技股跌幅靠前，饮料、白酒、券商板块护盘。\n受访人士表示，海外流动性收紧、外围股市下行，叠加科技板块前期累计涨幅较大、估值偏高，多重因素共同引...",
-    "body": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】\n\n10月15日，A股放量至1.65万亿元，超5100只个股收跌；通信等科技股跌幅靠前，饮料、白酒、券商板块护盘。\n\n受访人士表示，海外流动性收紧、外围股市下行，叠加科技板块前期累计涨幅较大、估值偏高，多重因素共同引发市场当日放量回调。市场底部是区间而非单点，后续可重点关注10月27日至28日的美联储议息会议。当前建议控制整体仓位，在投资结构上把握高低切换，可配置高股息标的搭建防御底仓，对冲市场波动。\n\n指数层面，A股全天低开低走，表现弱势。沪指收跌1.59%，报3707.48点；创业板指收跌2.92%，报2783.17点；深证成指收跌2.43%。上证50微跌0.42%，沪深300、科创50跌幅超1%，北证50收跌3.44%。\n\n交易量能放量，沪深京三市日成交额增加2195亿元，增至1.65万亿元。杠杆资金近期也在降温，截至10月14日，三市两融余额降至2.54万亿元。\n\n盘面上，银行、非银金融、通信运营、饮料、白酒护盘，基本金属、通信设备、F5G概念大跌，港口航运也低迷。\n\n行业层面呈现普跌格局。31个申万一级行业中，仅有食品饮料、非银金融微红，其余收跌，银行、家用电器微跌。\n\n23个申万一级行业跌幅超过2%，通信板块大跌4.64%，国防军工、机械设备、有色金属、建筑材料跌近4%。\n\n个股普跌，5108只个股收跌，26只跌停；430只个股收红，涨停股36只。交易活跃股方面，今日有5只个股日成交额超过100亿元，均为科技股，全部收跌。 中际旭创 收跌5.19%报656.94元/股， 新易盛 收跌7.49%报306.01元/股， 长鑫科技 收跌5.24%报43.59元/股， 兆易创新 收跌4.9%报278.22元/股。\n\n桓睿天泽总经理莫小城直言，今日市场放量普跌，主要受海外市场波动、科技板块前期涨幅较大及估值偏高等因素影响，部分资金集中兑现，放大了市场调整幅度。\n\n金田基金董事长杨丙田认为，本轮下跌一方面源于市场开始质疑科技巨头资本开支的回报水平；另一方面，美国9月CPI同比增速超预期反弹，推升市场对美联储再度加息的预期，对全球市场形成压制。\n\n鸿涵投资交易总监刘岩向记者表示，今日市场放量杀跌，海外流动性收紧以及海外股市下跌，无疑是压制A股风险偏好的重要因素。如市场能出现一次无论涨跌的大幅放量，则有空头出清的可能，否则仍需反复震荡、堆量、交换筹码。结构上看，今日半导体设备表现突出，未来能否持续仍需观察。\n\n金信基金基金经理黄飙表示，今日市场调整是内外因素共振的结果。其一，海外通胀重定价是最直接的触发因素；其二，隔夜纳斯达克指数跌1.88%，费城半导体指数跌4.3%，AI（人工智能）硬件估值消化压力向国内传导；其三，海外光刻设备龙头2027年产能指引低于市场预期，触发科技硬件回调；其四，国内增量资金不足仍是核心矛盾。\n\n三十三度资本基金经理程靓向记者分析，今日指数调整由多重因素共振引发：主因是美国9月CPI超预期，市场上调美联储加息概率，全球无风险利率抬升，海外半导体、韩日股市同步大跌，算力硬件、半导体等高估值成长股跟随杀估值；其次，AI硬件板块市净率仍处于历史高位区间，叠加光模块、PCB（印制电路板）相关海外政策传闻扰动，以及当前进入三季报业绩验证窗口，前期高位品种遭遇资金集中兑现，走出放量换手式下跌。\n\n程靓进一步指出，今日盘面释放三大信号：一是指数技术面已极度超卖，但均线空头排列，短期仅具备技术性反弹条件，不代表趋势反转；二是宽基ETF尾盘放量，可见配置资金出现托底动作；三是市场高低切换明确，银行、白酒等高股息低估值板块逆势走强，资金正从高估值成长赛道向低估值防御资产转移。\n\n针对近期市场连续回调，鸿风资产投资总监黄易表示，本轮下跌属于多重因素共振，外部因素为导火索，内部交易结构才是根源。海外宏观层面，美国通胀数据超预期推高美债收益率，市场加息预期显著升温。利率上行，高估值硬科技、算力、半导体等板块估值最先被压缩；北向资金风险偏好下降，阶段性流出， 亚太科技 股同步承压，形成跨境情绪传染。这是本轮成长板块领跌最核心的外部变量。\n\n内部交易结构方面，前期科技赛道拥挤度过高，获利盘兑现。上半年硬科技主线持续上涨，大量资金集中在AI硬件、PCB、存储等赛道，交易拥挤、远期预期打满，但业绩兑现节奏跟不上估值抬升。市场开始从炒远期故事，转向严格审视订单、资本开支、现金流的情况，高预期资产进入估值重定价阶段，属于筹码再平衡，并非产业长期趋势终结。当前市场处于存量资金博弈环境，增量资金供给不足。\n\n黄易进一步指出，当前市场属于存量博弈，没有大规模新增资金入场。一旦主线成长板块开始抛压，场内资金只能降低整体仓位，小部分资金轮动到其他板块；而量化、趋势资金的同向卖出，会放大日内波动，形成负向反馈。本轮行情并非基本面危机驱动的熊市，而是由外部利率扰动、前期拥挤主线估值消化叠加技术面共振引发的中级调整。\n\nA股何时见底？程靓认为，底部是区间而非单点，10月下旬将会是重要的时间点。首先核心观察锚点为10月27日至28日的美联储议息会议，其次需要看海外产业政策传闻是否证伪、宽基ETF资金能否持续流入。国内流动性宽松，股权风险溢价抬升，市场进一步下行空间有所收窄，但外部不确定性未落地前，难言趋势反转。\n\n“国内经济、政策框架、硬科技产业长期逻辑没有发生根本性破坏。但市场风险偏好已明显收缩，成长板块进入盈利验证期，估值需要回归与业绩相匹配的水平。”在黄易看来，上证指数大概率在3674点附近止跌缩量企稳，周线收出长下影。短期1—3周，大盘将震荡磨底、反复测试支撑；硬科技等主线板块或将在20月/60周均线这一共振支撑位博弈反弹，但更多属于震荡修复。硬科技板块调整能否终结，核心取决于盈利兑现：若三季报业绩不及预期，板块将继续消化估值；业绩兑现较好的细分领域，则有望率先走出结构性行情。\n\n科技板块持续下行，在当前多重因素交织下，投资者应当如何做好持仓与布局管理？\n\n杨丙田表示，上市公司三季报披露大幕即将开启，业绩验证将成为下一阶段行情的核心变量。节后市场持续调整，科技赛道也将加速进入“去伪存真”阶段。投资者可依托三季报业绩优中选优，聚焦订单扎实、业绩可落地、具备持续成长性、能够兑现长期现金流的“真科技”标的，借市场调整窗口分批布局，切忌追高，同时避免仓位过度集中在单一赛道。国产算力建设提速，有望进一步带动国内相关产业链量价齐升，封测、半导体制造、功率半导体等细分领域值得关注；此外，特斯拉产业链、华为产业链及无人驾驶方向同样具备投资看点。\n\n莫小城认为，本轮短期调整并不改变市场长期趋势，本质是估值与风险的重新定价。相比短期行情波动，更应看重企业长期价值创造能力。消费行业虽短期承压，但优质龙头的品牌壁垒、竞争优势与现金流仍具备长期价值。现阶段可维持合理仓位，重点挖掘估值具备吸引力的医药、消费优质标的。与其预判市场底部，不如聚焦优质公司，等待合适的买入时点。\n\n操作上，程靓建议控制总仓位，预留现金应对美联储决议带来的不确定性。结构上把握高低切换，以高股息标的构建防御底仓，对冲市场波动。AI硬件、半导体等成长赛道不急于抢反弹，但可做好跟踪；趋势反转可能需要美联储政策落地或海外限制传闻证伪。加息预期明朗前，仓位管理优先于选股，等待催化明确后再加大弹性板块配置。\n\n黄飙认为本轮调整更倾向于估值消化叠加流动性约束下的阶段性回撤，而非产业趋势反转。泛科技领域的中长期逻辑并未改变，继续看好TMT（科技、媒体和通信）、先进高端制造、医药生物等泛科技领域以及新经济领域的投资机会，建议在市场震荡过程中选取估值与成长匹配度高的优质标的，把握高景气赛道的布局窗口。",
-    "content": [
-      {
-        "type": "quote",
-        "text": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】"
-      },
-      {
-        "type": "p",
-        "text": "10月15日，A股放量至1.65万亿元，超5100只个股收跌；通信等科技股跌幅靠前，饮料、白酒、券商板块护盘。"
-      },
-      {
-        "type": "p",
-        "text": "受访人士表示，海外流动性收紧、外围股市下行，叠加科技板块前期累计涨幅较大、估值偏高，多重因素共同引发市场当日放量回调。市场底部是区间而非单点，后续可重点关注10月27日至28日的美联储议息会议。当前建议控制整体仓位，在投资结构上把握高低切换，可配置高股息标的搭建防御底仓，对冲市场波动。"
-      },
-      {
-        "type": "p",
-        "text": "指数层面，A股全天低开低走，表现弱势。沪指收跌1.59%，报3707.48点；创业板指收跌2.92%，报2783.17点；深证成指收跌2.43%。上证50微跌0.42%，沪深300、科创50跌幅超1%，北证50收跌3.44%。"
-      },
-      {
-        "type": "p",
-        "text": "交易量能放量，沪深京三市日成交额增加2195亿元，增至1.65万亿元。杠杆资金近期也在降温，截至10月14日，三市两融余额降至2.54万亿元。"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/crawl/688/w550h138/20261015/2c91-0419b2a11ced812872a2d121c7f39d10.jpg",
-        "caption": "",
-        "_imgCount": 1
-      },
-      {
-        "type": "p",
-        "text": "盘面上，银行、非银金融、通信运营、饮料、白酒护盘，基本金属、通信设备、F5G概念大跌，港口航运也低迷。"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/crawl/54/w550h304/20261015/1cd2-e02ffaafeee7799b2ca73b1cef3006df.jpg",
-        "caption": "",
-        "_imgCount": 2
-      },
-      {
-        "type": "p",
-        "text": "行业层面呈现普跌格局。31个申万一级行业中，仅有食品饮料、非银金融微红，其余收跌，银行、家用电器微跌。"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/crawl/27/w550h277/20261015/eff7-3894b0e638d584c4a2f57abbc019ff7f.jpg",
-        "caption": "",
-        "_imgCount": 3
-      },
-      {
-        "type": "p",
-        "text": "23个申万一级行业跌幅超过2%，通信板块大跌4.64%，国防军工、机械设备、有色金属、建筑材料跌近4%。"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/crawl/16/w550h266/20261015/a18f-fab6f1b37aad0aff9a0c080e8f8f8fa2.jpg",
-        "caption": "",
-        "_imgCount": 4
-      },
-      {
-        "type": "p",
-        "text": "个股普跌，5108只个股收跌，26只跌停；430只个股收红，涨停股36只。交易活跃股方面，今日有5只个股日成交额超过100亿元，均为科技股，全部收跌。 中际旭创 收跌5.19%报656.94元/股， 新易盛 收跌7.49%报306.01元/股， 长鑫科技 收跌5.24%报43.59元/股， 兆易创新 收跌4.9%报278.22元/股。"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/crawl/794/w550h244/20261015/6ccc-8cf46cd671ec7336e27aa862f71f8195.jpg",
-        "caption": "",
-        "_imgCount": 5
-      },
-      {
-        "type": "p",
-        "text": "桓睿天泽总经理莫小城直言，今日市场放量普跌，主要受海外市场波动、科技板块前期涨幅较大及估值偏高等因素影响，部分资金集中兑现，放大了市场调整幅度。"
-      },
-      {
-        "type": "p",
-        "text": "金田基金董事长杨丙田认为，本轮下跌一方面源于市场开始质疑科技巨头资本开支的回报水平；另一方面，美国9月CPI同比增速超预期反弹，推升市场对美联储再度加息的预期，对全球市场形成压制。"
-      },
-      {
-        "type": "p",
-        "text": "鸿涵投资交易总监刘岩向记者表示，今日市场放量杀跌，海外流动性收紧以及海外股市下跌，无疑是压制A股风险偏好的重要因素。如市场能出现一次无论涨跌的大幅放量，则有空头出清的可能，否则仍需反复震荡、堆量、交换筹码。结构上看，今日半导体设备表现突出，未来能否持续仍需观察。"
-      },
-      {
-        "type": "p",
-        "text": "金信基金基金经理黄飙表示，今日市场调整是内外因素共振的结果。其一，海外通胀重定价是最直接的触发因素；其二，隔夜纳斯达克指数跌1.88%，费城半导体指数跌4.3%，AI（人工智能）硬件估值消化压力向国内传导；其三，海外光刻设备龙头2027年产能指引低于市场预期，触发科技硬件回调；其四，国内增量资金不足仍是核心矛盾。"
-      },
-      {
-        "type": "p",
-        "text": "三十三度资本基金经理程靓向记者分析，今日指数调整由多重因素共振引发：主因是美国9月CPI超预期，市场上调美联储加息概率，全球无风险利率抬升，海外半导体、韩日股市同步大跌，算力硬件、半导体等高估值成长股跟随杀估值；其次，AI硬件板块市净率仍处于历史高位区间，叠加光模块、PCB（印制电路板）相关海外政策传闻扰动，以及当前进入三季报业绩验证窗口，前期高位品种遭遇资金集中兑现，走出放量换手式下跌。"
-      },
-      {
-        "type": "p",
-        "text": "程靓进一步指出，今日盘面释放三大信号：一是指数技术面已极度超卖，但均线空头排列，短期仅具备技术性反弹条件，不代表趋势反转；二是宽基ETF尾盘放量，可见配置资金出现托底动作；三是市场高低切换明确，银行、白酒等高股息低估值板块逆势走强，资金正从高估值成长赛道向低估值防御资产转移。"
-      },
-      {
-        "type": "p",
-        "text": "针对近期市场连续回调，鸿风资产投资总监黄易表示，本轮下跌属于多重因素共振，外部因素为导火索，内部交易结构才是根源。海外宏观层面，美国通胀数据超预期推高美债收益率，市场加息预期显著升温。利率上行，高估值硬科技、算力、半导体等板块估值最先被压缩；北向资金风险偏好下降，阶段性流出， 亚太科技 股同步承压，形成跨境情绪传染。这是本轮成长板块领跌最核心的外部变量。"
-      },
-      {
-        "type": "p",
-        "text": "内部交易结构方面，前期科技赛道拥挤度过高，获利盘兑现。上半年硬科技主线持续上涨，大量资金集中在AI硬件、PCB、存储等赛道，交易拥挤、远期预期打满，但业绩兑现节奏跟不上估值抬升。市场开始从炒远期故事，转向严格审视订单、资本开支、现金流的情况，高预期资产进入估值重定价阶段，属于筹码再平衡，并非产业长期趋势终结。当前市场处于存量资金博弈环境，增量资金供给不足。"
-      },
-      {
-        "type": "p",
-        "text": "黄易进一步指出，当前市场属于存量博弈，没有大规模新增资金入场。一旦主线成长板块开始抛压，场内资金只能降低整体仓位，小部分资金轮动到其他板块；而量化、趋势资金的同向卖出，会放大日内波动，形成负向反馈。本轮行情并非基本面危机驱动的熊市，而是由外部利率扰动、前期拥挤主线估值消化叠加技术面共振引发的中级调整。"
-      },
-      {
-        "type": "p",
-        "text": "A股何时见底？程靓认为，底部是区间而非单点，10月下旬将会是重要的时间点。首先核心观察锚点为10月27日至28日的美联储议息会议，其次需要看海外产业政策传闻是否证伪、宽基ETF资金能否持续流入。国内流动性宽松，股权风险溢价抬升，市场进一步下行空间有所收窄，但外部不确定性未落地前，难言趋势反转。"
-      },
-      {
-        "type": "p",
-        "text": "“国内经济、政策框架、硬科技产业长期逻辑没有发生根本性破坏。但市场风险偏好已明显收缩，成长板块进入盈利验证期，估值需要回归与业绩相匹配的水平。”在黄易看来，上证指数大概率在3674点附近止跌缩量企稳，周线收出长下影。短期1—3周，大盘将震荡磨底、反复测试支撑；硬科技等主线板块或将在20月/60周均线这一共振支撑位博弈反弹，但更多属于震荡修复。硬科技板块调整能否终结，核心取决于盈利兑现：若三季报业绩不及预期，板块将继续消化估值；业绩兑现较好的细分领域，则有望率先走出结构性行情。"
-      }
-    ],
-    "url": "https://finance.sina.com.cn/stock/marketresearch/2026-10-15/doc-iniviqye4675150.shtml",
-    "cover": "https://n.sinaimg.cn/finance/crawl/688/w550h138/20261015/2c91-0419b2a11ced812872a2d121c7f39d10.jpg",
-    "ts": 1792073996000,
-    "date": "10月15日",
-    "type": "图文",
-    "author": "市场资讯",
-    "sourceName": "财经观察",
-    "accountName": "财经观察",
-    "topics": [
-      "finance",
-      "tech"
-    ],
-    "stats": {
-      "read": "8.5万",
-      "likes": 2274,
-      "shares": 902,
-      "favorites": 329,
-      "comments": 0
-    },
-    "read": "8.5万",
-    "comments": [],
-    "commentSource": "none"
-  },
-  {
-    "id": "847671474",
-    "title": "财务自由的三个层次",
-    "summary": "原创 david 2026-10-15 22:17 广东 \n第一层 佛系自由 100万 \n我觉得有100万，很多场合就有说不的权利，2006年年底从中国移动辞职，正好赶上股票大牛市，年底资产突破100万，投简历的时候心里面也就不着急了，包括后来的工作，也都感觉自己的腰杆更硬，当时公司其他人对我的评价，就是特别佛系。 \n第二层 FIRE自由 500万 \n500万提前退休，这是我2013年底的选择，一",
-    "body": "原创 david 2026-10-15 22:17 广东 \n第一层 佛系自由 100万 \n我觉得有100万，很多场合就有说不的权利，2006年年底从中国移动辞职，正好赶上股票大牛市，年底资产突破100万，投简历的时候心里面也就不着急了，包括后来的工作，也都感觉自己的腰杆更硬，当时公司其他人对我的评价，就是特别佛系。 \n第二层 FIRE自由 500万 \n500万提前退休，这是我2013年底的选择，一线城市可能难一些，比如要有房，非一线的话，500万提前退休可以生活的很好，尤其是接受租房的话。 \n第三层 家族自由 3000万 \n穷则独善其身，达则兼济天下。职业投资者做不到兼济天下，兼济家族总是可以的。 \n3000万，5%的收益，一年150万，差不多够兼济家族了。 \n随着年龄增加，身边总会遇到不少事情，我岳父84岁，岳母早逝，现在身边已经离不开人，全职保姆一年十万左右吧，我大姐脑动脉瘤破裂，术后7个月还是微意识，要一直住康复医院恢复，也需要1对1护工，我大姐离异，所以现在费用主要是我来支付，我父亲89岁，母亲83岁，现在都还能自理，未来肯定也离不开全职保姆，我老婆最近身体也有小问题，家里雇了一个保姆，每月7000，去协和国际部看病，预计前后十万左右吧，现在国内医疗分级做的真不错，想又快又好，多花钱就行。 \n再加上租房一年30万（租我家楼下作为我的工作室和保姆休息的地方），旅行都是飞机商务舱加五星级酒店，这些年一直按这个标准带全家，包括双方父母和我两个姐姐出游。 \n即使所有这些都是我在掏钱，好像一年150万也能包住。 \n优美 \n自由，就是能离人离事远一点。一年要是花个几百万的话。说明事多，人多，人多事儿多，自然关系就比较复杂。很难真的自由。 \n一个人生活，一年花100万的话，肯定得买奢侈品。如果纯生活开销，花钱都是非常辛苦的事。请钟点工，我都觉得麻烦，不自由。更别说请保姆在家全天呆着。如果生活开销大，是因为家里人口多。那就更累人了。 \n整天在外头吃饭，到处去旅游，都是辛苦的事。过几年就不想过了。身体受不了。 \n另外，最重要的就是健康。没大病，没病痛，就很幸福了。不管花多少钱去看病，都是花钱找罪受。另外真要看病，国内有医保也能报销绝大部分了。如果时间自由的话，不天天被各种事赶着的话，哪怕在北京这种挂号难排队长的地方，也不用花很多钱。在深圳的话，挂特需号，基本队都不怎么排。医保报销80~90%。找个单间，请个护工，清清静静的养病。不需要人来人往的探望。 \n再说教育。国内的公立教育其实不花什么钱，孩子从小到大，小学初中没学费，高中1300一个学期，大学7000一学年。有时间有自由，从小陪着长大，自己找学习资料，网上大量免费的。另外花钱培养点兴趣爱好，花不了多少钱，比如我家孩子学了古筝，喜欢跑步，攀岩、飞盘，就古筝花点儿钱，从小到大可能花了10万出头吧，攀岩一次几十块钱，跑步，飞盘都不花钱。至于出国留学，将来孩子自己申请奖学金就行了。 \n自由，跟钱没太大关系。花钱多只是一种活法，并不是自由。 \n小卡 \n15年我妈误诊，以为是癌症，因此关注了癌症的治疗方案。真是贵，那时候我其实不算穷，出版作品和影视合作我都还行，在我们作者圈子里，好多作者朋友都羡慕我。我懒成这样，收入却还可以。但是在算诊疗费的时候，意识到钱到用时方恨少。 \n幸运是误诊。 \n那时候我开始认真的想，要怎么让自己赚点钱，在网上搜，找到了集思录和雪球。 \n我觉得一样是很幸运，至少靠套利和分级躲过了15年的股灾。 \n然后是可转债的信用发行，终于是重仓的状态下，实现了还可以收益。 \n今年的收益一般。不过很满意了，反正生活上没压力了。 \n包括雪球官方在内都和我做过联系，有挺多次发私募产品的机会。其他的合作机会也有。 \n考虑了一下还是放弃了。我觉得目前以我的能力舒适区就是一亿以内。真发产品，如果募集个几千万，压根也分不到多少钱，毕竟我这种风格不可能爆出特别高的收益的。万一运气，我募集的钱多，我认为我压根做不出来高收益。更关键的是会更幸苦，会占用更多的精力，我觉得以我目前的资金量自己做做其实也挺好的，理论上还有机会能资产再上台阶。 \n而且我最近又开始谈一些影视的合作，我觉得我大概率要杀回文坛。 \n我需要的钱，我觉得我已经有能力赚到了，更多的钱我想要但是我不想分精力，所以我只能放弃了。我觉得可能还是要做一些让自己快乐的事情。 \n所以财务自由，就是我们自己认可的那个恰到好处的阶段。估计也不需要那么具体的数字。每个人每个地区标准都不同。 \n遇到集思录我是真幸运。 \n孔曼子 \n这是一个饿不死人的年代。只要有住处无大病无负债，城市居民哪怕做社区安排的最低工资标准工作甚至吃低保，都可以轻松地活下去。而且以中国的基础设施和社会保障，他们的生活质量，其实比上世纪大部分的中国人和大部分第三世界国家的穷人还要高得多呢。 \n比起钱，更关键的还是身心健康，身体不健康天天病痛折磨，心理不健康天天焦虑狂躁，再多钱也未必帮得了你，生活质量可能还比不上拿着低工资，下班就躺平的普通人呢。 \n说起这个，我又想起了一位故人，他就是流传甚广的“财务自由九段论”（从菜场自由到国籍自由）的发明人，持有封基老师。虽然可能存在争议，而且他已经不再发言了，但我还是希望他身心健康，有空常回来看看！ \n骷髅仙人 \n90后离异无孩在十八线小县城县城生活，有自建房老头乐，一个人生活不抽烟不喝酒不赌博不嫖娼，吃饭自己做，偶尔下馆子，一个月生活费不到一千块，找份两千多交社保的工作混着玩，有 40 万存款，一年只想要 5%收益，就根本花不完了，这算不算另外一种财富自由。 \n符工 \n我只要300万就财务自由了。 \n我没什么物欲，一年消费也就10万足够了。300万投资收益，再随便干个清闲活，一年到手15万不算难。 \n可惜我快40岁了才只有50万。唉！ \n赵甲 \n@我想吃蛇羹 \n这种帖子最能看出来现在的贫富差距有多大 \n上层像美国，财富、资源、全球视野，生活条件比欧美还要好； \n中层像日本、欧洲，背负房贷、教育压力，内卷焦虑； \n底层像非洲，生存压力大，保障有限，日子过得很苦。 \n你站在哪一个阶层，看到的就是哪一个。” \n永不止步啊 \n财务自由没有绝对的标准，每个人的情况都不一样。 \n只要不再为了金钱，去出卖自己的体力、脑力、时间、情感、尊严，都是实现了财务自由。 \n持有小市值 \n数字基本对的齐。 \n我15-16年盈利破百万就把不喜欢的国企工作辞了（其实才入职几个月，还没过试用期），找了个只要周末上班的教培工作（单论收入比国企高，比时薪更别提了），缺点是不稳定，但账户给了自己底气。 \n20-21年投资资产千万出头，盈利大概六七百万的时候，刚好赶上砍教培，就不去机构上班了，有学生找上门能组得了班就在家里教教，没有也无所谓。 \n第三步还差点，不过家里暂时也没啥要兼济的。 \nl93868 \n大卫这篇让我想到：好的身体是投资的杠杆，好的心情也是投资的杠杆。 \n身体好，让复利有更多时间积累；心态好，遇到回撤、机会迟迟不来时，才能耐心等待，不急着靠一笔交易证明自己。这两种杠杆，账户上看不见，但投资做得越久，越值得认真经营。 \n以前我容易焦虑，最近开始学网球，慢慢有了每天投入、一点点进步的踏实感。正反手都得慢慢练，着急也没用。大道打高尔夫，我学网球，除了锻炼身体，也是在磨自己的性子。 \n账户没涨的日子，自己也可以往前走。生活里有其他成就感，就不必天天向市场讨一个好心情。 \n最近我也开始关注HRV（心率变异性）、VO₂ Max（最大摄氧量），也在了解DMN（默认模式网络）。名字挺专业，我关心的很简单：身体恢复得怎么样，体能有没有进步，是不是又陷入了反复焦虑。除了看账户，也多看看自己。 \n到了AI时代，查资料、做分析越来越方便，但最后做决定、承受波动的，还是我们自己。如果为了多赚几个点，把睡眠、身体、心情都搭进去，这笔收益就得重新算算。 \n钱慢慢积累，身体保持活力，日子也过得有意思。我觉得这才是值得长期做下去的投资。 \n关注集思录微信 \n特别提示 \n本文不构成任何投资建议，仅为信息分享。任何因本文导致的投资行为发生的亏损，本公众号及作者概不承担任何责任。 \n集思录(www.jisilu.cn)是一个以数据为本的投资理财社区，专注于新股、可转债、债券、封闭基金等数据服务。我们的理念是在保证本金安全的前提下，使资产获得稳健增长。 \n快捷查询： \n搜索公众号“jisilu8”添加我们 \n阅读原文 \n跳转微信打开 \n]]>",
-    "content": [
-      {
-        "type": "p",
-        "text": "原创 david 2026-10-15 22:17 广东"
-      },
-      {
-        "type": "img",
-        "src": "https://wechat2rss.xlab.app/img-proxy/?k=07fb5729&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_jpg%2F1cwAlbjgbMdB7aJdGw6QLkwFftf2ZkiaicLzqHoNNFRgxPpRTT9SJHLeIG96JeyY7YAqhucqYKvEFSvaRCvPaibLrIqoFpYUc5G23WkZvqnwZA%2F0%3Fwx_fmt%3Djpeg",
-        "caption": "",
-        "_imgCount": 1
-      },
-      {
-        "type": "p",
-        "text": "第一层 佛系自由 100万"
-      },
-      {
-        "type": "p",
-        "text": "我觉得有100万，很多场合就有说不的权利，2006年年底从中国移动辞职，正好赶上股票大牛市，年底资产突破100万，投简历的时候心里面也就不着急了，包括后来的工作，也都感觉自己的腰杆更硬，当时公司其他人对我的评价，就是特别佛系。"
-      },
-      {
-        "type": "p",
-        "text": "第二层 FIRE自由 500万"
-      },
-      {
-        "type": "p",
-        "text": "500万提前退休，这是我2013年底的选择，一线城市可能难一些，比如要有房，非一线的话，500万提前退休可以生活的很好，尤其是接受租房的话。"
-      },
-      {
-        "type": "p",
-        "text": "第三层 家族自由 3000万"
-      },
-      {
-        "type": "p",
-        "text": "穷则独善其身，达则兼济天下。职业投资者做不到兼济天下，兼济家族总是可以的。"
-      },
-      {
-        "type": "p",
-        "text": "3000万，5%的收益，一年150万，差不多够兼济家族了。"
-      },
-      {
-        "type": "p",
-        "text": "随着年龄增加，身边总会遇到不少事情，我岳父84岁，岳母早逝，现在身边已经离不开人，全职保姆一年十万左右吧，我大姐脑动脉瘤破裂，术后7个月还是微意识，要一直住康复医院恢复，也需要1对1护工，我大姐离异，所以现在费用主要是我来支付，我父亲89岁，母亲83岁，现在都还能自理，未来肯定也离不开全职保姆，我老婆最近身体也有小问题，家里雇了一个保姆，每月7000，去协和国际部看病，预计前后十万左右吧，现在国内医疗分级做的真不错，想又快又好，多花钱就行。"
-      },
-      {
-        "type": "p",
-        "text": "再加上租房一年30万（租我家楼下作为我的工作室和保姆休息的地方），旅行都是飞机商务舱加五星级酒店，这些年一直按这个标准带全家，包括双方父母和我两个姐姐出游。"
-      },
-      {
-        "type": "p",
-        "text": "即使所有这些都是我在掏钱，好像一年150万也能包住。"
-      },
-      {
-        "type": "p",
-        "text": "优美"
-      },
-      {
-        "type": "p",
-        "text": "自由，就是能离人离事远一点。一年要是花个几百万的话。说明事多，人多，人多事儿多，自然关系就比较复杂。很难真的自由。"
-      },
-      {
-        "type": "p",
-        "text": "一个人生活，一年花100万的话，肯定得买奢侈品。如果纯生活开销，花钱都是非常辛苦的事。请钟点工，我都觉得麻烦，不自由。更别说请保姆在家全天呆着。如果生活开销大，是因为家里人口多。那就更累人了。"
-      },
-      {
-        "type": "p",
-        "text": "整天在外头吃饭，到处去旅游，都是辛苦的事。过几年就不想过了。身体受不了。"
-      },
-      {
-        "type": "p",
-        "text": "另外，最重要的就是健康。没大病，没病痛，就很幸福了。不管花多少钱去看病，都是花钱找罪受。另外真要看病，国内有医保也能报销绝大部分了。如果时间自由的话，不天天被各种事赶着的话，哪怕在北京这种挂号难排队长的地方，也不用花很多钱。在深圳的话，挂特需号，基本队都不怎么排。医保报销80~90%。找个单间，请个护工，清清静静的养病。不需要人来人往的探望。"
-      },
-      {
-        "type": "p",
-        "text": "再说教育。国内的公立教育其实不花什么钱，孩子从小到大，小学初中没学费，高中1300一个学期，大学7000一学年。有时间有自由，从小陪着长大，自己找学习资料，网上大量免费的。另外花钱培养点兴趣爱好，花不了多少钱，比如我家孩子学了古筝，喜欢跑步，攀岩、飞盘，就古筝花点儿钱，从小到大可能花了10万出头吧，攀岩一次几十块钱，跑步，飞盘都不花钱。至于出国留学，将来孩子自己申请奖学金就行了。"
-      },
-      {
-        "type": "p",
-        "text": "自由，跟钱没太大关系。花钱多只是一种活法，并不是自由。"
-      },
-      {
-        "type": "p",
-        "text": "小卡"
-      },
-      {
-        "type": "p",
-        "text": "15年我妈误诊，以为是癌症，因此关注了癌症的治疗方案。真是贵，那时候我其实不算穷，出版作品和影视合作我都还行，在我们作者圈子里，好多作者朋友都羡慕我。我懒成这样，收入却还可以。但是在算诊疗费的时候，意识到钱到用时方恨少。"
-      },
-      {
-        "type": "p",
-        "text": "幸运是误诊。"
-      },
-      {
-        "type": "p",
-        "text": "那时候我开始认真的想，要怎么让自己赚点钱，在网上搜，找到了集思录和雪球。"
-      },
-      {
-        "type": "p",
-        "text": "我觉得一样是很幸运，至少靠套利和分级躲过了15年的股灾。"
-      },
-      {
-        "type": "p",
-        "text": "然后是可转债的信用发行，终于是重仓的状态下，实现了还可以收益。"
-      }
-    ],
-    "url": "https://mp.weixin.qq.com/s?__biz=MzAwNzA0MTkxOQ==&mid=2664925272&idx=1&sn=e24296899fb1ae25d4f4fcce3438b023",
-    "cover": "https://wechat2rss.xlab.app/img-proxy/?k=07fb5729&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_jpg%2F1cwAlbjgbMdB7aJdGw6QLkwFftf2ZkiaicLzqHoNNFRgxPpRTT9SJHLeIG96JeyY7YAqhucqYKvEFSvaRCvPaibLrIqoFpYUc5G23WkZvqnwZA%2F0%3Fwx_fmt%3Djpeg",
-    "ts": 1792073820000,
-    "date": "10月15日",
-    "type": "图文",
-    "author": "集思录",
-    "sourceName": "集思录",
-    "accountName": "集思录",
-    "topics": [
-      "life"
-    ],
-    "degraded": true,
-    "stats": {
-      "read": "8.2万",
-      "likes": 3200,
-      "shares": 393,
-      "favorites": 345,
-      "comments": 0
-    },
-    "read": "8.2万",
-    "comments": [],
-    "commentSource": "none"
-  },
-  {
-    "id": "2256586065",
-    "title": "（活力中国）数智加持 “柳州造” 借平陆运河出海东盟-中新网",
-    "summary": "【东盟专线】(活力中国)数智加持 “柳州造” 借平陆运河出海东盟",
-    "body": "【东盟专线】(活力中国)数智加持 “柳州造” 借平陆运河出海东盟\n\n中新社 广西柳州10月15日电 (俞靖 李嘉薇)“数字化转型让广西制造企业更具竞争力，我们不再只是向外销售机械设备，而是把成熟技术、生产标准、管理方法一起输出海外。”广西柳工机械股份有限公司(柳工)国际事业部商务运营总监刘霜峰15日在柳州受访时表示。\n\n在柳工挖掘机智慧工厂，可实现多型号挖掘机同线装配，自动化率超70%。这套兼顾传统工程机械生产与新一代电动装备研发的本土智造体系成为企业开拓海外市场的重要支撑。\n\n“以前产品信息靠手动存档，如今在人工智能助力下，制造过程更高效精确。”柳工挖掘机智慧工厂总装厂生产经理赵起峰介绍，目前，工厂产品从平台上线到整机交付需2.5至3.5天，相关零部件到厂会送入立体库存储，员工仅在线下单，在工位等待收料后投入生产。\n\n刘霜峰介绍，柳工在东盟设有多家子公司与200多个属地服务网点，超4万台工程设备应用于当地基建、矿业、民生项目。除设备出口，自研的“AI柳工”智能诊断系统落地印尼、泰国、越南等国家，降低海外设备运维难度。\n\n数据显示，柳工电动装备销往全球60多个国家和地区，今年上半年海外电动装载机出口同比增长超150%；电动挖掘机、大型矿用电动卡车相继进入越南、澳大利亚、欧洲等地矿山。\n\n刘霜峰称，眼下企业在印尼建设绿色智慧产业园，计划2027年上半年投产，完整移植国内工艺、标准与管理体系，建成后作为亚太制造中心就近供应东盟。",
-    "content": [
-      {
-        "type": "p",
-        "text": "【东盟专线】(活力中国)数智加持 “柳州造” 借平陆运河出海东盟"
-      },
-      {
-        "type": "p",
-        "text": "中新社 广西柳州10月15日电 (俞靖 李嘉薇)“数字化转型让广西制造企业更具竞争力，我们不再只是向外销售机械设备，而是把成熟技术、生产标准、管理方法一起输出海外。”广西柳工机械股份有限公司(柳工)国际事业部商务运营总监刘霜峰15日在柳州受访时表示。"
-      },
-      {
-        "type": "p",
-        "text": "在柳工挖掘机智慧工厂，可实现多型号挖掘机同线装配，自动化率超70%。这套兼顾传统工程机械生产与新一代电动装备研发的本土智造体系成为企业开拓海外市场的重要支撑。"
-      },
-      {
-        "type": "p",
-        "text": "“以前产品信息靠手动存档，如今在人工智能助力下，制造过程更高效精确。”柳工挖掘机智慧工厂总装厂生产经理赵起峰介绍，目前，工厂产品从平台上线到整机交付需2.5至3.5天，相关零部件到厂会送入立体库存储，员工仅在线下单，在工位等待收料后投入生产。"
-      },
-      {
-        "type": "img",
-        "src": "https://i2.chinanews.com.cn/simg/ypt/2026/261015/f81fd7b9-d8a2-4b8e-9464-4abf8b601ea9_zsite.jpg",
-        "caption": "",
-        "_imgCount": 1
-      },
-      {
-        "type": "p",
-        "text": "刘霜峰介绍，柳工在东盟设有多家子公司与200多个属地服务网点，超4万台工程设备应用于当地基建、矿业、民生项目。除设备出口，自研的“AI柳工”智能诊断系统落地印尼、泰国、越南等国家，降低海外设备运维难度。"
-      },
-      {
-        "type": "p",
-        "text": "数据显示，柳工电动装备销往全球60多个国家和地区，今年上半年海外电动装载机出口同比增长超150%；电动挖掘机、大型矿用电动卡车相继进入越南、澳大利亚、欧洲等地矿山。"
-      },
-      {
-        "type": "p",
-        "text": "刘霜峰称，眼下企业在印尼建设绿色智慧产业园，计划2027年上半年投产，完整移植国内工艺、标准与管理体系，建成后作为亚太制造中心就近供应东盟。"
-      }
-    ],
-    "url": "https://www.chinanews.com.cn/aseaninfo/2026/10-15/10715358.shtml",
-    "cover": "https://i2.chinanews.com.cn/simg/ypt/2026/261015/f81fd7b9-d8a2-4b8e-9464-4abf8b601ea9_zsite.jpg",
-    "ts": 1792073798000,
-    "date": "10月15日",
-    "type": "图文",
-    "author": "chinanews",
-    "sourceName": "中新要闻",
-    "accountName": "中新要闻",
-    "topics": [
-      "life"
-    ],
-    "stats": {
-      "read": "5.1万",
-      "likes": 3080,
-      "shares": 147,
-      "favorites": 414,
-      "comments": 0
-    },
-    "read": "5.1万",
-    "comments": [],
-    "commentSource": "none"
-  },
-  {
-    "id": "4015315614",
-    "title": "AI创企Cognition计划将Token消耗配额向最高效工程师倾斜",
-    "summary": "为控制AI相关开支，大型企业正通过限制员工使用额度、选用低成本小型模型、调度高难度查询至高价大模型等方式控本。AI代码智能体Devin背后的初创公司Cognition推出动态调额新方案：通过观测工程师编码会话，估算等效人工工时，除以会话成本算出使用效率指标，替代固定限额，效率评级达标或良好的员工触达上限后可自动提额，逻辑类似信用卡提额。该公司同步上线Devin Coach，可识别20至30类常见使",
-    "body": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】\n\n为控制AI相关开支，大型企业正在限制员工的使用额度、选用成本更低的小型模型，并借助路由调度器，只把难度最高的查询请求交由最贵的大模型处理。\n\nAI代码智能体Devin背后的初创公司Cognition，推出了一项新方案。该公司透露：通过衡量不同工程师使用AI的效率，企业可以把更多资源分配给使用效率最高的员工。\n\nCognition首席技术官卡尔文·吉鲁表示：“用户的使用限额不应固定不变，而要根据使用效率与产出价值动态调整。”\n\nCognition可以观测工程师使用Devin的编码会话，估算出人类完成同等工作量所需要的等效工时。再用该工时除以本次会话产生的成本，即可算出每位工程师的使用效率指标。",
-    "content": [
-      {
-        "type": "quote",
-        "text": "10月20-22日上海黄浦江畔，2026可持续全球领导者大会再度来袭。诺奖、图灵奖得主现场讲述科技未来与趋势，更有“解救”焦虑、内卷时代的网红教授——麦克法兰与项飙现场对话！\n名额有限，手慢无。让我们共赴可持续之约！ 【点击报名】"
-      },
-      {
-        "type": "img",
-        "src": "https://n.sinaimg.cn/finance/transform/63/w550h313/20261015/02bc-82c2a2c4b993b9335edfe04d80ed2bab.png",
-        "caption": "",
-        "_imgCount": 1
-      },
-      {
-        "type": "p",
-        "text": "为控制AI相关开支，大型企业正在限制员工的使用额度、选用成本更低的小型模型，并借助路由调度器，只把难度最高的查询请求交由最贵的大模型处理。"
-      },
-      {
-        "type": "p",
-        "text": "AI代码智能体Devin背后的初创公司Cognition，推出了一项新方案。该公司透露：通过衡量不同工程师使用AI的效率，企业可以把更多资源分配给使用效率最高的员工。"
-      },
-      {
-        "type": "p",
-        "text": "Cognition首席技术官卡尔文·吉鲁表示：“用户的使用限额不应固定不变，而要根据使用效率与产出价值动态调整。”"
-      },
-      {
-        "type": "p",
-        "text": "Cognition可以观测工程师使用Devin的编码会话，估算出人类完成同等工作量所需要的等效工时。再用该工时除以本次会话产生的成本，即可算出每位工程师的使用效率指标。"
-      }
-    ],
-    "url": "https://finance.sina.com.cn/stock/usstock/c/2026-10-15/doc-iniviksc8058653.shtml",
-    "cover": "https://n.sinaimg.cn/finance/transform/63/w550h313/20261015/02bc-82c2a2c4b993b9335edfe04d80ed2bab.png",
-    "ts": 1792073344000,
-    "date": "10月15日",
-    "type": "图文",
-    "author": "环球市场播报",
-    "sourceName": "新浪·科技要闻",
-    "accountName": "新浪·科技要闻",
-    "topics": [
-      "life"
-    ],
-    "stats": {
-      "read": "7.2万",
-      "likes": 974,
-      "shares": 387,
-      "favorites": 716,
-      "comments": 0
-    },
-    "read": "7.2万",
     "comments": [],
     "commentSource": "none"
   }
