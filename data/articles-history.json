@@ -531,6 +531,130 @@
     "commentSource": "none"
   },
   {
+    "id": "368638862",
+    "title": "iOS 27.0.1完整攻击链：从消息一键RCE到Chollima持久化越狱",
+    "summary": "原创 黑鸟 2026-10-17 23:36 广东 \n刚发布的 iPhone 18 Pro，在黑客大会上被当场 \"越狱\"，还能扛住重启 \n10月16日的巴黎Hexacon安全大会上，安全公司Calif.io一口气展示了四段现场demo，覆盖了从消息应用一键远程代码执行到设备持久化越狱的完整攻击链。这不是单点突破，而是一套可以串起来用的组合拳。 \n第一段是Signal攻击。演示里一个名为“resum",
+    "body": "原创 黑鸟 2026-10-17 23:36 广东 \n刚发布的 iPhone 18 Pro，在黑客大会上被当场 \"越狱\"，还能扛住重启 \n10月16日的巴黎Hexacon安全大会上，安全公司Calif.io一口气展示了四段现场demo，覆盖了从消息应用一键远程代码执行到设备持久化越狱的完整攻击链。这不是单点突破，而是一套可以串起来用的组合拳。 \n第一段是Signal攻击。演示里一个名为“resume-ash-katchem-2026-v6.pdf”的简历附件在Signal中被打开，PDF渲染出来的不是求职信息，而是Calif的标志，紧接着主屏幕上自动冒出了Calif应用图标。用户只做了“打开文件”这一个动作，代码就已经在手机上跑起来了，应用也被悄悄装好了。 \n第二段是iMessage攻击，代号Glyph Grift。研究人员在iMessage里打开恶意PDF之后，旁边的电脑屏幕上弹出一个实时窗口，标题写着“Glyph Grift live proof”，下面列出一条清晰的攻击路径：Look PDF → SpringBoard（桌面管理器）→ IMDPersistence（消息持久化服务）→ HTTPS。手机里存的聊天记录被一条条外发到远程服务器，其中一条还写着“With <3 from Calif”。 \n这两个demo指向的技术底座是同一个方向。Calif此前公开分析过CVE-2026-86950，一个存在于CoreGraphics（图形渲染框架）里的字体字形渲染越界写漏洞，恶意PDF里嵌入特制字体就能触发内存破坏。iMessage和Signal都会自动渲染PDF附件，这意味着只要用户点开那个看起来像简历的文件，攻击链就启动了。 \n第三、四段才是真正的重头戏。团队演示了名为Chollima的untethered jailbreak（完美越狱）工具，目标设备是iPhone 18 Pro，系统版本iOS 27.0.1。研究人员当着观众的面重启手机，走完正常开机流程，输入密码解锁，然后通过SSH 连上手机，直接拿到root（最高权限）shell。 \n终端输出把技术细节摆得明明白白：id命令返回uid=0确认是root身份，uname显示Darwin Kernel 27.0.0，底层构建号XNU 13432.2.10，跑在T8160芯片上，设备型号标识iPhone19,2，sw_vers确认系统是iOS 27.0.1 build 24A446。neofetch列出67个通过dpkg安装的软件包，uptime显示开机才两分钟。 \n整个流程覆盖了沙盒逃逸、内核读写、SPTM（Secure Page Table Monitor，安全页表监控）绕过和持久化几个关键环节。 \n拿到root之后，团队安装了Sileo越狱商店，还装了tweaks（系统插件）比如Gravity Lite。最能说明问题的是重启之后的画面：锁屏界面出现Calif标志和“From Calif with LOVE”字样，设置里多了一个Calif图标，而关于本机里系统版本仍然显示“iOS is up to date”。 \n这种重启之后越狱自动恢复的能力就是untethered。它不需要插线，不需要电脑引导，用户每次开机都是越狱状态。上一次在现代iOS上做到这件事还要追溯到iOS 9时代，而这次是在最新款硬件加最新系统上完成的。 \n要理解这件事为什么难，得先搞清楚现代iPhone到底叠了多少层防护。每个app都被关在sandbox（沙盒）里只能访问自己的文件，所有运行的代码必须经过Apple数字签名，启动链上每一步都会校验下一步合法性，内核还有PAC（Pointer Authentication Codes，指针认证码）这种硬件级防护防止内存指针被篡改，MIE（Memory Integrity Enforcement，内存完整性防护）则专门用来挡住内核内存利用。想从一个PDF附件一路拿到持久化root权限，需要把这些层全部绕过去。 \nAI这次直接参与了漏洞链的发现过程。这也不是Calif第一次这么干，今年4月Thai Duong就分享过Claude如何帮他拆解一个iOS Safari exploit。5月的时候，Calif用Anthropic的Claude Mythos Preview在不到一周的时间里做出了针对Apple M5芯片MIE防护的macOS内核exploit。Duong的评价是，Mythos Preview帮助识别bug并贯穿了整个exploit开发过程。 \nThai Duong在Google做了12年安全和密码学，参与创建了Tink和Wycheproof密码学库，还和别人一起发现了BEAST、CRIME、POODLE这几个著名的SSL/TLS漏洞，拿过Pwnie Award的最佳服务端漏洞奖。整个Calif团队的定位就是用AI加速漏洞研究，同时给AI模型本身做红队测试。 \nApple自己的iOS 27安全说明里其实已经提到了Calif.io，写的是“in collaboration with Claude and Anthropic Research”，归因于两个导致crash的bug。Hexacon大会是Synacktiv主办的offensive security（攻防安全）会议，为期两天。之前Cellebrite曾经公开表示iOS 27在任何当前物理设备上都无法越狱，iOS 18以上也没有可靠的公开越狱方案，这次Calif直接在最新硬件加最新系统上跑通完整持久化链，等于当场推翻了那个判断。 \n当然，对普通用户来说现在不用慌。方法还没公开，没有下载链接，网上任何声称能越狱iOS 27的工具基本都是恶意软件。但问题在于，能在一台完全更新的iPhone上从一个PDF附件打到持久化root，这种能力和商业spyware厂商卖给政府的东西是同一类。Citizen Lab前几天刚发了AdFection的研究，那是一种通过定向广告投递的zero-click（零点击）攻击，Hexacon上展示的技术和它属于同一个能力层级。 \nCalif在大会最后只留了一句话，“Everything will be released in due time”。Apple通常在补丁就绪之前不会确认安全问题，iOS 27.1目前还在beta阶段，里面有没有修掉Calif用的那几个bug，要等Calif公布细节或者Apple自己说。对于记者、活动人士、企业高管这些高风险人群，建议照旧：系统更新第一时间装，重要账号开2FA，考虑启用Lockdown Mode（锁定模式）。对大多数人来说，保持系统更新就够了。 \nAI正在把漏洞挖掘的门槛往下拉，苹果系统的防线当然也在升级，但攻防这盘棋，节奏已经不一样了。 \n跳转微信打开 \n]]>",
+    "content": [
+      {
+        "type": "p",
+        "text": "原创 黑鸟 2026-10-17 23:36 广东"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=d68e3edf&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_jpg%2FibO9kiauylaDqlUBprCjguhlIL8jDqKhb0Q61oreKHAFT5oKAWfaaAPeWc96W16Y0Ac9dia2drFBiaTTlbxoNWqalffx083tRics5dq6ofRbibRyQ%2F0%3Fwx_fmt%3Djpeg",
+        "caption": "",
+        "_imgCount": 1
+      },
+      {
+        "type": "p",
+        "text": "刚发布的 iPhone 18 Pro，在黑客大会上被当场 \"越狱\"，还能扛住重启"
+      },
+      {
+        "type": "p",
+        "text": "10月16日的巴黎Hexacon安全大会上，安全公司Calif.io一口气展示了四段现场demo，覆盖了从消息应用一键远程代码执行到设备持久化越狱的完整攻击链。这不是单点突破，而是一套可以串起来用的组合拳。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=65213134&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fsz_mmbiz_png%2FibO9kiauylaDrtQhHadKvotxw39sceu1yuOWhHMKax3ytrbxoNAHlW6REflp63dGEia1ww73Dg8E9S4y3eJNbKwibVjpvQ6Ogh1cibepV3Pk4djk%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "",
+        "_imgCount": 2
+      },
+      {
+        "type": "p",
+        "text": "第一段是Signal攻击。演示里一个名为“resume-ash-katchem-2026-v6.pdf”的简历附件在Signal中被打开，PDF渲染出来的不是求职信息，而是Calif的标志，紧接着主屏幕上自动冒出了Calif应用图标。用户只做了“打开文件”这一个动作，代码就已经在手机上跑起来了，应用也被悄悄装好了。"
+      },
+      {
+        "type": "p",
+        "text": "第二段是iMessage攻击，代号Glyph Grift。研究人员在iMessage里打开恶意PDF之后，旁边的电脑屏幕上弹出一个实时窗口，标题写着“Glyph Grift live proof”，下面列出一条清晰的攻击路径：Look PDF → SpringBoard（桌面管理器）→ IMDPersistence（消息持久化服务）→ HTTPS。手机里存的聊天记录被一条条外发到远程服务器，其中一条还写着“With <3 from Calif”。"
+      },
+      {
+        "type": "p",
+        "text": "这两个demo指向的技术底座是同一个方向。Calif此前公开分析过CVE-2026-86950，一个存在于CoreGraphics（图形渲染框架）里的字体字形渲染越界写漏洞，恶意PDF里嵌入特制字体就能触发内存破坏。iMessage和Signal都会自动渲染PDF附件，这意味着只要用户点开那个看起来像简历的文件，攻击链就启动了。"
+      },
+      {
+        "type": "p",
+        "text": "第三、四段才是真正的重头戏。团队演示了名为Chollima的untethered jailbreak（完美越狱）工具，目标设备是iPhone 18 Pro，系统版本iOS 27.0.1。研究人员当着观众的面重启手机，走完正常开机流程，输入密码解锁，然后通过SSH 连上手机，直接拿到root（最高权限）shell。"
+      },
+      {
+        "type": "p",
+        "text": "终端输出把技术细节摆得明明白白：id命令返回uid=0确认是root身份，uname显示Darwin Kernel 27.0.0，底层构建号XNU 13432.2.10，跑在T8160芯片上，设备型号标识iPhone19,2，sw_vers确认系统是iOS 27.0.1 build 24A446。neofetch列出67个通过dpkg安装的软件包，uptime显示开机才两分钟。"
+      },
+      {
+        "type": "p",
+        "text": "整个流程覆盖了沙盒逃逸、内核读写、SPTM（Secure Page Table Monitor，安全页表监控）绕过和持久化几个关键环节。"
+      },
+      {
+        "type": "p",
+        "text": "拿到root之后，团队安装了Sileo越狱商店，还装了tweaks（系统插件）比如Gravity Lite。最能说明问题的是重启之后的画面：锁屏界面出现Calif标志和“From Calif with LOVE”字样，设置里多了一个Calif图标，而关于本机里系统版本仍然显示“iOS is up to date”。"
+      },
+      {
+        "type": "p",
+        "text": "这种重启之后越狱自动恢复的能力就是untethered。它不需要插线，不需要电脑引导，用户每次开机都是越狱状态。上一次在现代iOS上做到这件事还要追溯到iOS 9时代，而这次是在最新款硬件加最新系统上完成的。"
+      },
+      {
+        "type": "img",
+        "src": "https://wechat2rss.xlab.app/img-proxy/?k=f0ab869d&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FibO9kiauylaDqekS9UHzUovxmnOs84ea3uDlFBdoicUNtcgPesSp940cC0WSpHUuEq2kbFq9obQtciafyElIZnJ8tLmyFG4xDNVMMqI152q2EAA%2F640%3Fwx_fmt%3Dpng%26from%3Dappmsg",
+        "caption": "",
+        "_imgCount": 3
+      },
+      {
+        "type": "p",
+        "text": "要理解这件事为什么难，得先搞清楚现代iPhone到底叠了多少层防护。每个app都被关在sandbox（沙盒）里只能访问自己的文件，所有运行的代码必须经过Apple数字签名，启动链上每一步都会校验下一步合法性，内核还有PAC（Pointer Authentication Codes，指针认证码）这种硬件级防护防止内存指针被篡改，MIE（Memory Integrity Enforcement，内存完整性防护）则专门用来挡住内核内存利用。想从一个PDF附件一路拿到持久化root权限，需要把这些层全部绕过去。"
+      },
+      {
+        "type": "p",
+        "text": "AI这次直接参与了漏洞链的发现过程。这也不是Calif第一次这么干，今年4月Thai Duong就分享过Claude如何帮他拆解一个iOS Safari exploit。5月的时候，Calif用Anthropic的Claude Mythos Preview在不到一周的时间里做出了针对Apple M5芯片MIE防护的macOS内核exploit。Duong的评价是，Mythos Preview帮助识别bug并贯穿了整个exploit开发过程。"
+      },
+      {
+        "type": "p",
+        "text": "Thai Duong在Google做了12年安全和密码学，参与创建了Tink和Wycheproof密码学库，还和别人一起发现了BEAST、CRIME、POODLE这几个著名的SSL/TLS漏洞，拿过Pwnie Award的最佳服务端漏洞奖。整个Calif团队的定位就是用AI加速漏洞研究，同时给AI模型本身做红队测试。"
+      },
+      {
+        "type": "p",
+        "text": "Apple自己的iOS 27安全说明里其实已经提到了Calif.io，写的是“in collaboration with Claude and Anthropic Research”，归因于两个导致crash的bug。Hexacon大会是Synacktiv主办的offensive security（攻防安全）会议，为期两天。之前Cellebrite曾经公开表示iOS 27在任何当前物理设备上都无法越狱，iOS 18以上也没有可靠的公开越狱方案，这次Calif直接在最新硬件加最新系统上跑通完整持久化链，等于当场推翻了那个判断。"
+      },
+      {
+        "type": "p",
+        "text": "当然，对普通用户来说现在不用慌。方法还没公开，没有下载链接，网上任何声称能越狱iOS 27的工具基本都是恶意软件。但问题在于，能在一台完全更新的iPhone上从一个PDF附件打到持久化root，这种能力和商业spyware厂商卖给政府的东西是同一类。Citizen Lab前几天刚发了AdFection的研究，那是一种通过定向广告投递的zero-click（零点击）攻击，Hexacon上展示的技术和它属于同一个能力层级。"
+      },
+      {
+        "type": "p",
+        "text": "Calif在大会最后只留了一句话，“Everything will be released in due time”。Apple通常在补丁就绪之前不会确认安全问题，iOS 27.1目前还在beta阶段，里面有没有修掉Calif用的那几个bug，要等Calif公布细节或者Apple自己说。对于记者、活动人士、企业高管这些高风险人群，建议照旧：系统更新第一时间装，重要账号开2FA，考虑启用Lockdown Mode（锁定模式）。对大多数人来说，保持系统更新就够了。"
+      },
+      {
+        "type": "p",
+        "text": "AI正在把漏洞挖掘的门槛往下拉，苹果系统的防线当然也在升级，但攻防这盘棋，节奏已经不一样了。"
+      },
+      {
+        "type": "p",
+        "text": "跳转微信打开"
+      }
+    ],
+    "url": "https://mp.weixin.qq.com/s?__biz=MzAxOTM1MDQ1NA==&mid=2451189367&idx=1&sn=44342bec2538bd6384c4b87bf94b62f7",
+    "cover": "https://wechat2rss.xlab.app/img-proxy/?k=d68e3edf&u=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_jpg%2FibO9kiauylaDqlUBprCjguhlIL8jDqKhb0Q61oreKHAFT5oKAWfaaAPeWc96W16Y0Ac9dia2drFBiaTTlbxoNWqalffx083tRics5dq6ofRbibRyQ%2F0%3Fwx_fmt%3Djpeg",
+    "ts": 1792251360000,
+    "date": "10月17日",
+    "type": "图文",
+    "author": "黑鸟",
+    "sourceName": "黑鸟",
+    "accountName": "黑鸟",
+    "topics": [
+      "life"
+    ],
+    "degraded": true,
+    "stats": {
+      "read": "1.1万",
+      "likes": 424,
+      "shares": 161,
+      "favorites": 425,
+      "comments": 0
+    },
+    "read": "1.1万",
+    "comments": [],
+    "commentSource": "none"
+  },
+  {
     "id": "896163505",
     "title": "这个科技加速时代，是人文的冬天还是春天？",
     "summary": "这个科技加速时代，是人文的冬天还是春天？,科学,时代,人文,人类学,威尔逊,心理学",
@@ -5688,63 +5812,63 @@
     "read": "3.6万",
     "comments": [
       {
-        "id": "3852160966",
+        "id": "3852160965",
         "name": "huaxiqiuyu",
         "location": "四川泸州",
         "time": "刚刚",
         "avatar": "https://mobilepics.ws.126.net/netease_subject/949e3d1163e87265767dd20ce21e53311567550964311245",
         "text": "杀人偿命",
-        "likes": 267,
+        "likes": 282,
         "replies": []
       },
       {
-        "id": "1858864008",
+        "id": "1858864007",
         "name": "有态度网友0il6Fp",
         "location": "广西防城港市",
         "time": "刚刚",
         "avatar": "https://cms-bucket.nosdn.127.net/2018/08/13/078ea9f65d954410b62a52ac773875a1.jpeg",
         "text": "必须处以极刑！",
-        "likes": 261,
+        "likes": 271,
         "replies": []
       },
       {
-        "id": "2933142721",
+        "id": "2933142720",
         "name": "有态度网友0xFDVG",
         "location": "四川成都",
         "time": "刚刚",
         "avatar": "https://cms-bucket.nosdn.127.net/2018/08/13/078ea9f65d954410b62a52ac773875a1.jpeg",
         "text": "杀人偿命",
-        "likes": 125,
+        "likes": 136,
         "replies": []
       },
       {
-        "id": "3457190723",
-        "name": "有态度网友0sd5zw",
-        "location": "安徽合肥",
-        "time": "刚刚",
-        "avatar": "https://cms-bucket.nosdn.127.net/2018/08/13/078ea9f65d954410b62a52ac773875a1.jpeg",
-        "text": "法律应该把自首二字消除掉，人被你害死了，谈什么自首不自首也能找到你，故意杀人必须死刑",
-        "likes": 120,
-        "replies": []
-      },
-      {
-        "id": "3429117951",
+        "id": "3429117926",
         "name": "酒后行为艺术家63",
         "location": "江西赣州",
         "time": "刚刚",
         "avatar": "https://mobilepics.ws.126.net/2024/0529/8413d820j00se969z000u000b700b8.jpg",
         "text": "女人在外边还是说话客气一点，与人为善，嘴里不饶人，遇到戾气重的，连后悔的机会都没有。",
-        "likes": 184,
+        "likes": 214,
         "replies": []
       },
       {
-        "id": "127738178",
+        "id": "127738176",
         "name": "有态度网友0fCVIR",
         "location": "河南许昌",
         "time": "刚刚",
         "avatar": "https://cms-bucket.nosdn.127.net/2018/08/13/078ea9f65d954410b62a52ac773875a1.jpeg",
         "text": "很多泼妇觉得这世界没人敢惹她们",
-        "likes": 67,
+        "likes": 84,
+        "replies": []
+      },
+      {
+        "id": "3107692793",
+        "name": "有态度网友0rZrpz",
+        "location": "广东江门",
+        "time": "刚刚",
+        "avatar": "https://cms-bucket.nosdn.127.net/2018/08/13/078ea9f65d954410b62a52ac773875a1.jpeg",
+        "text": "这案有个细节很有意思，塞进后备箱长达7个小时，在这期间司机多次查看，为什么受害方不求饶？打钱给司机不就可以终止加害了吗？宁死不屈一毛不拔？真是卧遇龙凤雏！！",
+        "likes": 19,
         "replies": []
       }
     ],
@@ -5955,121 +6079,6 @@
       "comments": 0
     },
     "read": "9304",
-    "comments": [],
-    "commentSource": "none"
-  },
-  {
-    "id": "2071948169",
-    "title": "从“薯都”到“token之都”，中国草原跑出算力黑马-中新网",
-    "summary": "曾经以土豆为产业主角的乌兰察布，正把全球最“来电”的生意，做得风生水起。",
-    "body": "近日，美国纽约北部小村庄东菲什基尔发布一纸禁令：三年内禁止新建任何数据中心。这座为IBM造了50年芯片的科技小镇，一下就踩了刹车。\n\n它不是不想发展，而是大规模缺电正制约美国AI发展。\n\n地球另一端，几乎同纬度的内蒙古草原上，截然相反的景象正在上演。风车在山脚下转动，光伏板向天际铺展，绿电涌进机房，数据运算马不停蹄。\n\n同样是在算力上做文章，乌兰察布——这个曾经以土豆为产业主角的小城，正把全球最“来电”的生意，做得风生水起。\n\n华为、阿里、苹果、快手、字节等头部企业相继落户，累计签约算力中心项目109个，截至2026年8月，算力规模达19万P。高盛评价，这里已崛起为亚太规模最大、增长最快的AI算力集群之一。\n\n一片曾以土豆闻名的草原，如今“放牧”算力，在把风、冷和草地变成算力硬通货的过程中，乌兰察布走好了三步棋。\n\n电力是算力建设的底座。乌兰察布地处阴山北麓，风能、太阳能资源富集，全市新能源并网装机超2000万千瓦，绿电占比约 67%。\n\n丰富资源奠定电价优势。乌兰察布算力项目到户电价稳定在约0.32—0.36元/千瓦时。对比北上广深0.7-0.8元左右的工业电价，几乎少了一半。\n\n有了电，乌兰察布利用气候和区位优势做产业文章。\n\n年均气温4.3℃，近10个月可用自然冷源，让数据中心的散热制冷成本省下一大截；距北京240公里的区位优势，则让数据传输的单向实测时延缩小到2.1毫秒。\n\n东部算力外溢，就近落地。模型训练、云存储、自动驾驶推演，一批批“吃电大户”在这里安家，算力规模一路滚到19万P。\n\n随着AI产业向纵深发展，从发电和数据中心起步的乌兰察布已不再满足于只做卖电和机柜租赁的生意。\n\n2025年11月，乌兰察布正式启动建设“token(词元)之都”三年行动计划，要打造“风光发电—绿色算力—词元价值输出”的闭环。“十五五”期间，其将培育词元生产、计量、评测、安全等环节，并推动词元交易平台建设。\n\ntoken，是大模型世界的最小计量单位。2024年以来，中国日均token调用量从1000亿狂飙至500万亿。从“卖资源”到“卖算力”再到“卖词元”，乌兰察布想做的，是在这条产业价值链上再进一步。\n\n算力网是国家规划建设的“六张网”之一，算力产业正处在加速发展阶段。\n\n从2013年布局数据中心，到2022年被列入“东数西算”枢纽，再到建设“token之都”，乌兰察布已从上世纪靠土豆和牛羊撑起家底的小城，逐渐走向全球AI算力竞争的中心舞台。\n\n这是一座城市向“新”发展的缩影，也是中国因地制宜推动高质量发展的注脚。\n\n从乌兰察布看向全国，“东数西算”工程已布局八大国家算力枢纽、10 个国家数据中心集群。贵州的全国首个大数据综合试验区，广东韶关的国家级数据中心集群，宁夏中卫的大规模绿电直供项目……各地依托资源禀赋，走出一条条发展新路。\n\n地球的两端，两种选择，两种结局：一边为电发愁，新兴产业按下暂停键；一边向电而生，把算力种进草原。\n\n当美国还在为小村庄的供电扯皮时，中国的草原上，AI时代的新动能，正加速形成。",
-    "content": [
-      {
-        "type": "img",
-        "src": "https://i2.chinanews.com.cn/simg/cmshd/2026/10/17/8094edae75ed40bb900f0b80cd05104a.jpg",
-        "caption": "",
-        "_imgCount": 1
-      },
-      {
-        "type": "p",
-        "text": "近日，美国纽约北部小村庄东菲什基尔发布一纸禁令：三年内禁止新建任何数据中心。这座为IBM造了50年芯片的科技小镇，一下就踩了刹车。"
-      },
-      {
-        "type": "p",
-        "text": "它不是不想发展，而是大规模缺电正制约美国AI发展。"
-      },
-      {
-        "type": "p",
-        "text": "地球另一端，几乎同纬度的内蒙古草原上，截然相反的景象正在上演。风车在山脚下转动，光伏板向天际铺展，绿电涌进机房，数据运算马不停蹄。"
-      },
-      {
-        "type": "p",
-        "text": "同样是在算力上做文章，乌兰察布——这个曾经以土豆为产业主角的小城，正把全球最“来电”的生意，做得风生水起。"
-      },
-      {
-        "type": "p",
-        "text": "华为、阿里、苹果、快手、字节等头部企业相继落户，累计签约算力中心项目109个，截至2026年8月，算力规模达19万P。高盛评价，这里已崛起为亚太规模最大、增长最快的AI算力集群之一。"
-      },
-      {
-        "type": "p",
-        "text": "一片曾以土豆闻名的草原，如今“放牧”算力，在把风、冷和草地变成算力硬通货的过程中，乌兰察布走好了三步棋。"
-      },
-      {
-        "type": "p",
-        "text": "电力是算力建设的底座。乌兰察布地处阴山北麓，风能、太阳能资源富集，全市新能源并网装机超2000万千瓦，绿电占比约 67%。"
-      },
-      {
-        "type": "p",
-        "text": "丰富资源奠定电价优势。乌兰察布算力项目到户电价稳定在约0.32—0.36元/千瓦时。对比北上广深0.7-0.8元左右的工业电价，几乎少了一半。"
-      },
-      {
-        "type": "p",
-        "text": "有了电，乌兰察布利用气候和区位优势做产业文章。"
-      },
-      {
-        "type": "p",
-        "text": "年均气温4.3℃，近10个月可用自然冷源，让数据中心的散热制冷成本省下一大截；距北京240公里的区位优势，则让数据传输的单向实测时延缩小到2.1毫秒。"
-      },
-      {
-        "type": "p",
-        "text": "东部算力外溢，就近落地。模型训练、云存储、自动驾驶推演，一批批“吃电大户”在这里安家，算力规模一路滚到19万P。"
-      },
-      {
-        "type": "p",
-        "text": "随着AI产业向纵深发展，从发电和数据中心起步的乌兰察布已不再满足于只做卖电和机柜租赁的生意。"
-      },
-      {
-        "type": "p",
-        "text": "2025年11月，乌兰察布正式启动建设“token(词元)之都”三年行动计划，要打造“风光发电—绿色算力—词元价值输出”的闭环。“十五五”期间，其将培育词元生产、计量、评测、安全等环节，并推动词元交易平台建设。"
-      },
-      {
-        "type": "p",
-        "text": "token，是大模型世界的最小计量单位。2024年以来，中国日均token调用量从1000亿狂飙至500万亿。从“卖资源”到“卖算力”再到“卖词元”，乌兰察布想做的，是在这条产业价值链上再进一步。"
-      },
-      {
-        "type": "p",
-        "text": "算力网是国家规划建设的“六张网”之一，算力产业正处在加速发展阶段。"
-      },
-      {
-        "type": "p",
-        "text": "从2013年布局数据中心，到2022年被列入“东数西算”枢纽，再到建设“token之都”，乌兰察布已从上世纪靠土豆和牛羊撑起家底的小城，逐渐走向全球AI算力竞争的中心舞台。"
-      },
-      {
-        "type": "p",
-        "text": "这是一座城市向“新”发展的缩影，也是中国因地制宜推动高质量发展的注脚。"
-      },
-      {
-        "type": "p",
-        "text": "从乌兰察布看向全国，“东数西算”工程已布局八大国家算力枢纽、10 个国家数据中心集群。贵州的全国首个大数据综合试验区，广东韶关的国家级数据中心集群，宁夏中卫的大规模绿电直供项目……各地依托资源禀赋，走出一条条发展新路。"
-      },
-      {
-        "type": "p",
-        "text": "地球的两端，两种选择，两种结局：一边为电发愁，新兴产业按下暂停键；一边向电而生，把算力种进草原。"
-      },
-      {
-        "type": "p",
-        "text": "当美国还在为小村庄的供电扯皮时，中国的草原上，AI时代的新动能，正加速形成。"
-      }
-    ],
-    "url": "https://www.chinanews.com.cn/cj/2026/10-17/10716390.shtml",
-    "cover": "https://i2.chinanews.com.cn/simg/cmshd/2026/10/17/8094edae75ed40bb900f0b80cd05104a.jpg",
-    "ts": 1792239999000,
-    "date": "10月17日",
-    "type": "图文",
-    "author": "chinanews",
-    "sourceName": "财经速递",
-    "accountName": "财经速递",
-    "topics": [
-      "tech"
-    ],
-    "stats": {
-      "read": "4.8万",
-      "likes": 4319,
-      "shares": 478,
-      "favorites": 39,
-      "comments": 0
-    },
-    "read": "4.8万",
     "comments": [],
     "commentSource": "none"
   }
