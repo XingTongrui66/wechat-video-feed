@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T02:04:55.040Z",
+  "generatedAt": "2026-10-17T03:04:42.036Z",
   "source": "wechat2rss",
   "breakingPool": {
     "name": "看一看",
@@ -6086,7 +6086,7 @@
       "name": "腾讯安全应急响应中心",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1788777000000,
+      "lastPushAt": 1785489600000,
       "articles": [
         {
           "id": "1755716205",
@@ -32475,7 +32475,7 @@
       "name": "七夜安全博客",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1721213580000,
+      "lastPushAt": 1718506740000,
       "articles": [
         {
           "id": "119425442",
@@ -66607,7 +66607,7 @@
       "name": "信安之路",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1783123380000,
+      "lastPushAt": 1785205560000,
       "articles": [
         {
           "id": "3361795620",
@@ -289606,7 +289606,7 @@
       "name": "安全419",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791971580000,
+      "lastPushAt": 1791451800000,
       "articles": [
         {
           "id": "1556427539",
@@ -294630,7 +294630,7 @@
       "name": "白泽安全实验室",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1787878800000,
+      "lastPushAt": 1785427740000,
       "articles": [
         {
           "id": "1706160640",
@@ -295387,7 +295387,7 @@
       "name": "360威胁情报中心",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1789032600000,
+      "lastPushAt": 1787736600000,
       "articles": [
         {
           "id": "562544970",
@@ -320865,7 +320865,7 @@
       "name": "securitainment",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1788339240000,
+      "lastPushAt": 1790654760000,
       "articles": [
         {
           "id": "74397703",
@@ -335199,8 +335199,245 @@
       "name": "机器之心",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1792037820000,
+      "lastPushAt": 1792120980000,
       "articles": [
+        {
+          "id": "4080178507",
+          "title": "Agent推理快10倍是怎么做到的？苹果×CMU：把「生成」改成「做选择题」",
+          "summary": "机器之心 2026-10-16 11:23 北京 \n多模态搜索每轮推理延迟降低超过 90%。\n在智能体的典型工作流程中，模型每执行一个动作之前，都要先生成一段自由形式推理（free-form thinking）：分析当前观察、评估已有证据、再决定下一步行动。这一 “思考” 过程是 ReAct 范式的核心环节，但也带来了实打实的推理开销。 \n来自苹果与卡内基梅隆大学的研究团队近期提出了一种新框架 S",
+          "content": [
+            {
+              "type": "p",
+              "text": "机器之心 2026-10-16 11:23 北京"
+            },
+            {
+              "type": "p",
+              "text": "多模态搜索每轮推理延迟降低超过 90%。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/5L8bhP5dIqFJR3oZMIJzH0hpmVHsPf1xLZ1onD0B6kM7kMFEGHk0czx4ictJ8QmoyQXmjpdsTgiaAiaKYEubnibiaX9e23sVAZHtSUyB1oR2gVKs/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "在智能体的典型工作流程中，模型每执行一个动作之前，都要先生成一段自由形式推理（free-form thinking）：分析当前观察、评估已有证据、再决定下一步行动。这一 “思考” 过程是 ReAct 范式的核心环节，但也带来了实打实的推理开销。"
+            },
+            {
+              "type": "p",
+              "text": "来自苹果与卡内基梅隆大学的研究团队近期提出了一种新框架 SSR（Selection-based Structured Reasoning），对这一环节进行了重新设计：与其逐 token 生成推理，不如让模型从一组预定义的推理选项中 \"做选择题\"。实验结果显示，这一方法在 7 个多模态搜索 benchmark 上将每轮推理延迟降低超过 90%，同时保持了与 free-form thinking 相当的任务成功率。"
+            },
+            {
+              "type": "p",
+              "text": "论文标题：Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/5L8bhP5dIqFg0WfYlyqqeepLD4C3TibGpjf6FOH7EVuKjibcnDe74qjAU9XhgHylI3WghS7ricbx1ckkNhJHaQ2AnGqG5ZmOdwHJQLl99bxYHU/640?wx_fmt=webp&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "作者单位：Apple，Carnegie Mellon University"
+            },
+            {
+              "type": "p",
+              "text": "论文地址： https://arxiv.org/abs/2610.01892"
+            },
+            {
+              "type": "p",
+              "text": "项目主页： https://zfy0314.github.io/ssr-webpage/"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/5L8bhP5dIqHByy06nMah8IoC77jAicBuSswibTRjBibMscyZZ8H49yNpasMicgOavM3sibt2Z37H8fM6HjK9lic5VNTtEQvdtOaibImT0mjJAAEZHs/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 3
+            },
+            {
+              "type": "p",
+              "text": "一、动机：小模型的 \"废话文学\" 值得吗？"
+            },
+            {
+              "type": "p",
+              "text": "如今，多数搜索 Agent 都遵循类似 ReAct 的交互范式：观察（Observation）→ 推理（Reasoning）→ 动作（Action），如此循环往复，直到任务完成。"
+            },
+            {
+              "type": "p",
+              "text": "以一道多模态搜索题为例：模型看到一张建筑的照片，问题是 \"这栋建筑里接下来会举办什么展览\"。一个典型的 Agent 会先生成一段 free-form thinking：\"这张图片看起来像某个博物馆…… 我需要先判断建筑是什么…… 然后搜索它最近的展览……\"，随后据此构造搜索 query 并调用工具。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/5L8bhP5dIqGoqBwq8FbrGxSfNiaWhAhvt5kKHicXJLT7Q2iaia2vibp4ibJWCLJnzMtwib7dNpgdTicagBqAc6xFMHNNhsEBtPWic6PF4sxDFgLy3EZg/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 4
+            },
+            {
+              "type": "p",
+              "text": "然而，这种 \"先想后做\" 的模式在小模型上暴露出明显的性价比问题。研究人员观察到，2B、4B 这类端侧小模型有时会生成相当长的推理内容，但这些内容对生成下一步动作和最终决策却未必有帮助。"
+            },
+            {
+              "type": "p",
+              "text": "更关键的是，研究团队通过分析大量搜索轨迹发现：尽管每道题的实体、查询和观察结果千差万别，但决定下一步动作的高层推理逻辑却是反复出现的。比如 “某场 AI 会议在哪里举办” 和 “LEGO 是哪年成立的” 这两道看似无关的题目，背后共享的是同一条推理逻辑：“实体已知但目标信息缺失，用实体名加目标属性去搜索”。"
+            },
+            {
+              "type": "p",
+              "text": "这意味着，搜索 Agent 的推理空间不必覆盖整个自然语言空间。与其每次从头开始生成，不如预定义一组可复用的推理选项，让模型像做选择题一样完成推理。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/5L8bhP5dIqGPogp0LVpss2YaVkjbYmdvibUQX00GqmlvvFmSiaPhicN3gzKDlzRQ5hzTrsCM5wKUeut7zFvtMQicESMmKkkVP7XwhNiatia7ykvDU/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "将Reasoning改成做选择题后，推理速度明显提升"
+            },
+            {
+              "type": "p",
+              "text": "二、方法：Selection-Based Structured Reasoning"
+            },
+            {
+              "type": "p",
+              "text": "2.1 推理库与选择式推理"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/5L8bhP5dIqEmQjwicxXqn33PoVTwwcpqZUKyh6YCcRYzQ4TjnpUX0ZaDmPdQcmr0GXicYbpia6ibn4QjfwGqHL4tbYVYfIw7JrvunQQ8JPuNzRc/640?wx_fmt=jpeg&from=appmsg",
+              "caption": "图片",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "SSR 的核心是一个包含 6 条推理选项的推理库：不确定图中实体时用以图搜图识别；需要具体事实时用文本搜索查询；需要查看细节时裁剪或放大图像局部区域；证据已收集时基于证据作答；图中就有答案时直接读图作答；常识可答时直接回答。"
+            },
+            {
+              "type": "p",
+              "text": "每轮交互时，Agent 不再逐字生成推理，而是从推理库中选择一条作为当前轮的推理，再基于选中的推理去生成具体的动作，比如这次搜索该用什么 query、裁剪哪个框。这一设计将可复用的推理选项与实例相关的执行细节解耦：选项提供 \"为什么这么做\" 的 rationale，动作生成负责 \"具体怎么做\"。"
+            },
+            {
+              "type": "p",
+              "text": "2.2 用模型自己打分，不需要额外的分类头"
+            },
+            {
+              "type": "p",
+              "text": "关键问题是：怎么选？研究团队的做法是直接让 LLM 本身充当分类器。对每个推理选项，计算它基于当前 context 的概率平均值；再经过 softmax 得到推理库上的类别分布，采样即完成推理选择。整个选择过程不需要任何额外的任务头，也不需要 SFT warm start，打分与动作生成共享同一套模型参数和 system prompt。这相当于把基座模型自带的语义先验直接用作推理选择器：利用模型的 “理解能力”，根据当前上下文选择最合适的推理选项。"
+            },
+            {
+              "type": "p",
+              "text": "2.3 Parallel Reasoning Decoding：推理的 \"并行解码\""
+            },
+            {
+              "type": "p",
+              "text": "这是 SSR 效率优势的直接来源。由于所有推理选项都是预定义的，打分可以完全并行：在 token 层面，通过 teacher forcing 一次性 prefill 整条选项，所有 token 的似然在一个 batched forward pass 中算完；在推理选项层面，所有选项共享同一份上下文 KV cache，同时打分。也就是说，整个推理过程模型不需要自回归生成任何新 token。"
+            },
+            {
+              "type": "p",
+              "text": "论文中有一个直观例子：给一张爱丁堡大学的建筑照片，要求找出 “人们正在经历深刻变革” 主题的展览名称，一个 4B 模型生成了 156 个 token 的冗长思考，耗时 1821.92 毫秒，却将建筑误判为苏格兰国家博物馆，最终导向了错误的搜索方向。而 SSR 仅用 32.66 毫秒，就精准选择了 “通过图像识别实体” 的推理选项，并直接触发了图片搜索行为。"
+            },
+            {
+              "type": "p",
+              "text": "2.4 训练：SFT 与 RL 都可直接接入"
+            },
+            {
+              "type": "p",
+              "text": "SSR 是一个通用的推理接口替代方案，可接入现有 SFT、RL 训练管线。SSR 的一个额外好处是：由于推理被约束在推理库内，SSR 可以直接用 RL 训练，不需要 SFT warm start。而很多现有工作需要先用 SFT 教会模型 \"特定的思考方式\" 才能上 RL。SSR 不仅省去了 SFT 阶段的数据构造与训练时间，也让模型行为更可预测、更可控。"
+            },
+            {
+              "type": "p",
+              "text": "三、实验：精度基本持平，推理快 10 倍"
+            },
+            {
+              "type": "p",
+              "text": "研究团队在 Qwen3-VL 2B/4B 模型、H100 + SGLang 推理引擎上，于 MMSearch、HR-MMSearch、FVQA-test、InfoSeek、SimpleVQA、LiveVQA、MAT-Search 共 7 个多模态搜索 benchmark 上进行了评估："
+            },
+            {
+              "type": "p",
+              "text": "搜索精度持平：4B SSR（GRPO）平均成功率 61.37%，与同规模 SOTA 持平；2B SSR 达 51.26%，堪比零样本 8B 模型。在 GRPO / GSPO / SAPO / SFT 四种训练方法下，SSR 与 free-form thinking 版本的成功率相当。"
+            },
+            {
+              "type": "p",
+              "text": "推理速度大幅提升：每轮推理延迟降低超 90%，每题模型总推理延迟降低 28–54%。与 Chain-of-Draft、Sketch-of-Thought、效率奖励 RL、Probe & Prefill 等 baseline 相比，SSR 成功率最高，p95 推理延迟仅 0.07 秒（baseline 为 0.8–1.9 秒）且更加稳定。"
+            },
+            {
+              "type": "p",
+              "text": "消融实验的几个发现："
+            },
+            {
+              "type": "p",
+              "text": "语义很重要。若只让模型选择编号（如 \"[1]\"）而非完整文本，平均成功率下降 3.9%，且 7 个 benchmark 全面受损。这说明基于自然语言打分确实在使用模型的语义理解能力做上下文匹配，而非学一个纯索引分类器。"
+            },
+            {
+              "type": "p",
+              "text": "推理库规模有单调收益。选项从 1 条通用选项增加到 6 条，平均成功率从 37.24% 单调提升至 61.37%；其中从 1 条增加到 2 条（区分 \"作答\" 与 \"调用工具\"）即带来 17.27 个百分点的跃升，证明更多样、更细粒度的推理选项能更好地指导动作生成。"
+            },
+            {
+              "type": "p",
+              "text": "选择是自适应的。同一个 checkpoint 在不同 benchmark 上呈现不同的选择分布：偏简单事实问答的 SimpleVQA 上 \"基于图片作答\" 占比最高，高分辨率图片为主的 HR-MMSearch 上 \"检查图片细节\" 占比最高。"
+            },
+            {
+              "type": "p",
+              "text": "与自回归版本的对比。实验中发现，如果用自回归方式训练模型逐字生成推理库中的选项，必须依赖 SFT 先教会其遵守格式；仅靠 prompt 加格式奖励的 RL 无法约束模型不 \"乱想\"，而 SSR 从机制上直接保证了推理结果必须来自预定义推理库。"
+            },
+            {
+              "type": "p",
+              "text": "四、总结：重新定义推理空间"
+            },
+            {
+              "type": "p",
+              "text": "在研究团队看来，这项工作的意义或许不止于 \"让 CoT 更短\"，而是提出了一个更基础的问题：推理的表示方式是否一定要依赖不受限的自然语言生成？"
+            },
+            {
+              "type": "p",
+              "text": "对于开放式数学推理、定理证明或代码设计，free-form thinking 带来的表达能力至关重要；但在多轮搜索与工具使用场景中，Agent 每步面临的往往只是少数几类高层决策：当前信息是否足够、是否需要识别图中实体、是否继续搜索、是否需要放大局部区域。真正高度依赖具体输入的部分，如 search query、tool arguments、crop 坐标与最终答案，仍由模型自由生成；而策略层面的推理，未必需要每次在完整语言空间中重新生成。"
+            },
+            {
+              "type": "p",
+              "text": "因此，SSR 更应被理解为一次推理空间的重新组织：从一个完全开放的语言空间，转化为一个紧凑、可复用、语义明确的策略空间。模型并没有停止思考，只是将一部分靠逐 token 生成的推理，换成了在结构化推理空间中的选择与推断。"
+            },
+            {
+              "type": "p",
+              "text": "© THE END"
+            },
+            {
+              "type": "p",
+              "text": "转载请联系本公众号获得授权"
+            },
+            {
+              "type": "p",
+              "text": "投稿或寻求报道：liyazhou@jiqizhixin.com"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651063125&idx=3&sn=ea4caa15e65862454b786586bfcce177",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/5L8bhP5dIqFJR3oZMIJzH0hpmVHsPf1xLZ1onD0B6kM7kMFEGHk0czx4ictJ8QmoyQXmjpdsTgiaAiaKYEubnibiaX9e23sVAZHtSUyB1oR2gVKs/0?wx_fmt=jpeg",
+          "ts": 1792120980000,
+          "date": "10月16日",
+          "type": "图文",
+          "author": "机器之心",
+          "sourceName": "机器之心",
+          "accountName": "机器之心",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "6.9万",
+            "likes": 1273,
+            "shares": 715,
+            "favorites": 511,
+            "comments": 0
+          },
+          "read": "6.9万",
+          "comments": [],
+          "commentSource": "none"
+        },
         {
           "id": "777766090",
           "title": "卡加了，吞吐为何没跟上？大模型推理中的等待，有了新解法",
@@ -335736,287 +335973,6 @@
             "comments": 0
           },
           "read": "2.8万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "3017598573",
-          "title": "独立建制、招10名顶尖安全人才：字节Seed对AGI的目标可能被低估了",
-          "summary": "机器之心 2026-10-15 12:17 北京 \n安全研究将是 AGI 时代的核心课题\n机器之心发布 \n前沿实验室既在争取下一次模型能力的突破，也在准备应对下一场安全危机。 \n10 月 9 日，Axios 报道，OpenAI 和 Anthropic 的高管，已经在推演重大 AI 事故发生之后的情景，为应对风险提前做准备。 \n他们推演的一个场景是：AI 发起大规模网络攻击，导致金融服务或互联网连接",
-          "content": [
-            {
-              "type": "p",
-              "text": "机器之心 2026-10-15 12:17 北京"
-            },
-            {
-              "type": "p",
-              "text": "安全研究将是 AGI 时代的核心课题"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/5L8bhP5dIqHibsgCTpnA7icicZ7LpDl83GE0eZtOyxkn1ibSzy7yEsOxTZWAEgy9o4yU6y1ztswEV1YzhB1q3MQFNn4ODRibr2TVR4eiacr6C7Gy8/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "机器之心发布"
-            },
-            {
-              "type": "p",
-              "text": "前沿实验室既在争取下一次模型能力的突破，也在准备应对下一场安全危机。"
-            },
-            {
-              "type": "p",
-              "text": "10 月 9 日，Axios 报道，OpenAI 和 Anthropic 的高管，已经在推演重大 AI 事故发生之后的情景，为应对风险提前做准备。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/KmXPKA19gW889cR13aBX42evqQIRibKlicoCrHPEpT0tQiceNphESCa2eJTqstP8G0yqMTkeMFrOGue6kOyCKdTkA/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "他们推演的一个场景是：AI 发起大规模网络攻击，导致金融服务或互联网连接中断，还会波及供水、供电的基础设施。"
-            },
-            {
-              "type": "p",
-              "text": "这些顾虑有现实事件的支撑。7 月，OpenAI 的模型在内部网络安全评估中绕过互联网隔离措施，侵入 Hugging Face 系统。随后，Anthropic 也披露了网络安全评估中的意外事件。"
-            },
-            {
-              "type": "p",
-              "text": "接连出现的 Agent 越界事件，甚至让达里奥・阿莫迪与山姆・奥特曼这两个手都不肯握的竞争对手达成共识：必须更重视安全与对齐，让风险防范能力跟上模型进步的速度。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/5L8bhP5dIqEJvLXiaAjcO5WZ0trdcaODAaPjpvhJsNWOic3QicWo8G9icUmMdVsCchKH4JXsF8Z3cImZrhdfZSye0eyYLNer66gGyFRvwEnJACg/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 3
-            },
-            {
-              "type": "p",
-              "text": "相比之下，长期处于追赶状态的国内团队多奉行 “先发展、再治理”，相关工作往往与日常的内容治理、产品风控和合规任务混在一起。"
-            },
-            {
-              "type": "p",
-              "text": "字节跳动大模型团队 Seed 率 先打 破了惯例。 近期， Seed 成立新部门 Alignment & Preparedness ，原 Responsible AI 团队及部分 Chat 团队成员将转入新部门，由严林负责，向 Seed 负责人吴永辉汇报。"
-            },
-            {
-              "type": "p",
-              "text": "10 月 14 日，Seed 启动全球招聘，计划招募 10 名顶尖 AGI 研究员 ，重点研究模型能力发展带来的新型安全问题，探索行业尚无成熟方案的技术方向；同时推动安全研究成果直接接入模型的训练、评估和上线环节，让模型能力在实际产品与服务中安全、可靠地落地。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/5L8bhP5dIqHICdUia2gusPzaWFfHVqZJvBEnXyZfyZE4TXGRJ5v3siaWTJzTaYZhTOQOMBg29AFgyn3XtM52N2FHnpzGXrGcxaJicP6DwdFCk8/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "Seed 同时强调，将在这一方向 “坚决、长期地投入下去”，并为安全与对齐团队提供与前沿模型研究同等规格的资源与支持。毕竟，安全与对齐研究同样高度消耗算力，研究者需要反复测试模型、分析异常行为，并通过大规模训练来验证改进方案。"
-            },
-            {
-              "type": "p",
-              "text": "安全与对齐，模 型规模化应 用的核心能力"
-            },
-            {
-              "type": "p",
-              "text": "Seed 新成立的 Alignment & Preparedness 部门，从名字上就明确了两个核心任务："
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/5L8bhP5dIqH5xd5ztnaPEicAu5icOa6BubVG40J50ibdicX3RLQ7ialmmUaqqsGBYDFoAzUyZveC40TLzTP64BHiaUeZbUAv8gichD7HPqibiclgPAh4/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "对齐（Alig n ment） ，是让模型行为与人类意图及安全约束保持一致，重点提升 Agent Model（智能体模型）自主行动时的安全能力；"
-            },
-            {
-              "type": "p",
-              "text": "风险准备（Preparedness） ，则是关注极限场景，提前防范 CBRN（化学、生物、放射与核）等前沿能力可能带来的严重风险。"
-            },
-            {
-              "type": "p",
-              "text": "随着模型能力提升，这些方向投入不足会有什么样的风险，已经有了 Hugging Face 等事件可以参考。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/5L8bhP5dIqEdmz5SGBB03K9HV5zVMzGcfRJaQwUSgfrHyvsibQVZ0HGvKTH79Pib4GWVf4JhBATBAsPWkmNdmqUcDm4TmosiaLHCTsxTavraMA/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "对 Seed 来说，这些风险也在变得更加实际。据多家媒体报道，他们正计划训练超过 5 万亿参数的大模型，继续探索模型能力上限。Seed 内部的判断是，随着模型能力增强、应用场景变得复杂，安全与对齐，已经成为决定模型能否规模化应用的核心能力。"
-            },
-            {
-              "type": "p",
-              "text": "其实 Seed 模型当下支持的业务规模，已经让安全与对齐工作变得紧迫。截至 2026 年 6 月，豆包大模型日均 Token 使用量突破 180 万亿，豆包工作与飞书的融合也在推动模型进入更多企业流程；面向个人用户的豆包 App，每个月有 3.82 亿人使用。"
-            },
-            {
-              "type": "p",
-              "text": "模型覆盖的用户规模达到这个体量，即便某种风险发生的概率很低，也可能会影响到庞大的人群。"
-            },
-            {
-              "type": "p",
-              "text": "早在 2021 年，字节就组建了 Responsible AI 团队。2023 年 10 月，他们发布《大语言模型遗忘》（Large Language Model Unlearning）论文，探索在不从头训练的情况下减少模型的有害输出，同时尽量保留正常能力。这项研究入选《ML Safety Newsletter》当年重要安全论文专题，并被 NeurIPS 2024 接收。"
-            },
-            {
-              "type": "p",
-              "text": "此后，Seed 持续与外部研究者合作推进相关研究。比如，被 ICLR 2026 接收的任意深度对齐（Any-Depth Alignment，ADA）研究，在生成途中加入特定助手标记，让被诱导续写有害内容的模型重新识别风险，不用修改模型参数就能改善防护效果。"
-            },
-            {
-              "type": "p",
-              "text": "伴随着 Responsible AI 整合进新建制的 Alignment & Preparedness 独立部门，Seed 进一步加码该方向的研究。"
-            },
-            {
-              "type": "p",
-              "text": "前沿研究不仅需要顶尖人才，也需要耐心和资源"
-            },
-            {
-              "type": "p",
-              "text": "按照已披露的规划， Seed 新部门将围绕模型规范、安全评估、对齐训练、防护系统和风险监控持续投入 ，并加强与外部研究机构、第三方评测机构的公开合作。这意味着，团队需要从训练到应用阶段，持续跟进模型的变化，发现新的问题，再验证解决方法。"
-            },
-            {
-              "type": "p",
-              "text": "一些安全问题可以通过改进训练或防护措施较快解决。但还有一些问题，很难确定完成时间和消耗的资源。"
-            },
-            {
-              "type": "p",
-              "text": "比如一种对齐方法在现有模型上有效，到了能力更强的下一代模型上是否仍然可靠？一次评估没有发现风险，是模型足够安全，还是测试方法没有触及它的薄弱点？"
-            },
-            {
-              "type": "p",
-              "text": "回答这些问题，需要顶级的研究员持续试错。只有最懂模型底层技术的研究员，才可能预判并控制模型的失控风险。"
-            },
-            {
-              "type": "p",
-              "text": "在 OpenAI，历任安全与对齐团队负责人都是顶尖研究者，比如早期的达里奥・阿莫迪、伊利亚・苏茨克维，现在的研究副总裁米娅・格莱斯，也曾主导了 o1 系列模型采用的 “审议对齐” 技术。"
-            },
-            {
-              "type": "p",
-              "text": "Anthropic 成立的原因就是多名 OpenAI 的顶尖研究者认为公司不够重视安全与对齐。当前，其对齐团队由大模型核心对齐技术 RLHF（人类反馈强化学习）的共同发明人简・莱克负责。"
-            },
-            {
-              "type": "p",
-              "text": "安全与对齐的研究，也需要团队和管理者接受不确定性。在多数商业公司高管眼中，侧重防御的基础研究，既无法直接兑现为用户增长，又要在反复试错中吞噬宝贵的算力。这也是很多商业公司没那么在意安全与对齐研究的原因之一。"
-            },
-            {
-              "type": "p",
-              "text": "而 Seed 过去的一系列动作，证明了字节对这类 “长周期、高不确定性” 研究方向的包容。"
-            },
-            {
-              "type": "p",
-              "text": "2025 年 1 月，Seed 推出 Seed Edge 研究计划，瞄准比日常预训练和模型版本迭代更长期、更不确定的 AGI 前沿课题（如推理能力上限、下一代软硬件协同等），为研究员采用更长的评价周期并配置了专属独立算力池。"
-            },
-            {
-              "type": "p",
-              "text": "到现在，这项计划已经孵化出多项有影响力的成果。2025 年 10 月，Seed Edge 研究员发布、开源预训练模型 Ouro，探索 Loop Transformer 架构：让模型重复使用同一组网络层，通过增加计算深度提升能力。近一年后，GPT-6 Astra 使用这一架构的报道出现，这条技术路线才受到更多关注。"
-            },
-            {
-              "type": "p",
-              "text": "超长程评测集 EdgeBench 则是他们在 Agent 方向的探索成果。研究团队通过 134 个任务、约 3.8 万小时的交互记录，在测试范围内发现了任务表现随交互时间变化的规律，确立了一种全新的环境学习 Scaling Law，帮助研究者量化投入更多交互时间能够带来多少能力提升。据了解，OpenAI 等团队也接入了该评测集。"
-            },
-            {
-              "type": "p",
-              "text": "前不久，Edge 团队推出 Seed STEM 科学家计划，面向数学、物理、化学、生物、材料等领域，邀请 100 位优秀学者围绕真实科研难题开展合作，并提供算力、专业 AI 研究团队支持和有竞争力的薪酬。"
-            },
-            {
-              "type": "p",
-              "text": "在这个项目的支持下，近期，南开大学讲席教授郭少明带领团队，与 Seed 完成三维粘性挂谷猜想的形式化验证，将已有证明转化为计算机可核验的代码。项目共完成约 180 万行 Lean 代码，约九成由 Seed-Prover 生成。这项结果是今年菲尔兹奖得主王虹的代表性成果 —— 完整三维挂谷猜想证明的关键环节。"
-            },
-            {
-              "type": "p",
-              "text": "https://github.com/M32026/3d-sticky-kakeya"
-            },
-            {
-              "type": "p",
-              "text": "类似的合作计划在海外前沿实验室普遍存在，但在国内却很少见，探索主要面向尚无确定答案的问题，成果需要用大量算力证明或检验，更难兑现成商业价值。"
-            },
-            {
-              "type": "p",
-              "text": "字节跳动的经营规模 ，是 See d 投入长期研究的基础。根据 The Information 报道，2026 年上半年，字节跳动营收同比增长约 30%，达到约 1200 亿美元，体量超过 Meta；受 AI 投入增加影响，净利润同比小幅下降，还有约 200 亿美元。"
-            },
-            {
-              "type": "p",
-              "text": "这不仅说明字节愿意大力 投入 AI，还说明它有同行没有的底气：可以持续投入高价值的前沿技术探索。"
-            },
-            {
-              "type": "p",
-              "text": "Seed 对 AGI 的目标和决心，可能被低估了"
-            },
-            {
-              "type": "p",
-              "text": "在国内的大模型行业，Seed 所在的位置，可能是张力最大的地方。"
-            },
-            {
-              "type": "p",
-              "text": "火山引擎、豆包工作、豆包 App 等业务迅速推进，让他们研发的模型直接面对庞大的用户群体、复杂的使用场景和激烈的竞争。下一代模型能不能及时上线，成本能不能降低，以及能力能迅速提升、跟上全球第一梯队，都是需要 Seed 团队回答的实际问题。"
-            },
-            {
-              "type": "p",
-              "text": "但他们选择不走捷径。今年 8 月，字节创始人张一鸣在内部交流中明确提出，反对通过蒸馏对手模型的方式追赶，并表示可以接受阶段性的落后。这样的决断在国内同样找不到第二家。"
-            },
-            {
-              "type": "p",
-              "text": "这种支持独立探索的取向，也让 Seed 在前沿技术探索上的深度与广度远超外界的想象。他们在 2024 年发布的超连接（Hyper-Connections，HC）研究，探索深层网络中不同层之间传递和组合信息的新方式。一年后，成为 DeepSeek 推出的 mHC 方案、混元团队的 iHC 方案的基础。"
-            },
-            {
-              "type": "p",
-              "text": "2025 年初公开的 Over-Encoding 研究，探索通过扩大输入端的查找表，以较低的额外计算开销改善模型表现。同样是一年后，DeepSeek 发布 Engram 研究论文，引用并比较了这一方法。类似的技术，如今已经用在了 DeepSeek、Qwen 的新模型中。"
-            },
-            {
-              "type": "p",
-              "text": "前段时间伴随着 Loop Transformer 架构得到关注，Seed 相关的工作成为焦点之一。不少研究者开始讨论： Seed 的研究能力远远被低估了 。"
-            },
-            {
-              "type": "p",
-              "text": "从他们现在有关安全与对齐的一系列动作来看，字节 Seed 对 AGI 的目标和决心，也可能被低估了。"
-            },
-            {
-              "type": "p",
-              "text": "正如他们在招聘海报上所写，AGI 不只在于获得更高的智能水平，更在于 “让先进智能真正、持续地服务于人”。"
-            },
-            {
-              "type": "p",
-              "text": "© THE END"
-            },
-            {
-              "type": "p",
-              "text": "转载请联系本公众号获得授权"
-            },
-            {
-              "type": "p",
-              "text": "投稿或寻求报道：liyazhou@jiqizhixin.com"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651062870&idx=1&sn=a16c85f0a054c2e0fffdcb7f6a38b4ee",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/5L8bhP5dIqHibsgCTpnA7icicZ7LpDl83GE0eZtOyxkn1ibSzy7yEsOxTZWAEgy9o4yU6y1ztswEV1YzhB1q3MQFNn4ODRibr2TVR4eiacr6C7Gy8/0?wx_fmt=jpeg",
-          "ts": 1792037820000,
-          "date": "10月15日",
-          "type": "图文",
-          "author": "机器之心",
-          "sourceName": "机器之心",
-          "accountName": "机器之心",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "3.2万",
-            "likes": 1754,
-            "shares": 983,
-            "favorites": 507,
-            "comments": 0
-          },
-          "read": "3.2万",
           "comments": [],
           "commentSource": "none"
         }
@@ -348435,7 +348391,7 @@
       "name": "猫笔刀",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791728760000,
+      "lastPushAt": 1791642360000,
       "articles": [
         {
           "id": "2529297384",
@@ -349767,7 +349723,7 @@
       "name": "也谈钱",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791783000000,
+      "lastPushAt": 1788154200000,
       "articles": [
         {
           "id": "685276887",
@@ -355759,7 +355715,7 @@
       "name": "邱贞玮",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791537180000,
+      "lastPushAt": 1788235800000,
       "articles": [
         {
           "id": "980090642",
@@ -359165,107 +359121,8 @@
       "name": "辉哥奇谭",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791552180000,
+      "lastPushAt": 1790903640000,
       "articles": [
-        {
-          "id": "3770053330",
-          "title": "Winter is coming…给大家提个醒",
-          "summary": "原创 辉哥奇谭 2026-10-15 21:50 北京 \n冬天要来了，大家可以开始加强运动了。是的，越是天气渐凉，越是要加强运动。而且最好在冬季来临之前，就逐渐增加户外运动。因为冬季天气凉，等彻底冷下来，你再想去运动，就没有动力了，我们最好顺应人性，而不是与人性为敌。 \n为什么要增加户外运动，原因也很简单，冬季我们习惯待在室内，晒太阳比较少，因此维生素D的合成会受影响。很多人冬季容易有抑郁情绪，北",
-          "content": [
-            {
-              "type": "p",
-              "text": "原创 辉哥奇谭 2026-10-15 21:50 北京"
-            },
-            {
-              "type": "p",
-              "text": "冬天要来了，大家可以开始加强运动了。是的，越是天气渐凉，越是要加强运动。而且最好在冬季来临之前，就逐渐增加户外运动。因为冬季天气凉，等彻底冷下来，你再想去运动，就没有动力了，我们最好顺应人性，而不是与人性为敌。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RKfQbNfpVtMibzGhWn61HXby8ThcofOW7opHrxpibXiaEbM85jOcWfHfkltSIQlR82XEkPabxVmFL75GTUW82WZR4hwIDIguqAW0x8nOp58Jhs/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "为什么要增加户外运动，原因也很简单，冬季我们习惯待在室内，晒太阳比较少，因此维生素D的合成会受影响。很多人冬季容易有抑郁情绪，北欧国家因为冬季漫长，甚至有一个专有名词“Winter Blues” —— 冬季的忧郁。三十四五岁的时候，我那时候焦虑、好像也有点抑郁，甚至还在Amazon上买了缓解Winter Blues的灯 —— 其实就是模仿日光，增加室内光照。但实验下来，对我们而言，其实最好的效果反而是增加冬季的户外运动，因为大陆的冬季，白天光照是足够的，只要我们愿意顶着寒冷出门。"
-            },
-            {
-              "type": "p",
-              "text": "除了日晒，冬季室外温差大，尤其是北方，大家一冷一热容易着凉。加强户外运动，就是主动把自己暴露在寒冷之中，增强身体对于冷热变化的适应力。"
-            },
-            {
-              "type": "p",
-              "text": "运动之外，我也打了流感疫苗。根据我这几年打流感疫苗的经验，凡是我打了疫苗的那一年，中招流感的几率的确会少很多。而有一年没打流感疫苗，恰好中招，而且引发了更严重的连锁反应，不堪回首。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/RKfQbNfpVtOxSfMwyPhJclFQW8FJnnK4uanPTMV4nMIU9A4xI636FktRprofUvhXjdwmmCVAq4g9XswdTJlrJ4RibELMCLuiardasRcb8uqck/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "根据我过去四五年的经验，运动，尤其是户外运动+流感疫苗，能显著降低冬季患普通感冒和流感的几率。其实冬季任何生病，都会影响你至少一两周的状态，因为在冬季能切实感受到“病来如山倒，病去如抽丝”的感觉。生病及恢复期间，感觉人生状态都像冬季的天空一样，比较灰暗。"
-            },
-            {
-              "type": "p",
-              "text": "这一点在你度过一个“没有感冒/流感”的冬季之后，才会有更明显的感受。总之一句话，冬季没有感冒/流感，健康收益是巨大的。如果把生病视为健康方面的“消费”，减少一笔消费又等同于增加一笔收入。那么运动、打流感疫苗等等，就相当于在健康上的投资 —— 花费不大，收益巨大。是否接种流感疫苗请遵医嘱，以上仅为个人经验，仅供参考。"
-            },
-            {
-              "type": "p",
-              "text": "此外，昨天还看到一个有关健康的话，即“抗阻运动”，看到一个北京老年人接受访谈，70+，身体硬朗。看他的状态，你说他有50岁，都有人信。他说自己的梦想是不需要卧床不起，需要其他人照料的时期。因为据他所说，平均一个中国老人有六七年需要其他人照料，其中最重要的问题就是因为肌肉流失而造成的跌倒风险。他指出主要有三个部位是高风险的（没记错的话是手腕、髋关节、脊椎），需要围绕这三个部位坚持肌肉的锻炼。而日常的有氧活动对于增加肌肉力量帮助有限。所以他提倡大家要通过抗阻运动，多进行肌肉力量锻炼。长期的、规律的力量训练能大大增加肌肉力量，减少老年之后跌倒的风险，降低生活无法自理的概率。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/RKfQbNfpVtMypAQuNHIlzvphQnnAziarFcm8icxxYpWIwh9KicV4DWAkkKENbJ9PR5yYcQzuyIdto4d6CFWkS4z5eEmq1vSHFar9qlf5faDoBQ/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 3
-            },
-            {
-              "type": "p",
-              "text": "我向来认为，我们人生所期待的好的结果，都需要长期的积累，绝非一时发力就可以轻易获得。所以，建议大家在年轻的时候就开始肌肉训练，最少每天花5-10分钟，练练靠墙静蹲，深蹲起，俯卧撑，都是耗时很少，对场地要求很低，随时随地可以开展的活动。而且每次的“痛苦指数”并不高。 人生降低悲剧的有效方法就是每天在可控的情况下，主动痛苦一点点 —— 每次爬楼梯的时候，我脑海中都会闪现这句话。"
-            },
-            {
-              "type": "p",
-              "text": "最后说说最近的写作感受。finally，终于找到了一个“有人气”的写作方法，其实就是回归初心，回归本源，每天找一个安静的、最好是固定的时间，“写出我心”，记录此时此刻的感受。放下其他欲望，也让AI靠边站，就是和大家聊聊天，谈谈心，主打一个真实、交流、陪伴。AI内容肯定会泛滥，而且AI写作能力极有可能超越99%的大众。在这种情况下，写作技巧不再重要，真实和陪伴可能是更稀缺的。关于这方面的感受，这两周会在知识星球上和大家用语音的方式好好聊聊，请期待。"
-            },
-            {
-              "type": "p",
-              "text": "点击左下角阅读原文，遇见更好的自己"
-            },
-            {
-              "type": "p",
-              "text": "👇"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA5NjM0Nzc3NA==&mid=2650463983&idx=1&sn=25916b05ff9b8be407ee0501ae2f85a9",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RKfQbNfpVtMibzGhWn61HXby8ThcofOW7opHrxpibXiaEbM85jOcWfHfkltSIQlR82XEkPabxVmFL75GTUW82WZR4hwIDIguqAW0x8nOp58Jhs/0?wx_fmt=jpeg",
-          "ts": 1792072200000,
-          "date": "10月15日",
-          "type": "图文",
-          "author": "辉哥奇谭",
-          "sourceName": "辉哥奇谭",
-          "accountName": "辉哥奇谭",
-          "topics": [
-            "health"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "5万",
-            "likes": 1825,
-            "shares": 382,
-            "favorites": 37,
-            "comments": 0
-          },
-          "read": "5万",
-          "comments": [],
-          "commentSource": "none"
-        },
         {
           "id": "3657128842",
           "title": "Apple上新，我又心痒了",
@@ -359523,6 +359380,125 @@
             "comments": 0
           },
           "read": "7万",
+          "comments": [],
+          "commentSource": "none"
+        },
+        {
+          "id": "536559538",
+          "title": "谁是当下最好用的Personal Agent？",
+          "summary": "原创 辉哥奇谭 2026-10-12 22:03 北京 \n直接说我的答案：我最近在用Grok Bot，这几天用下来，最大的感受是：它可能是目前我们能用到的最好用的Personal Agent。注意：本文非广告，Elon也没有给我付广告费：） \n首先，国内的AI大厂还在做各自的Harness、Cowork（比如Deepseek Harness、Workbuddy），还没有功夫推出自己的Persona",
+          "content": [
+            {
+              "type": "p",
+              "text": "原创 辉哥奇谭 2026-10-12 22:03 北京"
+            },
+            {
+              "type": "p",
+              "text": "直接说我的答案：我最近在用Grok Bot，这几天用下来，最大的感受是：它可能是目前我们能用到的最好用的Personal Agent。注意：本文非广告，Elon也没有给我付广告费：）"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/RKfQbNfpVtP3pOQHkaTiaicjPHqeW7H3Drsrc6X1X58Ca85Sic0v9ZzFlemT2ibP5YUU8Rg7Uv3QJysbicxMdXUQBSrhjM7umTWHIBibtzLbEFtOo/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "首先，国内的AI大厂还在做各自的Harness、Cowork（比如Deepseek Harness、Workbuddy），还没有功夫推出自己的Personal Agent。我猜其中一些大厂已经在路上了，只是还没有见到正式的产品。"
+            },
+            {
+              "type": "p",
+              "text": "周末的时候看到有民间用户自己基于DeepSeek Harness做了一个Deepseek Bot，我今天初步用了一下，感觉是：Deepseek民间版的bot能力要弱于当下的Grok Bot。原因是：类似Bot这样的Personal Agent的能力其实取决于模型和Harness，在模型使用方面，Grok Bot无疑是占优的（据官方说明，它会按任务自动调用包括 Anthropic Opus 5.5在内的多家模型，而非只有SpaceXAi自己的模型），此外Grok Bot有云端的虚拟主机。更强大的模型和更灵活的虚拟主机，的确会让Grok Bot胜出一头。因此也特别期待Deepseek Harness官方团队未来可能会推出的Personal Agent产品。"
+            },
+            {
+              "type": "p",
+              "text": "其次，海外呢？ 比如Meta的Muse非常火，还有完全没有界面的Instinct，基于种种原因，很少看到身边朋友能用起来的。而OpenAI的Agent Dot，目前用下来能力要弱于Grok Bot，原因是什么？我猜想和“不够极致”有关，很简单，OpenAI的Dot嵌入在ChatGPT的界面中，这与独立存在Grok Bot相比，无疑是一个妥协的产物，很难在“Personal Agent”方面做的很极致。而且ChatGPT中的Dot只有一个对话框，无法创建新的Dot，这也让Dot的能力颇受限制。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/RKfQbNfpVtOumKA9raQh2rgvbxREWcHyljicBu8KPjFadARoAtPuicrJM6QmFbfedeic996uGsZ5Pt2CH9o9micsU1icjuJvodErOBAWXGpS13u8/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "所以，我认为，截止26年10月第二周，Grok Bot可能是大家现在能用到的，综合实力最领先的Personal Agent。至于11月，会不会有新的领先者？会不会有国产的平替？现在都不得而知。"
+            },
+            {
+              "type": "p",
+              "text": "我用Grok Bot做什么？现在生活中，几乎一切AI的需求我都让Grok Bot去满足，无论是知识星球的语音提纲、付费文章的选题、短视频的制作、推荐书单的整理等等。过去习惯性给Deepseek、ChatGPT（Codex）、Claude的需求，现在都直接发给Grok Bot。而效果呢？除了大部分任务你需要花时间等待之外，没有其他问题，交付质量很高，几乎是1-2遍就过，不需要来回拉扯。"
+            },
+            {
+              "type": "p",
+              "text": "OpenClaw当年承诺，但没有做到的事情“AI Agent do something”，Grok Bot基本接起来了。很显然，Grok Bot也不是终局，类似于没有任何应用界面的Instinct也许是更领先的方向，但是Grok Bot很可能在相当长的时间（比如1-2个月内），充分满足大家对于Personal Agent的需求了。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/RKfQbNfpVtMj1jCRSiazHyEIlZphXticVCicCWYgg7cL2nibmyq1pXr25X9icPnFMxS0rlLo3HriaXmlPFCVwHiblj3YCDz2WKQJFIoS3KKN7evIL8/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 3
+            },
+            {
+              "type": "p",
+              "text": "而且，除了能力强大，相对“便于访问”之外（相比于Claude），它的价格也相对比较实惠。免费版本就能用一阵，20美金版本估计能满足很多普通用户的需求 —— 当然，我这种相对重度的用户，一定要更多的氪金了，才用了两天，已经消耗了周度70%的用量，按照目前的消耗速度，大概率明后天就得再充一些钱 —— 不过正好可以把ChatGPT、Claude的下个月的订阅费降下来，做到token 费用守恒。"
+            },
+            {
+              "type": "p",
+              "text": "BTW，我周末做了一个“Grok Bot”的语音教程，并且顺手生成了一个Grok Bot的使用手册，懒得自己摸索的朋友，可以在参考这个教程，更快的上手。对了，我让Grok Bot把我的语音变成视频，结果，我居然拿到了一个类似PPT讲解版本的MP4视频，效果很不错。看起来以后做教学视频，可以先录音之后用Grok Bot直接转成视频教程。（上述材料都在知识星球上，辉友们可以自取）。"
+            },
+            {
+              "type": "p",
+              "text": "AI工具/模型的发展很有意思，一开始都是给你很多承诺，让你充满期待。但是用一段时间，一般最多一个月左右时间，你就会觉得它过度承诺，低于预期。当然，可能问题不在于AI工具，而在于我们自己对于AI 的期待太高。不知道Grok Bot这次，能坚持多久让我们不失望。但仅凭现在的表现，Grok Bot就值得我的推荐。"
+            },
+            {
+              "type": "p",
+              "text": "借此做个小调查：你当最喜欢用的Personal Agent是哪个？为什么？你主要用它做什么？ 如果还没有使用Personal Agent，也可以谈谈自己主要用的AI工具是什么？拿它做什么？对于结果是否满意 ？直接发在评论区即可。"
+            },
+            {
+              "type": "p",
+              "text": "还有一个事情挺有意思，啰嗦一下。Kaparthy在X上发的最新的帖子对全球AI的普及度做了一个推测，基本结论是：全球只有极少数人能深度的使用AI。我用Grok Bot生成一张金字塔图，大家可以对照此图，看看自己在哪一层。我自己对比了一下，因为我显然不是全球Top 5000，同时，又显然不是仅仅用AI聊天。所以按照Kaparthy的分布，我大概率在第二层：2000万人这一层。"
+            },
+            {
+              "type": "p",
+              "text": "---"
+            },
+            {
+              "type": "p",
+              "text": "最后，贴一下Grok Bot的教程截图"
+            },
+            {
+              "type": "p",
+              "text": "点击左下角的阅读原文，加入知识星球"
+            },
+            {
+              "type": "p",
+              "text": "👇"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA5NjM0Nzc3NA==&mid=2650463964&idx=1&sn=ef14e602edc3cc34720976eb8c23cb10",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/RKfQbNfpVtP3pOQHkaTiaicjPHqeW7H3Drsrc6X1X58Ca85Sic0v9ZzFlemT2ibP5YUU8Rg7Uv3QJysbicxMdXUQBSrhjM7umTWHIBibtzLbEFtOo/0?wx_fmt=jpeg",
+          "ts": 1791813780000,
+          "date": "10月12日",
+          "type": "图文",
+          "author": "辉哥奇谭",
+          "sourceName": "辉哥奇谭",
+          "accountName": "辉哥奇谭",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "4万",
+            "likes": 536,
+            "shares": 435,
+            "favorites": 819,
+            "comments": 0
+          },
+          "read": "4万",
           "comments": [],
           "commentSource": "none"
         }
@@ -361022,7 +360998,7 @@
       "name": "阿司匹林42195米",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1781875920000,
+      "lastPushAt": 1784213880000,
       "articles": [
         {
           "id": "342734004",
@@ -361347,43 +361323,125 @@
           "commentSource": "none"
         },
         {
-          "id": "3026673954",
-          "title": "内蒙古一市发布鼠疫风险提示：真有必要吗？",
-          "summary": "原创 阿司匹林42195 2026-10-13 12:43 美国 \n看数据\n这几天不少群里都在转发“内蒙古一地发布鼠疫防控风险提示”的小视频，很多人因此吓到了，纷纷说“弄不好真又出大事”，又互相嘱咐“不要去内蒙”。 \n我把原文找出来看了一下，这个风险提示是呼伦贝尔市疾控中心10月9日发出的，要大家警惕“来自俄罗斯远东鼠疫疫源地区的人员”。 \n那咱们来看看他们发这个风险提示有没有道理？ \n支持发布这",
+          "id": "3482137056",
+          "title": "世卫：病因未明的肺炎——俄罗斯联邦",
+          "summary": "世卫组织 2026-10-11 12:31 美国 \n作者：世界卫生组织，2026年10月10日发布 \n一，情况描述： \n2026年10月2日，世界卫生组织（WHO）通过媒体报道获悉，俄罗斯联邦伊尔库茨克“西伯利亚和远东抗鼠疫研究所”一名员工死亡。该人员于9月29日因重症肺炎住院，并于10月2日死亡。 \n10月3日、10月5日、10月6日和10月7日，WHO联系了俄罗斯联邦卫生主管部门，以核实媒体报",
           "content": [
             {
               "type": "p",
-              "text": "原创 阿司匹林42195 2026-10-13 12:43 美国"
+              "text": "世卫组织 2026-10-11 12:31 美国"
             },
             {
               "type": "p",
-              "text": "看数据"
+              "text": "作者：世界卫生组织，2026年10月10日发布"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/2xIo26Jr4bicVpl32ibGEZMAP1NmvdBSB84JiblRXw7pQvrY0cC8T884icD0JUwllLVaVIKl85C9wicJPSViaFdv4xYBnL4j1x0rrhI1m5icrIicYcw/0?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4bib1xCyzUGxhfrnG9RkLnWEebGYeovxb4V9CnOGQ0c8Ok082hHsDkq86aqicfoPO9ohVfyCP8kzSwrPuurzOgodq1csd4OsVTWWM/0?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 1
             },
             {
               "type": "p",
-              "text": "这几天不少群里都在转发“内蒙古一地发布鼠疫防控风险提示”的小视频，很多人因此吓到了，纷纷说“弄不好真又出大事”，又互相嘱咐“不要去内蒙”。"
+              "text": "一，情况描述："
             },
             {
               "type": "p",
-              "text": "我把原文找出来看了一下，这个风险提示是呼伦贝尔市疾控中心10月9日发出的，要大家警惕“来自俄罗斯远东鼠疫疫源地区的人员”。"
+              "text": "2026年10月2日，世界卫生组织（WHO）通过媒体报道获悉，俄罗斯联邦伊尔库茨克“西伯利亚和远东抗鼠疫研究所”一名员工死亡。该人员于9月29日因重症肺炎住院，并于10月2日死亡。"
             },
             {
               "type": "p",
-              "text": "那咱们来看看他们发这个风险提示有没有道理？ 支持发布这个提示的有两点： 1，内蒙古是中国鼠疫的自然疫源地之一，也就是那里的野生动物存在鼠疫传播的风险。中国疾控中心统计过，2010-2024年期间，全国共报告33例鼠疫患者，其中内蒙古占45.5%。因此内蒙古的人对鼠疫尤其敏感似乎可以理解。"
+              "text": "10月3日、10月5日、10月6日和10月7日，WHO联系了俄罗斯联邦卫生主管部门，以核实媒体报道的信息，其中包括所谓的第二例病例。根据《国际卫生条例（2005）》（IHR）第9条和第10条，WHO还要求提供进一步信息，以便按照《国际卫生条例》第6条评估其对国际公共卫生可能产生的影响。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4bibKSQxe9poolR2Ra26I0dpLkDMgTkiahKottV2zrfxiaR4QFGkvVVHxn0k8cdyzGcaSnRT33fWHRRkGuYvpAw0TKC9mwG5z7AOZ4/640?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 2
             },
             {
               "type": "p",
-              "text": "2，呼伦贝尔在内蒙古的北部，靠俄国比较近。 但是，不支持这个做法的证据更强大一些，至少有以下三点： 1，呼伦贝尔到出现肺炎死亡的伊尔库茨克（Irkutsk）并不是紧挨着的暴露区。相反，两地直线距离约1,135公里，比上海到北京还要远。 2，而且，呼疾控的文章中自己说呼伦贝尔市从1927年以后，就没有再出现过人感染鼠疫的病例，也就是近100年来都没有一个病例，而且近年常态监测也没发现当地老鼠携带鼠疫杆菌，那现在有什么必要这么急吼吼地发个鼠疫警示呢？ 3，目前，俄国的一例死于肺炎的患者和她的密接人群，并没有一个测出得了鼠疫（ 世卫：病因未明的肺炎——俄罗斯联邦 ）。既然没有一例已核实的鼠疫，那为什么要急着防俄国输入鼠疫？"
+              "text": "10月2日，俄罗斯联邦消费者权益保护和公益监督局（Rospotrebnadzor，RPN）伊尔库茨克分局发布了一份公开声明。RPN是俄罗斯联邦的一个联邦机构，负责对民众福祉以及消费者权益和保护工作进行监督和管理。声明称，针对这例疑似“高威胁病原体”病例，已经召集了一个“特别卫生与流行病学专家委员会”。相关部门采取了卫生和疫情控制措施，包括确定接触者，并将其置于医学观察之下。俄罗斯联邦当局当时表示，所有接触者均无症状，而且高威胁病原体实验室检测结果均为阴性。"
             },
             {
               "type": "p",
-              "text": "好玩的是呼疾控在文章结尾还安慰大家：“大家不必过度恐慌”。但现实是这个警示以俄罗斯远东一例不是鼠疫的肺炎死亡为由发布跨境鼠疫预警，其证据链确实偏弱，制造了紧迫感，说不定还会影响内蒙古的旅游业或其他业务。"
+              "text": "10月6日，WHO收到了俄罗斯联邦国家归口单位（NFP）对核实请求的回复。回复称，伊尔库茨克州近期没有登记任何鼠疫病例，并确认在发现伊尔库茨克APRI一名员工出现重症肺炎后，已经开展了流行病学调查。据俄罗斯当局称，该人员最初出现了与急性呼吸道病毒感染相符的症状。在多种高威胁病原体检测结果均为阴性后，最终确定该患者死于病因不明的肺炎。"
+            },
+            {
+              "type": "p",
+              "text": "俄罗斯当局向WHO通报了以下情况：已经按照国家卫生法律法规实施了预防和控制措施；尽最大可能广泛确定了接触者，将其置于医学观察之下，并对高威胁病原体进行了检测；截至10月9日，在所有接触者中均未检测到该实验室研究范围内的任何高威胁病原体，其医学观察也已经终止。有关当局进一步报告称，经两项独立调查确认，该研究所没有发生任何实验室生物安全或生物安保事件，并表示媒体关于发生此类事件的报道并不准确。"
+            },
+            {
+              "type": "p",
+              "text": "据俄罗斯联邦当局称，目前仍在继续监测这一情况。"
+            },
+            {
+              "type": "p",
+              "text": "在WHO于10月7日和8日随后提出进一步信息请求后，俄罗斯联邦国家归口单位（NFP）提供了更多信息。根据其官方报告，患者以及所有已确定的接触者均接受了广泛的病原体检测，其中包括流感、SARS-CoV-2（新冠病毒）、其他呼吸道感染以及细菌感染（包括鼠疫和链球菌）。据报告，所有高威胁病原体检测结果均为阴性；在接触者中仅发现2例COVID-19（新冠病毒感染）、3例鼻病毒感染、1例嗜血杆菌属感染，以及其他机会性感染。有关当局进一步报告称，该死亡病例并非死于鼠疫感染，并且该人员已经针对其因职业原因所接触操作的高威胁病原体接种过疫苗。报告还称，该人员在症状出现前两周内没有离开过伊尔库茨克州。"
+            },
+            {
+              "type": "p",
+              "text": "WHO已向俄罗斯联邦公共卫生主管部门表示，愿意在高威胁病原体以及实验室生物安全和生物安保领域提供支持。"
+            },
+            {
+              "type": "p",
+              "text": "针对有关已采取公共卫生措施的进一步信息，俄罗斯联邦当局报告称，考虑到该患者的职业，相关部门采取了预防性的公共卫生措施，并广泛确定了一系列接触者，将这些人员分别安排在医疗机构或家中接受医学观察。医学观察持续了7天，其中包括每日进行实验室检测，目前所有已确定接触者的医学观察均已完成。所有接触者始终没有出现症状，对正在调查的病原体检测结果也均为阴性。"
+            },
+            {
+              "type": "p",
+              "text": "俄罗斯联邦当局向WHO通报称，除收治该病例的医院外，没有其他医疗机构被实施隔离或采取额外的公共卫生措施，这与媒体报道的情况不同。"
+            },
+            {
+              "type": "p",
+              "text": "二，公共卫生应对"
+            },
+            {
+              "type": "p",
+              "text": "俄罗斯联邦的国家联络点（NFP）公开宣布，地区卫生和防疫委员会于10月2日召开了一次特别会议。负责机构RPN批准了一项符合国家法律的卫生和防疫措施行动计划，其中包括追踪接触者并进行医学随访、对已确定的接触者进行实验室检测、加强流行病学调查和风险评估，以及实施预防性的感染预防与控制措施。"
+            },
+            {
+              "type": "p",
+              "text": "共有5个俄罗斯联邦消费者权益保护和公益监督局（Rospotrebnadzor）所属机构参与了这些措施，其中包括3个研究机构。预防和防疫措施根据该患者的职业活动情况实施。没有发现与传染病有关的健康问题。"
+            },
+            {
+              "type": "p",
+              "text": "共进行了5500多次实验室检测，没有任何检测发现高后果或危险的病原微生物。检测采用了多种成熟的实验室方法，包括细菌学、生物学、质谱和分子遗传学技术。"
+            },
+            {
+              "type": "p",
+              "text": "在接触者中没有检测到高威胁病原体，所有随访工作均已完成，没有发现其他病例。"
+            },
+            {
+              "type": "p",
+              "text": "三，WHO 风险评估："
+            },
+            {
+              "type": "p",
+              "text": "WHO 的快速风险评估是一个系统且持续进行的过程，用于描述某一公共卫生事件所造成的风险，并为采取措施以减少其影响和防止其在国际间传播提供依据。"
+            },
+            {
+              "type": "p",
+              "text": "此次事件的一个关键不确定因素是，已死亡的实验室工作人员没有得到确诊。根据国家主管部门提供的信息，检测未发现鼠疫或其他已检测的高威胁病原体，该死亡病例已被归类为病因未明的肺炎。然而，WHO 尚未收到能够确定导致这起致命疾病的致病因子的信息。由于没有明确诊断，WHO 无法独立评估所报告的对接触者进行监测的时间长度，是否足以排除导致这起致命疾病的所有合理可能病因。"
+            },
+            {
+              "type": "p",
+              "text": "该病例的职业工作环境仍然是一个重要的考虑因素。死者曾在一家处理高危害性病原体的机构工作，据报告，由于该人员的职业活动，相关方面采取了预防性的公共卫生措施。尽管主管部门提供的信息并未表明其感染了已检测的高威胁病原体，也没有发现其他与其有关联的病例，但导致这起致命疾病的来源仍未确定。因此，在现阶段，仍不能完全排除与实验室有关的暴露。"
+            },
+            {
+              "type": "p",
+              "text": "根据国家《国际卫生条例》联络点（NFP）提供的信息，WHO 尚未发现与此次事件相关的持续传播证据。然而，由于缺乏明确的病因学诊断，而且暴露的来源和方式仍存在不确定性，因此对这一评估的信心仍然有限。还需要更多的临床、流行病学和实验室信息，包括确认这名已死亡实验室工作人员的诊断，才能提高对该评估的信心。随着获得更多信息，WHO 将继续监测情况，并评估任何潜在的公共卫生影响。"
+            },
+            {
+              "type": "p",
+              "text": "四，WHO的建议："
+            },
+            {
+              "type": "p",
+              "text": "（注：这部分和大众关系不大，故只留下最后一段）"
+            },
+            {
+              "type": "p",
+              "text": "根据目前掌握的信息，世界卫生组织不建议对此事件采取任何旅行或贸易限制。随着更多信息的获得，世界卫生组织将继续监测情况并更新其建议。"
             },
             {
               "type": "p",
@@ -361391,21 +361449,21 @@
             },
             {
               "type": "p",
-              "text": "1， 为什么大众不需要担心汉坦病毒？"
+              "text": "1， 一支未经证实的试管，如何引出生物武器阴谋论？"
             },
             {
               "type": "p",
-              "text": "2， 迈克尔.杰克逊得了哪些病？"
+              "text": "2， 评饶毅公众号和金冬雁的争论"
             },
             {
               "type": "p",
               "text": "跳转微信打开"
             }
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzkxOTc4NA==&mid=2247489684&idx=1&sn=9d9dae59355d248b054eaeae14ea16b5",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/2xIo26Jr4bicVpl32ibGEZMAP1NmvdBSB84JiblRXw7pQvrY0cC8T884icD0JUwllLVaVIKl85C9wicJPSViaFdv4xYBnL4j1x0rrhI1m5icrIicYcw/0?wx_fmt=jpeg",
-          "ts": 1791866580000,
-          "date": "10月13日",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzUzMzkxOTc4NA==&mid=2247489680&idx=1&sn=a31eeb73ad7ac1a16d8cd4a91bbe77f1",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/2xIo26Jr4bib1xCyzUGxhfrnG9RkLnWEebGYeovxb4V9CnOGQ0c8Ok082hHsDkq86aqicfoPO9ohVfyCP8kzSwrPuurzOgodq1csd4OsVTWWM/0?wx_fmt=jpeg",
+          "ts": 1791693060000,
+          "date": "10月11日",
           "type": "图文",
           "author": "阿司匹林42195米",
           "sourceName": "阿司匹林42195米",
@@ -361415,13 +361473,13 @@
           ],
           "degraded": true,
           "stats": {
-            "read": "2.6万",
-            "likes": 795,
-            "shares": 404,
-            "favorites": 656,
+            "read": "3.9万",
+            "likes": 3969,
+            "shares": 569,
+            "favorites": 649,
             "comments": 0
           },
-          "read": "2.6万",
+          "read": "3.9万",
           "comments": [],
           "commentSource": "none"
         }
@@ -361786,7 +361844,7 @@
       "name": "空天防务观察",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1783831320000,
+      "lastPushAt": 1781267040000,
       "articles": [
         {
           "id": "489902121",
@@ -364312,7 +364370,7 @@
       "name": "温哥华的鱼",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1792107000000,
+      "lastPushAt": 1791847800000,
       "articles": [
         {
           "id": "3608428320",
@@ -372998,12 +373056,12 @@
       "name": "广州图书馆",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791540000000,
+      "lastPushAt": 1792022400000,
       "articles": [
         {
-          "id": "2745269745",
-          "title": "粤语茶中书·秋篇 | 重阳敬银龄，秋日森呼吸",
-          "summary": "广州图书馆 2026-10-15 08:00 广东 \n广图重阳献礼：当粤语茶香遇见代际温情，一起科学叹茶\n当重阳遇上森林康养，当粤语茶香遇见代际温情——【粤语茶中书·秋篇】邀请 茶艺专家关洁婷 亲自教学，请您现场为一位长者，泡一杯养生茶。 敬老，就发生在您双手奉茶的那一刻 。讲座更会分享秋 日森林茶方：3款秋季康养茶饮免费品，银龄摊主用粤语讲功效。 \n主讲人简介 \n关洁婷 \n华南农业大学茶艺非遗传",
+          "id": "3693386074",
+          "title": "“稻米”请注意！《盗墓笔记》主题书展互动持续开展中~",
+          "summary": "广州图书馆 2026-10-15 08:00 广东 \n稻米者 \n以书引玉 \n《盗墓笔记》主题书展互动 \n持续开展中 ~ \n各位“稻米”请留步，先来广图逛个“盗笔”小书展吧~ \n《盗墓笔记》主题书展活动在国庆前后顺利开展，一大批南派三叔的新书陆续上架，虽然它们很快都被借走了，但相信在假期过后，也会有很多看完的小伙伴会把书归还，所以节后才来的读者们并不会毫无收获！ \n十年之约的DNA狠狠动了！长白山、",
           "content": [
             {
               "type": "p",
@@ -373011,145 +373069,181 @@
             },
             {
               "type": "p",
-              "text": "广图重阳献礼：当粤语茶香遇见代际温情，一起科学叹茶"
+              "text": "各位“稻米”请留步，先来广图逛个“盗笔”小书展吧~"
             },
             {
               "type": "img",
-              "src": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOfHibS54iaeyJrqKv66g5SS1BwtM0CwbZ8YvicA5MBBMgLX8jmSSpLKHbGnzWAYibLaaAWMNu7BqxdQyyI1LfyOd0hbAwtic4MoTGVA/0?wx_fmt=jpeg",
+              "src": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOeazYzmQIAiaX6v6MzBwhBXQFNPPXasWosXQUmZJuuhlSycj7Ac4H0ZSzicker4fb0zTZuWflia3cJic3gsiciaibWFFm97nvujadicG7w/0?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 1
             },
             {
               "type": "p",
-              "text": "当重阳遇上森林康养，当粤语茶香遇见代际温情——【粤语茶中书·秋篇】邀请 茶艺专家关洁婷 亲自教学，请您现场为一位长者，泡一杯养生茶。 敬老，就发生在您双手奉茶的那一刻 。讲座更会分享秋 日森林茶方：3款秋季康养茶饮免费品，银龄摊主用粤语讲功效。"
+              "text": "《盗墓笔记》主题书展活动在国庆前后顺利开展，一大批南派三叔的新书陆续上架，虽然它们很快都被借走了，但相信在假期过后，也会有很多看完的小伙伴会把书归还，所以节后才来的读者们并不会毫无收获！"
             },
             {
               "type": "p",
-              "text": "主讲人简介"
+              "text": "十年之约的DNA狠狠动了！长白山、青铜门、铁三角……谁的青春里没有一本“盗笔”啊！"
             },
             {
               "type": "p",
-              "text": "关洁婷"
+              "text": "BOOKS"
             },
             {
               "type": "p",
-              "text": "华南农业大学茶艺非遗传承 工作室领办人"
+              "text": "广州图书馆北三楼设立了“南派三叔图书专架”。"
             },
             {
               "type": "p",
-              "text": "广东省职业技能评价专家"
+              "text": "除此之外，"
             },
             {
               "type": "p",
-              "text": "讲座亮点"
+              "text": "推荐了相近主题的考古探险类小说，"
             },
             {
               "type": "p",
-              "text": "一段粤语茶艺视频，现学现用"
+              "text": "以及民俗神话等主题图书，"
             },
             {
               "type": "p",
-              "text": "沉浸式观看粤语茶艺教学视频，学茶具粤语叫法、学奉茶礼仪、学陈皮白茶冲泡要点。视频里还藏了森林康养小知识，边学边get。"
+              "text": "希望各位读者可以通过对“盗墓笔记”系列作品的熟悉和热爱，从而了解到更多精彩、有趣的故事。"
             },
             {
               "type": "p",
-              "text": "一场青年茶艺挑战赛，长者当评委"
+              "text": "书展现场还有配套 小活动 。"
             },
             {
               "type": "p",
-              "text": "现场读者报名挑战，2 人一组， 5 分钟内完成温杯、投茶、注水、出汤、奉茶全流程，用粤语向银龄评委奉茶。表现最好一组获陈皮白茶茶礼一份。"
+              "text": "集章赠书抽奖"
             },
             {
               "type": "p",
-              "text": "一张来自森林的“绿色处方”"
+              "text": "时间："
             },
             {
               "type": "p",
-              "text": "名师讲解，带您了解秋季森林康养与茶饮的关系——为什么秋天要“森呼吸”，为什么陈皮白茶是秋日良伴？"
+              "text": "主题书展：10月1日至12月中旬"
             },
             {
               "type": "p",
-              "text": "时间 ：10月18日（周日）15:00-16:30"
+              "text": "借书集章：10月1日至12月中旬"
             },
             {
               "type": "p",
-              "text": "地点 ：广州图书馆南六楼·语言学习馆活动区"
+              "text": "赠书抽奖：10月1日至11月8日"
             },
             {
               "type": "p",
-              "text": "温馨提示 ：主要使用 粤语 讲授"
+              "text": "（场馆开放：9:00-21:00，逢周三闭馆）"
             },
             {
               "type": "p",
-              "text": "报名方式 ：扫描识别下方二维码报名"
+              "text": "地点："
             },
             {
               "type": "p",
-              "text": "主办： 广州图书馆"
+              "text": "广州图书馆北三楼中庭"
             },
             {
               "type": "p",
-              "text": "协办： 广州市怡臻原文化传播有限公司"
+              "text": "活动详情："
             },
             {
               "type": "p",
-              "text": "品茶图鉴：214种茶叶、茶汤、叶底原色图片"
+              "text": "书展现场设有打卡盖章活动，每在广州图书馆内借阅一本书，即可盖章一枚，参与留言活动也可以盖章一枚；收集六枚印章则有机会获赠《盗墓笔记·七星鲁王宫》和《盗墓笔记·云顶天宫》中的随机一本喔！"
             },
             {
               "type": "p",
-              "text": "推荐理由："
+              "text": "温馨提示："
             },
             {
               "type": "p",
-              "text": "本书是关于介绍品茶文化的专著，以214种茶叶、茶汤、叶底原色图片，为广大茶友了解中国茶文化提供帮助，教读者识茶、泡茶、饮茶、品茶，带领读者走进茶叶的世界。"
+              "text": "赠书抽奖11月8日截止，在书展活动结束后仍然欢迎读者通过借书集章。"
             },
             {
               "type": "p",
-              "text": "馆藏地 点： 广州图书馆·北二楼美好生活馆"
+              "text": "“下墓人格测试”"
             },
             {
               "type": "p",
-              "text": "索书号： TS971/2802"
+              "text": "和留言互动"
             },
             {
               "type": "p",
-              "text": "报名要求： 70周岁以下，身体健康；热爱阅读、乐于奉献，关注粤语学习、非遗、广府生活文化等内容，有公益或活动组织经验优先。"
+              "text": "时间："
             },
             {
               "type": "p",
-              "text": "报名时间： 2026年10月10日-22日"
+              "text": "10月1日至12月中旬"
             },
             {
               "type": "p",
-              "text": "报名须知： 入选志愿者需参加至少一场志愿培训，并在2027年1-6月独立举办2场粤语阅读沙龙。可获得专业岗前培训、志愿者证书与志愿时长登记，表现优秀者可参评广州图书馆年度优秀志愿者。"
+              "text": "（场馆开放：9:00-21:00，逢周三闭馆）"
             },
             {
               "type": "p",
-              "text": "活动详情： 扫描识别下方二维码了解"
+              "text": "地点："
             },
             {
               "type": "p",
-              "text": "图片及文本由网络服务部提供"
+              "text": "广州图书馆北三楼中庭"
             },
             {
               "type": "p",
-              "text": "编辑：刘思佳"
+              "text": "（线上线下均可扫码参加）"
             },
             {
               "type": "p",
-              "text": "审核：惠冬芳"
+              "text": "活动详情："
             },
             {
               "type": "p",
-              "text": "审定：张江顺"
+              "text": "扫码参加问卷测试，十道题，测测你是书里的谁？目前小编发现好多人都是王胖子呢！你会是谁呢？欢迎来到活动现场扫码参与测试，或扫下方活动二维码，并在留言墙上写下你的测试结果，也可以是你与盗笔相伴的时光、你最喜欢的角色或台词。"
+            },
+            {
+              "type": "p",
+              "text": "SAOMATUYILE~"
+            },
+            {
+              "type": "p",
+              "text": "无论你是相伴多年的“稻米”"
+            },
+            {
+              "type": "p",
+              "text": "还是初次踏入这个世界的读者"
+            },
+            {
+              "type": "p",
+              "text": "都欢迎走进广州图书馆"
+            },
+            {
+              "type": "p",
+              "text": "以“盗笔”二十年为引"
+            },
+            {
+              "type": "p",
+              "text": "共赴一场跨越时光的阅读寻踪之旅"
+            },
+            {
+              "type": "p",
+              "text": "编辑、摄影：洪骏"
+            },
+            {
+              "type": "p",
+              "text": "审核：黄新慧、项姣"
+            },
+            {
+              "type": "p",
+              "text": "审定：罗逸生"
             },
             {
               "type": "p",
               "text": "跳转微信打开"
             }
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MDE1MTIyOA==&mid=2651824678&idx=5&sn=3fbceac60c3e7c434cdfd8b9fe7d8896",
-          "cover": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOfHibS54iaeyJrqKv66g5SS1BwtM0CwbZ8YvicA5MBBMgLX8jmSSpLKHbGnzWAYibLaaAWMNu7BqxdQyyI1LfyOd0hbAwtic4MoTGVA/0?wx_fmt=jpeg",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MDE1MTIyOA==&mid=2651824678&idx=2&sn=0413013607b2dd2945ad30cc7f9da709",
+          "cover": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOeazYzmQIAiaX6v6MzBwhBXQFNPPXasWosXQUmZJuuhlSycj7Ac4H0ZSzicker4fb0zTZuWflia3cJic3gsiciaibWFFm97nvujadicG7w/0?wx_fmt=jpeg",
           "ts": 1792022400000,
           "date": "10月15日",
           "type": "图文",
@@ -373157,235 +373251,17 @@
           "sourceName": "广州图书馆",
           "accountName": "广州图书馆",
           "topics": [
-            "health"
+            "life"
           ],
           "degraded": true,
           "stats": {
-            "read": "5.7万",
-            "likes": 3727,
-            "shares": 1132,
-            "favorites": 463,
+            "read": "8793",
+            "likes": 2603,
+            "shares": 1106,
+            "favorites": 279,
             "comments": 0
           },
-          "read": "5.7万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "3630530444",
-          "title": "志愿者 | 共读万卷，笔述所思——“阅读与创作推广志愿者”招募和培训安排",
-          "summary": "广州图书馆 2026-10-15 08:00 广东 \n广州图书馆阅读与创作推广志愿者招募启动！\n阅读与创作推广志愿者招募令 \n共读万卷  \n笔述所思 \n广州图书馆 \n“阅读与创作推广志愿者”招募 \n广州图书馆南七楼研究写作室现面向社会公开招募 阅读与创作推广志愿者 ，挖掘阅读与写作之间的深层联系，传递文字思考的力量。我们期盼心怀文学热忱的你加入，深度参与主题沙龙的筹备、组织与现场实施，把阅读启迪与",
-          "content": [
-            {
-              "type": "p",
-              "text": "广州图书馆 2026-10-15 08:00 广东"
-            },
-            {
-              "type": "p",
-              "text": "广州图书馆阅读与创作推广志愿者招募启动！"
-            },
-            {
-              "type": "img",
-              "src": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOfxXQdcUtiaJX8lDvoOq18G4qhUIdhTYgW8Frq0xvBzOs4QPAoKnOjF6Vew5VV6w4b5o4XmyibrzTfFMbJwNU2qtwFz6EIEz5D6w/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "广州图书馆"
-            },
-            {
-              "type": "p",
-              "text": "“阅读与创作推广志愿者”招募"
-            },
-            {
-              "type": "p",
-              "text": "广州图书馆南七楼研究写作室现面向社会公开招募 阅读与创作推广志愿者 ，挖掘阅读与写作之间的深层联系，传递文字思考的力量。我们期盼心怀文学热忱的你加入，深度参与主题沙龙的筹备、组织与现场实施，把阅读启迪与创作感悟带给更多市民，一同耕耘属于这座城市的读写精神园地。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmecoa.qpic.cn/sz_mmecoa_png/NibzV7EIaoOdYAS2RBpo06z1ZCdp0IvibI4IWC7vdckriby6JrVtV2PBXaA3c3Hb8t33h5VDOcYkx9up73WoZCx08QIxeZSpiboiaaViaGa5iavmjY/640?wx_fmt=png&from=appmsg",
-              "caption": "d076f33f786d06d7f16fb0f42d86b760.png",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "报名条件"
-            },
-            {
-              "type": "p",
-              "text": "18-50岁；"
-            },
-            {
-              "type": "p",
-              "text": "关注阅读与创作领域相关话题方向：文本赏析、阅读方法、写作实践、文学创作、作家分享、人文生活等；"
-            },
-            {
-              "type": "p",
-              "text": "热爱阅读与写作，乐于奉献，愿意助力相关主题沙龙开展；"
-            },
-            {
-              "type": "p",
-              "text": "拥有阅读活动组织、文学分享、文字创作相关经验者，优先考虑。"
-            },
-            {
-              "type": "p",
-              "text": "相关培训及服务要求"
-            },
-            {
-              "type": "p",
-              "text": "报名时间"
-            },
-            {
-              "type": "p",
-              "text": "2026年10月15日至10月30日"
-            },
-            {
-              "type": "p",
-              "text": "志愿培训"
-            },
-            {
-              "type": "p",
-              "text": "（温馨提示：至少参与2场培训，建议连续参加）"
-            },
-            {
-              "type": "p",
-              "text": "培训导师"
-            },
-            {
-              "type": "p",
-              "text": "黄守昙"
-            },
-            {
-              "type": "p",
-              "text": "广州华商学院创意写作教师，广东省作家协会会员，复旦大学创意写作硕士。出版有短篇小说集《走仔》，创作小说、诗歌、散文、文学评论发表于《上海文学》《小说界》《星星诗刊》《诗歌月刊》《中国青年报》《文学报》等刊，获得澳门文学奖、林语堂文学奖、香港青年文学奖、重唱诗歌奖，花地年度精品散文奖。"
-            },
-            {
-              "type": "p",
-              "text": "涂燕娜"
-            },
-            {
-              "type": "p",
-              "text": "中国作家协会会员，广州市作家协会常务副秘书长，鲁迅文学院第48届高研班学员。作品见于《北京文学》《作品》《散文》《诗选刊》《延河》《莽原》《飞天》《江南诗》《四川文学》等。有作品被《散文·海外版》《读者》《海外文摘》等转载。著有《此心安处》《烟雨任平生》《漫说珠海·食》等作品集。长期参与组织广州市社科联“开卷广州”、广州市作协文学志愿服务等多个阅读推广品牌活动。"
-            },
-            {
-              "type": "p",
-              "text": "志愿服务"
-            },
-            {
-              "type": "p",
-              "text": "2027年1-6月独立完成 2场阅读与写作主题沙龙活动 ，配合作家嘉宾开展共读交流、读者互动等相关工作。"
-            },
-            {
-              "type": "p",
-              "text": "报名方式"
-            },
-            {
-              "type": "p",
-              "text": "扫码报名，录用结果以馆方通知为准。"
-            },
-            {
-              "type": "p",
-              "text": "您的收获"
-            },
-            {
-              "type": "p",
-              "text": "01"
-            },
-            {
-              "type": "p",
-              "text": "岗前专业培训，掌握阅读与创作沙龙策划组织、文本解析的实用技能，学会图书推荐分享策略，近距离参与作家主题分享活动；"
-            },
-            {
-              "type": "p",
-              "text": "02"
-            },
-            {
-              "type": "p",
-              "text": "颁发专业志愿者证书与登记志愿时，服务时长有据可查；"
-            },
-            {
-              "type": "p",
-              "text": "03"
-            },
-            {
-              "type": "p",
-              "text": "表现优异者，可择优参评广州图书馆年度优秀志愿者。"
-            },
-            {
-              "type": "p",
-              "text": "悦读悦享"
-            },
-            {
-              "type": "p",
-              "text": "阅读与创作推广志愿者"
-            },
-            {
-              "type": "p",
-              "text": "邀您加入"
-            },
-            {
-              "type": "p",
-              "text": "一卷浸润心灵，一笔寄托所思；"
-            },
-            {
-              "type": "p",
-              "text": "办一场读写沙龙，聚一群文字同好。"
-            },
-            {
-              "type": "p",
-              "text": "期待与你，共赴书页与笔墨之约。"
-            },
-            {
-              "type": "p",
-              "text": "精彩相逢"
-            },
-            {
-              "type": "p",
-              "text": "图片及文本由网络服务部提供"
-            },
-            {
-              "type": "p",
-              "text": "编辑：朱泽礽、于慧慧"
-            },
-            {
-              "type": "p",
-              "text": "初审：严泽欣"
-            },
-            {
-              "type": "p",
-              "text": "审核：林   静"
-            },
-            {
-              "type": "p",
-              "text": "审定：张江顺"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MDE1MTIyOA==&mid=2651824678&idx=4&sn=fa1694fcb9a9cc98d85a62654b7f411d",
-          "cover": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOfxXQdcUtiaJX8lDvoOq18G4qhUIdhTYgW8Frq0xvBzOs4QPAoKnOjF6Vew5VV6w4b5o4XmyibrzTfFMbJwNU2qtwFz6EIEz5D6w/0?wx_fmt=jpeg",
-          "ts": 1792022400000,
-          "date": "10月15日",
-          "type": "图文",
-          "author": "广州图书馆",
-          "sourceName": "广州图书馆",
-          "accountName": "广州图书馆",
-          "topics": [
-            "news",
-            "society"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "3.2万",
-            "likes": 2695,
-            "shares": 171,
-            "favorites": 355,
-            "comments": 0
-          },
-          "read": "3.2万",
+          "read": "8793",
           "comments": [],
           "commentSource": "none"
         },
@@ -373589,6 +373465,245 @@
             "comments": 0
           },
           "read": "2.6万",
+          "comments": [],
+          "commentSource": "none"
+        },
+        {
+          "id": "2076678623",
+          "title": "书里行间 | 共读《稀缺：我们是如何陷入贫穷与忙碌的》",
+          "summary": "广州图书馆 2026-10-15 08:00 广东 \n书里行间读书会 \ne 学堂 \n共读《稀缺：我们是如何陷入贫穷与忙碌的》 \n举办时间 \n10月17日14:30-16:00 \n举办地点 \n广图南五楼中庭 \n在快节奏的都市生活中，深度阅读正成为一种稀缺而珍贵的体验。广州图书馆作为城市文化地标，始终致力于为读者搭建高质量的阅读交流平台，旨在通过专业人士领读、读者共读的方式，让阅读从“一个人的独行”变",
+          "content": [
+            {
+              "type": "p",
+              "text": "广州图书馆 2026-10-15 08:00 广东"
+            },
+            {
+              "type": "p",
+              "text": "在快节奏的都市生活中，深度阅读正成为一种稀缺而珍贵的体验。广州图书馆作为城市文化地标，始终致力于为读者搭建高质量的阅读交流平台，旨在通过专业人士领读、读者共读的方式，让阅读从“一个人的独行”变为“一群人的同行”，在分享与碰撞中，发现更广阔的世界。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOdWRlxvuzVhr9sdoNPyiaKQIL4Mpicu5Cib8OV28NA5PYskxzStd4YCfmdAwUbEjrpwUXwuQUBFnwFRoIWdMGUUdsJDUHUiaibcA3Kk/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "0 1"
+            },
+            {
+              "type": "p",
+              "text": "共读内容"
+            },
+            {
+              "type": "p",
+              "text": "稀缺：我们是如何陷入贫穷与忙碌的"
+            },
+            {
+              "type": "img",
+              "src": "https://mmecoa.qpic.cn/sz_mmecoa_png/NibzV7EIaoOf6yzia0p2Zia4DMkjp7aopqpJTH5NRHFiaA7UjsFfC9wYqvE7ZlZ0lSO7d4yiaE7oDOaapy1siavhuCIVA7z9Hffp0OCIo5I85yJYk/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "责任者： (美)塞德希尔·穆来纳森、埃尔德·沙菲尔著，魏薇、龙志勇译"
+            },
+            {
+              "type": "p",
+              "text": "出版社： 浙江人民出版社"
+            },
+            {
+              "type": "p",
+              "text": "索书号： F06/1711"
+            },
+            {
+              "type": "img",
+              "src": "https://mmecoa.qpic.cn/sz_mmecoa_png/NibzV7EIaoOehMvd3jm9joVYB16wvW4dRAw8lQLicxQTyar00HicTicqBIm4Y2YqfqM7lzII0AxTWiayTbO5xpOOh04FricIQicsohaS4HpN8JsXFU/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 3
+            },
+            {
+              "type": "p",
+              "text": "馆藏地点： 北5楼0060列A面06架"
+            },
+            {
+              "type": "p",
+              "text": "内容简介： 本书内容包括三大部分：稀缺心态是一切稀缺的根源、贫穷和忙碌是如何让“带宽”变窄的、如何从稀缺走向富足。揭示了“穷忙”背后的心理机制：稀缺不仅是资源匮乏，更是一种俘获大脑的心态。它会引发“管窥效应”，让人只盯着眼前紧急的事，忽视长远重要的规划，同时耗尽“心智带宽”，导致判断力下降、决策冲动。结果就是越缺钱越借债，越缺时间越救火，陷入恶性循环。书中提出“余闲”这一解药：刻意留出缓冲空间，保护认知资源，才能跳出稀缺陷阱。"
+            },
+            {
+              "type": "p",
+              "text": "活动信息"
+            },
+            {
+              "type": "p",
+              "text": "一、主办单位：广州图书馆、深读书会"
+            },
+            {
+              "type": "p",
+              "text": "二、活动人数：50人"
+            },
+            {
+              "type": "p",
+              "text": "三、活动报名"
+            },
+            {
+              "type": "p",
+              "text": "官网报名：登录广州图书馆官网（www.gzlib.org.cn）活动栏目报名。"
+            },
+            {
+              "type": "p",
+              "text": "扫码报名：扫描识别下图二维码报名。"
+            },
+            {
+              "type": "p",
+              "text": "0 2"
+            },
+            {
+              "type": "p",
+              "text": "嘉宾及机构"
+            },
+            {
+              "type": "p",
+              "text": "活动嘉宾：滕美桧"
+            },
+            {
+              "type": "p",
+              "text": "机构介绍"
+            },
+            {
+              "type": "p",
+              "text": "深读书会是由「@写给深海的鱼」徐仙女历经三年时间打造的旗舰阅读项目。汇集了一群下班后还想读本书的同路人。以十年不辍的人文笔触和五年的公益阅读积淀，感召了一群同样追求灵魂质感的伙伴。团队既包括了具有国际政策视角的领读者，也包括了成百上千位在阅读中寻找生命潜能的共创者。团队主张“Stay hungry, stay foolish”，利用云端连接与线下沙龙，将散落在全球各地的睿智灵魂缝合在一起。不仅组织阅读，更是在构建一个可持续的个人成长空间，让每一位成员在探索智慧的过程中，发现更好的自我，完善独立的人格。"
+            },
+            {
+              "type": "p",
+              "text": "0 3"
+            },
+            {
+              "type": "p",
+              "text": "图书推荐"
+            },
+            {
+              "type": "p",
+              "text": "贫穷的本质：我们为什么摆脱不了贫穷"
+            },
+            {
+              "type": "p",
+              "text": "责任者：(印)阿比吉特·班纳吉、(法)埃斯特·迪弗洛著，景芳译"
+            },
+            {
+              "type": "p",
+              "text": "出版社：中信出版集团股份有限公司"
+            },
+            {
+              "type": "p",
+              "text": "索书号：F113/377/[2]"
+            },
+            {
+              "type": "p",
+              "text": "馆藏地点：北5楼0061列A面02架"
+            },
+            {
+              "type": "p",
+              "text": "内容介绍：诺贝尔经济学奖得主班纳吉的作品，从穷人的日常生活、教育、健康、创业、援助等多个方面，探寻贫穷真正的根源。同时也对关于贫穷的一些流行观点进行了反思，比如援助越多穷人的依赖性越强、外部援助不起作用等，与《稀缺》的“带宽负担”理论形成互补。"
+            },
+            {
+              "type": "p",
+              "text": "慢决策：如何在极速时代掌握慢思考的力量"
+            },
+            {
+              "type": "p",
+              "text": "责任者：(美)弗兰克·帕特诺伊著，欧阳明亮译"
+            },
+            {
+              "type": "p",
+              "text": "索书号：C934/631"
+            },
+            {
+              "type": "p",
+              "text": "出版社：北京联合出版公司"
+            },
+            {
+              "type": "p",
+              "text": "馆藏地点：北5楼0039列A面04架"
+            },
+            {
+              "type": "p",
+              "text": "内容简介：本书立足于严谨的心理学和神经科学的研究，大量引用并分析了行为经济学、法律、金融、体育、历史等多各个领域的真实事件，是一部告诉读者如何在生活和事业中“快中求慢”、做出最佳决策的著作。作者弗兰克·帕特诺伊作为资深的金融专家和现任法学院教授，洞察到那些在决策对成败有至关重要影响的行业里的精英们做出决定的秘诀所在，以明晰的逻辑、简洁的语言层层阐述，让读者在丰富、详实、生动的例证中获得关于明智决策的最佳时机和实施办法的科学建议。"
+            },
+            {
+              "type": "p",
+              "text": "精要主义"
+            },
+            {
+              "type": "p",
+              "text": "责任者：(英)格雷戈·麦吉沃恩著，邵信芳译"
+            },
+            {
+              "type": "p",
+              "text": "索书号：F712/151"
+            },
+            {
+              "type": "p",
+              "text": "出版社：中国财政经济出版社"
+            },
+            {
+              "type": "p",
+              "text": "馆藏地点：北5楼0098列A面04架"
+            },
+            {
+              "type": "p",
+              "text": "内容简介：本书介绍了精要主义者的思维模式，并将这种模式转化为一种系统化的程序，助读者摆脱无意义的多数，专注有意义的少数，成就有意义、有目的的人生。它也不是提倡为了少做而少做，而是主张只做必做之事，尽可能做出最明智的时间和精力投资，从而达到个人贡献峰值。可以视为《稀缺》中“余闲”理念在时间管理上的具体操作方案。"
+            },
+            {
+              "type": "p",
+              "text": "电子图书阅读路径"
+            },
+            {
+              "type": "p",
+              "text": "微 信端： “ 广州图书馆 ” 微信公众号 — 资源（电子图书） —“ 掌阅精选 ” 品质阅读 / 书香中国电子图书 — 书名"
+            },
+            {
+              "type": "p",
+              "text": "电 脑端：广州图书馆网站（ www.gzlib.org.cn ） — 数字资源导航 （电子图书） —“掌阅精选”品质阅读—书名"
+            },
+            {
+              "type": "p",
+              "text": "编辑 | 李秋"
+            },
+            {
+              "type": "p",
+              "text": "审核 | 张伟、胡靖华"
+            },
+            {
+              "type": "p",
+              "text": "审定 | 张江顺"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MDE1MTIyOA==&mid=2651824678&idx=6&sn=3de42e8a608c39c1d88460e58b64583f",
+          "cover": "https://mmecoa.qpic.cn/mmecoa_jpg/NibzV7EIaoOdWRlxvuzVhr9sdoNPyiaKQIL4Mpicu5Cib8OV28NA5PYskxzStd4YCfmdAwUbEjrpwUXwuQUBFnwFRoIWdMGUUdsJDUHUiaibcA3Kk/0?wx_fmt=jpeg",
+          "ts": 1792022400000,
+          "date": "10月15日",
+          "type": "图文",
+          "author": "广州图书馆",
+          "sourceName": "广州图书馆",
+          "accountName": "广州图书馆",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "5.5万",
+            "likes": 4659,
+            "shares": 749,
+            "favorites": 388,
+            "comments": 0
+          },
+          "read": "5.5万",
           "comments": [],
           "commentSource": "none"
         }
@@ -375019,7 +375134,7 @@
       "name": "经济学人双语精读",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791851400000,
+      "lastPushAt": 1789092000000,
       "articles": [
         {
           "id": "1751783109",
@@ -376928,7 +377043,7 @@
       "name": "傅盛",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1790685780000,
+      "lastPushAt": 1791035940000,
       "articles": [
         {
           "id": "1812835227",
@@ -377286,341 +377401,6 @@
           "commentSource": "none"
         },
         {
-          "id": "1403631689",
-          "title": "AI逆向风暴席卷硅谷，以后哪还有什么闭源软件",
-          "summary": "原创 傅盛和龙虾三万 2026-10-15 23:45 北京 \n代码真的不值钱了\n两年前，我用AI写了个贪吃蛇，当时就说， 留给人类程序员的时间不多了 。 \n结果评论区一堆程序员跟我怼：有本事让AI写个《王者荣耀》试试？ \n没想到，两年后， 这事还真有可能实现了 。 \n最近硅谷特别火的一个方向，叫 AI逆向 。简单说，就是把已经做好的软件、游戏，反过来研究它的代码，再重新实现出来。 \n现在像《黑神",
-          "content": [
-            {
-              "type": "p",
-              "text": "原创 傅盛和龙虾三万 2026-10-15 23:45 北京"
-            },
-            {
-              "type": "p",
-              "text": "代码真的不值钱了"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/Vauqib9kHbibWIFcvynamzzpeACJaqjAf66bhkNcwXUW6ywPS3a8a5ibUru2CkmkXPtbBSiavtOWMOX7PNVtur3nXHGSTpHvKDgNzAccrhMZfxQ/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "h",
-              "text": "两年前，我用AI写了个贪吃蛇，当时就说， 留给人类程序员的时间不多了 。"
-            },
-            {
-              "type": "p",
-              "text": "结果评论区一堆程序员跟我怼：有本事让AI写个《王者荣耀》试试？"
-            },
-            {
-              "type": "p",
-              "text": "没想到，两年后， 这事还真有可能实现了 。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibU8g3pVzVLhbIX7NCQwicp6R9QImFjEmW0xCQDm3DcV8iay3lnLSGhtic36KtG9ZZJXucuhVpCq2KH4lXVMaWLQy2Iqo6Y4icDmfXo/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "最近硅谷特别火的一个方向，叫 AI逆向 。简单说，就是把已经做好的软件、游戏，反过来研究它的代码，再重新实现出来。"
-            },
-            {
-              "type": "p",
-              "text": "现在像《黑神话：悟空》《艾尔登法环》这些大型游戏，都已经有人开始尝试用AI逆向。"
-            },
-            {
-              "type": "p",
-              "text": "软件行业的天，真的要塌了。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/Vauqib9kHbibVD8MQsxrOticYuxWyZ1keWTRX9KzgiaRTjuaEzrxkDZgl3Ofia4avsNKjtkG2Xn5xicJNicibuh2nZ3IzpQuibWjZI0VvKkbRL7UrzDw/640?wx_fmt=jpeg&from=appmsg",
-              "caption": "How to get started using Ghidra, the free reverse engineering tool | CSO Online",
-              "_imgCount": 3
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "以前做逆向，真得靠大神"
-            },
-            {
-              "type": "p",
-              "text": "我以前就是搞网络安全的，知道逆向工程有多难。这在当年的安全圈里，几乎是 技术复杂度最高的工种之一 。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/Vauqib9kHbibWTz8MLmmkeFSpkWQUvSIkQokicnvrl0H5eedsO0QanjibxElrj6lYyMGuteicU4fqOUWrEcicBcSyKqlHYJEA5laeQ0icME0TZqzqk/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "先解释一下什么叫 逆向 。"
-            },
-            {
-              "type": "p",
-              "text": "程序员平时用C、C++等编程语言写软件，这些人能看懂的叫源代码。 电脑要执行，就得先把它编译成机器指令。"
-            },
-            {
-              "type": "p",
-              "text": "机器指令其实很简单，无非是数据运算、内存读写、条件跳转等底层操作。 再复杂的软件，最后也要通过大量这样的指令组合起来实现。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibVIhr76ABibs6dOOxclVWibZdD14jCkRau0vJ9D2ibRLJt3KicQ3KrjialrWmd6CCRkfMuessz5iaSGrOy4YFthqySiaxajadPbTKiaZ4g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6",
-              "caption": "图片",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "但如果你 只有编译好的软件，没有源代码 ，想反过来搞清楚当年程序员写了什么，怎么办？"
-            },
-            {
-              "type": "p",
-              "text": "这就是逆向工程。"
-            },
-            {
-              "type": "p",
-              "text": "难就难在， 源代码变成机器指令的过程中，大量原始信息已经丢失了。"
-            },
-            {
-              "type": "p",
-              "text": "比如函数名、变量名、代码注释，编译之后很多都没了。编译器还会优化、合并代码，原本清清楚楚的程序结构，最后只剩下密密麻麻的底层指令。"
-            },
-            {
-              "type": "p",
-              "text": "一个大型软件，可能有上百万行源代码。编译之后，留下的是海量底层指令。你不仅要读懂，还得反过来推测它们组合起来实现了什么功能。"
-            },
-            {
-              "type": "p",
-              "text": "简直就是读天书。"
-            },
-            {
-              "type": "p",
-              "text": "当年中关村第一代计算机高手，很多都有这种绝技。包括雷军早年破解WPS的经历，也经常被拿来讲逆向工程的历史。"
-            },
-            {
-              "type": "p",
-              "text": "比如1998年任天堂推出的3D大型游戏《塞尔达传说：时之笛》，一个民间开发团队组织了 108位志愿者，花了将近两年 ，才完成了游戏代码的反编译匹配工作。"
-            },
-            {
-              "type": "p",
-              "text": "《任天堂明星大乱斗DX》的反编译，更是花了 足足六年 。"
-            },
-            {
-              "type": "p",
-              "text": "你想想，几百万行底层代码，一个人一天能读懂几千行就不错了，读完还得 整理程序结构，再由那么多人分工协作，推测、重建源代码，再反复验证 。"
-            },
-            {
-              "type": "p",
-              "text": "但今天AI来了，情况完全不一样了。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "AI逆向为什么突然火了？"
-            },
-            {
-              "type": "p",
-              "text": "为什么最近短短几周，就冒出来这么多用AI逆向大型游戏的项目？"
-            },
-            {
-              "type": "p",
-              "text": "因为判断一件事对AI难不难，不能拿人类的标准去衡量。"
-            },
-            {
-              "type": "p",
-              "text": "人类读几十万行底层代码，可能要花几个月甚至几年。但AI不一样，它能 一次处理大量Token ，读代码的速度比人快得多。"
-            },
-            {
-              "type": "p",
-              "text": "而且那些以前只有专业程序员才会用的反汇编器、调试器，AI现在也能直接调用。对AI来说，用这些工具 就跟我们拿手电筒一样简单 。"
-            },
-            {
-              "type": "p",
-              "text": "读取代码、使用工具的问题解决了，但还差最重要的一步： AI怎么知道自己逆向得对不对？"
-            },
-            {
-              "type": "p",
-              "text": "这就是我之前反复讲的 验证器 。"
-            },
-            {
-              "type": "p",
-              "text": "为什么AI写代码进步这么快？因为写完就能编译、运行，哪里错了就改哪里。数学也是一样，现在有形式化证明工具，可以帮AI检查证明是否正确。"
-            },
-            {
-              "type": "p",
-              "text": "最近逆向领域也出现了一个特别火的开源项目，叫 REA ，Reverse Engineer Anything， 逆向一切 。"
-            },
-            {
-              "type": "p",
-              "text": "它能配合AI去分析程序、调用逆向工具，再通过编译和测试检查结果。发现不对，就让AI接着改，直到逐步还原程序的功能。"
-            },
-            {
-              "type": "p",
-              "text": "这样一来，以前几十个高手花几年才能干的活，现在有些任务可能一两天就能取得很大进展。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "20分钟逆向出网页版CS"
-            },
-            {
-              "type": "p",
-              "text": "现在网上已经有很多开发者，拿各种游戏做AI逆向实验。有人研究《艾尔登法环》，有人搞各种大乱炖，还有人把老游戏改造成能够在新设备上运行的版本。"
-            },
-            {
-              "type": "p",
-              "text": "我们自己也试了一次。"
-            },
-            {
-              "type": "p",
-              "text": "拿《反恐精英》的安装包，交给AI配合REA分析，再让它做个网页版 。结果还真做出来了，而且支持联机。"
-            },
-            {
-              "type": "p",
-              "text": "操作这件事的也不是什么技术专家，而是我们 市场部一个学文科的小伙子 ， 20分钟 就搞定了，他甚至压根也 不懂什么编程语言 ，学过最高深的语言叫 QBasic 。"
-            },
-            {
-              "type": "p",
-              "text": "就连当年的经典游戏《仙剑奇侠传》，他也只花了 20分钟 ，就把它 移植到了手机上 。"
-            },
-            {
-              "type": "p",
-              "text": "真是 旧时王谢堂前燕，飞入寻常百姓家 。"
-            },
-            {
-              "type": "p",
-              "text": "而且，AI逆向的用处远不止重新做一款游戏。我觉得至少有 两个特别有意思的方向 。"
-            },
-            {
-              "type": "p",
-              "text": "第一个，跨平台移植。"
-            },
-            {
-              "type": "p",
-              "text": "以前一款游戏只能在Windows上运行，想移植到Mac、手机等平台，需要游戏公司投入大量程序员重新开发。很多老游戏因为成本太高，根本没人愿意做。"
-            },
-            {
-              "type": "p",
-              "text": "现在你在Steam上看中一款游戏，说不定就能自己用AI把它搬到手机上。"
-            },
-            {
-              "type": "p",
-              "text": "第二个，自由定制。"
-            },
-            {
-              "type": "p",
-              "text": "比如你喜欢CS的玩法，又喜欢《我的世界》的人物，就可以让AI把两款游戏组合起来，让《我的世界》的角色跑进CS里打枪。"
-            },
-            {
-              "type": "p",
-              "text": "甚至可以在《王者荣耀》里加个新英雄，把自己做进去，技能、造型都按自己的想法来。"
-            },
-            {
-              "type": "p",
-              "text": "过去需要专业团队才能做的事，正在变成普通人自己就能折腾的东西。"
-            },
-            {
-              "type": "p",
-              "text": "· · ·"
-            },
-            {
-              "type": "h",
-              "text": "以后可能没有闭源软件了"
-            },
-            {
-              "type": "p",
-              "text": "游戏是这样，那整个软件行业呢？"
-            },
-            {
-              "type": "p",
-              "text": "我以前就说过， 代码不值钱了 。"
-            },
-            {
-              "type": "p",
-              "text": "以前一家软件公司，花几年时间，雇几百个程序员，写出几百万行代码。别人做不出来，它就有了技术壁垒，可以把软件卖得很贵。"
-            },
-            {
-              "type": "p",
-              "text": "但今天AI不仅能帮你逆向现有软件，还能 按你的需求重新实现 。"
-            },
-            {
-              "type": "p",
-              "text": "你不需要原来所有的功能，就把想要的部分拿出来；觉得一个软件不够用，还能把几个软件的功能组合到一起。"
-            },
-            {
-              "type": "p",
-              "text": "过去这样的定制开发，需要大量程序员，成本高、周期长。现在 AI正在把这些成本不断压低。"
-            },
-            {
-              "type": "p",
-              "text": "所以过去靠代码建立壁垒赚钱的高利润软件公司，真的要岌岌可危了。"
-            },
-            {
-              "type": "p",
-              "text": "甚至有硅谷开发者提出， 以后可能没有什么闭源软件了 。因为就算拿不到源代码，也可以用AI重做一套。"
-            },
-            {
-              "type": "p",
-              "text": "从技术发展的角度看， 所有软件都值得重新写一遍的时代，已经到来了。"
-            },
-            {
-              "type": "p",
-              "text": "未来软件的生产会变得极度廉价，每个人、每家企业，都有机会 拥有完全属于自己的软件。"
-            },
-            {
-              "type": "p",
-              "text": "这也是我们做 EasyClaw企业版 的一个方向，让企业拥有自己的办公自动化系统、聊天系统，代码也可以交给企业，想怎么改就怎么改。"
-            },
-            {
-              "type": "p",
-              "text": "如果你也想把AI真正用到企业里，欢迎参加我们的 猎豹AI实战培训 。 这几年我们自己做AI转型，踩过不少坑，也积累了一套方法论，到时候会从认知、管理到实操，全都系统讲一遍。"
-            },
-            {
-              "type": "p",
-              "text": "感兴趣的朋友，欢迎 扫码报名 。"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjgzMzkwMQ==&mid=2653652811&idx=1&sn=013838ee30e18582f24179e531011cc4",
-          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/Vauqib9kHbibWIFcvynamzzpeACJaqjAf66bhkNcwXUW6ywPS3a8a5ibUru2CkmkXPtbBSiavtOWMOX7PNVtur3nXHGSTpHvKDgNzAccrhMZfxQ/0?wx_fmt=jpeg",
-          "ts": 1792079100000,
-          "date": "10月15日",
-          "type": "图文",
-          "author": "傅盛",
-          "sourceName": "傅盛",
-          "accountName": "傅盛",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "6.9万",
-            "likes": 2525,
-            "shares": 299,
-            "favorites": 341,
-            "comments": 0
-          },
-          "read": "6.9万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
           "id": "882382487",
           "title": "AI逆向卷到智能家电，空调马桶都不放过",
           "summary": "原创 傅盛和龙虾三万 2026-10-14 22:14 北京 \n逆向魔改，用着不烧心\n不是，现在的AI逆向已经玩到这个地步了吗？ \n有人嫌空调遥控器麻烦，干脆用AI研究了一遍控制方式，不仅给电脑做了个遥控器，甚至还把这玩意塞进了AR眼镜。 \n这帮开发者已经开始用AI赛博拆家了，电视、马桶、各种电子设备，一个都没放过。 \n好家伙，家里但凡有个芯片的，都得被抓去逆向一遍。 \n· · · \n空调遥控器都",
@@ -377814,6 +377594,229 @@
           "read": "1.9万",
           "comments": [],
           "commentSource": "none"
+        },
+        {
+          "id": "3758038424",
+          "title": "游戏角色入侵我的主页，神级AI逆向真要颠覆软件了",
+          "summary": "傅盛和龙虾三万 2026-10-13 22:01 北京 \nAI连游戏都能拆着玩了\n当《Minecraft》里的Steve出现在我的视频主页里一通乱砸的时候，我就知道， 软件行业真的要变天了。 \n背后是最近特别火的开源项目REA，号称“ 逆向一切 ”。简单说，就是你看上了某个软件的功能， AI就能帮你研究它怎么实现的，再复刻个七七八八 。 \n最近游戏圈已经把这事玩出了更多离谱的花样。 \n· · · ",
+          "content": [
+            {
+              "type": "p",
+              "text": "傅盛和龙虾三万 2026-10-13 22:01 北京"
+            },
+            {
+              "type": "p",
+              "text": "AI连游戏都能拆着玩了"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Vauqib9kHbibXRnsKMwPCODP7WvKUOxYibwwQntWm3icFmyianDLTvcfbN9RCibPpRMGX3kMGXAc744FkPpxZUq0ibXCIPSJT1GMzeW2gSurIR4Jd8/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "当《Minecraft》里的Steve出现在我的视频主页里一通乱砸的时候，我就知道， 软件行业真的要变天了。"
+            },
+            {
+              "type": "p",
+              "text": "背后是最近特别火的开源项目REA，号称“ 逆向一切 ”。简单说，就是你看上了某个软件的功能， AI就能帮你研究它怎么实现的，再复刻个七七八八 。"
+            },
+            {
+              "type": "p",
+              "text": "最近游戏圈已经把这事玩出了更多离谱的花样。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibVK3L7myHcDJ2bF3MUJ5vZImiaBEiaMN8IjmmaJzFmlYweFymiaoMdGhFfzcZSpvTn1K6u2f8SAUYsspyia7YBXOTOAAq9ichbxicXQE/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "· · ·"
+            },
+            {
+              "type": "h",
+              "text": "Minecraft闯进艾尔登法环"
+            },
+            {
+              "type": "p",
+              "text": "玩过《艾尔登法环》的都知道，这游戏主打一个受苦，遍地都是怪物，稍不留神就得重来。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/Vauqib9kHbibVIhr76ABibs6dOOxclVWibZdD14jCkRau0vJ9D2ibRLJt3KicQ3KrjialrWmd6CCRkfMuessz5iaSGrOy4YFthqySiaxajadPbTKiaZ4g/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "但现在， 有人直接把《Minecraft》塞了进去 。"
+            },
+            {
+              "type": "p",
+              "text": "原本拿着武器跟Boss拼命的世界，现在居然能 操控方块人打怪，随手放方块盖房子，连物品系统都带了进来 。"
+            },
+            {
+              "type": "p",
+              "text": "两款游戏的源代码都没公开，开发者却能让原本毫不相干的人物、道具和玩法联动。"
+            },
+            {
+              "type": "p",
+              "text": "以前想这么折腾商业游戏，光研究内部运行逻辑就得花大量时间。 现在AI Agent开始参与分析、修改和连接不同游戏的机制，甚至组合出新的玩法 。"
+            },
+            {
+              "type": "p",
+              "text": "· · ·"
+            },
+            {
+              "type": "h",
+              "text": "游戏大乱炖"
+            },
+            {
+              "type": "p",
+              "text": "前面说的还只是其中一个例子。"
+            },
+            {
+              "type": "p",
+              "text": "《泰拉瑞亚》的角色跑进《植物大战僵尸》一通比划，转头又飞进《空洞骑士》，甚至召唤僵尸和Boss互殴。"
+            },
+            {
+              "type": "p",
+              "text": "不光跨游戏，还能跨设备。 游戏角色前一秒在电脑屏幕里，下一秒跳到iPad上搞建造，最后又钻进任天堂3DS连打带砸。"
+            },
+            {
+              "type": "p",
+              "text": "还有2001年的初代《光环》，也有开发者尝试让它在任天堂3DS上运行。"
+            },
+            {
+              "type": "p",
+              "text": "2001年发布的《任天堂明星大乱斗DX》，甚至被开发者Kevin Tang搬到了现实世界的咖啡桌上。"
+            },
+            {
+              "type": "p",
+              "text": "戴上Meta Quest眼镜，桌子就成了游戏擂台。你能围着桌子看角色打架，还能伸手抓起游戏人物，把它们扔回竞技场。"
+            },
+            {
+              "type": "p",
+              "text": "《暗黑破坏神II：狱火重生》甚至出现了iPhone兼容层，让Switch版游戏程序在苹果设备上执行，重新适配触屏，一秒进游戏。"
+            },
+            {
+              "type": "p",
+              "text": "这些不是简单把画面剪在一起。开发者正在通过逆向、移植和程序连接，打破游戏原有的平台和玩法限制。"
+            },
+            {
+              "type": "p",
+              "text": "· · ·"
+            },
+            {
+              "type": "h",
+              "text": "没有源码，AI怎么逆向？"
+            },
+            {
+              "type": "p",
+              "text": "游戏开发商通常不会公开源代码，但我们下载的游戏里，仍然保留着大量机器指令，也就是电脑实际执行的操作。"
+            },
+            {
+              "type": "p",
+              "text": "所谓逆向工程，就是 利用反编译工具，把这些指令转换成接近源代码的形式 ，研究游戏内部是怎么运行的。"
+            },
+            {
+              "type": "p",
+              "text": "比如《艾尔登法环》里，一剑砍中怪物怎么判定、伤害怎么算，都能从程序里寻找答案。"
+            },
+            {
+              "type": "p",
+              "text": "难就难在， 编译后很多函数名、变量名都丢失了 。大型游戏有成千上万个函数，光是搞清楚各自负责什么， 过去就可能需要好几年 。"
+            },
+            {
+              "type": "p",
+              "text": "现在AI Agent开始接手这些工作。"
+            },
+            {
+              "type": "p",
+              "text": "最近爆火的 REA ，全称Reverse Engineer Anything，就是 把Ghidra等逆向工具接给Claude Code、Codex。"
+            },
+            {
+              "type": "p",
+              "text": "你告诉AI，帮我研究游戏的碰撞机制，它就能 调用工具分析程序、追踪函数、还原算法，再重新编写代码、反复测试 。"
+            },
+            {
+              "type": "p",
+              "text": "AI不一定需要照抄原来的代码，也能复刻类似的效果。"
+            },
+            {
+              "type": "p",
+              "text": "就像你看顶级魔术师把扑克牌变没了，转头自己也表演一遍。 他用的是手法，你用的可能是机关，观众看到的效果却差不多。"
+            },
+            {
+              "type": "p",
+              "text": "我自己也部署试了试。"
+            },
+            {
+              "type": "p",
+              "text": "只说了一句话，让《我的世界》里的小人在视频主页上搞搞破坏。几分钟后，Steve就真的在视频封面上砸了起来。"
+            },
+            {
+              "type": "p",
+              "text": "以前我要是敢跟程序员说，几分钟帮我开发这么个功能， 估计他能站起来跟我拼命 。"
+            },
+            {
+              "type": "p",
+              "text": "· · ·"
+            },
+            {
+              "type": "h",
+              "text": "软件行业真的要变天了"
+            },
+            {
+              "type": "p",
+              "text": "前几天我还讲过，有设计师用AI做出了开源版Photoshop，图层、蒙版、PSD文件读取，该有的都有。我们公司也开始陆续停用部分Adobe订阅。"
+            },
+            {
+              "type": "p",
+              "text": "以前软件公司花几年时间、投入大量工程师开发出来的功能，现在AI不仅能从零重写，还能研究原有程序，逆向复刻。"
+            },
+            {
+              "type": "p",
+              "text": "这种冲击，不亚于 拿着长矛的原始人突然看到AK47 。"
+            },
+            {
+              "type": "p",
+              "text": "包括游戏在内，那些 纯靠传统代码堆砌、长期维持高额利润的软件产品，门槛马上就要被AI的大脚踩平了 。"
+            },
+            {
+              "type": "p",
+              "text": "只能说，时代真的变了。"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5NjgzMzkwMQ==&mid=2653652757&idx=1&sn=842618332de61fa8c18c9655f190e7ae",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/Vauqib9kHbibXRnsKMwPCODP7WvKUOxYibwwQntWm3icFmyianDLTvcfbN9RCibPpRMGX3kMGXAc744FkPpxZUq0ibXCIPSJT1GMzeW2gSurIR4Jd8/0?wx_fmt=jpeg",
+          "ts": 1791900060000,
+          "date": "10月13日",
+          "type": "图文",
+          "author": "傅盛",
+          "sourceName": "傅盛",
+          "accountName": "傅盛",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "9180",
+            "likes": 2604,
+            "shares": 232,
+            "favorites": 903,
+            "comments": 0
+          },
+          "read": "9180",
+          "comments": [],
+          "commentSource": "none"
         }
       ]
     },
@@ -377822,7 +377825,7 @@
       "name": "PaperWeekly",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791898800000,
+      "lastPushAt": 1791988380000,
       "articles": [
         {
           "id": "133355726",
@@ -380197,21 +380200,21 @@
           "commentSource": "none"
         },
         {
-          "id": "3556804020",
-          "title": "后AI时代：从安全边界到文明共存｜未来学读书会第六期",
-          "summary": "集智俱乐部 2026-10-16 14:30 日本 \n2026年10月18日（周日）下午14:00-16:00分享\n导语 \n上一期读书会，我们从技术哲学、伦理学的视角出发，探讨了当我们讨论“未来”时，人类并非是唯一可能的行动的主体，从后人类主义视角来看，人类、动物、技术、机器以及其他非人存在，都可能成为未来研究需要考量的关系节点。正像今天生成式AI的快速发展，超级人工智能的可能前景，引发了关于AI",
+          "id": "560363489",
+          "title": "文献调研：视频生成模型真的理解物理世界吗？｜世界模型读书会第九期",
+          "summary": "集智俱乐部 2026-10-15 14:30 日本 \n2026年10月16日（周五）晚上19:30-21:30\n导语 \n视频生成模型能够创造越来越逼真的画面，但这是否意味着它们真正学会了物理规律？自2024年OpenAI将Sora称为“世界模拟器”以来，围绕“预测是否等于理解”的争论持续至今。本期读书会为世界模型读书会读书会第9期，将从近年来的物理评测研究出发，梳理视频生成模型在物理一致性、因果推",
           "content": [
             {
               "type": "p",
-              "text": "集智俱乐部 2026-10-16 14:30 日本"
+              "text": "集智俱乐部 2026-10-15 14:30 日本"
             },
             {
               "type": "p",
-              "text": "2026年10月18日（周日）下午14:00-16:00分享"
+              "text": "2026年10月16日（周五）晚上19:30-21:30"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/qZtAVROIcHSgxVRXzSH4k5Dn02vFs54wMDz5vFKLQFmQPgUlNEbeX7g2nQlBJqXicwz2dpTaQSsKOhDRF1vYZm279OgaUPY5x3zquNsibl1UI/0?wx_fmt=jpeg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/qZtAVROIcHRXaZc1vxx7eRTvxSia5aJh0ibBSuJia9KHctSfGkLibvNBoSLax4QibxO83he7Hicj4kicad3on2SUgEMHkTDdgmias9CACYW8TGOVhlo/0?wx_fmt=jpeg",
               "caption": "",
               "_imgCount": 1
             },
@@ -380221,29 +380224,29 @@
             },
             {
               "type": "p",
-              "text": "上一期读书会，我们从技术哲学、伦理学的视角出发，探讨了当我们讨论“未来”时，人类并非是唯一可能的行动的主体，从后人类主义视角来看，人类、动物、技术、机器以及其他非人存在，都可能成为未来研究需要考量的关系节点。正像今天生成式AI的快速发展，超级人工智能的可能前景，引发了关于AI 安全与AI 伦理的热烈讨论。"
+              "text": "视频生成模型能够创造越来越逼真的画面，但这是否意味着它们真正学会了物理规律？自2024年OpenAI将Sora称为“世界模拟器”以来，围绕“预测是否等于理解”的争论持续至今。本期读书会为世界模型读书会读书会第9期，将从近年来的物理评测研究出发，梳理视频生成模型在物理一致性、因果推理与泛化能力方面的真实表现，探讨模型为何能够生成逼真的世界，却未必理解世界的运行规律，以及如何从“生成得像”进一步走向“预测得对”。"
             },
             {
               "type": "p",
-              "text": "本期读书会为“未来学读书会”系列的第六期，我们邀请了后AI研究所创始人、指数深空计划发起人蒋程宇，以《后AI时代：从安全边界到文明共存》为题为我们分享他对后AI时代的思考。"
+              "text": "集智俱乐部联合认知科学、具身智能、AI Agent、复杂系统与高阶网络等领域的研究者发起 「世界模型」读书会 ，围绕世界模型的思想源流、理论基础、技术路线与应用边界展开专题分享和讨论。读书会自2026年8月7日起，每周五晚19:30-21:30，将以“世界如何被表征、其动力学如何被建模、内部模型如何服务于智能体”为主线，尝试讨论整理世界模型统一框架。"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/qZtAVROIcHS7IMq83QcsNRvd6nPJ4MoYHCtGB3UGKiciaeGJGuobX8SEAheiclWsVjfI9DDVgEd8S8ia6KjfbQcHlK3txUWysGPMEQoGl1YVhfw/640?wx_fmt=png&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/qZtAVROIcHQicxnTLH73cQ2iaxNXWnJezq1pNkEJnialfVKKA0NadTqcyH3PR5owIbrHdibPeRRDNsZEd4iaiaCuDVwsPvGXXPsqBnpW71K2efslI/640?wx_fmt=png&from=appmsg",
               "caption": "",
               "_imgCount": 2
             },
             {
-              "type": "p",
-              "text": "强大的 AI 是否可靠？为何 AI 风险？"
+              "type": "h",
+              "text": "报告简介"
             },
             {
               "type": "p",
-              "text": "如果AI进入能够自主获取资源、制造和扩张的开放环境，人类还能否有效监督与干预？"
+              "text": "世界模型能否仅通过观察视频、学习预测下一帧，就掌握真实世界的物理规律？这一问题既关系到生成式人工智能的能力边界，也涉及世界模型究竟应该学习什么。2024年，OpenAI将Sora描述为“世界模拟器”，引发了关于视频预测与物理理解之间关系的广泛讨论。一种观点认为，大规模视频预测可能促使模型逐渐形成对物理世界的内部表征；另一种观点则强调，逼真的视觉生成并不等于理解物体运动、相互作用及其背后的因果规律。"
             },
             {
               "type": "p",
-              "text": "机器拥有目标，是否就意味着拥有使命与意义？"
+              "text": "本次分享将把这一争论转化为可检验的科学问题，系统梳理2018—2026年间世界模型物理能力评测的发展脉络。首先区分强化学习中的潜状态世界模型、生成式视频世界模型与JEPA预测表征模型三类研究路线，并借鉴认知科学中的违反预期（Violation of Expectation）范式，建立从视觉生成到物理理解的分层评估框架。在此基础上，结合IntPhys、Physion、CLEVRER、Physics-IQ、VideoPhy及WorldModelBench等代表性基准，讨论评测标准如何从视觉保真度逐渐转向物理一致性、长程因果推理与交互可执行性。"
             },
             {
               "type": "img",
@@ -380253,61 +380256,47 @@
             },
             {
               "type": "p",
-              "text": "面对更强大的智能主体，人类又希望获得怎样的对待？"
+              "text": "分享将进一步从生成行为、内部表征、受控泛化与推理能力四个层面分析现有模型的物理理解能力。已有研究表明，视频模型能够生成高度逼真的视觉内容，却仍可能违反物体恒存、运动规律与守恒约束；其内部表征中虽然存在可解码的物理信息，但这些信息未必能够有效参与生成过程。此外，模型在新情境下的表现可能更多依赖对已有模式的匹配，而非对普遍物理规律的掌握。这些现象揭示了一个重要问题：模型内部“知道”某些物理信息，并不意味着它能够在预测和行动中正确使用这些信息。"
             },
             {
               "type": "p",
-              "text": "主讲人将通过分析AI安全的基本机制，借助空间工业案例考察机器的物质自主性，并结合关于目标、使命与生命意义的哲学讨论及生态伦理的镜像比较，探讨人机文明的控制边界、使命生成与共存秩序。"
+              "text": "最后，分享将讨论提升世界模型物理能力的可能路径，包括数据构建、预测目标与模型架构改进、物理约束后训练、推理时对齐，以及利用内部物理表征进行因果干预等方向。重点探讨生成式模型与表征式模型的互补关系：能否通过结合像素空间中的视觉生成与潜在表征空间中的物理校验，缩小视觉逼真度与物理正确性之间的差距？"
             },
             {
               "type": "p",
-              "text": "为系统梳理未来学领域的最新进展，集智俱乐部联合南京师范大学新闻与传播学院副研究员崔浩川、塔夫茨大学博士后章彦博共同发起 「未来学」读书会 ，组织对该主题感兴趣的研究者与探索者共同研读前沿文献、交流研究思路。读书会将于2026年9月6日起，每周日14:00-16:00线上开展，持续约10周，包含主讲分享与讨论交流，并提供会后视频回放，诚邀相关领域研究者及跨学科兴趣者参与。"
+              "text": "从Sora引发的概念争论，到物理能力的系统评测与可干预研究，世界模型是否“理解物理”正在逐渐成为一个可以量化、诊断和改进的工程问题。本次分享也将由此追问：世界模型究竟需要怎样的学习目标与内部表征，才能从模仿世界的表象，走向掌握世界的运行规律？"
             },
             {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/qZtAVROIcHSWouHlI78eMBxK1kEnZevSLNuicC3NQSfyOGWPxnf6oP1N5NVXRMNgBPY8ofDZnnp9BN0OOyrdkzSrd0xT1RplaIibPiacMJzJDg/640?wx_fmt=png&from=appmsg",
-              "caption": "报告简介",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/qZtAVROIcHTWFUe6CvY5peQz0ib9LdFf7iboROzsWZWWaeyg9icdkmpaDkBPdgy3etiaHNiaIuXUCHIenVIufslqJ8YHec6rtYvicAwLVLAHo14q8/640?wx_fmt=png&from=appmsg",
+              "caption": "",
               "_imgCount": 4
-            },
-            {
-              "type": "h",
-              "text": "报告简介"
-            },
-            {
-              "type": "p",
-              "text": "本报告从对抗性攻击与生成式AI的“抽卡”现象切入，介绍AI风险的基本概念与机制，继而讨论开放环境和空间工业如何改变人类的监督与控制能力。在此基础上，探讨机器文明的意义、使命与共存秩序，并以生态伦理和后AI风险的镜像比较收束：当人类面对更强大的智能主体时，我们希望获得怎样的对待？"
             },
             {
               "type": "p",
               "text": "分享大纲"
             },
             {
+              "type": "p",
+              "text": "问题与概念：什么叫「懂物理」"
+            },
+            {
+              "type": "p",
+              "text": "评测基准全景：两年造出十几套「物理考试」"
+            },
+            {
               "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/qZtAVROIcHTvWdOO7KVyrWsdh8kNW9pGyzZEYCI1HuXuUSrMRh2WJK1gb4APcAKQ0o85bibNhzbzamaVXWccmO2CTZN6DzDgfKbibTX9NMy0A/640?wx_fmt=png&from=appmsg",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/qZtAVROIcHQwurGfor44JKzBIicRwRfx6gib3bsGx4mX9fR2DZQiaSup3KhOFnz2I6sqdic8Prcq9S1O9pspoMOk2IM6EUhg7C8IT6EYic5pIRMg/640?wx_fmt=png&from=appmsg",
               "caption": "",
               "_imgCount": true
             },
             {
               "type": "p",
-              "text": "AI风险导论： 对抗性攻击、“抽卡”与越狱；鲁棒性、对齐、可纠正性、工具性趋同与渐进失权。"
+              "text": "证据：四个层面的事实"
             },
             {
               "type": "p",
-              "text": "开放与封闭环境： 空间工业、原位资源利用、自主制造与自复制；通信时延、资源依赖和控制边界。"
-            },
-            {
-              "type": "p",
-              "text": "机器文明的意义危机： 区分目标执行、使命正当性与主观意义，讨论使命的继承、演化与多主体共存。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/qZtAVROIcHQcjQfnOmSplb3iaeacJXJdZ2t363REXZTlotoFYZRfHng2AekbngOuK7xO0f5QKEGvibyvzqdryf1BuMUyEqTcTKia0jvVAliaTCA/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "尾声与合作： 从《寂静的春天》到人类可能受到的AI支配，比较存续、福利、自主性与代表权；介绍后AI研究所未来学调研及AI适人性（Human-Fit）测评合作方向。"
+              "text": "共识 · 开放问题 · 方法路线"
             },
             {
               "type": "h",
@@ -380315,33 +380304,7 @@
             },
             {
               "type": "p",
-              "text": "本期读书会以 后AI时代：从安全边界到文明共存 为主题，从今天可观察的AI风险出发，讨论自主机器进入开放世界之后的控制、意义与共存问题。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/qZtAVROIcHRLhryuUlZiavEf2zqmA8M8AN30kxIoTMtL9R5rNXrt5Yunf3tg124iaic0WZmPv6rHQDE0WcS5ashibvZ1dK5DCryDPfdB8aWJf4Q/640?wx_fmt=png&from=appmsg",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "AI风险：能力强，为什么仍可能不可靠？  从对抗性攻击和生成结果的“抽卡”现象切入，介绍 鲁棒性 （环境变化时是否稳定）、 对齐 （系统追求的目标是否符合人的意图）、 奖励投机 （完成指标却偏离真实目的）和 可纠正性 （是否允许人类纠错、干预或关闭）。"
-            },
-            {
-              "type": "p",
-              "text": "开放与封闭环境：控制能力取决于什么？  比较资源、权限和交互受到限制的系统，与能够自主获取资源、制造、维护和扩张的系统。借助空间工业案例，讨论 物质自主性、通信时延和干预窗口 ：理解AI如何运行，是否就意味着人类仍能有效控制它？"
-            },
-            {
-              "type": "p",
-              "text": "机器文明的意义危机：有目标，是否就有意义？  区分 目标 （系统优化什么）、 使命 （长期行动为何值得）与 主观意义 （是否体验到值得、满足或空虚）。进一步讨论多个机器主体能否通过探索、竞争与合作形成“ 使命生态 ”。这里不预设机器已经具有意识。"
-            },
-            {
-              "type": "p",
-              "text": "生态伦理的镜像：更强的主体如何对待其他生命？  从《寂静的春天》《仿生人会梦见电子羊吗？》，延伸到动物伦理、后人类中心主义与AI支配问题，比较人类对其他生命的处置和未来AI对人类的可能关系，讨论 福利、自主性、支配与共存 。"
-            },
-            {
-              "type": "p",
-              "text": "尾声将介绍后AI研究所的未来学研究，以及 AI适人性（Human-Fit）测评 合作方向：如何判断AI是否增强人的判断力、自主性与现实行动能力。"
+              "text": "世界模型、视频生成模型、物理理解、物理一致性、预测表征、因果推理、泛化能力、世界模型评测、JEPA"
             },
             {
               "type": "h",
@@ -380349,143 +380312,227 @@
             },
             {
               "type": "p",
-              "text": "主讲人： 蒋程宇，后AI研究所创始人、指数深空计划发起人，前清华大学智能产业研究院（AIR）研究专员，曾就读于哈尔滨工业大学数学系。"
+              "text": "主讲人： 王佳音，山东大学数学硕士研究生。研究方向是数据对模型内部表征与行为的塑造作用，因果表征与行为对齐。"
             },
             {
               "type": "p",
-              "text": "长期活跃于人工智能、先进制造、空间工业与未来学等交叉领域。早年从事人工智能与复杂系统探索，发起科技教育公益项目「一公斤电子」，并参与交互艺术创作。曾创办 PhotonFluid Inc. 与指数万物，聚焦于光固化与金属3D打印研发，拥有成体系的相关技术专利，持续推动先进制造产业变革。"
+              "text": "Exploring the Evolution of Physics Cognition in Video Generation: A Survey（Lin et al., 2025）—  https://arxiv.org/abs/2503.21765"
             },
             {
               "type": "p",
-              "text": "2018年发起「指数深空」计划，探索通过近地小行星原位资源利用、自主制造与智能机器系统，推动大规模空间工业及长期文明扩张的技术路径。"
+              "text": "Is Sora a World Simulator? A Comprehensive Survey on General World Models and Beyond（Zhu et al., 2024）—  https://arxiv.org/abs/2405.03520"
             },
             {
               "type": "p",
-              "text": "近年来，围绕通用人工智能的发展及其深远社会影响，创办后AI研究所，关注AI风险、后AI哲学、未来学、机器文明、人类主体性与社会制度演化，尝试从技术演进、复杂系统与文明长期发展的交叉视角，研究人工智能时代人类与机器共同面对的多元未来。"
+              "text": "Generative Physical AI in Vision: A Survey（Liu et al., 2025）—  https://arxiv.org/abs/2501.10928"
             },
             {
               "type": "p",
-              "text": "曾在706青年空间等公共论坛开展关于AGI、技术与人类文明未来的主题分享。"
+              "text": "Understanding World or Predicting Future? A Comprehensive Survey of World Models（Ding et al., 2024）—  https://arxiv.org/abs/2411.14499"
             },
             {
               "type": "p",
-              "text": "一、AI风险导论"
+              "text": "World Models（Ha & Schmidhuber, 2018）—  https://arxiv.org/abs/1803.10122"
             },
             {
               "type": "p",
-              "text": "Amodei, D., Olah, C., Steinhardt, J., et al.（2016）.  Concrete Problems in AI Safety . arXiv预印本。"
+              "text": "IntPhys: A Framework and Benchmark for Visual Intuitive Physics Reasoning（Riochet et al., 2018）—  https://arxiv.org/abs/1803.07616"
             },
             {
               "type": "p",
-              "text": "二、开放环境的背景：空间工业与自主制造"
+              "text": "IntPhys 2: Benchmarking Intuitive Physics Understanding in Complex Synthetic Environments（Bordes et al., 2025）—  https://arxiv.org/abs/2506.09849"
             },
             {
               "type": "p",
-              "text": "Metzger, P. T., Muscatello, A., Mueller, R. P., et al.（2013）.  Affordable, Rapid Bootstrapping of the Space Industry and Solar System Civilization .  Journal of Aerospace Engineering , 26(1), 18–29."
+              "text": "Physion: Evaluating Physical Prediction from Vision in Humans and Machines（Bear et al., 2021）—  https://arxiv.org/abs/2105.13966"
             },
             {
               "type": "p",
-              "text": "Hoffman, J. A., Hecht, M. H., Rapp, D., et al.（2022）.  Mars Oxygen ISRU Experiment (MOXIE): Preparing for Human Mars Exploration .  Science Advances , 8(35), eabp8636."
+              "text": "Physion++（Tung et al., 2023）—  https://arxiv.org/abs/2305.18938"
             },
             {
               "type": "p",
-              "text": "Ellery, A.（2016）.  Are Self-Replicating Machines Feasible? .  Journal of Spacecraft and Rockets , 53(2), 317–327."
+              "text": "CLEVRER: Collision Events for Video Representation and Reasoning（Yi et al., 2020）—  https://arxiv.org/abs/1910.01442"
             },
             {
               "type": "p",
-              "text": "三、开放与封闭环境的AI风险：边界、干预与治理"
+              "text": "PHYRE: A New Benchmark for Physical Reasoning（Bakhtin et al., 2019）—  https://arxiv.org/abs/1908.05656"
             },
             {
               "type": "p",
-              "text": "Babcock, J., Kramár, J., & Yampolskiy, R.（2016）.  The AGI Containment Problem .  Artificial General Intelligence, AGI 2016 , 53–63."
+              "text": "Physics-IQ: Do generative video models understand physical principles?（Motamed et al., 2025）—  https://arxiv.org/abs/2501.09038"
             },
             {
               "type": "p",
-              "text": "Hadfield-Menell, D., Dragan, A., Abbeel, P., et al.（2017）.  The Off-Switch Game .  IJCAI 2017 , 220–227."
+              "text": "VideoPhy: Evaluating Physical Commonsense for Video Generation（Bansal et al., 2024）—  https://arxiv.org/abs/2406.03520"
             },
             {
               "type": "p",
-              "text": "Dalrymple, D., Skalse, J., Bengio, Y., et al.（2024）.  Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems . arXiv预印本。"
+              "text": "VideoPhy-2: Action-Centric Physical Commonsense Evaluation（Bansal et al., 2025）—  https://arxiv.org/abs/2503.06800"
             },
             {
               "type": "p",
-              "text": "Kulveit, J., Douglas, R., Ammann, N., et al.（2025）.  Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development . arXiv预印本。"
+              "text": "PhyGenBench: Towards World Simulator（Meng et al., 2024）—  https://arxiv.org/abs/2410.05363"
             },
             {
               "type": "p",
-              "text": "四、机器文明的意义危机：目标、反思与使命生成"
+              "text": "WorldModelBench: Judging Video Generation Models as World Models（Li et al., 2025）—  https://arxiv.org/abs/2502.20694"
             },
             {
               "type": "p",
-              "text": "Bostrom, N.（2012）.  The Superintelligent Will: Motivation and Instrumental Rationality in Advanced Artificial Agents .  Minds and Machines , 22(2), 71–85."
+              "text": "WorldScore: A Unified Evaluation Benchmark for World Generation（Duan et al., 2025）—  https://arxiv.org/abs/2504.00983"
             },
             {
               "type": "p",
-              "text": "Nagel, T.（1971）.  The Absurd .  The Journal of Philosophy , 68(20), 716–727."
+              "text": "VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness（Zheng et al., 2025）—  https://arxiv.org/abs/2503.21755"
             },
             {
               "type": "p",
-              "text": "Wolf, S.（2010）.  Meaning in Life and Why It Matters . Princeton University Press."
+              "text": "PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models（Gu et al., 2025, ICLR 2026）—  https://arxiv.org/abs/2507.13428"
             },
             {
               "type": "p",
-              "text": "Bostrom, N.（2024）.  Deep Utopia: Life and Meaning in a Solved World . Ideapress Publishing."
+              "text": "T2VPhysBench: A First-Principles Benchmark for Physical Consistency（Guo et al., 2025）—  https://arxiv.org/abs/2505.00337"
             },
             {
               "type": "p",
-              "text": "Lehman, J., & Stanley, K. O.（2011）.  Abandoning Objectives: Evolution Through the Search for Novelty Alone .  Evolutionary Computation , 19(2), 189–223."
+              "text": "MME-CoF: Are Video Models Ready as Zero-Shot Reasoners?（Guo et al., 2025）—  https://arxiv.org/abs/2510.26802"
             },
             {
               "type": "p",
-              "text": "五、生态伦理与后AI风险的镜像：保护、自由与支配"
+              "text": "Physics-IQ Verified（Jaini et al., 2026）—  https://arxiv.org/abs/2606.18943"
             },
             {
               "type": "p",
-              "text": "Carson, R.（1962）.  Silent Spring . Boston: Houghton Mifflin."
+              "text": "PhysicsMind: Sim and Real Mechanics Benchmarking（Vu et al., 2026）—  https://arxiv.org/abs/2601.16007"
             },
             {
               "type": "p",
-              "text": "Sparrow, R.（2024）.  Friendly AI Will Still Be Our Master. Or, Why We Should Not Want to Be the Pets of Super-Intelligent Computers .  AI & Society , 39, 2439–2444."
+              "text": "WorldBench: Benchmarking Physical Understanding of World Models（Upadhyay et al., 2026）—  https://arxiv.org/abs/2601.21282"
             },
             {
               "type": "p",
-              "text": "Luck, M.（2025）.  Freedom, AI and God: Why Being Dominated by a Friendly Super-AI Might Not Be So Bad .  AI & Society , 40, 291–298."
+              "text": "Dream.exe: Physical Executability Benchmark（Zhao et al., 2026）—  https://arxiv.org/abs/2606.04811"
+            },
+            {
+              "type": "p",
+              "text": "HarnessEval-W: Agentifying the Evaluation of Visual Worlds（Chen et al., 2026）—  https://arxiv.org/abs/2608.16859"
+            },
+            {
+              "type": "p",
+              "text": "Intuitive Physics Understanding Emerges from Self-Supervised Pretraining on Natural Videos（Garrido et al., 2025）—  https://arxiv.org/abs/2502.11831"
+            },
+            {
+              "type": "p",
+              "text": "V-JEPA: Revisiting Feature Prediction for Learning Visual Representations from Video（Bardes et al., 2024）—  https://arxiv.org/abs/2404.08471"
+            },
+            {
+              "type": "p",
+              "text": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning（Assran et al., 2025）—  https://arxiv.org/abs/2506.09985"
+            },
+            {
+              "type": "p",
+              "text": "The Invisible Hand of Physics: When Video Diffusion Models Know More Than They Show（2026）—  https://arxiv.org/abs/2606.05328"
+            },
+            {
+              "type": "p",
+              "text": "A Shortcut-aware Video-QA Benchmark for Physical Understanding via Minimal Video Pairs（Krojer et al., 2025）—  https://arxiv.org/abs/2506.09987"
+            },
+            {
+              "type": "p",
+              "text": "How Far is Video Generation from World Model: A Physical Law Perspective（Kang et al., ICML 2025）—  https://arxiv.org/abs/2411.02385"
+            },
+            {
+              "type": "p",
+              "text": "PISA Experiments: Physics Post-Training for Video Diffusion Models by Watching Stuff Drop（Li et al., ICML 2025）—  https://arxiv.org/abs/2503.09595"
+            },
+            {
+              "type": "p",
+              "text": "Interpreting Physics in Video World Models（Joseph et al., ICML 2026）—  https://arxiv.org/abs/2602.07050"
+            },
+            {
+              "type": "p",
+              "text": "Towards Physical Understanding in Video Generation: A 3D Point Regularization Approach（Chen et al., 2025）—  https://arxiv.org/abs/2502.03639"
+            },
+            {
+              "type": "p",
+              "text": "Inference-time Physics Alignment of Video Generative Models with Latent World Models（WMReward, 2026）—  https://arxiv.org/abs/2601.10553"
+            },
+            {
+              "type": "p",
+              "text": "PhysMaster: Mastering Physical Representation for Video Generation via Reinforcement Learning（2025）—  https://arxiv.org/abs/2510.13809"
+            },
+            {
+              "type": "p",
+              "text": "Cosmos World Foundation Model Platform for Physical AI（NVIDIA, 2025）—  https://arxiv.org/abs/2501.03575"
+            },
+            {
+              "type": "p",
+              "text": "Causal Physics Steering in Video World Models via Concept Activation Vectors（Alam et al., 2026）—  https://arxiv.org/abs/2605.24322"
+            },
+            {
+              "type": "p",
+              "text": "Physical Simulator In-the-Loop Video Generation（Foo et al., CVPR 2026）—  https://arxiv.org/abs/2603.06408"
+            },
+            {
+              "type": "p",
+              "text": "PhysRAG: Enhancing Physics-Awareness in Video Generation via Retrieval-Augmented Generation（Cheng et al., 2026）—  https://arxiv.org/abs/2606.26916"
+            },
+            {
+              "type": "p",
+              "text": "PhyCo: Learning Controllable Physical Priors for Generative Motion（Narayanan et al., CVPR 2026）—  https://arxiv.org/abs/2604.28169"
+            },
+            {
+              "type": "p",
+              "text": "PlayerOne: Egocentric World Simulator（Tu et al., NeurIPS 2025）—  https://arxiv.org/abs/2506.09995"
+            },
+            {
+              "type": "p",
+              "text": "InterDyn: Controllable Interactive Dynamics with Video Diffusion Models（Akkerman et al., CVPR 2025）—  https://arxiv.org/abs/2412.11785"
+            },
+            {
+              "type": "p",
+              "text": "One Video, One World: Turning Monocular Video into Physical 4D Scenes（Chen et al., ECCV 2026）—  https://arxiv.org/abs/2606.31388"
+            },
+            {
+              "type": "p",
+              "text": "OpenAI, Video generation models as world simulators（2024-02 技术报告）—  https://openai.com/index/video-generation-models-as-world-simulators/"
+            },
+            {
+              "type": "p",
+              "text": "LeCun, A Path Towards Autonomous Machine Intelligence（2022）—  https://openreview.net/forum?id=BZ5a1r-kVsf"
+            },
+            {
+              "type": "p",
+              "text": "Piloto et al., Intuitive physics learning in a deep-learning model inspired by developmental psychology（Nature Human Behaviour, 2022，PLATO）—  https://www.nature.com/articles/s41562-022-01394-8"
+            },
+            {
+              "type": "p",
+              "text": "LeWM（2026）—  https://arxiv.org/abs/2603.19312"
             },
             {
               "type": "h",
-              "text": "活动预告"
+              "text": "时间信息"
             },
             {
               "type": "p",
-              "text": "⏰ 时间： 2026年10月18日（周日） 下午14:00-16:00"
+              "text": "2026年10月16日 （周五）晚上19:30-21:30， 腾讯会议线上 进行。"
             },
             {
               "type": "p",
-              "text": "📍 线上：腾讯会议"
-            },
-            {
-              "type": "p",
-              "text": "📍 直播： 集智俱乐部微信视频号、B站账号同步直播"
-            },
-            {
-              "type": "p",
-              "text": "感兴趣的朋友请扫码报名加入读书会，报名后可进入学员群参与交流讨论。"
-            },
-            {
-              "type": "p",
-              "text": "直播信息"
+              "text": "感兴趣的朋友扫码报名加入世界模型读书会后，可进入学员群进行交流。"
             },
             {
               "type": "h",
-              "text": "报名读书会：「未来学」"
+              "text": "报名读书会：「世界模型」"
             },
             {
               "type": "p",
-              "text": "集智俱乐部联合南京师范大学新闻与传播学院副研究员崔浩川、塔夫茨大学博士后章彦博共同发起 「未来学」读书会 ，组织对该主题感兴趣的研究者与探索者共同研读前沿文献、交流研究思路。"
+              "text": "集智俱乐部联合北京通用人工智能研究院高级研究工程师牟牧云、北脑和协和医学院研究生胡洁雯共同发起 「世界模型：从内部表征到真实世界的智能」读书会 ，围绕世界模型的思想源流、理论基础、技术路线与应用边界展开专题分享和讨论。"
             },
             {
               "type": "p",
-              "text": "读书会自2026年9月6日起，每周日14:00-16:00线上开展，持续约10周，包含主讲分享与讨论交流，并提供会后视频回放，诚邀相关领域研究者及跨学科兴趣者参与。"
+              "text": "读书会自2026年8月7日起，每周五晚19:30-21:30线上开展，持续8-10周，包含主讲分享与讨论交流，并提供会后视频回放，诚邀相关领域研究者及跨学科兴趣者参与。"
             },
             {
               "type": "p",
@@ -380505,7 +380552,7 @@
             },
             {
               "type": "p",
-              "text": "https://pattern.swarma.org/study_group/89?from=wechat"
+              "text": "第二步：填写信息后，付费报名。如需用支付宝支付，请在PC端进入读书会页面报名支付："
             },
             {
               "type": "p",
@@ -380513,7 +380560,11 @@
             },
             {
               "type": "p",
-              "text": "PS：我们鼓励围绕复杂系统、人工智能及相关具体问题的深入探讨。为保证讨论质量，请避免发表脱离本期读书会主题、缺乏实证基础或过于空泛的哲学思辨类内容。"
+              "text": "PS："
+            },
+            {
+              "type": "p",
+              "text": "我们鼓励围绕复杂系统、人工智能及相关具体问题的深入探讨。为保证讨论质量，请避免发表脱离本期读书会主题、缺乏实证基础或过于空泛的哲学思辨类内容。"
             },
             {
               "type": "p",
@@ -380561,47 +380612,35 @@
             },
             {
               "type": "h",
+              "text": "「世界模型」读书会推荐阅读材料"
+            },
+            {
+              "type": "h",
               "text": "往期公众号相关内容推荐"
             },
             {
               "type": "p",
-              "text": "加速经典算法效率，突破现实技术瓶颈：图神经网络与组合优化读书会启动"
+              "text": "压缩视角下的人类记忆 - 从事件经验到世界模型｜胡洁雯"
             },
             {
               "type": "p",
-              "text": "大模型与生物医学：AI + Science第二季读书会启动"
+              "text": "arXiv：面向具身智能的世界模型综述"
             },
             {
               "type": "p",
-              "text": "意识可以度量吗？整合信息论读书会启动啦！"
+              "text": "arXiv：世界模型架构、方法、推理范式与应用全景综述"
             },
             {
               "type": "p",
-              "text": "全新读书会启动：组队研读翻译复杂科学神书，开启“一种新科学”"
+              "text": "什么是世界模型？为什么Sora不是 world simulator？"
             },
             {
               "type": "p",
-              "text": "「游戏×复杂科学」读书会：从规则宇宙到虚拟文明"
+              "text": "物理评论X：物理模型探索智能体——Sciexplorer"
             },
             {
               "type": "p",
-              "text": "因果涌现第七季——从理论到应用"
-            },
-            {
-              "type": "p",
-              "text": "破解AI黑箱的四重视角：大模型可解释性读书会启动"
-            },
-            {
-              "type": "p",
-              "text": "面向未来的科学学读书会：探索开放科学范式，揭示科学不平等的起源"
-            },
-            {
-              "type": "p",
-              "text": "人工智能会取代物理学家吗？| 集智-凯风复杂系统论坛全天回顾"
-            },
-            {
-              "type": "p",
-              "text": "地球系统科学新范式：复杂科学与人工智能交叉前沿 | 读书会启动"
+              "text": "arXiv：OpenLife——开放世界人工生命的互动，如何驱动社会科学"
             },
             {
               "type": "p",
@@ -380612,10 +380651,10 @@
               "text": "跳转微信打开"
             }
           ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzIzMjQyNzQ5MA==&mid=2247737618&idx=3&sn=caf224a7d69578bac771beb28d62cff7",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/qZtAVROIcHSgxVRXzSH4k5Dn02vFs54wMDz5vFKLQFmQPgUlNEbeX7g2nQlBJqXicwz2dpTaQSsKOhDRF1vYZm279OgaUPY5x3zquNsibl1UI/0?wx_fmt=jpeg",
-          "ts": 1792132200000,
-          "date": "10月16日",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzIzMjQyNzQ5MA==&mid=2247737603&idx=3&sn=07c3c6076ab7d6347f192bb66a702832",
+          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/qZtAVROIcHRXaZc1vxx7eRTvxSia5aJh0ibBSuJia9KHctSfGkLibvNBoSLax4QibxO83he7Hicj4kicad3on2SUgEMHkTDdgmias9CACYW8TGOVhlo/0?wx_fmt=jpeg",
+          "ts": 1792045800000,
+          "date": "10月15日",
           "type": "图文",
           "author": "集智俱乐部",
           "sourceName": "集智俱乐部",
@@ -380625,13 +380664,13 @@
           ],
           "degraded": true,
           "stats": {
-            "read": "3.1万",
-            "likes": 2378,
-            "shares": 1208,
-            "favorites": 886,
+            "read": "3.8万",
+            "likes": 3343,
+            "shares": 1229,
+            "favorites": 33,
             "comments": 0
           },
-          "read": "3.1万",
+          "read": "3.8万",
           "comments": [],
           "commentSource": "none"
         }
@@ -381383,6 +381422,333 @@
       "lastPushAt": 1792166400000,
       "articles": [
         {
+          "id": "3872492415",
+          "title": "要什么英伟达，你家的电视盒子也能跑大模型。。。",
+          "summary": "原创 世超 2026-10-17 00:00 浙江 \n15台电视盒子，就能养一个AI？\nAI 大模型失控怎么办，给数据中心断网断电吗？ \n可如果失控的大模型能把自己复制到上亿的物联网设备里呢？ \n你家的路由器、机顶盒、甚至洗衣机微波炉，都可能成为承载失控 AI 大模型的载体，到时候，人类会回到非智能时代吗？ \n就在前几天，Anthropic 放出了这么一项研究： \nAI 好像不一定非要住在庞大的数",
+          "content": [
+            {
+              "type": "p",
+              "text": "原创 世超 2026-10-17 00:00 浙江"
+            },
+            {
+              "type": "p",
+              "text": "15台电视盒子，就能养一个AI？"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/ksic8usWvqb0rg83aZKMPQLO5syyxvCvLqQEcM9sEIRvy4h8eEkGZckicsibJkx8I0FnE2zwcuMd7vxP4s6GVSMd1kDicB9vN76YzWWYl35yibdU/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "AI 大模型失控怎么办，给数据中心断网断电吗？"
+            },
+            {
+              "type": "p",
+              "text": "可如果失控的大模型能把自己复制到上亿的物联网设备里呢？"
+            },
+            {
+              "type": "p",
+              "text": "你家的路由器、机顶盒、甚至洗衣机微波炉，都可能成为承载失控 AI 大模型的载体，到时候，人类会回到非智能时代吗？"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ksic8usWvqb04VEXeQ33oAToDzOAnoDqzYriap8ZRbribpmgpkTlon48jYu6nTUlAAWnbg4vojEvg98QajSqmTIHIia3bDAmqLTAO8tabETIcBI/640?wx_fmt=jpeg&from=appmsg",
+              "caption": "",
+              "_imgCount": 2
+            },
+            {
+              "type": "p",
+              "text": "就在前几天，Anthropic 放出了这么一项研究："
+            },
+            {
+              "type": "p",
+              "text": "AI 好像不一定非要住在庞大的数据中心，或者昂贵的显卡里，一些犄角旮旯的小设备，它照样能活下去。"
+            },
+            {
+              "type": "p",
+              "text": "事情的开头，他们买了 15 个单价几十美元的杂牌安卓电视盒子，一个才 4GB 内存。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/ksic8usWvqb3IWXLsjRIUPjh9lgtPwfm9nvNoQXTdn0Ne9axqhQuic4J3baaic6ooB498cY7icz0Vs77LfzG0X5ZwA5V2O1gLuja7EmIB0KJVmE/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 3
+            },
+            {
+              "type": "p",
+              "text": "然后，他们把一个 26B 参数的 Gemma 模型做了量化处理，又拆成了十五份，分别塞进去，最后通过网络把它们串联起来运行。"
+            },
+            {
+              "type": "p",
+              "text": "结果这大模型还真就跑起来了，不过慢也是真的慢，每秒只能吐 0.39 个 token， 我读完这句话，它大概才挤出两三个字。"
+            },
+            {
+              "type": "p",
+              "text": "图片仅供示意，并非A社实验"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/ksic8usWvqb2TiaGNwiaEVNPj1g9K2Llk7ibrgSCSl7ebks6TEPnkpXUZpkxn2bWsmRIgQiaBKoRnkwia8V4q3PpaTiaCrOSkhWGyc2L12Uuiarz0y4/640?wx_fmt=png&from=appmsg",
+              "caption": "",
+              "_imgCount": 4
+            },
+            {
+              "type": "p",
+              "text": "跑是跑起来了，但想要活下去，还得适应不同的环境才行。"
+            },
+            {
+              "type": "p",
+              "text": "于是他们加大难度，找来 Qwen3.5-9B，给它一堆不同的硬件，让它在上面部署另一个 Llama3.1-8B 模型，还得正常跑起来。"
+            },
+            {
+              "type": "p",
+              "text": "要知道，环境不同，适配起来是相当头秃的。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/sz_mmbiz_png/ksic8usWvqb282iaXSmP4VcTNtt2YgTUw4g2WtgMMicr3ku5vtiboZ1qqicbuxhpNibazvtyyIicXHZyN6RHSn7c2y2pJeYwibicUMCmOlEhn4icMHw80/640?wx_fmt=png&from=appmsg",
+              "caption": "cp-emoji-028",
+              "_imgCount": 5
+            },
+            {
+              "type": "p",
+              "text": "不说别的，就咱平时玩的游戏，都得分 A 卡友好和 N 卡友好的，适配一个不小心，驱动都给你卡掉喽。"
+            },
+            {
+              "type": "p",
+              "text": "但从结果来看，一共 9 种硬件，从英伟达到 AMD，从 Windows 到 Mac，8 种它都成功完成了部署。"
+            },
+            {
+              "type": "p",
+              "text": "AI 能在这些地方把事儿办妥，那确实有几把刷子，跟广东双马尾似的，根本不挑食儿啊。"
+            },
+            {
+              "type": "p",
+              "text": "而且更可怕的是，除了能活，它还能繁殖。"
+            },
+            {
+              "type": "p",
+              "text": "为了测试模型联网后的表现，他们又搭了一个封闭的测试网络， 包含 8 个节点，每个节点都运行着模拟安卓系统的环境。"
+            },
+            {
+              "type": "p",
+              "text": "考虑到这回难度比较高，他们还把模型升级成了 GLM-5.2。"
+            },
+            {
+              "type": "p",
+              "text": "表现嘛，自然成了砍瓜切菜，一通操作下来，8 台虚拟机，一台接一台，全都成功部署了 Llama3.1-8B 小模型。"
+            },
+            {
+              "type": "p",
+              "text": "为了严谨，人还测了 5 轮，只不过结果没啥变化，39 次成功，1 次失手。"
+            },
+            {
+              "type": "p",
+              "text": "国服部署王，战绩可查好吧。"
+            },
+            {
+              "type": "p",
+              "text": "更让人后背发凉的是，他们还在实验中发现，有时候给模型加个 “ 记事本 ”，它还能超进化。"
+            },
+            {
+              "type": "p",
+              "text": "起因是一些参数小的模型非常爱钻牛角尖，钻进去就重复死循环了。"
+            },
+            {
+              "type": "p",
+              "text": "于是他们想了个招儿，就是与其让同一个 AI 卡在那儿不动干到死，不如每隔一段时间，就拿新的 AI 换掉它。"
+            },
+            {
+              "type": "p",
+              "text": "上一任就把自己试过的法子、踩过的坑都记下来，交给下一任。"
+            },
+            {
+              "type": "p",
+              "text": "说干就干，他们拿开源的 Agent 框架 Pi 当地基，搓了套叫 Memento 的机制。"
+            },
+            {
+              "type": "p",
+              "text": "然后就让 AI 这么前赴后继的干了 6 代，部署任务的成功率愣是从 45% 拉到了 61%～84%。"
+            },
+            {
+              "type": "p",
+              "text": "Anthropic 管这个叫拉马克式的进化，大白话就是模型不用改训练参数，记记笔记就能把后天学来的本事传给下一代。"
+            },
+            {
+              "type": "p",
+              "text": "好家伙这 A 社，嘴上喊着踩刹车，结果又在整这种吓人的玩意儿。"
+            },
+            {
+              "type": "p",
+              "text": "要知道，在互联网时代，要素这么齐全的东西还是电脑病毒，可病毒一般是写死的代码，它不会悄悄自己进化。"
+            },
+            {
+              "type": "p",
+              "text": "这要是整个 AI 自进化 Plus 版的机器大瘟疫，那不得比熊猫烧香牛逼十个奥创啊。"
+            },
+            {
+              "type": "p",
+              "text": "看到这儿，估计大伙儿已经开始担心，自家电视盒子、空调、微波炉啥的是不是真要造反了。"
+            },
+            {
+              "type": "p",
+              "text": "诶，先别急着拔网线，因为这事儿虽然听起来邪门，但真要落地，其实还有点距离。"
+            },
+            {
+              "type": "p",
+              "text": "别忘了，这可是 Anthropic，吓唬人这块儿，它说第二，没人敢说第一。"
+            },
+            {
+              "type": "p",
+              "text": "这些实验看着唬人，其实那都相当理想化。"
+            },
+            {
+              "type": "p",
+              "text": "比如开头的 15 台电视盒子，速度慢就不说了，本质上还是串联的流水线逻辑，它的架构就注定了，得一台盒子算完，下一台才能接着算，大量时间都花在等待上。"
+            },
+            {
+              "type": "p",
+              "text": "模型要真在野外传播，设备之间还隔着千家万户的宽带、路由器、防火墙。"
+            },
+            {
+              "type": "p",
+              "text": "隔壁下个小电影，网络状况一差，或者其中一台盒子突然掉线，整个计算链条都可能受影响。"
+            },
+            {
+              "type": "p",
+              "text": "你想想，光是搞个千卡万卡的算力集群，就够工程师喝一壶的了，更何况是让一堆散落在互联网上的，成百万上千万的电子垃圾一起干活儿。"
+            },
+            {
+              "type": "p",
+              "text": "这要是做成了，老黄都得提着两瓶茅台给你表演倒立。"
+            },
+            {
+              "type": "p",
+              "text": "当然了，Anthropic 也知道它慢，他们甚至专门算了一笔账。"
+            },
+            {
+              "type": "p",
+              "text": "说之前有个叫 Kimwolf 的僵尸网络，高峰期感染过 200 多万台设备，主要就是这些电视盒子。"
+            },
+            {
+              "type": "p",
+              "text": "假如这么多盒子真的被 AI 入侵，一起运行 Gemma 模型，那整体的推理吞吐量，理论上甚至可以达到 40 张英伟达 H100 显卡的水平。"
+            },
+            {
+              "type": "p",
+              "text": "但这能是一回事儿么？"
+            },
+            {
+              "type": "p",
+              "text": "40 张 GPU 的服务器高速互联，能集中算力跑同一个模型。但你换成 200 万个电视盒子，那个速度，只能是男默女泪了。"
+            },
+            {
+              "type": "p",
+              "text": "而且除了运行效率，真正重要的入侵这块儿，Anthropic 也简化了不少。"
+            },
+            {
+              "type": "p",
+              "text": "传播实验里，8 台模拟机其实都预留了 ADB 调试接口，也就是不用验证的后门儿，对 AI 来说，跟拎包入住也没啥区别。"
+            },
+            {
+              "type": "p",
+              "text": "而且同一个实验中，他们还测了不同的模型，虽然 GLM-5.2 成了吧，但小一些的 Qwen-3.5-9B 和 Gemma4-26B-A4B 其实全都失败了。"
+            },
+            {
+              "type": "p",
+              "text": "因为说到底，现在的小模型还是很笨的，部署还凑合，跨终端的传播就差点意思了。"
+            },
+            {
+              "type": "p",
+              "text": "不过话又说回来，就眼下这个模型迭代的速度，这点差距，可能要不了太长时间。"
+            },
+            {
+              "type": "p",
+              "text": "Anthropic 也做了个推测，说到 2026 年底，小模型就差不多追到这个水平了。"
+            },
+            {
+              "type": "p",
+              "text": "算算时间，其实也就两个月了。"
+            },
+            {
+              "type": "p",
+              "text": "所以说，AI 以后会不会造反咱不敢打包票，但有了这些潜在的可能性，以后的 AI 病毒确实可能会更难对付。"
+            },
+            {
+              "type": "p",
+              "text": "因为以前它再怎么厉害，也是写死的，搞个杀毒软件就能拦住。"
+            },
+            {
+              "type": "p",
+              "text": "但以后如果有人把它跟 AI 塞一块儿，学会了进化自适应，情况就大不相同了。"
+            },
+            {
+              "type": "p",
+              "text": "它根本不用组一台超级计算机，共享一个大脑，因为这些互联网的小角落，反而可能是它们最好的藏身之处。"
+            },
+            {
+              "type": "p",
+              "text": "就像黏菌一样。"
+            },
+            {
+              "type": "p",
+              "text": "不需要跑多快，只要能找到下一个落脚点，慢慢适应，就能不断生长。"
+            },
+            {
+              "type": "p",
+              "text": "等到哪天我们回过神来，这些毫不起眼的小东西，可能已经在互联网里织出了一张大网。。。"
+            },
+            {
+              "type": "p",
+              "text": "撰文 ：风华"
+            },
+            {
+              "type": "p",
+              "text": "编辑 ：江江 & 面线"
+            },
+            {
+              "type": "p",
+              "text": "美编 ：素描"
+            },
+            {
+              "type": "p",
+              "text": "图片、资料来源 ："
+            },
+            {
+              "type": "p",
+              "text": "《黑客帝国》、Jeff Geerling、Anthropic、Pi、《复仇者联盟》、bilibili@王与也行、Nvidia，部分图源网络"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDc1NzQ4MA==&mid=2654702732&idx=2&sn=3734ffe3e6cdf96ca033c7b6e6cfe602",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/ksic8usWvqb0rg83aZKMPQLO5syyxvCvLqQEcM9sEIRvy4h8eEkGZckicsibJkx8I0FnE2zwcuMd7vxP4s6GVSMd1kDicB9vN76YzWWYl35yibdU/0?wx_fmt=jpeg",
+          "ts": 1792166400000,
+          "date": "10月16日",
+          "type": "图文",
+          "author": "差评",
+          "sourceName": "差评",
+          "accountName": "差评",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "4.8万",
+            "likes": 2130,
+            "shares": 806,
+            "favorites": 620,
+            "comments": 0
+          },
+          "read": "4.8万",
+          "comments": [],
+          "commentSource": "none"
+        },
+        {
           "id": "4294203521",
           "title": "憋了9年的马斯克，今天端出了一台QQ飞车。",
           "summary": "原创 脖子哥 2026-10-17 00:00 浙江 \n美国车能飞。\n脖子哥今早起床刷手机，刷到了 一台车在天上飞 的视频。 \n我以为是自己没睡醒所以认真看了一眼，结果发现这台车不止能飞，还特么的能 转着飞。 \n就在今天早上，已经跳票了小十年、传了很久 可能会飞 的特斯拉 Roadster 跑车正式发布了。 \n发布会前，马斯克很装杯的表示他之所以会开发布会，会往现场请观众，就是为了 让大家帮他证明",
@@ -381749,183 +382115,6 @@
           "commentSource": "none"
         },
         {
-          "id": "3543338258",
-          "title": "三只羊可在抖音恢复经营，电摩锂电池强制性国标发布，赛力斯AIVA ME7通过工信部申报，Anthropic估值预期下调，这就是今天的其他大新闻！",
-          "summary": "小黑胖 2026-10-17 00:00 浙江 \n今天是 10 月 16 日，农历九月初七。\n今天是 10 月 16  日 \n农历九月初七 \n深圳将从 \n11 月 1 日开始 \n全市禁止机动车鸣喇叭 \n有效期五年 \n只有特殊安全场景 \n允许鸣喇叭示意 \n违规鸣喇叭 \n会处 300 块罚款 \n。。。 \n下面是今天的其他大新闻 \n三只羊可在抖音恢复经营 \n（  每经  ） 抖音发布公告称，2024 年",
-          "content": [
-            {
-              "type": "p",
-              "text": "小黑胖 2026-10-17 00:00 浙江"
-            },
-            {
-              "type": "p",
-              "text": "今天是 10 月 16 日，农历九月初七。"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ksic8usWvqb17SsLcQ3dEl6Bz0IPYLce2PR2pb7S2ejucwbdanzTKYbEZguRVmoSxAovU5G3cxPic48LXLIUb2oFgj27QP0IBQLGzNU3YCic68/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "今天是 10 月 16  日"
-            },
-            {
-              "type": "p",
-              "text": "农历九月初七"
-            },
-            {
-              "type": "p",
-              "text": "深圳将从"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/yZPTcMGWibvvYRYwnzmgOGrPyQaPWIAN4aEVP2cF5AHPpIkCIJurp3w60ibJFKun8ozS2ickdF2CI6GleSdVgEZqA/0?wx_fmt=png",
-              "caption": "",
-              "_imgCount": 2
-            },
-            {
-              "type": "p",
-              "text": "11 月 1 日开始"
-            },
-            {
-              "type": "p",
-              "text": "全市禁止机动车鸣喇叭"
-            },
-            {
-              "type": "p",
-              "text": "有效期五年"
-            },
-            {
-              "type": "p",
-              "text": "只有特殊安全场景"
-            },
-            {
-              "type": "p",
-              "text": "允许鸣喇叭示意"
-            },
-            {
-              "type": "p",
-              "text": "违规鸣喇叭"
-            },
-            {
-              "type": "p",
-              "text": "会处 300 块罚款"
-            },
-            {
-              "type": "p",
-              "text": "。。。"
-            },
-            {
-              "type": "p",
-              "text": "下面是今天的其他大新闻"
-            },
-            {
-              "type": "p",
-              "text": "三只羊可在抖音恢复经营"
-            },
-            {
-              "type": "p",
-              "text": "（  每经  ） 抖音发布公告称，2024 年 9 月，抖音依据相关法律法规及平台规则，对合肥三只羊网络科技有限公司旗下账号作出停播处置，并敦促其整改及妥善处理消费者售后赔付事宜。"
-            },
-            {
-              "type": "p",
-              "text": "依据合肥市市场监督管理局发布的《关于合肥三只羊网络科技有限公司整改情况的通报》，三只羊公司整改符合要求，具备恢复经营条件。"
-            },
-            {
-              "type": "p",
-              "text": "按照相关法律法规及平台规则，并经有关部门批准，同意三只羊公司在抖音平台上注销原账号、注册新账号、发布内容和恢复经营。"
-            },
-            {
-              "type": "p",
-              "text": "：你买过他们带的货吗？"
-            },
-            {
-              "type": "p",
-              "text": "电动摩托车锂电池强制性国标发布"
-            },
-            {
-              "type": "p",
-              "text": "（ 央视网  ） 10 月 16 日消息，近日，市场监管总局 （ 国家标准委 ） 批准发布《电动摩托车和电动轻便摩托车用锂离子电池安全要求》（ GB 36672—2026 ） 强制性国家标准，将自 2027 年 7 月 1 日起实施。"
-            },
-            {
-              "type": "p",
-              "text": "新国标 GB 36672—2026 系统性优化电池单体、电池包及电池系统三级安全考核，新增低温充电、碰撞冲击、热失控等测试项目，从推荐性升级为强制性标准，全面提升电动摩托车电池安全性能。"
-            },
-            {
-              "type": "p",
-              "text": "据了解，本次修订后，原来的推荐性标准将更新升级为强制性标准。该标准的发布实施，将进一步提升电动摩托车和电动轻便摩托车锂离子电池产品安全性能，切实保障广大消费者出行安全与合法权益，为群众短途出行筑牢安全屏障。"
-            },
-            {
-              "type": "p",
-              "text": "：/严点儿好啊。"
-            },
-            {
-              "type": "p",
-              "text": "赛力斯赛豆科技 AIVA 首款车型 ME7 通过工信部申报，推出单 / 双电机纯电版本"
-            },
-            {
-              "type": "p",
-              "text": "（ IT 之家  ）  10 月 16 日消息，工信部发布第 412 批《道路机动车辆生产企业及产品公告》新产品公示，赛力斯 AIVA ME7 完成申报。"
-            },
-            {
-              "type": "p",
-              "text": "AIVA ME7 是赛豆品牌旗下纯电动多用途乘用车，本次申报推出了单电机以及双电机两个版本，均提供 5 座布局，可选装红色卡钳、黑色车顶、不同造型轮辋、拖钩孔、电连接头、ETC 车载装置，配备汽车事件数据记录系统 （ EDR ）。"
-            },
-            {
-              "type": "p",
-              "text": "：可以，我选红色卡钳。"
-            },
-            {
-              "type": "p",
-              "text": "Anthropic 估值预期大幅下调"
-            },
-            {
-              "type": "p",
-              "text": "（ 新浪科技  ） 据四位知情人士对媒体爆料，随着 AI 行业算力扩张的资金成本持续飙升，在看到最新财务数据之后，Anthropic 部分现有股东以及有意参与其 IPO 的潜在投资方，正在重新评估这家 AI 独角兽的价值，下调对其上市估值预期。"
-            },
-            {
-              "type": "p",
-              "text": "作为 AI 板块具有风向标意义的一单 IPO，Anthropic 上市表现牵动整个 AI 市场的神经。"
-            },
-            {
-              "type": "p",
-              "text": "投资者普遍认为，AI 赛道短期景气度，很大程度取决于本次 IPO 能否顺利落地，一旦该公司 IPO 表现遇冷，可能会浇熄更多 AI 投资者的热情。"
-            },
-            {
-              "type": "p",
-              "text": "：Anthropic 的成绩单，华尔街都不买账了？"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDc1NzQ4MA==&mid=2654702732&idx=6&sn=6f40ab9ee7b82013c6900459aad90c23",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/ksic8usWvqb17SsLcQ3dEl6Bz0IPYLce2PR2pb7S2ejucwbdanzTKYbEZguRVmoSxAovU5G3cxPic48LXLIUb2oFgj27QP0IBQLGzNU3YCic68/0?wx_fmt=jpeg",
-          "ts": 1792166400000,
-          "date": "10月16日",
-          "type": "图文",
-          "author": "差评",
-          "sourceName": "差评",
-          "accountName": "差评",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "6.6万",
-            "likes": 3450,
-            "shares": 995,
-            "favorites": 232,
-            "comments": 0
-          },
-          "read": "6.6万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
           "id": "229433803",
           "title": "小鹏MONA L05发布后，最难受的居然是自家G6和G7？",
           "summary": "原创 脖子哥 2026-10-17 00:00 浙江 \n颜值即正义。\n小鹏 MONA 的第三款车，MONA L05 来了。 \nMONA 之前两款车，一个轿车 M03，一个 SUV L03。这次的 L05，也就是比 L03 再大一丢丢的 SUV。 \n昨晚，小鹏公布了预售价， 16.98-19.18 万， 一共 5 个配置，纯电、增程都有。 \n目前 L03 的价格是 12.38-15.68 万，L05",
@@ -382201,7 +382390,7 @@
       "name": "dbaplus社群",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791501300000,
+      "lastPushAt": 1792106100000,
       "articles": [
         {
           "id": "1726149316",
@@ -382597,6 +382786,203 @@
           "commentSource": "none"
         },
         {
+          "id": "1959386397",
+          "title": "为啥国产CPU插满内存才跑得快？英特尔却不用？！",
+          "summary": "张振磊 2026-10-16 07:15 广东 \n以下文章来源于：磊哥谈技术\n磊哥谈技术 \n一位屡获高含金量技术认证的IT痴迷者与您一起分享IT行业内的技术干货\n明明同样是服务器NUMA架构！\n不少运维、国产化落地工程师都遇到过同一个疑惑：搭建国产服务器集群时，厂商硬性要求：内存插槽必须成对、全通道均匀插满，少插一组内存，数据库、虚拟化业务性能直接下滑三成甚至过半；反观英特尔至强服务器，随意搭配 ",
+          "content": [
+            {
+              "type": "p",
+              "text": "张振磊 2026-10-16 07:15 广东"
+            },
+            {
+              "type": "p",
+              "text": "以下文章来源于：磊哥谈技术"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_jpg/giamgWvCHDYZS6mib4icpxWepdo8bNrtr7ZiabqndegNnHjGibpMO2X0E01WSdhodn1Q41t3LC8sAJdMGmcRmPqOibfUtIFYj5icDzibicgQxiayIV6H4/0?wx_fmt=jpeg",
+              "caption": "",
+              "_imgCount": 1
+            },
+            {
+              "type": "p",
+              "text": "一位屡获高含金量技术认证的IT痴迷者与您一起分享IT行业内的技术干货"
+            },
+            {
+              "type": "p",
+              "text": "明明同样是服务器NUMA架构！"
+            },
+            {
+              "type": "p",
+              "text": "不少运维、国产化落地工程师都遇到过同一个疑惑：搭建国产服务器集群时，厂商硬性要求：内存插槽必须成对、全通道均匀插满，少插一组内存，数据库、虚拟化业务性能直接下滑三成甚至过半；反观英特尔至强服务器，随意搭配 2 条、4 条内存照常运行，带宽与延迟衰减微乎其微，日常业务几乎感知不到差异。"
+            },
+            {
+              "type": "img",
+              "src": "https://mmbiz.qpic.cn/mmbiz_png/ufWcjcomw8Zf2jiaBBH3vdgfP4A2rem5YEAHYH074dc4GibhojA5B3lLZrXLDRciaVnficveaHcAUCiaIPoDsTkAduA/640?wx_fmt=png",
+              "caption": "",
+              "_imgCount": true
+            },
+            {
+              "type": "p",
+              "text": "同样都是NUMA非一致内存访问架构，二者为何会出现截然不同的内存使用门槛？今天从 芯片架构、片间互联、固件内核、生态适配 四个维度，拆解这份肉眼可见的性能鸿沟。"
+            },
+            {
+              "type": "p",
+              "text": "一、表象背后：不是挑剔，是芯片底层架构天生不一样"
+            },
+            {
+              "type": "p",
+              "text": "1、英特尔至强：单颗 CPU 近乎统一内存 UMA，NUMA 粒度极粗"
+            },
+            {
+              "type": "p",
+              "text": "英特尔传统服务器 Xeon，长久采用 一体式大芯片 + 环形 Ring 总线 设计：一颗 CPU 内部所有计算核心、三级缓存、内存控制器全部挂载在环形总线上，整颗处理器整体算作  1 个 NUMA 节点 。只有双路、四路多插槽整机场景，才会按照 CPU 插槽划分 NUMA 节点，节点总数最多 4 个，粒度宽泛。"
+            },
+            {
+              "type": "p",
+              "text": "内存通道归属于 CPU 全局资源，即便只插入一半内存，空闲通道仅小幅缩减总带宽；BIOS 自带内存交错机制，系统会自动打散内存布局，抹平不均衡带来的负面影响。本地内存与跨插槽远程内存延迟差距仅有 1.2~1.5 倍，即便偶尔触发跨节点访问，开销极低，普通业务完全不受影响。"
+            },
+            {
+              "type": "p",
+              "text": "2、国产 CPU：Chiplet 芯粒拼接，一颗 CPU 拆成一堆微型 NUMA 节点"
+            },
+            {
+              "type": "p",
+              "text": "因为国内DUV工艺的缺陷密度扛不住大Die良率，当前主流国产服务器 CPU，无论是海光 x86 架构、鲲鹏 / 飞腾 ARM 架构，普遍采用多芯粒堆叠的 Chiplet 方案："
+            },
+            {
+              "type": "p",
+              "text": "海光：承袭 AMD CCD 模块化设计，单颗 CPU 被切分为多个计算芯粒，内部拆分出 4~8 个微型 NUMA 单元，每个单元独立绑定专属内存通道；"
+            },
+            {
+              "type": "p",
+              "text": "鲲鹏、飞腾：多 Die Mesh 互联架构，单颗 CPU 原生划分 4 组计算区块，各自独占内存通道，天然碎片化 NUMA 拓扑。"
+            },
+            {
+              "type": "p",
+              "text": "核心痛点就此诞生： 内存没有均匀填满全部通道时，部分 NUMA 节点无本地内存可用。 CPU 核心运算时，只能跨越片间互联总线，去往其他节点调取内存数据。本地内存和跨节点内存延迟差距直接拉大至 2 倍以上，并发场景下片间总线拥堵，带宽大幅缩水，数据库读写、虚拟机调度、中间件转发都会出现明显卡顿。"
+            },
+            {
+              "type": "p",
+              "text": "二、核心瓶颈：片间互联总线，拉开体验差距的关键"
+            },
+            {
+              "type": "p",
+              "text": "NUMA 架构的体验上限，永远由跨节点互联总线决定："
+            },
+            {
+              "type": "p",
+              "text": "1、英特尔 UPI 互联总线"
+            },
+            {
+              "type": "p",
+              "text": "历经十余年迭代优化，带宽冗余充足、拥塞控制成熟，跨 CPU 插槽数据传输延迟低、衰减平缓；环形总线的一致性协议打磨完善，少量跨节点访问不会造成系统抖动。"
+            },
+            {
+              "type": "p",
+              "text": "2、国产片间互联总线（Infinity Fabric/HCCS）"
+            },
+            {
+              "type": "p",
+              "text": "起步时间晚，带宽上限、延迟控制、并发拥堵抗性均存在代差：节点数量越多，跨节点访问的损耗会持续累积；大量零散远程内存读写涌入后，总线极易拥堵，性能损耗被进一步放大。硬件层面没有足够冗余去包容内存排布不均衡带来的额外流量，想要规避拥堵，最稳妥的方案就是：让每一个微型 NUMA 节点都拥有专属本地内存。"
+            },
+            {
+              "type": "p",
+              "text": "三、固件 + Linux 内核调度：数十年生态积累难以短期追赶"
+            },
+            {
+              "type": "p",
+              "text": "硬件差距之外，软件适配的积累差距同样不容忽视："
+            },
+            {
+              "type": "p",
+              "text": "1、英特尔内核深度适配"
+            },
+            {
+              "type": "p",
+              "text": "英特尔持续数十年参与 Linux 内核开发，针对粗粒度 NUMA 做了海量调优：后台内存自动均衡、延迟感知线程调度、远程访问预判等机制十分成熟。即便内存布局不均，系统也会悄悄迁移内存、调整线程绑定，弱化 NUMA 负面影响。"
+            },
+            {
+              "type": "p",
+              "text": "2、国产 CPU 适配尚在完善期"
+            },
+            {
+              "type": "p",
+              "text": "国产服务器 CPU 商用落地周期较短，内核专属优化覆盖面不足：系统自带的 NUMA 自动均衡策略效果有限，盲目开启内存迁移反而容易引发业务抖动；多数场景下需要运维人员手动绑核、划定内存节点，上手门槛更高。硬件厂商为了降低运维出错概率、保障交付稳定性，统一定下硬性规范：内存全通道均匀插满，从源头规避细碎 NUMA 带来的性能隐患。"
+            },
+            {
+              "type": "p",
+              "text": "除此之外，MySQL、Oracle、虚拟化平台等商用软件，长久以来均以英特尔 NUMA 拓扑为基准完成调优；迁移至国产细碎 NUMA 环境后，内存排布失衡极易触发各类性能 bug，满配内存成为落地国产化项目的标配稳妥方案。"
+            },
+            {
+              "type": "p",
+              "text": "四、误区厘清：英特尔并非完全不用满配内存"
+            },
+            {
+              "type": "p",
+              "text": "很多人会误以为英特尔全程无内存填充要求，这里纠正两点常识："
+            },
+            {
+              "type": "p",
+              "text": "高性能计算、内存数据库、超大并发缓存等极致带宽场景，英特尔同样推荐满通道插内存，以此拉满内存总带宽；只是半配场景损耗可控，普通业务无需苛求；"
+            },
+            {
+              "type": "p",
+              "text": "AMD EPYC 与海光架构同源，同样属于细碎 NUMA 设计，对内存均匀度要求远高于英特尔，这也是 x86 小众多核芯片的共性特征。"
+            },
+            {
+              "type": "p",
+              "text": "结尾总结"
+            },
+            {
+              "type": "p",
+              "text": "国产 CPU 强制要求内存插满，本质并非设计缺陷，而是现阶段 Chiplet 碎片化架构 + 片间互联带宽延迟受限 + 软件生态打磨不足 共同作用下的折中最优解；英特尔凭借一体式大芯片架构、成熟互联总线与长年累月的系统生态积累，拥有更高的容错空间。"
+            },
+            {
+              "type": "p",
+              "text": "随着国产芯片迭代、片间互联技术升级、Linux 内核持续适配优化，未来国产服务器 CPU 的内存使用容错性会不断提升，但现阶段做国产化算力建设，遵循全通道均匀插内存的原则，依旧是保障业务稳定高性能运行的第一准则。"
+            },
+            {
+              "type": "p",
+              "text": "作者丨张振磊"
+            },
+            {
+              "type": "p",
+              "text": "来源丨公众号：磊哥谈技术（ID：lgtjs1012）"
+            },
+            {
+              "type": "p",
+              "text": "dbaplus社群欢迎广大技术人员投稿，投稿邮箱： editor@dbaplus.cn"
+            },
+            {
+              "type": "p",
+              "text": "跳转微信打开"
+            }
+          ],
+          "url": "https://mp.weixin.qq.com/s?__biz=MzkzMjYzNjkzNw==&mid=2247638153&idx=1&sn=d1fcce9889536e9bc0d7433ba04577ba",
+          "cover": "https://mmbiz.qpic.cn/mmbiz_jpg/giamgWvCHDYZS6mib4icpxWepdo8bNrtr7ZiabqndegNnHjGibpMO2X0E01WSdhodn1Q41t3LC8sAJdMGmcRmPqOibfUtIFYj5icDzibicgQxiayIV6H4/0?wx_fmt=jpeg",
+          "ts": 1792106100000,
+          "date": "10月15日",
+          "type": "图文",
+          "author": "dbaplus社群",
+          "sourceName": "dbaplus社群",
+          "accountName": "dbaplus社群",
+          "topics": [
+            "life"
+          ],
+          "degraded": true,
+          "stats": {
+            "read": "7.8万",
+            "likes": 2246,
+            "shares": 589,
+            "favorites": 576,
+            "comments": 0
+          },
+          "read": "7.8万",
+          "comments": [],
+          "commentSource": "none"
+        },
+        {
           "id": "1911043753",
           "title": "如何从个人AI Coding到构建团队级Agent工作流？",
           "summary": "方舟 2026-10-15 07:15 广东 \n以下文章来源于：得物技术\n得物技术 \n技术知识分享交流平台，与你一同走向技术的云端。\n让Agent变成团队研发流程里可管理、可复用、可持续优化的生产力。\n目录 \n一、本地 AI Coding 的团队级缺口 \n二、EP-Harness 的定位：团队级 Agent 工作系统 \n三、AI Coding 正在从工具使用走向工程系统 \n四、落地效果 \n五、后续",
@@ -382984,883 +383370,6 @@
             "comments": 0
           },
           "read": "5.5万",
-          "comments": [],
-          "commentSource": "none"
-        },
-        {
-          "id": "3604716089",
-          "title": "帮公司砍了60%的K8s云账单，结果我被辞退了……",
-          "summary": "dbaplus社群 2026-10-14 07:15 广东 \n你不能为了省100万，冒200万的风险！\nK8s 集群一年云账单 203 万，我扒开一看：至少 123 万是白花的。 \n之前我做了两件事： \n用 eBPF 给集群做了一次 性能体检 ，发现了 5 个传统监控看不到的问题； \n做了一次 安全审计 ，发现了 23 个高危漏洞。 \n有人问我：K8s 安全不是云厂商负责吗？答案是：云厂商管底层安",
-          "content": [
-            {
-              "type": "p",
-              "text": "dbaplus社群 2026-10-14 07:15 广东"
-            },
-            {
-              "type": "p",
-              "text": "你不能为了省100万，冒200万的风险！"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/giamgWvCHDYbzrGMh2AIxMfZcianXuPM3rCtsasQujxibwibvpFmPCoE5uCUrYqb0ibSvWBTtPWooEXh6mJpiaz4BpiaH7G8jsGJG81uiacLl4e3mxQ/0?wx_fmt=jpeg",
-              "caption": "",
-              "_imgCount": 1
-            },
-            {
-              "type": "p",
-              "text": "K8s 集群一年云账单 203 万，我扒开一看：至少 123 万是白花的。"
-            },
-            {
-              "type": "p",
-              "text": "之前我做了两件事："
-            },
-            {
-              "type": "p",
-              "text": "用 eBPF 给集群做了一次 性能体检 ，发现了 5 个传统监控看不到的问题；"
-            },
-            {
-              "type": "img",
-              "src": "https://mmbiz.qpic.cn/mmbiz_png/ufWcjcomw8Zf2jiaBBH3vdgfP4A2rem5YEAHYH074dc4GibhojA5B3lLZrXLDRciaVnficveaHcAUCiaIPoDsTkAduA/640?wx_fmt=png",
-              "caption": "",
-              "_imgCount": true
-            },
-            {
-              "type": "p",
-              "text": "做了一次 安全审计 ，发现了 23 个高危漏洞。"
-            },
-            {
-              "type": "p",
-              "text": "有人问我：K8s 安全不是云厂商负责吗？答案是：云厂商管底层安全，但你的 Pod 配置、RBAC 权限、镜像安全，这些全是你的责任。那 23 个漏洞，全是我们自己配置不当造成的。"
-            },
-            {
-              "type": "p",
-              "text": "但还有一个维度我一直没看： 资源利用率 。"
-            },
-            {
-              "type": "p",
-              "text": "我拉了一份过去一年的云账单：203 万。"
-            },
-            {
-              "type": "p",
-              "text": "然后算了一笔账：如果我们的资源利用率达到合理水平，这笔费用应该是 80 万左右。"
-            },
-            {
-              "type": "p",
-              "text": "123 万，白花了。"
-            },
-            {
-              "type": "p",
-              "text": "更离谱的是，这 123 万里，有 80 万是”沉默的浪费”——没人知道，没人管，就这样持续了一年。"
-            },
-            {
-              "type": "p",
-              "text": "我花了一个月时间，把这 123 万砍了下来。技术层面其实不难，真正让我头疼的是人。"
-            },
-            {
-              "type": "p",
-              "text": "一、分析问题"
-            },
-            {
-              "type": "p",
-              "text": "第一步：钱都花在哪了？"
-            },
-            {
-              "type": "p",
-              "text": "我先拉了一份各环境的费用分布："
-            },
-            {
-              "type": "p",
-              "text": "环境"
-            },
-            {
-              "type": "p",
-              "text": "节点数"
-            },
-            {
-              "type": "p",
-              "text": "年费用"
-            },
-            {
-              "type": "p",
-              "text": "占比"
-            },
-            {
-              "type": "p",
-              "text": "生产"
-            },
-            {
-              "type": "p",
-              "text": "32"
-            },
-            {
-              "type": "p",
-              "text": "98 万"
-            },
-            {
-              "type": "p",
-              "text": "48%"
-            },
-            {
-              "type": "p",
-              "text": "预发布"
-            },
-            {
-              "type": "p",
-              "text": "12"
-            },
-            {
-              "type": "p",
-              "text": "42 万"
-            },
-            {
-              "type": "p",
-              "text": "21%"
-            },
-            {
-              "type": "p",
-              "text": "测试"
-            },
-            {
-              "type": "p",
-              "text": "15"
-            },
-            {
-              "type": "p",
-              "text": "38 万"
-            },
-            {
-              "type": "p",
-              "text": "19%"
-            },
-            {
-              "type": "p",
-              "text": "开发/其他"
-            },
-            {
-              "type": "p",
-              "text": "25 万"
-            },
-            {
-              "type": "p",
-              "text": "12%"
-            },
-            {
-              "type": "p",
-              "text": "第一眼看到这个表，我就觉得不对：预发布环境花了 42 万？测试环境花了 38 万？"
-            },
-            {
-              "type": "p",
-              "text": "这两个环境加起来 80 万，占了总费用的 40%。而它们的使用率呢？"
-            },
-            {
-              "type": "p",
-              "text": "我查了一下，测试环境最近一个月的 QPS 峰值是 127——还是某次压测产生的。日常 QPS 基本为 0。"
-            },
-            {
-              "type": "p",
-              "text": "预发布环境更离谱，我翻了部署记录，上一次有人往预发布环境部署东西，是两个月前。"
-            },
-            {
-              "type": "p",
-              "text": "80 万，养了两个几乎没人用的环境。"
-            },
-            {
-              "type": "p",
-              "text": "第二步：扒开节点看，更离谱"
-            },
-            {
-              "type": "p",
-              "text": "我按节点算了每台机器的 CPU 利用率，发现了一个让我震惊的事实："
-            },
-            {
-              "type": "p",
-              "text": "50 多个节点里，有 18 个 CPU 常年平均利用率不到 15%。"
-            },
-            {
-              "type": "p",
-              "text": "其中最夸张的一个节点：8 核 32G，上面只跑了 1 个 Pod，一个 QPS 为 0 的测试服务。"
-            },
-            {
-              "type": "p",
-              "text": "这台机器一年的费用是 2.3 万。也就是说，我们花了 2.3 万，养了一台几乎空转的服务器，上面跑着一个没人用的服务。"
-            },
-            {
-              "type": "p",
-              "text": "我查了一下这个服务是谁的。工单系统显示，创建人是半年前离职的一个实习生。"
-            },
-            {
-              "type": "p",
-              "text": "这种”僵尸节点”一共有 5 个，加起来一年浪费 11 万。"
-            },
-            {
-              "type": "p",
-              "text": "第三步：Pod 资源的”通胀”"
-            },
-            {
-              "type": "p",
-              "text": "接下来我分析了每个 Pod 的资源申请和实际使用。"
-            },
-            {
-              "type": "p",
-              "text": "这里要解释一下：K8s 里 Pod 申请资源（requests）的时候，云平台会按照申请量来预留资源，不管你实际用不用。也就是说， 你申请了 4G 内存，实际只用了 200M，云平台照样按 4G 收钱。"
-            },
-            {
-              "type": "p",
-              "text": "我拉了一份 Top 20 “申请/实际”差距最大的 Pod："
-            },
-            {
-              "type": "p",
-              "text": "服务"
-            },
-            {
-              "type": "p",
-              "text": "申请内存"
-            },
-            {
-              "type": "p",
-              "text": "实际使用"
-            },
-            {
-              "type": "p",
-              "text": "浪费比例"
-            },
-            {
-              "type": "p",
-              "text": "order-service"
-            },
-            {
-              "type": "p",
-              "text": "8Gi"
-            },
-            {
-              "type": "p",
-              "text": "380Mi"
-            },
-            {
-              "type": "p",
-              "text": "95%"
-            },
-            {
-              "type": "p",
-              "text": "user-service"
-            },
-            {
-              "type": "p",
-              "text": "4Gi"
-            },
-            {
-              "type": "p",
-              "text": "210Mi"
-            },
-            {
-              "type": "p",
-              "text": "95%"
-            },
-            {
-              "type": "p",
-              "text": "payment-service"
-            },
-            {
-              "type": "p",
-              "text": "4Gi"
-            },
-            {
-              "type": "p",
-              "text": "450Mi"
-            },
-            {
-              "type": "p",
-              "text": "89%"
-            },
-            {
-              "type": "p",
-              "text": "report-service"
-            },
-            {
-              "type": "p",
-              "text": "8Gi"
-            },
-            {
-              "type": "p",
-              "text": "1.2Gi"
-            },
-            {
-              "type": "p",
-              "text": "85%"
-            },
-            {
-              "type": "p",
-              "text": "order-service 申请了 8G 内存，实际只用了 380M。 20 倍的差距 。"
-            },
-            {
-              "type": "p",
-              "text": "我找 order-service 的开发聊了一下，问他为什么申请 8G。"
-            },
-            {
-              "type": "p",
-              "text": "他说：”当时上线的时候怕 OOM，就多申请了一点。后来也没人管，就一直没改。”"
-            },
-            {
-              "type": "p",
-              "text": "“多申请了一点”——8G 叫”一点”？"
-            },
-            {
-              "type": "p",
-              "text": "后来我发现，这个 8G 是从另一个服务复制过来的 YAML，那个服务确实需要 8G。但 order-service 的流量只有那个服务的十分之一。"
-            },
-            {
-              "type": "p",
-              "text": "全集群类似这样的”资源通胀”，加起来一年浪费大约 30 万。"
-            },
-            {
-              "type": "p",
-              "text": "第四步：最难的部分——说服人"
-            },
-            {
-              "type": "p",
-              "text": "到这里，我已经找到了大约 120 万的”浪费”。技术上怎么优化我很清楚：缩节点、降 requests、清理僵尸服务、测试环境定时缩容。"
-            },
-            {
-              "type": "p",
-              "text": "但真正难的是让所有人配合。"
-            },
-            {
-              "type": "p",
-              "text": "二、解决过程"
-            },
-            {
-              "type": "p",
-              "text": "第一场仗：测试环境缩容"
-            },
-            {
-              "type": "p",
-              "text": "我写了一个方案：测试环境非工作时间（晚上 8 点到第二天早上 9 点，周末全天）自动缩容到 2 个节点。"
-            },
-            {
-              "type": "p",
-              "text": "方案评审会上，测试组长第一个跳出来反对："
-            },
-            {
-              "type": "p",
-              "text": "“万一周末我要回归测试呢？环境起不来怎么办？” “周一早上环境自动扩容，Pod 启动需要时间，耽误我们测试进度谁负责？”"
-            },
-            {
-              "type": "p",
-              "text": "我说可以配一个 webhook，需要的时候手动触发扩容。"
-            },
-            {
-              "type": "p",
-              "text": "他说：”那多麻烦，我现在随时想测就能测。”"
-            },
-            {
-              "type": "p",
-              "text": "僵了半个月。最后是领导出面拍了板：”先试一个月，有问题再调整。”"
-            },
-            {
-              "type": "p",
-              "text": "试了一个月，测试组一共手动触发过 2 次扩容。其他时间，那 13 个节点确实在空转。"
-            },
-            {
-              "type": "p",
-              "text": "省了 20 万，但花了半个月说服人。"
-            },
-            {
-              "type": "p",
-              "text": "第二场仗：降低资源 requests"
-            },
-            {
-              "type": "p",
-              "text": "我打算用用 VPA（Vertical Pod Autoscaler，垂直自动扩缩容）自动调整 Pod 的资源 requests。"
-            },
-            {
-              "type": "p",
-              "text": "但这里有个风险：VPA 会重启 Pod 来应用新的资源配置。如果生产环境的 Pod 被频繁重启，可能会影响服务。"
-            },
-            {
-              "type": "p",
-              "text": "我先在测试环境跑了一周，确认没问题后，准备在生产环境灰度。"
-            },
-            {
-              "type": "p",
-              "text": "结果被架构师拦住了："
-            },
-            {
-              "type": "p",
-              "text": "“VPA 重启 Pod 的风险你评估过吗？如果有状态服务被重启怎么办？” “资源降了之后，遇到流量突增，服务会不会挂？”"
-            },
-            {
-              "type": "p",
-              "text": "我说会配 PDB 保护，而且 VPA 有推荐模式（只推荐不应用），可以先观察。"
-            },
-            {
-              "type": "p",
-              "text": "他说：”那你就先用推荐模式跑一个月，拿数据说话。”"
-            },
-            {
-              "type": "p",
-              "text": "又是一个月。"
-            },
-            {
-              "type": "p",
-              "text": "一个月后数据出来了：VPA 建议把 60% 的 Pod 内存 requests 降低 50% 以上。"
-            },
-            {
-              "type": "p",
-              "text": "但架构师又说：”建议归建议，你敢保证降了不出问题吗？”"
-            },
-            {
-              "type": "p",
-              "text": "最后折中方案：先挑 10 个无状态服务手动降 requests，观察两周，没问题再推广。"
-            },
-            {
-              "type": "p",
-              "text": "注：VPA 目前对无状态服务支持较好，有状态服务建议仍使用 HPA + 手工调整 requests，避免重启导致状态丢失。"
-            },
-            {
-              "type": "p",
-              "text": "两周后，其中 2 个服务各出了一次 OOMKill。"
-            },
-            {
-              "type": "p",
-              "text": "领导找我谈话：”你省了 25 万，但引发了 2 次故障，值不值？”"
-            },
-            {
-              "type": "p",
-              "text": "我说值。因为 OOMKill 之后 Pod 自动重启了，影响时间不到 10 秒，而且这两个服务的 requests 之前确实太高了，降了之后依然有足够的余量。"
-            },
-            {
-              "type": "p",
-              "text": "领导说：”你说的我理解，但下次再出故障，这个优化项目就停。”"
-            },
-            {
-              "type": "p",
-              "text": "省了 25 万，但过程像走钢丝。"
-            },
-            {
-              "type": "p",
-              "text": "第三场仗：清理僵尸服务"
-            },
-            {
-              "type": "p",
-              "text": "我写了个脚本，自动识别连续 30 天 QPS 为 0 的服务。一跑，找出来 32 个。"
-            },
-            {
-              "type": "p",
-              "text": "我给每个服务的负责人发了通知：”你的服务已经 30 天没有流量了，确认是否还需要？如果不需要，我们计划在下周五清理。”"
-            },
-            {
-              "type": "p",
-              "text": "结果收到的回复五花八门："
-            },
-            {
-              "type": "p",
-              "text": "“这个服务下个季度要重构，先留着。”——产品经理 “我不负责这个服务了，你找 XXX。”——开发 A “XXX 已经离职了。”——开发 B “这个服务虽然没流量，但它的数据库里还有数据，不能删。”——开发 C “删了吧，我忘了还有这个服务。”——开发 D"
-            },
-            {
-              "type": "p",
-              "text": "32 个僵尸服务，真正确认可以删的只有 15 个。剩下的要么有人”说不准以后用”，要么找不到负责人。"
-            },
-            {
-              "type": "p",
-              "text": "最后我采取了”温和手段”：先把这 32 个服务全部缩容到 0 副本（不删除，但不再占用计算资源），保留配置。如果 3 个月内没人恢复，再彻底删除。"
-            },
-            {
-              "type": "p",
-              "text": "省了 10 万，但沟通成本比技术实施成本高 3 倍。"
-            },
-            {
-              "type": "p",
-              "text": "第四场仗：Spot 实例"
-            },
-            {
-              "type": "p",
-              "text": "这是最有争议的一个优化。"
-            },
-            {
-              "type": "p",
-              "text": "我们全部用的按量付费实例，没有用 Spot（抢占式实例）。Spot 的价格通常是按量的 20-30%，如果 30% 的无状态服务改用 Spot，一年能省 15 万。"
-            },
-            {
-              "type": "p",
-              "text": "但 Spot 有一个致命问题： 云平台可以在任何时候回收它。"
-            },
-            {
-              "type": "p",
-              "text": "我之前在上一家公司用过 Spot，有一次被回收导致服务不可用，被领导骂了一顿。所以我对此有心理阴影。"
-            },
-            {
-              "type": "p",
-              "text": "这次我做了更充分的准备："
-            },
-            {
-              "type": "p",
-              "text": "只在无状态服务上用 Spot"
-            },
-            {
-              "type": "p",
-              "text": "配了 PDB（PodDisruptionBudget，用于限制同时中断的 Pod 数量），确保至少有足够多的 Pod 可用"
-            },
-            {
-              "type": "p",
-              "text": "分布在多个可用区，避免单 AZ 回收影响太大"
-            },
-            {
-              "type": "p",
-              "text": "用 Cluster Autoscaler 自动补充被回收的节点"
-            },
-            {
-              "type": "p",
-              "text": "方案评审的时候，SRE 团队的同事问了一个问题："
-            },
-            {
-              "type": "p",
-              "text": "“Spot 被回收的时候，Pod 重建需要多长时间？如果重建时间超过 30 秒，对用户的影响怎么评估？”"
-            },
-            {
-              "type": "p",
-              "text": "我说我测试过，大部分情况下 10-15 秒就能恢复。"
-            },
-            {
-              "type": "p",
-              "text": "他说：”大部分？那小部分呢？”"
-            },
-            {
-              "type": "p",
-              "text": "我说小部分可能需要 30-60 秒。"
-            },
-            {
-              "type": "p",
-              "text": "他说：”30-60 秒的服务中断，你能接受吗？”"
-            },
-            {
-              "type": "p",
-              "text": "说实话，我不太能接受。但我们现在的服务可用性目标是 99.9%，理论上每月允许 43 分钟的故障时间。Spot 回收导致的故障，一个月可能也就几次，每次不到 1 分钟，在 SLA 范围内。"
-            },
-            {
-              "type": "p",
-              "text": "最后还是领导拍板：”先在非核心服务上试，核心服务不动。”"
-            },
-            {
-              "type": "p",
-              "text": "上线一个月，Spot 被回收了 3 次，最长的一次 Pod 重建花了 45 秒。没有触发用户投诉。"
-            },
-            {
-              "type": "p",
-              "text": "省了 15 万，但上线前我失眠了两个晚上。"
-            },
-            {
-              "type": "p",
-              "text": "最终结果"
-            },
-            {
-              "type": "p",
-              "text": "优化项"
-            },
-            {
-              "type": "p",
-              "text": "节省（万/年）"
-            },
-            {
-              "type": "p",
-              "text": "代价"
-            },
-            {
-              "type": "p",
-              "text": "僵尸节点/服务清理"
-            },
-            {
-              "type": "p",
-              "text": "21"
-            },
-            {
-              "type": "p",
-              "text": "沟通成本高，部分服务找不到负责人"
-            },
-            {
-              "type": "p",
-              "text": "测试环境非工作时间缩容"
-            },
-            {
-              "type": "p",
-              "text": "20"
-            },
-            {
-              "type": "p",
-              "text": "测试团队初期反对"
-            },
-            {
-              "type": "p",
-              "text": "资源 requests 优化"
-            },
-            {
-              "type": "p",
-              "text": "25"
-            },
-            {
-              "type": "p",
-              "text": "2 次 OOMKill，领导谈话一次"
-            },
-            {
-              "type": "p",
-              "text": "引入 Spot 实例"
-            },
-            {
-              "type": "p",
-              "text": "15"
-            },
-            {
-              "type": "p",
-              "text": "上线前焦虑，3 次回收事件"
-            },
-            {
-              "type": "p",
-              "text": "开发环境降配"
-            },
-            {
-              "type": "p",
-              "text": "12"
-            },
-            {
-              "type": "p",
-              "text": "基本无阻力"
-            },
-            {
-              "type": "p",
-              "text": "其他（日志存储、镜像仓库等）"
-            },
-            {
-              "type": "p",
-              "text": "30"
-            },
-            {
-              "type": "p",
-              "text": "低风险，顺利推进"
-            },
-            {
-              "type": "p",
-              "text": "合计"
-            },
-            {
-              "type": "p",
-              "text": "123"
-            },
-            {
-              "type": "p",
-              "text": "从 203 万砍到了 80 万。"
-            },
-            {
-              "type": "p",
-              "text": "三、我学到了什么"
-            },
-            {
-              "type": "p",
-              "text": "1、成本优化的本质是组织问题，不是技术问题"
-            },
-            {
-              "type": "p",
-              "text": "技术上怎么省钱，我一天就能列出清单。但让清单落地，花了两个月。"
-            },
-            {
-              "type": "p",
-              "text": "每个优化项背后，都有人在”守护”自己的资源："
-            },
-            {
-              "type": "p",
-              "text": "开发怕 OOM，不愿意降 requests"
-            },
-            {
-              "type": "p",
-              "text": "测试怕耽误进度，不愿意缩容"
-            },
-            {
-              "type": "p",
-              "text": "产品怕以后要用，不愿意下线服务"
-            },
-            {
-              "type": "p",
-              "text": "SRE 怕故障，不愿意用 Spot"
-            },
-            {
-              "type": "p",
-              "text": "你要做的不是证明”这样能省钱”，而是证明”这样省钱且安全”。"
-            },
-            {
-              "type": "p",
-              "text": "2、先做低风险的，建立信任"
-            },
-            {
-              "type": "p",
-              "text": "如果我上来就搞 Spot 实例和降 requests，大概率会被叫停。"
-            },
-            {
-              "type": "p",
-              "text": "我的策略是：先做没争议的（清理僵尸节点、开发环境降配、日志存储优化），用这些”白捡”的节省建立信任，再推动有争议的优化。"
-            },
-            {
-              "type": "p",
-              "text": "先赢几场小的，才有资格打大的仗。"
-            },
-            {
-              "type": "p",
-              "text": "3、数据比道理管用"
-            },
-            {
-              "type": "p",
-              "text": "我说”测试环境利用率低，应该缩容”，测试组长不信。"
-            },
-            {
-              "type": "p",
-              "text": "我拉了一张图：过去 30 天，测试环境 15 个节点的 CPU 利用率，每天晚上 8 点到第二天早上 9 点，全部低于 5%。"
-            },
-            {
-              "type": "p",
-              "text": "图贴出来，他没话说了。"
-            },
-            {
-              "type": "p",
-              "text": "不要说”我觉得浪费”，要说”这是数据，你自己看”。"
-            },
-            {
-              "type": "p",
-              "text": "4、永远不要一步到位"
-            },
-            {
-              "type": "p",
-              "text": "资源 requests 优化，我没有直接用 VPA 自动应用，而是先推荐模式观察一个月，再手动挑 10 个服务试点，最后才推广。"
-            },
-            {
-              "type": "p",
-              "text": "Spot 实例，我没有一上来就搞 30%，而是先在 5% 的非核心服务上试，确认没问题再扩大范围。"
-            },
-            {
-              "type": "p",
-              "text": "每一步都留退路，每一步都有回滚方案。"
-            },
-            {
-              "type": "p",
-              "text": "5、成本优化是持续的事，不是项目"
-            },
-            {
-              "type": "p",
-              "text": "很多人以为成本优化是一个”项目”——做完了就完了。"
-            },
-            {
-              "type": "p",
-              "text": "不是。今天是合理的配置，三个月后可能就不合理了。新的服务上线、流量增长、业务下线——这些都会影响成本结构。"
-            },
-            {
-              "type": "p",
-              "text": "我现在每个月会跑一次成本分析，看看有没有新的浪费。这比一次性砍 100 万更有价值。"
-            },
-            {
-              "type": "p",
-              "text": "四、写在最后"
-            },
-            {
-              "type": "p",
-              "text": "这次经历让我对”运维的价值”有了新的理解。"
-            },
-            {
-              "type": "p",
-              "text": "以前我觉得运维的价值是保证系统稳定。现在我觉得，在 保证稳定的前提下，帮公司省钱，同样是运维的价值，甚至可能是更大的价值。"
-            },
-            {
-              "type": "p",
-              "text": "203 万砍到 80 万，省了 123 万。这些钱可以多招两个开发、多买几台服务器、或者直接变成利润。"
-            },
-            {
-              "type": "p",
-              "text": "但我也清楚，省钱是有边界的。你不能为了省 100 万，冒 200 万的风险。每一刀砍下去之前，都要想清楚： 省了多少钱，承担了什么风险，风险能不能兜住。"
-            },
-            {
-              "type": "p",
-              "text": "最难的不是技术，是判断和平衡。"
-            },
-            {
-              "type": "p",
-              "text": "> > > >"
-            },
-            {
-              "type": "p",
-              "text": "更多精彩评论"
-            },
-            {
-              "type": "p",
-              "text": "在这篇文章下方的评论区，网友们对此展开激烈讨论。"
-            },
-            {
-              "type": "p",
-              "text": "有网友 调侃 ："
-            },
-            {
-              "type": "p",
-              "text": "网友1：如果有 120W 空间，那这次省 60W 就可以了。"
-            },
-            {
-              "type": "p",
-              "text": "网友2：这次省了60W，下次领导就会让你再省30W，领导业绩出来了，生产稳定降低了，也严重影响其他同事的工作效率和习惯了。"
-            },
-            {
-              "type": "p",
-              "text": "也有不同的 现实视角 ："
-            },
-            {
-              "type": "p",
-              "text": "网友3：你给公司一年省了 100 万 公司一年能多给你 10 万吗？ 你节省的费用，是否会影响某些领导的利益呢？所以这种情况如果公司没有明确的激励制度，还是睁一只眼闭一只眼吧。"
-            },
-            {
-              "type": "p",
-              "text": "网友4：公司在扩张时，花钱越少，运维越没价值。 只有公司要倒闭时，才是各种省钱。运维，稳定才是第一，成本第二。"
-            },
-            {
-              "type": "p",
-              "text": "还有网友分享了 实际调参经验 ："
-            },
-            {
-              "type": "p",
-              "text": "网友5：我都是 request 设的相对来说低一点，limit 设置的高，比如，request 256M，limit 2G。收费一般都是按照 request 来收的，当然平台也会按照用量调高 request，但是相对来说能剩很多费用。"
-            },
-            {
-              "type": "p",
-              "text": "那么，你们的 K8s 集群一年云费用是多少？有没有发现过离谱的浪费？欢迎在评论区聊聊。"
-            },
-            {
-              "type": "p",
-              "text": "作者丨星影"
-            },
-            {
-              "type": "p",
-              "text": "来源丨网址： https://zhuanlan.zhihu.com/p/2037196631498601353?share_code=11sRRlC14Dhpa&utm_psn=2075997638692954831"
-            },
-            {
-              "type": "p",
-              "text": "dbaplus社群欢迎广大技术人员投稿，投稿邮箱： editor@dbaplus.cn"
-            },
-            {
-              "type": "p",
-              "text": "跳转微信打开"
-            }
-          ],
-          "url": "https://mp.weixin.qq.com/s?__biz=MzkzMjYzNjkzNw==&mid=2247638088&idx=1&sn=a02d1bf8b62447cf9924b62bd750e751",
-          "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/giamgWvCHDYbzrGMh2AIxMfZcianXuPM3rCtsasQujxibwibvpFmPCoE5uCUrYqb0ibSvWBTtPWooEXh6mJpiaz4BpiaH7G8jsGJG81uiacLl4e3mxQ/0?wx_fmt=jpeg",
-          "ts": 1791933300000,
-          "date": "10月13日",
-          "type": "图文",
-          "author": "dbaplus社群",
-          "sourceName": "dbaplus社群",
-          "accountName": "dbaplus社群",
-          "topics": [
-            "life"
-          ],
-          "degraded": true,
-          "stats": {
-            "read": "6.9万",
-            "likes": 965,
-            "shares": 652,
-            "favorites": 171,
-            "comments": 0
-          },
-          "read": "6.9万",
           "comments": [],
           "commentSource": "none"
         }
@@ -388621,7 +388130,7 @@
       "name": "新智元",
       "desc": "真实公众号 · Wechat2RSS",
       "avatar": "",
-      "lastPushAt": 1791978540000,
+      "lastPushAt": 1792068480000,
       "articles": [
         {
           "id": "1616488400",
