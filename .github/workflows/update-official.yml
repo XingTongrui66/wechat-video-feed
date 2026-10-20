@@ -91,7 +91,7 @@ jobs:
             data/ai-review.json
             data/articles-history.json
             data/articles-missing.txt
-            data/articles/**/*.json
+            data/articles/
 
       # 上传单篇到腾讯 COS：手机端 vwFetchJson 远程优先读 COS，
       # 这里必须把 data/articles/{id}.json 推上去，"有标题就有正文"才成立。
