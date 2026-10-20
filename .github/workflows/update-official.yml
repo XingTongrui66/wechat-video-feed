@@ -5,8 +5,8 @@ name: Update official feed
 # 由 GitHub Pages 直接对外提供 → APK 无需重新打包即可吃到最新数据。
 on:
   schedule:
-    # UTC 20:00 = 北京时间 04:00，与视频号任务（22:00 UTC）错开，避免同时提交
-    - cron: '0 20 * * *'
+    # 每 2 小时跑一次，保证"有标题就有正文"不变式最多 2 小时闭环一次。
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       # content library 是持续累积池（本地已 75MB 且每轮都会变），
       # 提交进 git 会让仓库迅速膨胀 → 改用 Actions 缓存跨轮保留。
       # 缓存未命中时脚本会优雅降级为空池，不影响抓取結果。
@@ -52,12 +57,75 @@ jobs:
         continue-on-error: true
         run: node scripts/ai-comments.js --conc 4
 
+      # 剥离正文为单篇小文件 data/articles/{id}.json（幂等）：
+      # 保证 official-feed.json 里每一篇有标题的文章，都配一个可独立拉取的正文章节。
+      - name: Strip article bodies into per-id files
+        run: python3 scripts/strip-content-to-articles.py
+
+      # 审计：检查 official-feed 里是否存在"有标题但缺单篇"的文章（不应发生，仅记录）。
+      - name: Audit per-article body coverage
+        run: |
+          python3 - <<'PY'
+          import json,os
+          feed=json.load(open('data/official-feed.json',encoding='utf-8'))
+          art='data/articles'
+          missing=[]
+          for a in (feed.get('accounts') or []):
+              for it in (a.get('articles') or []):
+                  cid=it.get('id')
+                  if cid and not os.path.exists(os.path.join(art,f'{cid}.json')):
+                      missing.append(str(cid))
+          open('data/articles-missing.txt','w').write('\n'.join(missing))
+          print('official-feed articles:',sum(len(a.get('articles') or []) for a in (feed.get('accounts') or [])))
+          print('missing per-id bodies:',len(missing))
+          if missing: print('first 20:',missing[:20])
+          PY
+
       - name: Commit updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: update official/look feed + AI comments'
+          commit_message: 'chore: update official/look feed + AI comments + per-id article bodies'
           file_pattern: >-
             data/official-feed.json
             data/look-feed.json
             data/ai-review.json
             data/articles-history.json
+            data/articles-missing.txt
+            data/articles/**/*.json
+
+      # 上传单篇到腾讯 COS：手机端 vwFetchJson 远程优先读 COS，
+      # 这里必须把 data/articles/{id}.json 推上去，"有标题就有正文"才成立。
+      - name: Upload per-id article bodies to Tencent COS
+        if: success()
+        env:
+          COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
+          COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
+          COS_BUCKET: vw-data-1311399697
+          COS_REGION: ap-guangzhou
+        run: |
+          pip3 install -q cos-python-sdk
+          python3 - <<'PY'
+          import os
+          from qcloud_cos import CosConfig, CosS3Client
+          cfg=CosConfig(Region=os.environ['COS_REGION'],
+                        SecretId=os.environ['COS_SECRET_ID'],
+                        SecretKey=os.environ['COS_SECRET_KEY'],
+                        Scheme='https')
+          c=CosS3Client(cfg)
+          art='data/articles'
+          up=0; fail=0
+          for f in sorted(os.listdir(art)):
+              if not f.endswith('.json'): continue
+              try:
+                  c.put_object(Bucket=os.environ['COS_BUCKET'],
+                               Key='data/articles/'+f,
+                               Body=open(os.path.join(art,f),'rb').read(),
+                               ContentType='application/json; charset=utf-8')
+                  up+=1
+              except Exception as e:
+                  fail+=1
+                  if fail<5: print('put fail',f,e)
+          print('COS upload: ok=%d fail=%d' % (up,fail))
+          if fail and fail>up:
+              raise SystemExit('too many COS upload failures')
+          PY
