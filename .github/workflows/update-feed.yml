@@ -71,6 +71,8 @@ jobs:
       # 这样每小时抓取后自动把最新数据推到 COS，前端(手机)从 COS 拉到实时更新。
       # timeout-minutes: 15 → 上传卡死时 15 分钟自动放行，锁不会被无限占住。
       # 去掉 continue-on-error：上传失败/403/404 时让 CI 标 failure，避免"假 success 但 COS 没新数据"。
+      # 增量上传：data/articles/ 只传本轮 git diff 里新增/变更的单篇（不再全量递归 1700 篇导致超时）；
+      # 4 个 feed JSON 是单文件，全量上传（秒传）。
       - name: Upload latest data to Tencent COS
         timeout-minutes: 15
         env:
@@ -81,8 +83,24 @@ jobs:
         run: |
           pip install -q coscmd
           coscmd config -a "$COS_SECRET_ID" -s "$COS_SECRET_KEY" -b "$COS_BUCKET" -r "$COS_REGION" -m 10
+          # 4 个主数据单文件：全量上传（每个几秒）
           coscmd upload data/official-feed.json data/official-feed.json
           coscmd upload data/look-feed.json data/look-feed.json
           coscmd upload data/channels-feed.json data/channels-feed.json
           coscmd upload data/ai-review.json data/ai-review.json
-          if [ -d data/articles ]; then coscmd upload -r data/articles data/articles; fi
+          # 单篇增量：只传本轮变更的 data/articles/*.json
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'data/articles/' 2>/dev/null || true)
+          if [ -z "$CHANGED" ]; then
+            # 首轮/无 diff 时回退全量（仅首轮慢，后续走增量）
+            echo "[COS] first run or no diff, full upload of data/articles"
+            coscmd upload -r data/articles data/articles
+          else
+            echo "$CHANGED" | while read -r f; do
+              case "$f" in
+                data/articles/*.json)
+                  coscmd upload "$f" "$f" || echo "[COS] upload fail: $f"
+                  ;;
+              esac
+            done
+            echo "[COS] incremental upload: $(echo "$CHANGED" | grep -c 'data/articles/.*\.json') changed per-id bodies"
+          fi
