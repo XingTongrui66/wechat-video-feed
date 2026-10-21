@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     # 串行运行，避免并行轮次互相覆盖已累积的评论
     # group 改为 shared-git-lock：与 update-official.yml 共享同一把锁，
-    # 两条流水线同时想推 main 时，后启动的会排队等先跑完的推完，避免 non-fast-forward 拒绝
+    # cancel-in-progress: true → 新触发直接抢占旧 run（旧的最多 15 分钟超时放行，不会无限排队）
     concurrency:
       group: shared-git-lock
-      cancel-in-progress: false
+      cancel-in-progress: true
     env:
       # CI 上跳过 localhost 微信源（云端跑不到），其余 Web 源正常抓取
       GITHUB_ACTIONS: 'true'
@@ -53,9 +53,8 @@ jobs:
 
       # AI 评论：增量生成（跳过已存在的），写入 data/ai-review.json。
       # 需要仓库 Secrets 里配置 SF_KEY（SiliconFlow API Key）。
-      # continue-on-error：未配置 key 时只跳过评论，不影响视频号/公众号抓取提交。
+      # 去掉 continue-on-error：生成失败/0 条/402/没 key 时直接让 CI 标 failure，避免"假 success 但 key 数不涨"。
       - name: Generate AI comments
-        continue-on-error: true
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
         run: node scripts/ai-comments.js --conc 4
@@ -70,8 +69,10 @@ jobs:
       # 密钥从仓库 Secrets 读取，绝不明文写在仓库里。
       # 需先在 仓库 Settings → Secrets 配置：COS_SECRET_ID / COS_SECRET_KEY
       # 这样每小时抓取后自动把最新数据推到 COS，前端(手机)从 COS 拉到实时更新。
+      # timeout-minutes: 15 → 上传卡死时 15 分钟自动放行，锁不会被无限占住。
+      # 去掉 continue-on-error：上传失败/403/404 时让 CI 标 failure，避免"假 success 但 COS 没新数据"。
       - name: Upload latest data to Tencent COS
-        continue-on-error: true
+        timeout-minutes: 15
         env:
           COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
           COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
