@@ -20,11 +20,20 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const http = require('http');
 const crypto = require('crypto');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const FEED_PATH = path.join(DATA_DIR, 'channels-feed.json');
 const HISTORY_PATH = path.join(DATA_DIR, 'channels-history.json');
+
+// ---- B站 抓取代理（绕开 CI 机房 IP 的 -400 风控）----
+// 设置 BILI_PROXY（如 http://1.2.3.4:8080 / socks5 需另处理）后，
+// 所有 api.bilibili.com 请求经 HTTP CONNECT 隧道走代理出口，避免被 B站 机房风控。
+// 代理认证（可选）：BILI_PROXY_USER / BILI_PROXY_PASS。
+const BILI_PROXY = process.env.BILI_PROXY || '';
+const BILI_PROXY_USER = process.env.BILI_PROXY_USER || '';
+const BILI_PROXY_PASS = process.env.BILI_PROXY_PASS || '';
 
 const HEADERS = {
   'User-Agent':
@@ -71,27 +80,62 @@ let _wbiKeys = null;
 
 function fetchJson(url, tries) {
   tries = tries || 2;
+  // 走代理时：只对 B站 域名走 CONNECT 隧道，其它域名（如 github.io 远端 feed）直连
+  const viaProxy = BILI_PROXY && /bilibili\.|bilivideo\.|hdslb\./.test(url);
   return new Promise(function (resolve, reject) {
     let attempt = 0;
     function go() {
-      const req = https.get(
-        url,
-        { headers: HEADERS },
-        function (res) {
-          if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-            res.resume();
-            return resolve(fetchJson(res.headers.location, tries));
-          }
-          let body = '';
-          res.setEncoding('utf8');
-          res.on('data', function (c) { body += c; });
-          res.on('end', function () {
-            try { resolve(JSON.parse(body)); } catch (e) { retry(new Error('JSON parse failed: ' + e.message)); }
+      let req;
+      if (viaProxy) {
+        const pu = new URL(BILI_PROXY);
+        req = http.request({
+          host: pu.hostname,
+          port: pu.port || 80,
+          method: 'CONNECT',
+          headers: pu.pathname ? { 'Proxy-Authorization': 'basic ' + Buffer.from((BILI_PROXY_USER + ':' + BILI_PROXY_PASS)).toString('base64') } : {}
+        });
+        req.on('connect', function (res, socket) {
+          if (res.statusCode !== 200) { socket.destroy(new Error('proxy CONNECT ' + res.statusCode)); return; }
+          // 建 TLS 隧道到目标
+          const net = require('net');
+          const target = new URL(url);
+          const tls = require('tls');
+          const host = target.hostname;
+          const port = target.port || 443;
+          const p = tls.connect({ socket: socket, servername: host, port: 443, host: host }, function () {
+            const proxyReq = https.request({
+              host: host, port: port, path: target.pathname + target.search,
+              headers: HEADERS, server: host
+            }, function (res2) { handleRes(res2); });
+            proxyReq.on('error', function (e) { retry(e); });
+            proxyReq.end();
           });
-        }
-      );
+          p.on('error', function (e) { reject(e); });
+        });
+        req.on('error', function (e) { retry(e); });
+        req.setTimeout(15000, function () { req.destroy(new Error('proxy connect timeout')); });
+        req.end();
+      } else {
+        req = https.get(
+          url,
+          { headers: HEADERS },
+          function (res) { handleRes(res); }
+        );
+      }
       req.on('error', function (e) { retry(e); });
       req.setTimeout(15000, function () { req.destroy(new Error('request timeout')); });
+    }
+    function handleRes(res) {
+      if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
+        return resolve(fetchJson(res.headers.location, tries));
+      }
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', function (c) { body += c; });
+      res.on('end', function () {
+        try { resolve(JSON.parse(body)); } catch (e) { retry(new Error('JSON parse failed: ' + e.message)); }
+      });
     }
     function retry(err) {
       attempt += 1;
@@ -99,6 +143,7 @@ function fetchJson(url, tries) {
       console.warn('[update-feed] retry ' + attempt + ' -', err.message);
       setTimeout(go, 1200 * attempt);
     }
+    if (viaProxy) console.log('[update-feed] using proxy ' + BILI_PROXY.replace(/\/\/.*@/,'//') + ' for ' + url.split('/').slice(0,3).join('/'));
     go();
   });
 }
