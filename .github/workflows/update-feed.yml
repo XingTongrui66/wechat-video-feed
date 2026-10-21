@@ -37,6 +37,10 @@ jobs:
 
       - name: Generate video feed
         timeout-minutes: 40
+        # 风控兜底：B站 对 CI 机房 IP -400 风控时，本步失败但**不挂整条流水线**；
+        # 后续公众号/评论/COS 上传照常跑，视频号沿用上一轮数据（脚本本身有"保留旧 feed"逻辑）。
+        # B站 风控解除后，下一次成功 generate，新视频自动顶上。
+        continue-on-error: true
         env:
           # 增量累积评论：继承 checkout 出来的上一轮 data/channels-feed.json，每轮只给前 300 个无评论视频补抓
           COMMENT_BATCH: '300'
