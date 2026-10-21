@@ -12,11 +12,11 @@ on:
 permissions:
   contents: write
 
-# 与本仓库其它 feed 任务排队串行，避免两个任务同时向同一分支提交产生冲突。
-# 使用仓库级共享锁组 shared-git-lock，所有会 push main 的 workflow 都用它。
+# 与本仓库其它 feed 任务共用一把锁，避免两条同时 push main 撞 non-fast-forward。
+# cancel-in-progress: true → 新触发直接抢占正在跑的旧 run（旧的最多 15 分钟超时放行，不会无限排队）。
 concurrency:
   group: shared-git-lock
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-official:
@@ -51,11 +51,11 @@ jobs:
         run: node scripts/update-official-feed.js
 
       # AI 评论：增量生成（已有评论的文章会跳过）。
-      # SF_KEY 未配置时本步骤会失败但不影响上面的抓取结果提交。
+      # 去掉 continue-on-error：生成失败/0 条/402/没 key 时直接让 CI 标 failure，
+      # 避免"假 success 但 key 数不涨"的坑。
       - name: Generate AI comments (incremental)
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
-        continue-on-error: true
         run: node scripts/ai-comments.js --conc 4
 
       # 剥离正文为单篇小文件 data/articles/{id}.json（幂等）：
@@ -97,8 +97,10 @@ jobs:
       # 上传单篇到腾讯 COS：手机端 vwFetchJson 远程优先读 COS，
       # 这里必须把 data/articles/{id}.json 推上去，"有标题就有正文"才成立。
       # 用纯标准库实现（hmac/hashlib/urllib），不依赖任何第三方包，避免 CI 装包失败。
+      # timeout-minutes: 15 → 上传卡死时 15 分钟自动放行，锁不会被无限占住。
       - name: Upload per-id article bodies to Tencent COS
         if: success()
+        timeout-minutes: 15
         env:
           COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
           COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
@@ -151,6 +153,7 @@ jobs:
       # 同样纯标准库方式上传 4 个 feed JSON（官方/视频号主数据）
       - name: Upload feed JSONs to Tencent COS
         if: success()
+        timeout-minutes: 15
         env:
           COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
           COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
