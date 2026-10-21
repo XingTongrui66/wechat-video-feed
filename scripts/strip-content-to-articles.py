@@ -27,19 +27,55 @@ os.makedirs(ART_DIR, exist_ok=True)
 
 STRIP_KEYS = ("content", "body")
 
-# 脏数据可能含孤立代理字符（如半个 emoji：`\ud83d`），json.dump(ensure_ascii=False)
-# 写 UTF-8 时会抛 UnicodeEncodeError。递归清洗所有字符串，去掉 U+D800–U+DFFF。
-_SURROGATE_RE = re.compile(r"[\ud800-\udfff]")
+# ---------------------------------------------------------------------------
+# 密钥脱敏：单篇正文里若混入形如 API key 的字符串（例：某篇文章贴了
+# Stripe / GitHub / AWS 密钥样例），会把 GitHub 仓库的 Push Protection
+# 触发，导致 CI 的 git push 被 GH013 拒。写单篇前把这些"密钥形"字符串
+# 替换为 [REDACTED]，让文章可读但不再触发 secret scanning。
+# 这是最小化脱敏：只命中高置信度的密钥前缀，避免误伤正文。
+# ---------------------------------------------------------------------------
+_SECRET_PATTERNS = [
+    r"sk_(live|test)_[A-Za-z0-9]{20,}",       # Stripe
+    r"ghp_[A-Za-z0-9]{30,}",                  # GitHub PAT (classic)
+    r"gho_[A-Za-z0-9]{30,}",
+    r"ghs_[A-Za-z0-9]{30,}",
+    r"ghu_[A-Za-z0-9]{30,}",
+    r"github_pat_[A-Za-z0-9_]{20,}",          # GitHub PAT (fine-grained)
+    r"AKIA[A-Z0-9]{16}",                      # AWS access key id
+    r"AIza[A-Za-z0-9_-]{35}",                 # Google API key
+    r"xox[bpars]-[A-Za-z0-9-]{10,}",          # Slack token
+    r"AKID[A-Za-z0-9]{20,}",                  # 腾讯云 secret id
+    r"-----BEGIN [A-Z ]*PRIVATE KEY-----",    # PEM 私有密钥
+]
+_SECRET_RE = re.compile("|".join(f"({p})" for p in _SECRET_PATTERNS))
 
+def redact_secrets(text):
+    """把文本里形如密钥的子串替换为 [REDACTED]。仅作用于字符串值。"""
+    if not isinstance(text, str):
+        return text
+    return _SECRET_RE.sub("[REDACTED]", text)
 
-def _sanitize(obj):
-    if isinstance(obj, str):
-        return _SURROGATE_RE.sub("", obj)
-    if isinstance(obj, list):
-        return [_sanitize(x) for x in obj]
-    if isinstance(obj, dict):
-        return {k: _sanitize(v) for k, v in obj.items()}
-    return obj
+def deep_redact(o):
+    if isinstance(o, str):
+        return redact_secrets(o)
+    if isinstance(o, dict):
+        return {k: deep_redact(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [deep_redact(v) for v in o]
+    return o
+
+# 清理孤立 UTF-16 代理（\ud800-\udfff），避免 json.dump(ensure_ascii=False)
+# 写 utf-8 文件时 UnicodeEncodeError（源 RSS 偶有截断表情残骸）。
+_SURR_RE = re.compile(r"[\ud800-\udfff]")
+
+def deep_clean(o):
+    if isinstance(o, str):
+        return _SURR_RE.sub("", o)
+    if isinstance(o, dict):
+        return {k: deep_clean(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [deep_clean(v) for v in o]
+    return o
 
 
 def strip_feed(fname):
@@ -77,9 +113,13 @@ def strip_feed(fname):
                         "content": content,
                         "body": body,
                     }
+                    # 脱敏密钥形字符串，避免 GitHub Push Protection 拒推
+                    payload = deep_redact(payload)
+                    # 清理孤立 UTF-16 代理（避免 ensure_ascii=False 写文件崩溃）
+                    payload = deep_clean(payload)
                     try:
                         with open(os.path.join(ART_DIR, f"{cid}.json"), "w", encoding="utf-8") as f:
-                            json.dump(_sanitize(payload), f, ensure_ascii=False)
+                            json.dump(payload, f, ensure_ascii=False)
                         stripped += 1
                     except Exception as e:
                         failed += 1
@@ -88,7 +128,9 @@ def strip_feed(fname):
                 for k in STRIP_KEYS:
                     art.pop(k, None)
     # 写回（压缩单行，前端解析无影响；体积更小）
-    d = _sanitize(d)
+    # 同样对列表 JSON 做脱敏 + 清代理，避免 official-feed/look-feed 也触发 Push Protection
+    d = deep_redact(d)
+    d = deep_clean(d)
     tmp = p + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(d, f, ensure_ascii=False)
