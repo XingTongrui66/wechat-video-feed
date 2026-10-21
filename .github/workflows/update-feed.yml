@@ -14,8 +14,10 @@ jobs:
   update-feed:
     runs-on: ubuntu-latest
     # 串行运行，避免并行轮次互相覆盖已累积的评论
+    # group 改为 shared-git-lock：与 update-official.yml 共享同一把锁，
+    # 两条流水线同时想推 main 时，后启动的会排队等先跑完的推完，避免 non-fast-forward 拒绝
     concurrency:
-      group: update-feed
+      group: shared-git-lock
       cancel-in-progress: false
     env:
       # CI 上跳过 localhost 微信源（云端跑不到），其余 Web 源正常抓取
@@ -37,18 +39,9 @@ jobs:
 
       - name: Generate video feed
         timeout-minutes: 40
-        # 风控兜底：B站 对 CI 机房 IP -400 风控时，本步失败但**不挂整条流水线**；
-        # 后续公众号/评论/COS 上传照常跑，视频号沿用上一轮数据（脚本本身有"保留旧 feed"逻辑）。
-        # B站 风控解除后，下一次成功 generate，新视频自动顶上。
-        continue-on-error: true
         env:
           # 增量累积评论：继承 checkout 出来的上一轮 data/channels-feed.json，每轮只给前 300 个无评论视频补抓
           COMMENT_BATCH: '300'
-          # B站 抓取代理（绕开 CI 机房 IP 的 -400 风控）。在 secrets 配 BILI_PROXY[/_USER/_PASS] 后自动走代理；
-          # 不配则保持直连（零风险）。仅 B站 域名走 CONNECT 隧道，其余请求不受影响。
-          BILI_PROXY: ${{ secrets.BILI_PROXY }}
-          BILI_PROXY_USER: ${{ secrets.BILI_PROXY_USER }}
-          BILI_PROXY_PASS: ${{ secrets.BILI_PROXY_PASS }}
         run: node scripts/update-feed.js
 
       # 说明：公众号文章源已全部改为 新浪 + 网易 + 中新网 + 科技财经站，均不依赖 RSSHub
@@ -72,11 +65,6 @@ jobs:
         with:
           commit_message: 'chore: crawl + update library + ai comments'
           file_pattern: data/channels-feed.json data/channels-history.json data/official-feed.json data/official-sources.json data/articles-history.json data/library.json data/ai-review.json data/look-feed.json
-
-      # 剥离正文为单篇小文件（省 COS 流量）：Actions 用 python3 跑，生成 data/articles/
-      - name: Strip article bodies into per-id files
-        continue-on-error: true
-        run: python3 scripts/strip-content-to-articles.py
 
       # 上传到腾讯云 COS：手机端唯一可读源（国内网络访问 GitHub 不通）。
       # 密钥从仓库 Secrets 读取，绝不明文写在仓库里。
