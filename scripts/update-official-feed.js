@@ -95,7 +95,26 @@ const TOPIC_WHITE = {
 /* ---------- 基础工具 ---------- */
 
 function readJson(file, fallback) { try { return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '')); } catch (_) { return fallback; } }
-function writeJson(file, value) { fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\n', 'utf8'); }
+function writeJson(file, value) {
+  // 脱敏"密钥形"字符串：防止 GitHub Push Protection（secret scanning）把
+  // 抓取到的文章正文/评论里形如 API key 的内容当成真实密钥，拒绝 git push，
+  // 导致后续 COS 上传被跳过（曾反复卡死 update-official / update-feed 流水线）。
+  var SECRET_RE = new RegExp(
+    [
+      'sk_(live|test)_[A-Za-z0-9]{16,}',           // Stripe
+      'ghp_[A-Za-z0-9]{20,}', 'gho_[A-Za-z0-9]{20,}', 'ghs_[A-Za-z0-9]{20,}', 'ghu_[A-Za-z0-9]{20,}', // GitHub PAT
+      'github_pat_[A-Za-z0-9_]{16,}',
+      'AKIA[A-Z0-9]{16}',                            // AWS
+      'AKID[A-Za-z0-9]{16,}',                         // 腾讯云
+      'AIza[A-Za-z0-9_-]{25,}',                      // Google
+      'xox[baprs]-[A-Za-z0-9-]{10,}',                // Slack
+      '-----BEGIN [A-Z ]*PRIVATE KEY-----'
+    ].join('|'), 'g'
+  );
+  var json = JSON.stringify(value, null, 2);
+  json = json.replace(SECRET_RE, '[REDACTED]');
+  fs.writeFileSync(file, json + '\n', 'utf8');
+}
 function decode(value) { return String(value || '').replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/gi, ' ').replace(/&#x([0-9a-f]+);/gi, (_, x) => String.fromCharCode(parseInt(x, 16))).replace(/&#(\d+);/g, (_, x) => String.fromCharCode(Number(x))); }
 /* 已知 HTML 标签名白名单。二次清理只用它剥标签，不用通用 /<[^>]+>/：
    因为解码后技术文章里的代码示例（<?xml ...?>、<!DOCTYPE ...>、SQL 里的尖括号）会变成
