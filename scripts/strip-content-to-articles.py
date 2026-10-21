@@ -78,7 +78,7 @@ def deep_clean(o):
     return o
 
 
-def strip_feed(fname):
+def strip_feed(fname, changed_ids):
     p = os.path.join(DATA, fname)
     if not os.path.exists(p):
         print(f"[skip] {fname} 不存在")
@@ -121,6 +121,7 @@ def strip_feed(fname):
                         with open(os.path.join(ART_DIR, f"{cid}.json"), "w", encoding="utf-8") as f:
                             json.dump(payload, f, ensure_ascii=False)
                         stripped += 1
+                        changed_ids.add(str(cid))
                     except Exception as e:
                         failed += 1
                         sys.stderr.write(f"[err] 写 articles/{cid}.json 失败: {e}\n")
@@ -141,9 +142,16 @@ def strip_feed(fname):
 
 
 if __name__ == "__main__":
+    changed = set()
     for fn in ("look-feed.json", "official-feed.json"):
-        strip_feed(fn)
+        strip_feed(fn, changed)
+    # 写增量清单：本轮新生成/变更的单篇 id（CI 的 COS 上传步骤读它做增量，避免全量 1700 篇超时）
+    changed_path = os.path.join(DATA, "articles-changed.txt")
+    with open(changed_path, "w", encoding="utf-8") as f:
+        for cid in sorted(changed):
+            f.write(cid + "\n")
+    print(f"\n本轮变更单篇: {len(changed)} 个 -> data/articles-changed.txt")
     # 统计 articles 目录
     cnt = len([x for x in os.listdir(ART_DIR) if x.endswith(".json")])
     sz = sum(os.path.getsize(os.path.join(ART_DIR, x)) for x in os.listdir(ART_DIR) if x.endswith(".json"))
-    print(f"\ndata/articles/: {cnt} 个小文件, 合计 {sz/1048576:.1f}MB（按需下载，不进列表流量）")
+    print(f"data/articles/: {cnt} 个小文件, 合计 {sz/1048576:.1f}MB（按需下载，不进列表流量）")
