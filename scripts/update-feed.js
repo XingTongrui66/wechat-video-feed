@@ -506,9 +506,25 @@ async function main() {
     items: chosen.map(function (x) { var c = Object.assign({}, x); delete c.repeat; return c; })
   };
 
-  fs.writeFileSync(FEED_OUT_PATH, JSON.stringify(result, null, 2));
+  // 脱敏"密钥形"字符串：防止抓到的视频标题/评论里形如 API key 的内容被 GitHub
+  // Push Protection 当成真实密钥、拒绝 git push（曾卡死本流水线）。
+  const SECRET_RE = new RegExp(
+    [
+      'sk_(live|test)_[A-Za-z0-9]{16,}',
+      'ghp_[A-Za-z0-9]{20,}', 'gho_[A-Za-z0-9]{20,}', 'ghs_[A-Za-z0-9]{20,}', 'ghu_[A-Za-z0-9]{20,}',
+      'github_pat_[A-Za-z0-9_]{16,}',
+      'AKIA[A-Z0-9]{16}',
+      'AKID[A-Za-z0-9]{16,}',
+      'AIza[A-Za-z0-9_-]{25,}',
+      'xox[baprs]-[A-Za-z0-9-]{10,}',
+      '-----BEGIN [A-Z ]*PRIVATE KEY-----'
+    ].join('|'), 'g'
+  );
+  function redact(s) { return String(s).replace(SECRET_RE, '[REDACTED]'); }
+
+  fs.writeFileSync(FEED_OUT_PATH, redact(JSON.stringify(result, null, 2)));
   const newHistory = Array.from(new Set(history.concat(chosen.map(function (x) { return x.bvid; })))).slice(-3000);
-  fs.writeFileSync(HISTORY_OUT_PATH, JSON.stringify(newHistory, null, 2));
+  fs.writeFileSync(HISTORY_OUT_PATH, redact(JSON.stringify(newHistory, null, 2)));
   console.log('[update-feed] DONE. wrote ' + chosen.length + ' videos. history size ' + newHistory.length);
 }
 
