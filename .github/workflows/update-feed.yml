@@ -40,6 +40,11 @@ jobs:
         env:
           # 增量累积评论：继承 checkout 出来的上一轮 data/channels-feed.json，每轮只给前 300 个无评论视频补抓
           COMMENT_BATCH: '300'
+          # B站 抓取代理（绕开 CI 机房 IP 的 -400 风控）。在 secrets 配 BILI_PROXY[/_USER/_PASS] 后自动走代理；
+          # 不配则保持直连（零风险）。仅 B站 域名走 CONNECT 隧道，其余请求不受影响。
+          BILI_PROXY: ${{ secrets.BILI_PROXY }}
+          BILI_PROXY_USER: ${{ secrets.BILI_PROXY_USER }}
+          BILI_PROXY_PASS: ${{ secrets.BILI_PROXY_PASS }}
         run: node scripts/update-feed.js
 
       # 说明：公众号文章源已全部改为 新浪 + 网易 + 中新网 + 科技财经站，均不依赖 RSSHub
