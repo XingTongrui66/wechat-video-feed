@@ -12,9 +12,10 @@ on:
 permissions:
   contents: write
 
-# 与本仓库其它 feed 任务排队串行，避免两个任务同时向同一分支提交产生冲突
+# 与本仓库其它 feed 任务排队串行，避免两个任务同时向同一分支提交产生冲突。
+# 使用仓库级共享锁组 shared-git-lock，所有会 push main 的 workflow 都用它。
 concurrency:
-  group: pages-feed
+  group: shared-git-lock
   cancel-in-progress: false
 
 jobs:
