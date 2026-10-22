@@ -81,7 +81,26 @@ for (const feedFile of FEEDS) {
   if (tasks.length >= LIMIT) break;
 }
 
-console.log(`[ai-comments] 待生成文章: ${tasks.length} 篇 (conc=${CONC}, force=${FORCE})`);
+// ---------- 快讯池：official-feed.json 的 breakingPool.items ----------
+// 前端 key：accountKeyOf({id:'breaking_pool'}) + '#' + (article.id || article.title)
+const accountTaskCount = tasks.length;
+try {
+  const feed = JSON.parse(fs.readFileSync(FEEDS[1], 'utf8'));
+  const seen = new Set(tasks.map(t => t.key));
+  for (const art of (feed.breakingPool && feed.breakingPool.items) || []) {
+    if (tasks.length >= LIMIT) break;
+    const key = 'breaking_pool#' + (art.id || art.title);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    if (!FORCE && review[key] && review[key].comments && review[key].comments.length) continue;
+    let body = art.body || '';
+    if (!body && Array.isArray(art.content)) body = art.content.map(b => (b && b.text) || '').join('\n');
+    body = String(body).slice(0, 1000);
+    tasks.push({ key, account: '快讯', title: art.title || '', digest: art.summary || art.digest || '', body });
+  }
+} catch (e) { console.warn('[ai-comments] 快讯池读取失败，跳过:', e.message); }
+
+console.log(`[ai-comments] 待生成文章: ${tasks.length} 篇 (账号文章 ${accountTaskCount}，快讯 ${tasks.length - accountTaskCount}) (conc=${CONC}, force=${FORCE})`);
 
 if (!tasks.length) {
   console.log('[ai-comments] 没有需要生成的文章，结束。');

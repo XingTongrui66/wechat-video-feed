@@ -53,11 +53,12 @@ jobs:
 
       # AI 评论：增量生成（跳过已存在的），写入 data/ai-review.json。
       # 需要仓库 Secrets 里配置 SF_KEY（SiliconFlow API Key）。
-      # 去掉 continue-on-error：生成失败/0 条/402/没 key 时直接让 CI 标 failure，避免"假 success 但 key 数不涨"。
+      # 失败不拦路：生成失败/402/没 key 时只打 ::warning:: 注解（在运行页可见），本轮不动评论，
+      # 提交 / 上传照常执行，避免“评论服务一出问题整条链路冻结、数据不更新”；下一轮增量自动补。
       - name: Generate AI comments
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
-        run: node scripts/ai-comments.js --conc 4
+        run: node scripts/ai-comments.js --conc 4 || echo "::warning::AI 评论生成失败（密钥/额度/网络），本轮跳过，其余步骤照常，下一轮自动补"
 
       - name: Commit updated feed + library + comments
         uses: stefanzweifel/git-auto-commit-action@v5
