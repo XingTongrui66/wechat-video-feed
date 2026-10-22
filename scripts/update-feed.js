@@ -7,13 +7,15 @@
  *   items[].bvid 必须是 BV + 10 位字符，否则前端会丢弃。
  *   items[].vertical / width / height 会被前端用来把视频号渲染成竖屏（9:16）样式。
  *
- * 竖屏判定：height >= width 且带明确尺寸。ranking / popular 列表本身不含尺寸，
- * 需要再用“视频详情(view)”接口取 dimension 才能判断横竖。
+ * 竖屏判定：height >= width 且带明确尺寸。popular / precious / ranking/v2 的列表响应
+ * 自带 dimension（width/height/rotate），可直接判断；ranking(v1) 与 ranking/region 的列表
+ * 不含 dimension，需“视频详情(view)”接口，或使用 data/video-pool.json、上一轮 feed 里已知的尺寸缓存。
  *
- * 来源策略（两个都带重试，谁先凑够竖屏用谁）：
- *   1) popular（带 web_location + wbi 签名）—— 列表自带 dimension，最干净；CI/正常网络用。
- *   2) ranking + view 兜底 —— popular 被某些 IP 风控(-400)时，用排行榜凑候选，
- *      再逐条查 view 拿 dimension 筛竖屏。两个接口在本机都不风控，稳定可用。
+ * 来源策略（谁先凑够竖屏用谁）：
+ *   1) popular（带 web_location + wbi 签名，每页 ps<=50，超过返回 -400）—— 列表自带 dimension。
+ *   2) 兜底：ranking/v2（自带 dimension）+ ranking v1/region 候选；候选先查尺寸缓存，
+ *      缓存未命中才逐条 view，且连续失败(含 412)达阈值即熔断，不再继续请求。
+ * 拿不到足够竖屏时保留旧 feed 不变，退出码 0（并打 ::warning::），不阻断同 job 的后续步骤。
  */
 'use strict';
 
@@ -53,7 +55,10 @@ function toHttpsPic(pic) {
 
 const TARGET = 200;            // 每轮抓取的竖屏视频候选上限（用户要求约每天 200 新视频）
 const MIN_VERTICAL = 8;        // 至少要有这么多竖屏，否则视为抓取异常，保留旧 feed
-const POPULAR_PAGES = 3;       // popular 最多翻几页
+const POPULAR_PS = 50;         // B站 popular 的 ps 上限为 50，超过返回 -400
+const POPULAR_PAGES = 6;       // popular 最多翻几页
+const VIEW_FAIL_BREAK = 5;     // 兜底阶段 view 连续失败(含 412)达该值即熔断，不再继续请求
+const POOL_PATH = path.join(DATA_DIR, 'video-pool.json');
 const VIEW_BUDGET = 800;      // 候选数量（原 220 只筛出 56 竖屏；放大到 800，预计 250+ 竖屏）
 const VIEW_DELAY = 40;        // view 详情间隔(ms)，预算放大时调小避免总耗时过长
 const PAGE_DELAY = 2000;       // popular 翻页间隔(ms)
@@ -80,6 +85,10 @@ let _wbiKeys = null;
 
 function fetchJson(url, tries) {
   tries = tries || 2;
+  // 仅本地验证用：BILI_SIM_412 含 view / popular 时，模拟 CI 机房 IP 被风控（默认关闭）
+  const sim = process.env.BILI_SIM_412 || '';
+  if (sim && sim.indexOf('view') >= 0 && url.indexOf('/x/web-interface/view') >= 0) return Promise.resolve({ code: -412, message: 'simulated' });
+  if (sim && sim.indexOf('popular') >= 0 && url.indexOf('/x/web-interface/popular') >= 0) return Promise.resolve({ code: -400, message: 'simulated' });
   // 走代理时：只对 B站 域名走 CONNECT 隧道，其它域名（如 github.io 远端 feed）直连
   const viaProxy = BILI_PROXY && /bilibili\.|bilivideo\.|hdslb\./.test(url);
   return new Promise(function (resolve, reject) {
@@ -257,17 +266,58 @@ function dimVertical(dim) {
   return (w > 0 && h > 0) ? (h >= w) : false;
 }
 
+// 诊断计数（失败时汇总打印）
+const diag = {
+  popular: { pages: 0, candidates: 0, vertical: 0, stop: '' },
+  rankingV2: { requests: 0, candidates: 0, vertical: 0, stop: '' },
+  ranking: { candidates: 0, cacheHit: 0, cacheVertical: 0, viewCalls: 0, viewFail: 0, lastViewCode: '', circuitOpen: false, vertical: 0 }
+};
+
+// 列表项（popular / ranking/v2：自带 owner/stat/dimension）→ feed 条目
+function listItemToFeed(v, bvid) {
+  const dim = v.dimension || {};
+  const stat = v.stat || {};
+  const owner = v.owner || {};
+  return {
+    bvid: bvid,
+    title: String(v.title || '视频').trim(),
+    author: String(owner.name || 'B站').trim(),
+    face: String(owner.face || ''),
+    // 封面：切换/首播时垫在播放器下面，避免 iframe 渲染前的黑屏空档
+    pic: toHttpsPic(v.pic),
+    likeCount: Number(stat.like || 0),
+    favorite: Number(stat.favorite || 0),
+    share: Number(stat.share || 0),
+    reply: Number(stat.reply || 0),
+    coin: Number(stat.coin || 0),
+    view: Number(stat.view || 0),
+    duration: Number(v.duration || 0),
+    width: Number(dim.width || 0),
+    height: Number(dim.height || 0),
+    vertical: true,
+    addedAt: new Date().toISOString()
+  };
+}
+
 // 路径 1：popular（列表自带 dimension，直接筛竖屏）
 async function collectFromPopular() {
   const out = [];
   const seen = new Set();
   for (let pn = 1; pn <= POPULAR_PAGES; pn++) {
     if (out.length >= TARGET) break;
-    const url = buildUrl('https://api.bilibili.com/x/web-interface/popular', { ps: 100, pn: pn, web_location: '333.1007' });
+    const url = buildUrl('https://api.bilibili.com/x/web-interface/popular', { ps: POPULAR_PS, pn: pn, web_location: '333.1007' });
     try {
+      diag.popular.pages += 1;
       const resp = await fetchJson(url);
+      // 明确的接口错误（-400 参数/风控、-412 等）：停止翻页，不重试
+      if (resp && resp.code !== 0) {
+        diag.popular.stop = 'code=' + resp.code;
+        console.warn('[update-feed] popular pn=' + pn + ' stop: code=' + resp.code + ' msg=' + (resp.message || ''));
+        break;
+      }
       const raw = extractItems(resp);
-      if (!raw.length) { console.warn('[update-feed] popular pn=' + pn + ' empty (code=' + (resp && resp.code) + ')'); continue; }
+      if (!raw.length) { console.warn('[update-feed] popular pn=' + pn + ' empty (code=' + (resp && resp.code) + ')'); diag.popular.stop = 'empty'; break; }
+      diag.popular.candidates += raw.length;
       for (const v of raw) {
         if (out.length >= TARGET) break;
         const bvid = String(v.bvid || '').trim();
@@ -275,41 +325,67 @@ async function collectFromPopular() {
         if (!dimVertical(v.dimension)) continue;
         if (seen.has(bvid)) continue;
         seen.add(bvid);
-        const dim = v.dimension || {};
-        const stat = v.stat || {};
-        const owner = v.owner || {};
-        out.push({
-          bvid: bvid,
-          title: String(v.title || '视频').trim(),
-          author: String(owner.name || 'B站').trim(),
-          face: String(owner.face || ''),
-          // 封面：切换/首播时垫在播放器下面，避免 iframe 渲染前的黑屏空档
-          pic: toHttpsPic(v.pic),
-          likeCount: Number(stat.like || 0),
-          favorite: Number(stat.favorite || 0),
-          share: Number(stat.share || 0),
-          reply: Number(stat.reply || 0),
-          coin: Number(stat.coin || 0),
-          view: Number(stat.view || 0),
-          duration: Number(v.duration || 0),
-          width: Number(dim.width || 0),
-          height: Number(dim.height || 0),
-          vertical: true,
-          addedAt: new Date().toISOString()
-        });
+        out.push(listItemToFeed(v, bvid));
       }
       console.log('[update-feed] popular pn=' + pn + ' -> vertical so far: ' + out.length);
     } catch (e) {
+      diag.popular.stop = 'error=' + e.message;
       console.warn('[update-feed] popular pn=' + pn + ' failed -', e.message);
+      break;
     }
     if (pn < POPULAR_PAGES) await new Promise(function (r) { setTimeout(r, PAGE_DELAY); });
   }
+  diag.popular.vertical = out.length;
   return out;
 }
 
-// 路径 2：ranking 凑候选 bvid，再逐条 view 拿 dimension 筛竖屏（popular 被风控时兜底）
+// 已知尺寸缓存：bvid -> {width,height}（视频池 + 上一轮 feed；缺失/损坏一律忽略）
+function loadDimCache() {
+  const m = new Map();
+  function add(list) {
+    for (const it of Array.isArray(list) ? list : []) {
+      const b = it && String(it.bvid || '');
+      if (/^BV[0-9A-Za-z]{10}$/.test(b) && Number(it.width) > 0 && Number(it.height) > 0 && !m.has(b)) {
+        m.set(b, { width: Number(it.width), height: Number(it.height) });
+      }
+    }
+  }
+  try { add(JSON.parse(fs.readFileSync(POOL_PATH, 'utf8')).items); } catch (e) { /* ignore */ }
+  const local = readLocalFeed();
+  add(local && local.items);
+  return m;
+}
+
+// 路径 2：兜底。ranking/v2（自带 dimension）→ ranking v1/region 候选（先查尺寸缓存，未命中才 view，带熔断）
 async function collectFromRanking() {
-  const seen = new Set();
+  const out = [];
+  const have = new Set();
+
+  // 2a) ranking/v2：列表自带 dimension，不需要 view
+  try {
+    diag.rankingV2.requests += 1;
+    const resp = await fetchJson('https://api.bilibili.com/x/web-interface/ranking/v2?rid=0&type=all');
+    if (resp && resp.code !== 0) {
+      diag.rankingV2.stop = 'code=' + resp.code;
+      console.warn('[update-feed] ranking/v2 stop: code=' + resp.code);
+    }
+    const list = extractItems(resp);
+    diag.rankingV2.candidates = list.length;
+    for (const v of list) {
+      const b = String(v.bvid || '').trim();
+      if (!/^BV[0-9A-Za-z]{10}$/.test(b) || have.has(b) || !dimVertical(v.dimension)) continue;
+      have.add(b);
+      out.push(listItemToFeed(v, b));
+    }
+  } catch (e) {
+    diag.rankingV2.stop = 'error=' + e.message;
+    console.warn('[update-feed] ranking/v2 failed -', e.message);
+  }
+  diag.rankingV2.vertical = out.length;
+  console.log('[update-feed] ranking/v2 -> candidates ' + diag.rankingV2.candidates + ', vertical ' + out.length);
+
+  // 2b) ranking v1 / region：列表不含 dimension
+  const seen = new Set(have);
   const cand = [];
   const sources = [
     'https://api.bilibili.com/x/web-interface/ranking?day=3',
@@ -327,7 +403,7 @@ async function collectFromRanking() {
       const list = extractItems(resp);
       for (const v of list) {
         const b = String(v.bvid || '').trim();
-        if (/^BV[0-9A-Za-z]{10}$/.test(b) && !seen.has(b)) { seen.add(b); cand.push(b); }
+        if (/^BV[0-9A-Za-z]{10}$/.test(b) && !seen.has(b)) { seen.add(b); cand.push({ bvid: b, title: v.title, author: v.author, pic: v.pic, play: v.play }); }
         if (cand.length >= VIEW_BUDGET) break;
       }
       console.log('[update-feed] ranking src -> candidates ' + cand.length);
@@ -335,42 +411,47 @@ async function collectFromRanking() {
       console.warn('[update-feed] ranking src failed -', e.message);
     }
   }
+  diag.ranking.candidates = cand.length;
 
-  const out = [];
-  let checked = 0;
-  for (const b of cand) {
+  const dimCache = loadDimCache();
+  let viewFail = 0;
+  for (const c of cand) {
     if (out.length >= TARGET) break;
-    checked += 1;
+    const b = c.bvid;
+    const known = dimCache.get(b);
+    if (known) {
+      // 已知尺寸：不调 view；横屏直接丢弃，竖屏用列表字段构造条目（头像/互动数缺省）
+      diag.ranking.cacheHit += 1;
+      if (!dimVertical(known)) continue;
+      diag.ranking.cacheVertical += 1;
+      out.push(listItemToFeed({ title: c.title, pic: c.pic, dimension: known, owner: { name: c.author }, stat: { view: c.play } }, b));
+      continue;
+    }
+    if (viewFail >= VIEW_FAIL_BREAK) {
+      diag.ranking.circuitOpen = true;
+      continue; // 熔断：只处理缓存命中的候选，不再请求 view
+    }
     try {
+      diag.ranking.viewCalls += 1;
       const r = await fetchJson('https://api.bilibili.com/x/web-interface/view?bvid=' + b);
       const d = r && r.data;
-      if (!d) continue;
+      if (!r || r.code !== 0 || !d) {
+        viewFail += 1; diag.ranking.viewFail += 1; diag.ranking.lastViewCode = String(r && r.code);
+        if (viewFail >= VIEW_FAIL_BREAK) console.warn('[update-feed] view circuit open (code=' + diag.ranking.lastViewCode + '), skipping remaining uncached candidates');
+        continue;
+      }
+      viewFail = 0;
       const dim = d.dimension || {};
       if (!dimVertical(dim)) continue; // 只收竖屏
-      const owner = d.owner || {};
-      const stat = d.stat || {};
-      out.push({
-        bvid: b,
-        title: String(d.title || '视频').trim(),
-        author: String(owner.name || 'B站').trim(),
-        face: String(owner.face || ''),
-        pic: toHttpsPic(d.pic),
-        likeCount: Number(stat.like || 0),
-        favorite: Number(stat.favorite || 0),
-        share: Number(stat.share || 0),
-        reply: Number(stat.reply || 0),
-        coin: Number(stat.coin || 0),
-        view: Number(stat.view || 0),
-        duration: Number(d.duration || 0),
-        width: Number(dim.width || 0),
-        height: Number(dim.height || 0),
-        vertical: true,
-        addedAt: new Date().toISOString()
-      });
-    } catch (e) { /* 单条失败忽略，继续 */ }
+      out.push(listItemToFeed(d, b));
+    } catch (e) {
+      viewFail += 1; diag.ranking.viewFail += 1; diag.ranking.lastViewCode = 'error';
+      if (viewFail >= VIEW_FAIL_BREAK) console.warn('[update-feed] view circuit open (' + e.message + '), skipping remaining uncached candidates');
+    }
     if (VIEW_DELAY) await new Promise(function (r) { setTimeout(r, VIEW_DELAY); });
   }
-  console.log('[update-feed] ranking->view checked ' + checked + ' -> vertical ' + out.length);
+  diag.ranking.vertical = out.length - diag.rankingV2.vertical;
+  console.log('[update-feed] ranking fallback: cacheHit ' + diag.ranking.cacheHit + ', viewCalls ' + diag.ranking.viewCalls + ', viewFail ' + diag.ranking.viewFail + ' -> vertical ' + out.length);
   return out;
 }
 
@@ -391,7 +472,10 @@ async function main() {
 
   if (collected.length < MIN_VERTICAL) {
     console.error('[update-feed] only ' + collected.length + ' vertical (need >= ' + MIN_VERTICAL + '). Keep existing feed unchanged.');
-    process.exit(1);
+    console.error('[update-feed] diag ' + JSON.stringify(diag));
+    // 外部风控导致的预期降级：旧 feed 原样保留（此处尚未写任何文件），退出码 0 以免阻断同 job 的公众号/AI 评论/提交步骤
+    console.log('::warning::video feed not updated: only ' + collected.length + ' vertical (need >= ' + MIN_VERTICAL + '); ' + JSON.stringify(diag));
+    process.exit(0);
   }
 
   // 新内容优先排在前面
