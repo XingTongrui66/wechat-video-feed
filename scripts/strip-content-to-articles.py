@@ -15,6 +15,7 @@
 用法：
   python scripts/strip-content-to-articles.py
 """
+import hashlib
 import json
 import os
 import re
@@ -26,6 +27,29 @@ ART_DIR = os.path.join(DATA, "articles")
 os.makedirs(ART_DIR, exist_ok=True)
 
 STRIP_KEYS = ("content", "body")
+
+# 权威上传清单 {id: sha1前16位}：只有 COS 返回 200 后才由上传脚本写入。
+UPLOADED_PATH = os.path.join(DATA, "articles-uploaded.json")
+
+def load_uploaded():
+    """清单缺失/损坏/非 dict 时视为空清单，不崩溃。"""
+    try:
+        with open(UPLOADED_PATH, encoding="utf-8") as f:
+            u = json.load(f)
+        if isinstance(u, dict):
+            return u
+    except FileNotFoundError:
+        pass
+    except Exception as e:
+        sys.stderr.write(f"[warn] articles-uploaded.json 损坏，按空清单处理: {e}\n")
+    return {}
+
+def payload_bytes(payload):
+    """确定性序列化（sort_keys），落盘字节即哈希字节。"""
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+
+def payload_sha(b):
+    return hashlib.sha1(b).hexdigest()[:16]
 
 # ---------------------------------------------------------------------------
 # 密钥脱敏：单篇正文里若混入形如 API key 的字符串（例：某篇文章贴了
@@ -78,7 +102,7 @@ def deep_clean(o):
     return o
 
 
-def strip_feed(fname, changed_ids):
+def strip_feed(fname, changed_ids, uploaded):
     p = os.path.join(DATA, fname)
     if not os.path.exists(p):
         print(f"[skip] {fname} 不存在")
@@ -118,10 +142,13 @@ def strip_feed(fname, changed_ids):
                     # 清理孤立 UTF-16 代理（避免 ensure_ascii=False 写文件崩溃）
                     payload = deep_clean(payload)
                     try:
-                        with open(os.path.join(ART_DIR, f"{cid}.json"), "w", encoding="utf-8") as f:
-                            json.dump(payload, f, ensure_ascii=False)
+                        raw = payload_bytes(payload)
+                        with open(os.path.join(ART_DIR, f"{cid}.json"), "wb") as f:
+                            f.write(raw)
                         stripped += 1
-                        changed_ids.add(str(cid))
+                        # 仅当清单里没有该 id 或哈希不同才需要上传
+                        if uploaded.get(str(cid)) != payload_sha(raw):
+                            changed_ids.add(str(cid))
                     except Exception as e:
                         failed += 1
                         sys.stderr.write(f"[err] 写 articles/{cid}.json 失败: {e}\n")
@@ -143,14 +170,15 @@ def strip_feed(fname, changed_ids):
 
 if __name__ == "__main__":
     changed = set()
+    uploaded = load_uploaded()
     for fn in ("look-feed.json", "official-feed.json"):
-        strip_feed(fn, changed)
+        strip_feed(fn, changed, uploaded)
     # 写增量清单：本轮新生成/变更的单篇 id（CI 的 COS 上传步骤读它做增量，避免全量 1700 篇超时）
     changed_path = os.path.join(DATA, "articles-changed.txt")
     with open(changed_path, "w", encoding="utf-8") as f:
         for cid in sorted(changed):
             f.write(cid + "\n")
-    print(f"\n本轮变更单篇: {len(changed)} 个 -> data/articles-changed.txt")
+    print(f"\n本轮变更单篇（相对上传清单）: {len(changed)} 个 -> data/articles-changed.txt")
     # 统计 articles 目录
     cnt = len([x for x in os.listdir(ART_DIR) if x.endswith(".json")])
     sz = sum(os.path.getsize(os.path.join(ART_DIR, x)) for x in os.listdir(ART_DIR) if x.endswith(".json"))

@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     # 串行运行，避免并行轮次互相覆盖已累积的评论
     # group 改为 shared-git-lock：与 update-official.yml 共享同一把锁，
-    # cancel-in-progress: true → 新触发直接抢占旧 run（旧的最多 15 分钟超时放行，不会无限排队）
+    # cancel-in-progress: false → 新触发排队等待而不抢占，避免长时间 COS 上传被取消、清单丢失、整轮变红。
     concurrency:
       group: shared-git-lock
-      cancel-in-progress: true
+      cancel-in-progress: false
     env:
       # CI 上跳过 localhost 微信源（云端跑不到），其余 Web 源正常抓取
       GITHUB_ACTIONS: 'true'
