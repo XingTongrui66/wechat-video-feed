@@ -51,12 +51,11 @@ jobs:
         run: node scripts/update-official-feed.js
 
       # AI 评论：增量生成（已有评论的文章会跳过）。
-      # 失败不拦路：生成失败/402/没 key 时只打 ::warning:: 注解（在运行页可见），本轮不动评论，
-      # 后面的 strip / 提交 / 上传照常执行，避免“评论服务一出问题整条链路冻结、数据不更新”；下一轮增量自动补。
+      # 生成失败时停止发布，避免将本轮不完整的数据发布到 COS。
       - name: Generate AI comments (incremental)
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
-        run: node scripts/ai-comments.js --conc 4 || echo "::warning::AI 评论生成失败（密钥/额度/网络），本轮跳过，其余步骤照常，下一轮自动补"
+        run: node scripts/ai-comments.js --conc 4
 
       # 剥离正文为单篇小文件 data/articles/{id}.json（幂等）：
       # 保证 official-feed.json 里每一篇有标题的文章，都配一个可独立拉取的正文章节。
@@ -88,20 +87,10 @@ jobs:
           open('data/articles-missing.txt','w').write('\n'.join(missing))
           print('official-feed articles:',sum(len(a.get('articles') or []) for a in (feed.get('accounts') or [])))
           print('missing per-id bodies:',len(missing))
-          if missing: print('first 20:',missing[:20])
+          if missing:
+              print('first 20:',missing[:20])
+              raise SystemExit('missing per-id bodies; refuse COS publication')
           PY
-
-      - name: Commit updated data
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore: update official/look feed + AI comments + per-id article bodies'
-          file_pattern: >-
-            data/official-feed.json
-            data/look-feed.json
-            data/ai-review.json
-            data/articles-history.json
-            data/articles-missing.txt
-            data/articles/
 
       # 上传单篇到腾讯 COS：手机端 vwFetchJson 远程优先读 COS，
       # 这里必须把 data/articles/{id}.json 推上去，"有标题就有正文"才成立。
@@ -118,14 +107,7 @@ jobs:
           UPLOAD_BUDGET_MINUTES: '25'
         run: python3 scripts/upload-articles-to-cos.py
 
-      # 提交上传清单（always：即便上一步标红/失败，已落盘的清单也要入库，下轮才能续传）。
-      - name: Commit upload manifest
-        if: always()
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore: update articles upload manifest'
-          file_pattern: data/articles-uploaded.json
-      # 同样纯标准库方式上传 4 个 feed JSON（官方/视频号主数据）
+      # 主 JSON 只在单篇正文上传成功（含预算正常退出）后发布，避免标题与正文不一致。
       - name: Upload feed JSONs to Tencent COS
         if: success()
         timeout-minutes: 15
@@ -165,8 +147,34 @@ jobs:
                       if a==3: return -1, str(e)[:200]
                       time.sleep(2)
               return -1, 'retry-exhausted'
-          for key in ['data/official-feed.json','data/look-feed.json','data/ai-review.json']:
-              if not os.path.exists(key): print('skip (not found):',key); continue
+          required = ['data/official-feed.json','data/look-feed.json','data/ai-review.json']
+          failures = []
+          for key in required:
+              if not os.path.exists(key):
+                  print('missing required JSON:', key)
+                  failures.append(key)
+                  continue
               st, info = put(key, key)
               print(f'  {key}: HTTP {st}', info if st!=200 else '(ok)')
+              if st != 200:
+                  failures.append(key)
+          if failures:
+              print('JSON COS upload failed for:', ', '.join(failures))
+              raise SystemExit(1)
           PY
+
+      # COS 发布完成后才提交 Git 备份和上传清单。该步骤失败会使 workflow 失败，
+      # 但不会回滚或阻断已发布的 COS 用户数据。
+      - name: Commit published data and upload manifest
+        continue-on-error: false
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update official/look feed + AI comments + article COS manifest'
+          file_pattern: >-
+            data/official-feed.json
+            data/look-feed.json
+            data/ai-review.json
+            data/articles-history.json
+            data/articles-missing.txt
+            data/articles-uploaded.json
+            data/articles/
