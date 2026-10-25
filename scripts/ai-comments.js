@@ -1,7 +1,10 @@
-/* 为 look-feed.json（看一看）与 official-feed.json（公众号主页）的每篇文章用 AI（SiliconFlow Qwen）
- * 生成贴合正文的真实感评论，写入 data/ai-review.json。前端 official.js 的 articleComments() 按 articleKey 读取。
+/* 为 look-feed.json（看一看）与 official-feed.json（公众号主页）的每篇文章，以及 official-feed.json
+ * 里的 breakingPool（快讯）用 AI（SiliconFlow Qwen）生成贴合正文的真实感评论，写入 data/ai-review.json。
+ * 前端 official.js 的 articleComments() 按 articleKey 读取。
  *
- * key 规则与前端完全一致： (account.id || account.name) + '#' + (article.id || article.title)
+ * key 规则与前端完全一致：
+ *   - 公众号/看一看文章： (account.id || account.name) + '#' + (article.id || article.title)
+ *   - 快讯（breakingPool）： 'breaking_pool#' + (article.id || article.title)
  * 评论结构： { name, text, likes, location, time, replies: [] }
  *
  * 设计：
@@ -64,6 +67,7 @@ for (const feedFile of FEEDS) {
   let feed;
   try { feed = JSON.parse(fs.readFileSync(feedFile, 'utf8')); }
   catch (e) { console.warn('[ai-comments] 读取失败，跳过:', feedFile, e.message); continue; }
+  // 公众号 / 看一看 文章
   for (const acc of feed.accounts || []) {
     for (const art of acc.articles || []) {
       const key = (acc.id || acc.name) + '#' + (art.id || art.title);
@@ -78,29 +82,22 @@ for (const feedFile of FEEDS) {
     }
     if (tasks.length >= LIMIT) break;
   }
-  if (tasks.length >= LIMIT) break;
-}
-
-// ---------- 快讯池：official-feed.json 的 breakingPool.items ----------
-// 前端 key：accountKeyOf({id:'breaking_pool'}) + '#' + (article.id || article.title)
-const accountTaskCount = tasks.length;
-try {
-  const feed = JSON.parse(fs.readFileSync(FEEDS[1], 'utf8'));
-  const seen = new Set(tasks.map(t => t.key));
-  for (const art of (feed.breakingPool && feed.breakingPool.items) || []) {
-    if (tasks.length >= LIMIT) break;
+  // 快讯（breakingPool）：key 固定前缀 breaking_pool#，与前端 official.js 的读取规则一致
+  const pool = feed.breakingPool && feed.breakingPool.items;
+  for (const art of (pool || [])) {
     const key = 'breaking_pool#' + (art.id || art.title);
-    if (seen.has(key)) continue;
-    seen.add(key);
     if (!FORCE && review[key] && review[key].comments && review[key].comments.length) continue;
+    const title = art.title || '';
+    const digest = art.summary || art.digest || '';
     let body = art.body || '';
     if (!body && Array.isArray(art.content)) body = art.content.map(b => (b && b.text) || '').join('\n');
     body = String(body).slice(0, 1000);
-    tasks.push({ key, account: '快讯', title: art.title || '', digest: art.summary || art.digest || '', body });
+    tasks.push({ key, account: art.sourceName || art.accountName || '快讯', title, digest, body });
   }
-} catch (e) { console.warn('[ai-comments] 快讯池读取失败，跳过:', e.message); }
+  if (tasks.length >= LIMIT) break;
+}
 
-console.log(`[ai-comments] 待生成文章: ${tasks.length} 篇 (账号文章 ${accountTaskCount}，快讯 ${tasks.length - accountTaskCount}) (conc=${CONC}, force=${FORCE})`);
+console.log(`[ai-comments] 待生成文章: ${tasks.length} 篇 (conc=${CONC}, force=${FORCE})`);
 
 if (!tasks.length) {
   console.log('[ai-comments] 没有需要生成的文章，结束。');
