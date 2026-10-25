@@ -14,10 +14,8 @@ jobs:
   update-feed:
     runs-on: ubuntu-latest
     # 串行运行，避免并行轮次互相覆盖已累积的评论
-    # group 改为 shared-git-lock：与 update-official.yml 共享同一把锁，
-    # cancel-in-progress: false → 新触发排队等待而不抢占，避免长时间 COS 上传被取消、清单丢失、整轮变红。
     concurrency:
-      group: shared-git-lock
+      group: update-feed
       cancel-in-progress: false
     env:
       # CI 上跳过 localhost 微信源（云端跑不到），其余 Web 源正常抓取
@@ -53,12 +51,12 @@ jobs:
 
       # AI 评论：增量生成（跳过已存在的），写入 data/ai-review.json。
       # 需要仓库 Secrets 里配置 SF_KEY（SiliconFlow API Key）。
-      # 失败不拦路：生成失败/402/没 key 时只打 ::warning:: 注解（在运行页可见），本轮不动评论，
-      # 提交 / 上传照常执行，避免“评论服务一出问题整条链路冻结、数据不更新”；下一轮增量自动补。
+      # continue-on-error：未配置 key 时只跳过评论，不影响视频号/公众号抓取提交。
       - name: Generate AI comments
+        continue-on-error: true
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
-        run: node scripts/ai-comments.js --conc 4 || echo "::warning::AI 评论生成失败（密钥/额度/网络），本轮跳过，其余步骤照常，下一轮自动补"
+        run: node scripts/ai-comments.js --conc 4
 
       - name: Commit updated feed + library + comments
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -66,21 +64,30 @@ jobs:
           commit_message: 'chore: crawl + update library + ai comments'
           file_pattern: data/channels-feed.json data/channels-history.json data/official-feed.json data/official-sources.json data/articles-history.json data/library.json data/ai-review.json data/look-feed.json
 
+      # 剥离正文为单篇小文件（省 COS 流量）：Actions 用 python3 跑，生成 data/articles/
+      - name: Strip article bodies into per-id files
+        continue-on-error: true
+        run: python3 scripts/strip-content-to-articles.py
+
       # 上传到腾讯云 COS：手机端唯一可读源（国内网络访问 GitHub 不通）。
       # 密钥从仓库 Secrets 读取，绝不明文写在仓库里。
       # 需先在 仓库 Settings → Secrets 配置：COS_SECRET_ID / COS_SECRET_KEY
       # 这样每小时抓取后自动把最新数据推到 COS，前端(手机)从 COS 拉到实时更新。
-      # 改用纯标准库签名 PUT 脚本：coscmd 在 Actions 上传完第一个文件后会卡住直到超时，
-      # 导致 look-feed / ai-review / channels-feed 没上传。脚本每次 PUT 有 120s 超时 + 重试，整步不会卡死。
-      # timeout-minutes: 12 → 兜底，锁不会被无限占住。
-      # 去掉 continue-on-error：上传失败/403/404 时让 CI 标 failure，避免"假 success 但 COS 没新数据"。
-      # 这里只传视频号 channels-feed.json；公众号/看一看/AI 评论的 feed 与单篇 data/articles/ 都由 update-official.yml 那条 CI 负责
-      # （它跑 strip 生成单篇 + 写 articles-changed.txt 增量清单），这里不碰 articles/ 避免超时。
       - name: Upload latest data to Tencent COS
-        timeout-minutes: 12
+        continue-on-error: true
         env:
           COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
           COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
           COS_BUCKET: vw-data-1311399697
           COS_REGION: ap-guangzhou
-        run: python3 scripts/upload-feeds-to-cos.py
+        run: |
+          pip install -q coscmd
+          coscmd config -a "$COS_SECRET_ID" -s "$COS_SECRET_KEY" -b "$COS_BUCKET" -r "$COS_REGION" -m 10
+          coscmd upload data/official-feed.json data/official-feed.json
+          coscmd upload data/look-feed.json data/look-feed.json
+          # 注意：不要再上传 channels-feed.json！
+          # B 站对 GitHub Actions 机房 IP 风控，云端永远抓不到视频号真实评论，
+          # 只会把「只有 280/500 条评论」的残缺版本推到 COS，覆盖掉本机补抓好的 491/500。
+          # 视频号数据现在完全由本机 scripts/fetch-channels-comments.js --push 维护。
+          coscmd upload data/ai-review.json data/ai-review.json
+          if [ -d data/articles ]; then coscmd upload -r data/articles data/articles; fi
