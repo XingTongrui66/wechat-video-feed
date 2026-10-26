@@ -118,11 +118,16 @@ jobs:
                       time.sleep(2)
               return -1, 'retry-exhausted'
           fail=0
+          # 评论文件可选：上传失败只告警，不计入 fail，避免 bash -e 中止后面的单篇正文上传
+          OPTIONAL={'data/ai-review.json'}
           for key in ['data/official-feed.json','data/look-feed.json','data/ai-review.json']:
               if not os.path.exists(key):
                   print('skip (not found):', key); continue
-              st, info = put(key, key)
+              try: st, info = put(key, key)
+              except Exception as e: st, info = -1, str(e)[:200]
               print(f'  {key}: HTTP {st}', info if st!=200 else '(ok)')
+              if st!=200 and key in OPTIONAL:
+                  print(f'::warning::{key} 本轮未上传到 COS（HTTP {st}），下轮重试；不影响正文和列表上传'); continue
               if st!=200: fail+=1
           if fail>0:
               print(f'[COS] {fail} feed upload(s) failed'); raise SystemExit(1)

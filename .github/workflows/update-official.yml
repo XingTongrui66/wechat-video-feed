@@ -170,4 +170,7 @@ jobs:
               if not os.path.exists(key): print('skip (not found):',key); continue
               st, info = put(key, key)
               print(f'  {key}: HTTP {st}', info if st!=200 else '(ok)')
+              # 评论文件可选：失败只告警，下轮重试
+              if st!=200 and key=='data/ai-review.json':
+                  print(f'::warning::{key} 本轮未上传到 COS（HTTP {st}），下轮重试；不影响正文和列表上传')
           PY
