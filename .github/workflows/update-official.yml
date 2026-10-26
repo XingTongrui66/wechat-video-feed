@@ -120,7 +120,16 @@ jobs:
           COS_REGION: ap-guangzhou
           COS_FEED_FILES: official-feed.json,look-feed.json,ai-review.json
           COS_FEED_OPTIONAL: ai-review.json
-        run: python3 scripts/upload-feeds-to-cos.py
+        # COS 上的 ai-review.json 只放当前列表文章的评论（精简版写到 $RUNNER_TEMP，不进 Git）；
+        # 仓库里的 data/ai-review.json 保持全量，供 ai-comments.js 增量。裁剪失败则回退上传全量版。
+        run: |
+          TRIM="${RUNNER_TEMP:-/tmp}/ai-review.trimmed.json"
+          if python3 scripts/trim-ai-review.py "$TRIM"; then
+            export COS_FEED_SRC="ai-review.json=$TRIM"
+          else
+            echo "::warning::ai-review.json 裁剪失败，本轮回退上传全量版"
+          fi
+          python3 scripts/upload-feeds-to-cos.py
 
       # COS 发布完成后才提交 Git 备份和上传清单。该步骤失败会使 workflow 失败，
       # 但不会回滚或阻断已发布的 COS 用户数据。

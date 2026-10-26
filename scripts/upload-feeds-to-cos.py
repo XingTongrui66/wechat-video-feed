@@ -5,6 +5,7 @@
 环境变量：
   COS_FEED_FILES     逗号分隔的待传文件（须在白名单内），未设置时只传 channels-feed.json
   COS_FEED_OPTIONAL  逗号分隔的可选文件（须是 COS_FEED_FILES 的子集），失败只告警、不让退出码非零；默认为空
+  COS_FEED_SRC       逗号分隔的 <文件名>=<本地路径>，用该路径内容上传到 data/<文件名>（文件名须在 COS_FEED_FILES 内）；默认为空
   COS_ENDPOINT       覆盖 COS 地址（默认 https://{bucket}.cos.{region}.myqcloud.com）
   FEED_PUT_TIMEOUT   单次 PUT 超时秒数（默认 120）
   FEED_BACKOFF_BASE  重试退避基数秒数（默认 2）
@@ -51,6 +52,21 @@ def optional_files(names):
     if any(name not in ALLOWED_FILES or name not in names for name in optional):
         raise ValueError("COS_FEED_OPTIONAL must be a subset of COS_FEED_FILES")
     return optional
+
+
+def source_overrides(names):
+    # COS_FEED_SRC="ai-review.json=/tmp/x.json"：用本地文件替代 data/<name> 作为上传内容，对象键不变
+    value = os.environ.get("COS_FEED_SRC") or ""
+    overrides = {}
+    for item in value.split(","):
+        if not item.strip():
+            continue
+        name, sep, path = item.partition("=")
+        name, path = name.strip(), path.strip()
+        if not sep or not path or name not in ALLOWED_FILES or name not in names:
+            raise ValueError("COS_FEED_SRC entries must be <name>=<path> with name in COS_FEED_FILES")
+        overrides[name] = path
+    return overrides
 
 
 def h(key, message):
@@ -101,6 +117,7 @@ def main():
     try:
         names = feed_files()
         optional = optional_files(names)
+        overrides = source_overrides(names)
     except ValueError as error:
         print(error)
         return 1
@@ -110,7 +127,7 @@ def main():
 
     results = []
     for name in names:
-        path = os.path.join(BASE, "data", name)
+        path = overrides.get(name) or os.path.join(BASE, "data", name)
         if not os.path.isfile(path):
             print(f"[error] {path} not found")
             results.append((name, 0, -1, 0))
