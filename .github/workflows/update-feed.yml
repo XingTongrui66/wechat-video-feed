@@ -14,8 +14,10 @@ jobs:
   update-feed:
     runs-on: ubuntu-latest
     # 串行运行，避免并行轮次互相覆盖已累积的评论
+    # group 改为 shared-git-lock：与 update-official.yml 共享同一把锁，
+    # cancel-in-progress: false → 新触发排队等待而不抢占，避免长时间 COS 上传被取消、清单丢失、整轮变红。
     concurrency:
-      group: update-feed
+      group: shared-git-lock
       cancel-in-progress: false
     env:
       # CI 上跳过 localhost 微信源（云端跑不到），其余 Web 源正常抓取
@@ -51,12 +53,12 @@ jobs:
 
       # AI 评论：增量生成（跳过已存在的），写入 data/ai-review.json。
       # 需要仓库 Secrets 里配置 SF_KEY（SiliconFlow API Key）。
-      # continue-on-error：未配置 key 时只跳过评论，不影响视频号/公众号抓取提交。
+      # 失败不拦路：生成失败/402/没 key 时只打 ::warning:: 注解（在运行页可见），本轮不动评论，
+      # 提交 / 上传照常执行，避免“评论服务一出问题整条链路冻结、数据不更新”；下一轮增量自动补。
       - name: Generate AI comments
-        continue-on-error: true
         env:
           SF_KEY: ${{ secrets.SF_KEY }}
-        run: node scripts/ai-comments.js --conc 4
+        run: node scripts/ai-comments.js --conc 4 || echo "::warning::AI 评论生成失败（密钥/额度/网络），本轮跳过，其余步骤照常，下一轮自动补"
 
       - name: Commit updated feed + library + comments
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -64,76 +66,9 @@ jobs:
           commit_message: 'chore: crawl + update library + ai comments'
           file_pattern: data/channels-feed.json data/channels-history.json data/official-feed.json data/official-sources.json data/articles-history.json data/library.json data/ai-review.json data/look-feed.json
 
-      # 剥离正文为单篇小文件（省 COS 流量）：Actions 用 python3 跑，生成 data/articles/
-      - name: Strip article bodies into per-id files
-        continue-on-error: true
-        run: python3 scripts/strip-content-to-articles.py
-
-      # 上传到腾讯云 COS：手机端唯一可读源（国内网络访问 GitHub 不通）。
-      # 密钥从仓库 Secrets 读取，绝不明文写在仓库里。
-      # 需先在 仓库 Settings → Secrets 配置：COS_SECRET_ID / COS_SECRET_KEY
-      # 这样每小时抓取后自动把最新数据推到 COS，前端(手机)从 COS 拉到实时更新。
-      - name: Upload latest data to Tencent COS
-        continue-on-error: true
-        env:
-          COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
-          COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
-          COS_BUCKET: vw-data-1311399697
-          COS_REGION: ap-guangzhou
-        run: |
-          # feed JSON 改用腾讯云 TC3 签名直传（与 update-official.yml 的「Upload feed JSONs」步骤一致），
-          # 不再依赖 coscmd（pip 安装 + 二进制不稳定、曾超时失败）。
-          # 注意：channels-feed.json 不再在此上传——B 站对 GitHub Actions 机房 IP 风控，云端永远抓不到
-          # 视频号真实评论，只会把「只有 280/500 条」的残缺版本推到 COS，覆盖掉本机补抓好的 491/500。
-          # 视频号数据完全由本机 scripts/fetch-channels-comments.js --push 维护。
-          python3 - <<'PY'
-          import os, time, hmac, hashlib, urllib.request, urllib.error
-          SID=os.environ.get('COS_SECRET_ID',''); SKEY=os.environ.get('COS_SECRET_KEY','')
-          BUCKET=os.environ.get('COS_BUCKET','vw-data-1311399697'); REGION=os.environ.get('COS_REGION','ap-guangzhou')
-          HOST=f'{BUCKET}.cos.{REGION}.myqcloud.com'
-          if not SID or not SKEY:
-              print('COS secrets not set, skip'); raise SystemExit(0)
-          def h(k,m): return hmac.new(k, m.encode('utf-8'), hashlib.sha256).digest()
-          def put(key, local, ct='application/json; charset=utf-8'):
-              body=open(local,'rb').read()
-              t0=int(time.time()); kt=f'{t0};{t0+3000}'; dp=time.strftime('%Y-%m-%d', time.gmtime(t0))
-              md5=hashlib.md5(body).hexdigest()
-              canon='PUT/'+key+'/'+chr(10)+f'content-type:{ct};host:{HOST};'+chr(10)+'content-type;host'+chr(10)+md5
-              sts='TC3-HMAC-SHA256'+chr(10)+kt+chr(10)+'/cos/'+dp+'/qcs'+chr(10)+hashlib.sha256(canon.encode()).hexdigest()
-              k=h(SKEY.encode(),dp); k=h(k,'cos'); k=h(k,REGION); k=h(k,'qcs')
-              sig=hmac.new(k,sts.encode(),hashlib.sha256).hexdigest()
-              auth=f'TC3-HMAC-SHA256 Credential={SID}/{kt}/cos/{dp}/qcs, SignedHeaders=content-type;host, Signature={sig}'
-              req=urllib.request.Request(f'https://{HOST}/{key}', data=body, method='PUT')
-              req.add_header('Content-Type', ct); req.add_header('Host', HOST)
-              req.add_header('X-TC-Action','PutObject'); req.add_header('X-TC-Timestamp',str(t0)); req.add_header('Authorization',auth)
-              # CI 环境无代理，直连 COS API
-              proxy=urllib.request.build_opener(urllib.request.ProxyHandler({}))
-              for a in range(4):
-                  try:
-                      r=proxy.open(req, timeout=180); return r.status, ''
-                  except urllib.error.HTTPError as e:
-                      return e.code, e.read().decode('utf-8','replace')[:200]
-                  except Exception as e:
-                      if a==3: return -1, str(e)[:200]
-                      time.sleep(2)
-              return -1, 'retry-exhausted'
-          fail=0
-          # 评论文件可选：上传失败只告警，不计入 fail，避免 bash -e 中止后面的单篇正文上传
-          OPTIONAL={'data/ai-review.json'}
-          for key in ['data/official-feed.json','data/look-feed.json','data/ai-review.json']:
-              if not os.path.exists(key):
-                  print('skip (not found):', key); continue
-              try: st, info = put(key, key)
-              except Exception as e: st, info = -1, str(e)[:200]
-              print(f'  {key}: HTTP {st}', info if st!=200 else '(ok)')
-              if st!=200 and key in OPTIONAL:
-                  print(f'::warning::{key} 本轮未上传到 COS（HTTP {st}），下轮重试；不影响正文和列表上传'); continue
-              if st!=200: fail+=1
-          if fail>0:
-              print(f'[COS] {fail} feed upload(s) failed'); raise SystemExit(1)
-          print('[COS] feed JSONs uploaded (TC3)')
-          PY
-          # 单篇正文仍走 coscmd -rs 递归增量（与 update-official.yml 一致：跳过已存在文件，避免全量重传超时）
-          pip install -q coscmd
-          coscmd config -a "$COS_SECRET_ID" -s "$COS_SECRET_KEY" -b "$COS_BUCKET" -r "$COS_REGION" -m 10
-          if [ -d data/articles ]; then coscmd upload -rs data/articles data/articles; fi
+      # 本工作流不向 COS 发布任何文件：
+      #  - 公众号 / 看一看 / AI 评论 / 单篇正文由 update-official.yml 独占发布（先单篇、后列表），
+      #    避免"列表已发布、正文未上传"（2026-10-25 run 40203079421 事故）。
+      #  - channels-feed.json 由本机 scripts/fetch-channels-comments.js --push 维护（1084e86：B 站对 CI 机房 IP 风控，
+      #    云端版本评论残缺，会覆盖本机补抓数据）。如需恢复 CI 上传视频号，加回调用
+      #    `python3 scripts/upload-feeds-to-cos.py`（默认只传 channels-feed.json）的步骤即可（8fc3412）。

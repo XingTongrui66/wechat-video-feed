@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""逐个签名 PUT feed JSON 到腾讯 COS。"""
+"""逐个签名 PUT feed JSON 到腾讯 COS。
+
+环境变量：
+  COS_FEED_FILES     逗号分隔的待传文件（须在白名单内），未设置时只传 channels-feed.json
+  COS_FEED_OPTIONAL  逗号分隔的可选文件（须是 COS_FEED_FILES 的子集），失败只告警、不让退出码非零；默认为空
+  COS_ENDPOINT       覆盖 COS 地址（默认 https://{bucket}.cos.{region}.myqcloud.com）
+  FEED_PUT_TIMEOUT   单次 PUT 超时秒数（默认 120）
+  FEED_BACKOFF_BASE  重试退避基数秒数（默认 2）
+"""
 import hashlib
 import hmac
 import os
@@ -35,6 +43,14 @@ def feed_files():
     if not names or any(name not in ALLOWED_FILES for name in names):
         raise ValueError("COS_FEED_FILES must contain only supported feed filenames")
     return names
+
+
+def optional_files(names):
+    value = os.environ.get("COS_FEED_OPTIONAL") or ""
+    optional = {name.strip() for name in value.split(",") if name.strip()}
+    if any(name not in ALLOWED_FILES or name not in names for name in optional):
+        raise ValueError("COS_FEED_OPTIONAL must be a subset of COS_FEED_FILES")
+    return optional
 
 
 def h(key, message):
@@ -84,6 +100,7 @@ def upload(key, body):
 def main():
     try:
         names = feed_files()
+        optional = optional_files(names)
     except ValueError as error:
         print(error)
         return 1
@@ -109,11 +126,17 @@ def main():
         results.append((name, len(body), status, retries))
 
     failed = 0
+    optional_failed = 0
     for name, size, status, retries in results:
         ok = status == 200
+        if not ok and name in optional:
+            optional_failed += 1
+            print(f"WARN {name} bytes={size} status={status} retries={retries}")
+            print(f"::warning::data/{name} 本轮未上传到 COS（status={status}），下轮重试；不影响正文和列表上传")
+            continue
         failed += not ok
         print(f"{'OK  ' if ok else 'FAIL'} {name} bytes={size} status={status} retries={retries}")
-    print(f"[COS] feeds done: failed={failed}")
+    print(f"[COS] feeds done: failed={failed} optional_failed={optional_failed}")
     return 1 if failed else 0
 
 
